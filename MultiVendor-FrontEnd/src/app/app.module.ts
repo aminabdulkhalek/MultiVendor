@@ -8,6 +8,7 @@ import { VendorDashboardComponent } from './vendor-dashboard/vendor-dashboard.co
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { VendorDashboardSidebarComponent } from './vendor-dashboard-sidebar/vendor-dashboard-sidebar.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { VendorDashboardSidebarComponent } from './vendor-dashboard-sidebar/vend
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    MatSidenavModule
+    MatSidenavModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
