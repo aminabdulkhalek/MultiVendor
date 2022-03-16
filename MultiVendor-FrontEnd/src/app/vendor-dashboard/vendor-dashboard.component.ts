@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faSignOut } from '@fortawesome/free-solid-svg-icons';
+import { faBell, faSignOut } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -9,6 +9,7 @@ import { faSignOut } from '@fortawesome/free-solid-svg-icons';
 })
 export class VendorDashboardComponent implements OnInit {
   logout=faSignOut;
+  notification = faBell
   constructor() { }
 
   ngOnInit(): void {
