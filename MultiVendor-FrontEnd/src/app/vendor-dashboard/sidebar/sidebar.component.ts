@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { faBriefcase, faDollarSign, faHome, faStar, faTools, faUsers } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
-  selector: 'app-vendor-dashboard-sidebar',
-  templateUrl: './vendor-dashboard-sidebar.component.html',
-  styleUrls: ['./vendor-dashboard-sidebar.component.scss']
+  selector: 'app-sidebar',
+  templateUrl: './sidebar.component.html',
+  styleUrls: ['./sidebar.component.scss']
 })
-export class VendorDashboardSidebarComponent implements OnInit {
+export class SidebarComponent implements OnInit {
   home =faHome;
   product = faBriefcase
   order = faDollarSign
