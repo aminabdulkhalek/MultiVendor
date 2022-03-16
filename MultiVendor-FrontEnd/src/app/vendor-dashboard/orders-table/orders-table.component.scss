@@ -1,0 +1,44 @@
+table {
+    border: 1px solid #E5E5E5;
+    border-radius: 4px;
+    width: 350px;
+    height: 250px;
+}
+
+.bar {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.bar-title {
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.header {
+    font-size: x-large;
+    font-weight: 700;
+
+}
+
+.order {
+    font-size: 30px;
+    color: white;
+    background-color: #1B0067;
+    height: 75px;
+    width: 100px;
+    text-align: center;
+}
+
+.order-value {
+    font-size: 30px;
+    color: #3F3F3F;
+    background-color: #F7F7FF;
+    width: 100px;
+    text-align: center;
+}
+
+.mat-progress-bar-fill::after {
+    background-color: #1B0067 !important;
+}

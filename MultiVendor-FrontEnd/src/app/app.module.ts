@@ -7,9 +7,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { VendorDashboardComponent } from './vendor-dashboard/vendor-dashboard.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { SidebarComponent } from './vendor-dashboard/sidebar/sidebar.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { OrdersTableComponent } from './orders-table/orders-table.component';
+import { OrdersTableComponent } from './vendor-dashboard/orders-table/orders-table.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { OrdersTableComponent } from './orders-table/orders-table.component';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatSidenavModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    MatProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
