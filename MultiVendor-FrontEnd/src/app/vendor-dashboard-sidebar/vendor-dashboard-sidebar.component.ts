@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FaConfig } from '@fortawesome/angular-fontawesome';
 import { faBriefcase, faDollarSign, faHome, faStar, faTools, faUsers } from '@fortawesome/free-solid-svg-icons';
 
 @Component({

@@ -1,22 +1,7 @@
-.example-container {
 
-    width: 300px;
-    height: 300px;
-    border: 1px solid rgba(0, 0, 0, 0.5);
-}
-
-.example-sidenav-content {
-    display: flex;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-}
-
-.example-sidenav {
-    padding: 20px;
-}
 
 .logo{
+
     color: rgb(255, 65, 65);
     font-size: 50px;
     font-weight: 900;
@@ -30,5 +15,23 @@
     position: fixed;
 }
 .market-name{
+    flex:1;
     font-size: x-large;
+}
+
+
+a{
+    text-decoration: none;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.store-logo{
+    margin: 10px;
+
+    border-radius: 100px;
+    width: 40px;
+    height: 40px;
+    border: 3px white solid;
 }
