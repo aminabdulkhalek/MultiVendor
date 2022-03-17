@@ -13,6 +13,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { OrdersTableComponent } from './vendor-dashboard/orders-table/orders-table.component';
 import { ProductsTableComponent } from './vendor-dashboard/products-table/products-table.component';
 import { CustomersTableComponent } from './vendor-dashboard/customers-table/customers-table.component';
+import { RecentOrdersTableComponent } from './vendor-dashboard/recent-orders-table/recent-orders-table.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { CustomersTableComponent } from './vendor-dashboard/customers-table/cust
     SidebarComponent,
     OrdersTableComponent,
     ProductsTableComponent,
-    CustomersTableComponent
+    CustomersTableComponent,
+    RecentOrdersTableComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,49 @@
+table {
+    border: 1px solid #E5E5E5;
+    border-radius: 4px;
+    width: 400px;
+    height: 250px;
+}
+
+
+.header {
+    font-size: x-large;
+    font-weight: 700;
+
+}
+
+.sub-header {
+    font-size: 30px;
+    color: white;
+    background-color: #1B0067;
+    height: 75px;
+    text-align: center;
+}
+
+.order-value {
+    font-size: 30px;
+    color: #3F3F3F;
+    background-color: #F7F7FF;
+    width: 100px;
+    text-align: center;
+}
+.title{
+    font-size: 18px;
+    padding-left: 20px;
+    border-bottom: 1px solid #E5E5E5;
+    height: 35px;
+}
+
+.order{
+    font-size: 16px;
+    color: #474747;
+    padding-left: 20px;
+}
+
+.price{
+    font-size: 16px;
+    color: #5c5c5c;
+    text-align: end;
+    padding-right: 25px;
+    font-weight: 500;
+}
