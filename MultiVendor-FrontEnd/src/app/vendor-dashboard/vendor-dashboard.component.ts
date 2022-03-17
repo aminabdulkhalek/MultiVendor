@@ -9,7 +9,8 @@ import { faBell, faSignOut } from '@fortawesome/free-solid-svg-icons';
 })
 export class VendorDashboardComponent implements OnInit {
   logout=faSignOut;
-  notification = faBell
+  notification = faBell;
+  imagePath = "favicon.ico";
   constructor() { }
 
   ngOnInit(): void {
