@@ -72,6 +72,9 @@ Sidebar Nav
 .active {
   color: white !important;
   background-color: #1b0067 !important;
+  -moz-box-shadow:    inset 0 0 10px #000000;
+   -webkit-box-shadow: inset 0 0 10px #000000;
+   box-shadow:         inset 0 0 10px #000000;
 }
 
 .icon {
