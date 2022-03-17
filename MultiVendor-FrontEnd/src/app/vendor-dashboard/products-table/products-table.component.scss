@@ -1,0 +1,52 @@
+table {
+    border: 1px solid #E5E5E5;
+    border-radius: 4px;
+    width: 350px;
+    height: 250px;
+}
+
+
+.header {
+    font-size: x-large;
+    font-weight: 700;
+
+}
+
+.order {
+    font-size: 30px;
+    color: white;
+    background-color: #1B0067;
+    height: 75px;
+    width: 100px;
+    text-align: center;
+}
+
+.order-value {
+    font-size: 30px;
+    color: #3F3F3F;
+    background-color: #F7F7FF;
+    width: 100px;
+    text-align: center;
+}
+.title{
+    font-size: 18px;
+    padding-left: 20px;
+    border-bottom: 1px solid #E5E5E5;
+    height: 35px;
+}
+
+.product{
+    font-size: 16px;
+    color: #646464;
+    padding-left: 20px;
+    // border-bottom: 1px solid #E5E5E5;
+
+}
+
+.sales{
+    font-size: 16px;
+    color: #3F3F3F;
+    text-align: center;
+    // border-bottom: 1px solid #E5E5E5;
+
+}

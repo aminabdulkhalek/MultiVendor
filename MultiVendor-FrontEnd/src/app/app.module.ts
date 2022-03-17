@@ -11,13 +11,15 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 import { SidebarComponent } from './vendor-dashboard/sidebar/sidebar.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { OrdersTableComponent } from './vendor-dashboard/orders-table/orders-table.component';
+import { ProductsTableComponent } from './vendor-dashboard/products-table/products-table.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     VendorDashboardComponent,
     SidebarComponent,
-    OrdersTableComponent
+    OrdersTableComponent,
+    ProductsTableComponent
   ],
   imports: [
     BrowserModule,
