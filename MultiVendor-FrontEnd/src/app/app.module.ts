@@ -14,6 +14,7 @@ import { OrdersTableComponent } from './vendor-dashboard/orders-table/orders-tab
 import { ProductsTableComponent } from './vendor-dashboard/products-table/products-table.component';
 import { CustomersTableComponent } from './vendor-dashboard/customers-table/customers-table.component';
 import { RecentOrdersTableComponent } from './vendor-dashboard/recent-orders-table/recent-orders-table.component';
+import { RecentReviewsTableComponent } from './vendor-dashboard/recent-reviews-table/recent-reviews-table.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { RecentOrdersTableComponent } from './vendor-dashboard/recent-orders-tab
     OrdersTableComponent,
     ProductsTableComponent,
     CustomersTableComponent,
-    RecentOrdersTableComponent
+    RecentOrdersTableComponent,
+    RecentReviewsTableComponent
   ],
   imports: [
     BrowserModule,
