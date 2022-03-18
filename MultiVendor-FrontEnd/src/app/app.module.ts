@@ -21,6 +21,7 @@ import { VendorProductsComponent } from './vendor-products/vendor-products.compo
 import { ProductsComponent } from './vendor-products/products/products.component';
 import {MatTableModule} from '@angular/material/table';
 import { BarRatingModule } from "ngx-bar-rating";
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { BarRatingModule } from "ngx-bar-rating";
     MatProgressBarModule,
     MatTableModule,
     BarRatingModule,
+    MatPaginatorModule
 
   ],
   providers: [],
