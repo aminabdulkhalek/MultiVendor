@@ -8,5 +8,5 @@
   <a href="#"><fa-icon [icon]="logout" size="lg"></fa-icon> </a>
 </mat-toolbar>
 <app-sidebar class="side-bar" [isProducts]="true"></app-sidebar>
-<button class="add"> <fa-icon [icon]="add" size="lg"> </fa-icon><span class="text">Add New Product</span></button>
+<button class="add" (click)="openDialog()"> <fa-icon [icon]="add" size="lg"> </fa-icon><span class="text">Add New Product</span></button>
 <app-products class="products-table"></app-products>

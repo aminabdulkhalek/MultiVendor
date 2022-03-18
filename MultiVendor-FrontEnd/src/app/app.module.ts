@@ -23,6 +23,8 @@ import {MatTableModule} from '@angular/material/table';
 import { BarRatingModule } from "ngx-bar-rating";
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { AddProductModalComponent } from './vendor-products/add-product-modal/add-product-modal.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,8 @@ import { MatSortModule } from '@angular/material/sort';
     IncomeTableComponent,
     HomeComponent,
     VendorProductsComponent,
-    ProductsComponent
+    ProductsComponent,
+    AddProductModalComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +53,8 @@ import { MatSortModule } from '@angular/material/sort';
     MatTableModule,
     BarRatingModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatDialogModule
 
   ],
   providers: [],
