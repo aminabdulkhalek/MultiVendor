@@ -17,14 +17,15 @@ import { RecentOrdersTableComponent } from './vendor-dashboard/recent-orders-tab
 import { RecentReviewsTableComponent } from './vendor-dashboard/recent-reviews-table/recent-reviews-table.component';
 import { IncomeTableComponent } from './vendor-dashboard/income-table/income-table.component';
 import { HomeComponent } from './home/home.component';
-import { VendorProductsComponent } from './vendor-products/vendor-products.component';
+import { VendorProductsComponent ,AddProductModalComponent } from './vendor-products/vendor-products.component';
 import { ProductsComponent } from './vendor-products/products/products.component';
 import {MatTableModule} from '@angular/material/table';
 import { BarRatingModule } from "ngx-bar-rating";
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
-import { AddProductModalComponent } from './vendor-products/add-product-modal/add-product-modal.component';
+// import { AddProductModalComponent } from './vendor-products/add-product-modal/add-product-modal.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,10 @@ import { MatDialogModule } from '@angular/material/dialog';
     ProductsComponent,
     AddProductModalComponent
   ],
+  entryComponents: [
+    AddProductModalComponent,
+    MatDialogModule
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -54,8 +59,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     BarRatingModule,
     MatPaginatorModule,
     MatSortModule,
-    MatDialogModule
-
+    MatDialogModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

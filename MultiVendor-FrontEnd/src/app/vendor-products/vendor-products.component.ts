@@ -26,7 +26,7 @@ export class VendorProductsComponent {
   templateUrl: 'add-product-modal/add-product-modal.component.html',
   styleUrls: ['add-product-modal/add-product-modal.component.scss']
 })
-export class AddProductModalComponent implements OnInit {
+export class AddProductModalComponent  {
 
   constructor() { }
 

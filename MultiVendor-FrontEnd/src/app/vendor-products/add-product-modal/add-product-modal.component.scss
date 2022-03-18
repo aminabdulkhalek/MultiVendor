@@ -1,0 +1,84 @@
+.content {
+    display: flex;
+    height: 60vh;
+    width: 70vw;
+}
+
+.container ,.col-6{
+    display: flex;
+}
+
+.col1,
+.cola,
+.colb {
+    flex: 1;
+}
+
+.col2 {
+    flex: 0.5;
+}
+
+.colb,.cola{
+    margin: 10px;
+}
+
+.example-full-width {
+    width: 100%;
+}
+.stock{
+    width: 5rem;
+    margin-left: 10px;
+}
+
+td {
+    padding-right: 8px;
+}
+
+.close ,.submit{
+    width: 5rem;
+    height: 2.5rem;
+    background-color: #1B0067;
+    color: white;
+    font-size: 1rem;
+    border: 0;
+    border-radius: 4px;
+    margin-left: 1%;
+
+    cursor: pointer;
+
+    &:hover {
+        transition: all 0.6s ease;
+        background-color: white;
+        color: #1B0067;
+        border: #1B0067 1px solid;
+    }
+}
+
+.submit{
+    width: 15rem;
+    height: 2.5rem;
+    background-color: #1B0067;
+    color: white;
+    font-size: 1rem;
+    border: 0;
+    border-radius: 4px;
+    margin-left: 1%;
+
+    cursor: pointer;
+
+    &:hover {
+        transition: all 0.6s ease;
+        background-color: white;
+        color: #1B0067;
+        border: #1B0067 1px solid;
+    }
+}
+
+.title{
+    font-weight: 700;
+    color: #3F3F3F;
+}
+
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex{
+    background-color: #F7F7FF;
+}

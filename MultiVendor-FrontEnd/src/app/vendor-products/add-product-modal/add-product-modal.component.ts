@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, NgModule, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-add-product-modal',
@@ -13,3 +13,9 @@ export class AddProductModalComponent implements OnInit {
   }
 
 }
+@NgModule({
+	declarations: [AddProductModalComponent],
+    exports: [AddProductModalComponent],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
+})
+export class WrapperModule {}
