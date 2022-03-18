@@ -18,6 +18,8 @@ import { RecentReviewsTableComponent } from './vendor-dashboard/recent-reviews-t
 import { IncomeTableComponent } from './vendor-dashboard/income-table/income-table.component';
 import { HomeComponent } from './home/home.component';
 import { VendorProductsComponent } from './vendor-products/vendor-products.component';
+import { ProductsComponent } from './vendor-products/products/products.component';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import { VendorProductsComponent } from './vendor-products/vendor-products.compo
     RecentReviewsTableComponent,
     IncomeTableComponent,
     HomeComponent,
-    VendorProductsComponent
+    VendorProductsComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +43,8 @@ import { VendorProductsComponent } from './vendor-products/vendor-products.compo
     MatToolbarModule,
     MatSidenavModule,
     FontAwesomeModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

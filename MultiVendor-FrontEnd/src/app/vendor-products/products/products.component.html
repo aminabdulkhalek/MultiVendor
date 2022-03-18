@@ -1,0 +1,49 @@
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+    <mat-cell *matCellDef="let product"> {{ product.id }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+    <mat-cell *matCellDef="let product"> {{ product.name }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="price">
+    <mat-header-cell *matHeaderCellDef> Price </mat-header-cell>
+    <mat-cell *matCellDef="let product"> {{ product.price }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="flags">
+    <mat-header-cell *matHeaderCellDef> Flags </mat-header-cell>
+    <mat-cell *matCellDef="let product"> {{ product.flags }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="reviews">
+    <mat-header-cell *matHeaderCellDef> Reviews </mat-header-cell>
+    <mat-cell *matCellDef="let product"> {{ product.reviews }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="stock">
+    <mat-header-cell *matHeaderCellDef> Stock </mat-header-cell>
+    <mat-cell *matCellDef="let product"> {{ product.stock }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="preview">
+    <mat-header-cell *matHeaderCellDef> Preview </mat-header-cell>
+    <mat-cell *matCellDef="let product"> <img src="{{ product.preview }}" alt="img"> </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="status">
+    <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+    <mat-cell *matCellDef="let product"> {{ product.status }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="action">
+    <mat-header-cell *matHeaderCellDef> Products Action </mat-header-cell>
+    <mat-cell *matCellDef="let product"> <Button>Update Product</Button> </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+</mat-table>
