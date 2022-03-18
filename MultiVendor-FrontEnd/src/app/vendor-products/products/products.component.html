@@ -1,30 +1,33 @@
-<mat-paginator [pageSizeOptions]="[6, 10, 20]"
-                 aria-label="Select page of Products">
-  </mat-paginator>
-<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-  
+<mat-paginator
+  [pageSizeOptions]="[6, 10, 20]"
+  aria-label="Select page of Products"
+>
+</mat-paginator>
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
   <ng-container matColumnDef="id">
-    <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
+    <mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by id"> ID </mat-header-cell>
     <mat-cell *matCellDef="let product"> {{ product.id }} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="name">
-    <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+    <mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by name"> Name </mat-header-cell>
     <mat-cell *matCellDef="let product"> {{ product.name }} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="price">
-    <mat-header-cell *matHeaderCellDef mat-sort-header> Price </mat-header-cell>
+    <mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by price"> Price </mat-header-cell>
     <mat-cell *matCellDef="let product"> {{ product.price }} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="flags">
-    <mat-header-cell *matHeaderCellDef mat-sort-header> Flags </mat-header-cell>
+    <mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by flags"> Flags </mat-header-cell>
     <mat-cell *matCellDef="let product"> {{ product.flags }} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="reviews">
-    <mat-header-cell *matHeaderCellDef mat-sort-header> Reviews </mat-header-cell>
+    <mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by reviews">
+      Reviews
+    </mat-header-cell>
     <mat-cell *matCellDef="let product">
       <bar-rating [rate]="product.reviews" [readOnly]="true" [max]="5">
         <ng-template ratingInactive>
@@ -52,9 +55,9 @@
     </mat-cell>
   </ng-container>
 
-  <ng-container matColumnDef="stock" >
-    <mat-header-cell *matHeaderCellDef mat-sort-header> Stock </mat-header-cell>
-    <mat-cell  *matCellDef="let product"> {{ product.stock }} </mat-cell>
+  <ng-container matColumnDef="stock">
+    <mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by stock"> Stock </mat-header-cell>
+    <mat-cell *matCellDef="let product"> {{ product.stock }} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="preview">
@@ -65,18 +68,23 @@
   </ng-container>
 
   <ng-container matColumnDef="status">
-    <mat-header-cell *matHeaderCellDef mat-sort-header> Status </mat-header-cell>
+    <mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by status">
+      Status
+    </mat-header-cell>
     <mat-cell *matCellDef="let product"> {{ product.status }} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="action">
-    <mat-header-cell *matHeaderCellDef > Products Action </mat-header-cell>
+    <mat-header-cell *matHeaderCellDef> Products Action </mat-header-cell>
     <mat-cell *matCellDef="let product">
       <Button class="update">Update</Button>
-      <button class="delete"> <fa-icon class="icon-delete"
-        [icon]="delete"
-        style="color: #FF5C5C"
-      ></fa-icon></button>
+      <button class="delete">
+        <fa-icon
+          class="icon-delete"
+          [icon]="delete"
+          style="color: #ff5c5c"
+        ></fa-icon>
+      </button>
     </mat-cell>
   </ng-container>
 
