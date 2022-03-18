@@ -1,5 +1,4 @@
 .logo {
-
     color: rgb(255, 65, 65);
     font-size: 50px;
     font-weight: 900;
@@ -66,6 +65,13 @@ a {
     margin-top: 1%;
     z-index: 100;
     cursor: pointer;
+
+    &:hover {
+        transition: all 0.6s ease;
+        background-color: white;
+        color: #1B0067;
+        border: #1B0067 1px solid;
+    }
 }
 
 .text {
