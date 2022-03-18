@@ -1,0 +1,56 @@
+.preview-img{
+  margin: 10px;
+  width: 40px;
+  height: auto;
+  border: 3px white solid;
+}
+
+.mat-column-id , .mat-column-flags , .mat-column-stock{
+  flex: 0.5;
+}
+
+.mat-cell{
+  font-size: 16px;
+  font-weight: 500;
+  color: #3F3F3F;
+  border: 0;
+}
+
+.mat-row{
+  border-bottom: 0;
+  background-color: #F7F7FF;
+  margin: 15px auto;
+}
+
+.mat-elevation-z8{
+ all: unset;
+}
+
+.mat-header-row{
+  background-color:#1B0067 ;
+}
+
+.mat-header-cell{
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.delete{
+  font-size: 25px;
+  border: 0;
+  background-color: transparent;
+  padding-left: 30px;
+}
+
+.update{
+  font-size: 18px;
+  color: white;
+  background-color: #1B0067;
+  border: 0;
+  border-radius: 4px;
+  height: 2.5rem;
+  width: 5.5rem;
+}
+

@@ -20,6 +20,7 @@ import { HomeComponent } from './home/home.component';
 import { VendorProductsComponent } from './vendor-products/vendor-products.component';
 import { ProductsComponent } from './vendor-products/products/products.component';
 import {MatTableModule} from '@angular/material/table';
+import { BarRatingModule } from "ngx-bar-rating";
 
 @NgModule({
   declarations: [
@@ -44,7 +45,9 @@ import {MatTableModule} from '@angular/material/table';
     MatSidenavModule,
     FontAwesomeModule,
     MatProgressBarModule,
-    MatTableModule
+    MatTableModule,
+    BarRatingModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

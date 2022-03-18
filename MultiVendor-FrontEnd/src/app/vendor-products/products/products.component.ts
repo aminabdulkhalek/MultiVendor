@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { faStar, faStarHalfAlt, faTrash, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import {MatTableDataSource} from '@angular/material/table';
 
 export interface Products {
   id: number;
@@ -13,14 +15,14 @@ export interface Products {
 }
 
 const Product_DATA: Products[] = [
-  { id: 1, name: 'Hydrogen', price: "1299$", flags: 3, reviews: 5, stock: 100, preview: "", status: "Approved" },
-  { id: 2, name: 'Hydrogen', price: "1299$", flags: 3, reviews: 5, stock: 100, preview: "", status: "Approved" },
-  { id: 3, name: 'Hydrogen', price: "1299$", flags: 3, reviews: 5, stock: 100, preview: "", status: "Approved" },
-  { id: 4, name: 'Hydrogen', price: "1299$", flags: 3, reviews: 5, stock: 100, preview: "", status: "Approved" },
-  { id: 5, name: 'Hydrogen', price: "1299$", flags: 3, reviews: 5, stock: 100, preview: "", status: "Approved" },
-  { id: 6, name: 'Hydrogen', price: "1299$", flags: 3, reviews: 5, stock: 100, preview: "", status: "Approved" },
-  { id: 7, name: 'Hydrogen', price: "1299$", flags: 3, reviews: 5, stock: 100, preview: "", status: "Approved" },
-  { id: 8, name: 'Hydrogen', price: "1299$", flags: 3, reviews: 5, stock: 100, preview: "", status: "Approved" },
+  { id: 1, name: 'iphone 13 Pro MAX', price: "1299$", flags: 1, reviews: 2, stock: 10, preview: "", status: "Approved" },
+  { id: 2, name: 'Red Scarf', price: "1299$", flags: 0, reviews: 1, stock: 4, preview: "", status: "Pending" },
+  { id: 3, name: 'Chair', price: "1299$", flags: 0, reviews: 4, stock: 3, preview: "", status: "Approved" },
+  { id: 4, name: 'Blue Jeans', price: "1299$", flags: 1, reviews: 1.5, stock: 1, preview: "", status: "Disapproved" },
+  { id: 5, name: 'Black Shirt', price: "1299$", flags: 0, reviews: 3.5, stock: 3, preview: "", status: "Approved" },
+  { id: 6, name: 'Polo T-Shirt', price: "1299$", flags: 2, reviews: 2.5, stock: 5, preview: "", status: "Approved" },
+  { id: 7, name: 'Sockes', price: "1299$", flags: 0, reviews: 4, stock: 100, preview: "", status: "Pending" },
+  { id: 8, name: 'Suit', price: "1299$", flags: 0, reviews: 3, stock: 3, preview: "", status: "Approved" },
 ];
 
 @Component({
@@ -29,6 +31,9 @@ const Product_DATA: Products[] = [
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
+  star = faStar;
+  half_star = faStarHalfAlt;
+  delete = faTrashAlt
 
   displayedColumns: string[] = ['id', 'name', 'price', 'flags', 'reviews', 'stock', 'preview', 'status', 'action'];
   dataSource = Product_DATA;
