@@ -17,6 +17,7 @@ import { RecentOrdersTableComponent } from './vendor-dashboard/recent-orders-tab
 import { RecentReviewsTableComponent } from './vendor-dashboard/recent-reviews-table/recent-reviews-table.component';
 import { IncomeTableComponent } from './vendor-dashboard/income-table/income-table.component';
 import { HomeComponent } from './home/home.component';
+import { VendorProductsComponent } from './vendor-products/vendor-products.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { HomeComponent } from './home/home.component';
     RecentOrdersTableComponent,
     RecentReviewsTableComponent,
     IncomeTableComponent,
-    HomeComponent
+    HomeComponent,
+    VendorProductsComponent
   ],
   imports: [
     BrowserModule,

@@ -2,37 +2,37 @@
   <nav class="sidebar-nav">
     <ul>
       <li>
-        <a href="#" class="active"
+        <a id="dashboard" href="vendor-dashboard" [class.active]="isDash"
           ><fa-icon [icon]="home" size="lg"></fa-icon>
           <div class="icon">Dashboard</div></a
         >
       </li>
       <li>
-        <a href="#">
+        <a id="products" href="vendor-products" [class.active]="isProducts">
           <fa-icon [icon]="product" size="lg"></fa-icon>
           <div class="icon">Products</div></a
         >
       </li>
       <li>
-        <a href="#">
+        <a id="orders" href="#" [class.active]="isOrders">
           <fa-icon [icon]="order" size="lg"></fa-icon>
           <div class="icon">Orders</div></a
         >
       </li>
       <li>
-        <a href="#"
+        <a id="customers" href="#" [class.active]="isCustomers"
           ><fa-icon [icon]="customer" size="lg"></fa-icon>
           <div class="icon">Customers</div></a
         >
       </li>
       <li>
-        <a href="#"
+        <a id="reviews" href="#" [class.active]="isReviews"
           ><fa-icon [icon]="review" size="lg"></fa-icon>
           <div class="icon">Reviews</div></a
         >
       </li>
       <li>
-        <a href="#"
+        <a id="settings" href="#" [class.active]="isSettings"
           ><fa-icon [icon]="settings" size="lg"></fa-icon>
           <div class="icon">Settings</div></a
         >

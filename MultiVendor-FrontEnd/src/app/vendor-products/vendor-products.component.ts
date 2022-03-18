@@ -1,22 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { faBell, faSignOut } from '@fortawesome/free-solid-svg-icons';
 
-
 @Component({
-  selector: 'app-vendor-dashboard',
-  templateUrl: './vendor-dashboard.component.html',
-  styleUrls: ['./vendor-dashboard.component.scss']
+  selector: 'app-vendor-products',
+  templateUrl: './vendor-products.component.html',
+  styleUrls: ['./vendor-products.component.scss']
 })
-export class VendorDashboardComponent implements OnInit {
+export class VendorProductsComponent implements OnInit {
   logout=faSignOut;
   notification = faBell;
   imagePath = "favicon.ico";
-  isDash = true;
   constructor() { }
 
   ngOnInit(): void {
   }
-   
+
 }
-
-
