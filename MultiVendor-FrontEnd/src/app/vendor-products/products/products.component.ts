@@ -15,14 +15,14 @@ export interface Products {
 }
 
 const Product_DATA: Products[] = [
-  { id: 1, name: 'iphone 13 Pro MAX', price: "1299$", flags: 1, reviews: 2, stock: 10, preview: "", status: "Approved" },
-  { id: 2, name: 'Red Scarf', price: "1299$", flags: 0, reviews: 1, stock: 4, preview: "", status: "Pending" },
-  { id: 3, name: 'Chair', price: "1299$", flags: 0, reviews: 4, stock: 3, preview: "", status: "Approved" },
-  { id: 4, name: 'Blue Jeans', price: "1299$", flags: 1, reviews: 1.5, stock: 1, preview: "", status: "Disapproved" },
-  { id: 5, name: 'Black Shirt', price: "1299$", flags: 0, reviews: 3.5, stock: 3, preview: "", status: "Approved" },
-  { id: 6, name: 'Polo T-Shirt', price: "1299$", flags: 2, reviews: 2.5, stock: 5, preview: "", status: "Approved" },
-  { id: 7, name: 'Sockes', price: "1299$", flags: 0, reviews: 4, stock: 100, preview: "", status: "Pending" },
-  { id: 8, name: 'Suit', price: "1299$", flags: 0, reviews: 3, stock: 3, preview: "", status: "Approved" },
+  { id: 1, name: 'iphone 13 Pro MAX', price: "1299$", flags: 1, reviews: 2, stock: 10, preview: "/assets/img.png", status: "Approved" },
+  { id: 2, name: 'Red Scarf', price: "1299$", flags: 0, reviews: 1, stock: 4, preview: "/assets/img.png", status: "Pending" },
+  { id: 3, name: 'Chair', price: "1299$", flags: 0, reviews: 4, stock: 3, preview: "/assets/img.png", status: "Approved" },
+  { id: 4, name: 'Blue Jeans', price: "1299$", flags: 1, reviews: 1.5, stock: 1, preview: "/assets/img.png", status: "Denied" },
+  { id: 5, name: 'Black Shirt', price: "1299$", flags: 0, reviews: 3.5, stock: 3, preview: "/assets/img.png", status: "Approved" },
+  { id: 6, name: 'Polo T-Shirt', price: "1299$", flags: 2, reviews: 2.5, stock: 5, preview: "/assets/img.png", status: "Approved" },
+  { id: 7, name: 'Sockes', price: "1299$", flags: 0, reviews: 4, stock: 100, preview: "/assets/img.png", status: "Pending" },
+  { id: 8, name: 'Suit', price: "1299$", flags: 0, reviews: 3, stock: 3, preview: "/assets/img.png", status: "Approved" },
 ];
 
 @Component({

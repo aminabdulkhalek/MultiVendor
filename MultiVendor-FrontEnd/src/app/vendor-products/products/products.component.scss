@@ -1,56 +1,174 @@
-.preview-img{
+.preview-img {
   margin: 10px;
-  width: 40px;
-  height: auto;
-  border: 3px white solid;
+  width: auto;
+  height: 60px;
+
 }
 
-.mat-column-id , .mat-column-flags , .mat-column-stock{
+
+.mat-column-id {
+  flex: 0.2;
+}
+
+.mat-column-name {
+  justify-content: center;
+  flex: 1;
+}
+
+.mat-column-price {
+  justify-content: center;
   flex: 0.5;
 }
 
-.mat-cell{
+.mat-column-flags {
+  justify-content: center;
+  flex: 0.7;
+}
+
+.mat-column-reviews {
+  justify-content: center;
+  flex: 0.6;
+}
+
+.mat-column-stock {
+  justify-content: center;
+  flex: 0.5;
+}
+
+.mat-column-preview {
+  justify-content: center;
+  flex: 1;
+}
+
+.mat-column-status {
+  justify-content: center;
+  flex: 0.5;
+}
+
+.mat-column-action {
+  justify-content: center;
+  flex: 1.5;
+}
+
+.mat-cell {
   font-size: 16px;
   font-weight: 500;
   color: #3F3F3F;
   border: 0;
 }
 
-.mat-row{
+.mat-row {
   border-bottom: 0;
   background-color: #F7F7FF;
   margin: 15px auto;
 }
 
-.mat-elevation-z8{
- all: unset;
+.mat-elevation-z8 {
+  all: unset;
 }
 
-.mat-header-row{
-  background-color:#1B0067 ;
+.mat-header-row {
+  background-color: #1B0067;
 }
 
-.mat-header-cell{
+.mat-header-cell {
   color: white;
   font-size: 18px;
   font-weight: 600;
   letter-spacing: 1px;
 }
 
-.delete{
+.delete {
   font-size: 25px;
   border: 0;
   background-color: transparent;
   padding-left: 30px;
+  
 }
-
-.update{
+.icon-delete{
+  cursor: pointer;
+}
+.update {
   font-size: 18px;
   color: white;
   background-color: #1B0067;
   border: 0;
   border-radius: 4px;
   height: 2.5rem;
-  width: 5.5rem;
+  width: 6rem;
+  cursor: pointer;
 }
 
+@media only screen and (max-width: 800px) {
+  .mat-column-id ,.mat-column-reviews, .mat-column-preview{
+    display: none;
+  }
+  .mat-column-name {
+    justify-content: center;
+    flex: 1;
+    font-size: 14px;
+  }
+  .delete {
+    font-size: 14px;
+    border: 0;
+    background-color: transparent;
+    padding-left: 5px;
+    display: none;
+  }
+  
+  .update {
+    font-size: 12px;
+    color: white;
+    background-color: #1B0067;
+    border: 0;
+    border-radius: 4px;
+    height: 1.5rem;
+  }
+
+  .mat-header-cell {
+    padding-right: 5px;
+    text-align: center;
+    flex: 1;
+    color: white;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0px;
+  }
+  .mat-cell {
+    padding-right: 10px;
+    text-align: center;
+    flex: 1;
+    font-size: 12px;
+    font-weight: 500;
+    color: #3F3F3F;
+    border: 0;
+  }
+  .mat-column-flags {
+    justify-content: center;
+    flex: 0.6;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .mat-column-preview{
+    display: none;
+  }
+  .mat-column-flags ,.mat-column-stock .mat-column-price{
+    flex:0.4;
+  }
+  .mat-column-id{
+    flex: 0.2;
+  }
+  .mat-column-action{
+    flex: 0.9;
+  }
+  .update {
+    font-size: 14px;
+    color: white;
+    background-color: #1B0067;
+    border: 0;
+    border-radius: 4px;
+    height: 1.5rem;
+    width: 4.5rem;
+  }
+}
