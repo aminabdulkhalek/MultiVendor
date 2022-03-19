@@ -83,7 +83,7 @@
         #fileDropRef
         id="fileDropRef"
         multiple
-        (change)="fileBrowseHandler($event)"
+        (change)="fileBrowseHandler($any($event.target).files)"
       />
       <fa-icon class="image_icon" [icon]="image_icon" size="lg"></fa-icon>
       <h3>Drag and drop file here</h3>
