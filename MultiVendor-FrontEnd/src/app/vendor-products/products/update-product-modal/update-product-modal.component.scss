@@ -37,6 +37,10 @@ td {
     padding-right: 8px;
 }
 
+.close {
+    float: right;
+}
+
 .close,
 .submit {
     width: 5rem;
@@ -231,7 +235,8 @@ td {
     font-size: 25px;
     padding-left: 10px;
 }
-.file_icon{
+
+.file_icon {
     font-size: 25px;
     color: #3F3F3F;
     padding-right: 10px;

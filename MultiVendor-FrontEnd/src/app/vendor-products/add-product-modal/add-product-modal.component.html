@@ -1,4 +1,6 @@
-<h1 mat-dialog-title class="title">Add New Product</h1>
+<h1 mat-dialog-title class="title">
+  Add New Product <button mat-dialog-close class="close">Close</button>
+</h1>
 <div mat-dialog-content class="content">
   <div class="col1">
     <form class="example-form">
@@ -62,8 +64,7 @@
           <p>
             <mat-form-field class="example-full-width" appearance="outline">
               <mat-label>Description 1</mat-label>
-              <textarea matInput placeholder="Ex. 100 Main St" rows="12">
-              </textarea>
+              <textarea matInput rows="12" placeholder="Describe your product the way you like!..."></textarea>
             </mat-form-field>
             <mat-form-field class="example-full-width" appearance="outline">
               <mat-label>Description 2</mat-label>
@@ -74,11 +75,17 @@
       </div>
     </form>
   </div>
-  <div >
-    <span>Please upoload 4 Images</span>
+  <div>
+    <span class="upload-header">Please Upload 4 Images</span>
     <div class="container" appDnd (fileDropped)="onFileDropped($event)">
-      <input type="file" #fileDropRef id="fileDropRef" multiple (change)="fileBrowseHandler($event)" />
-      <fa-icon class="image_icon" [icon]="image_icon"  size="lg"></fa-icon>
+      <input
+        type="file"
+        #fileDropRef
+        id="fileDropRef"
+        multiple
+        (change)="fileBrowseHandler($event)"
+      />
+      <fa-icon class="image_icon" [icon]="image_icon" size="lg"></fa-icon>
       <h3>Drag and drop file here</h3>
       <h3>or</h3>
       <label for="fileDropRef">Browse for file</label>
@@ -99,12 +106,12 @@
           class="icon-delete"
           [icon]="delete"
           style="color: #ff5c5c"
-        (click)="deleteFile(i)"></fa-icon>
+          (click)="deleteFile(i)"
+        ></fa-icon>
       </div>
     </div>
   </div>
 </div>
 <div mat-dialog-actions align="end">
-  <button mat-dialog-close class="close">Close</button>
   <button mat-dialog class="submit">Submit Product</button>
 </div>

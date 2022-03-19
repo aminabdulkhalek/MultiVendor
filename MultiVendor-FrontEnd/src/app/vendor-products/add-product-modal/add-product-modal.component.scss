@@ -33,7 +33,9 @@
 td {
     padding-right: 8px;
 }
-
+.close{
+    float: right;
+}
 .close ,.submit{
     width: 5rem;
     height: 2.5rem;
@@ -91,9 +93,12 @@ td {
     color: #3F3F3F;
     font-size: 50px;
 }
-
+.upload-header{
+    font-weight:500 ;
+    padding-bottom: 5px;
+}
 .container {
-    width: max-content;
+    width: 40vh;
     height: 200px;
     padding: 2rem;
     text-align: center;
