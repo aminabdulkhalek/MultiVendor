@@ -29,6 +29,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import { ProgressComponent } from './vendor/vendor-products/progress/progress.component';
 import { DndDirective } from './dnd.directive';
+import { VendorOrdersComponent } from './vendor/vendor-orders/vendor-orders.component';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { DndDirective } from './dnd.directive';
     AddProductModalComponent,
     ProgressComponent,
     DndDirective,
-    UpdateProductModalComponent
+    UpdateProductModalComponent,
+    VendorOrdersComponent
   ],
   entryComponents: [
     AddProductModalComponent,
