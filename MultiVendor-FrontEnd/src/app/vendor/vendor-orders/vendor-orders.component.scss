@@ -35,7 +35,7 @@ a {
     border: 3px white solid;
 }
 
-.products-table {
+.orders-table {
     position: absolute;
     top: 64px;
     right: 0;
@@ -79,7 +79,7 @@ a {
 }
 
 @media only screen and (max-width: 600px) {
-    .products-table {
+    .orders-table {
         left: 0;
         margin-top: 20%;
     }

@@ -30,6 +30,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { ProgressComponent } from './vendor/vendor-products/progress/progress.component';
 import { DndDirective } from './dnd.directive';
 import { VendorOrdersComponent } from './vendor/vendor-orders/vendor-orders.component';
+import { VendorOrdersTableComponent } from './vendor/vendor-orders/vendor-orders-table/vendor-orders-table.component';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import { VendorOrdersComponent } from './vendor/vendor-orders/vendor-orders.comp
     ProgressComponent,
     DndDirective,
     UpdateProductModalComponent,
-    VendorOrdersComponent
+    VendorOrdersComponent,
+    VendorOrdersTableComponent
   ],
   entryComponents: [
     AddProductModalComponent,

@@ -1,10 +1,11 @@
 <mat-toolbar class="toolbar">
-    <span class="logo">M</span>
-    <span class="market-name">MultiVendor</span>
-  
-    <a href="#"><fa-icon [icon]="notification" size="lg"></fa-icon> </a>
-    <img class="store-logo" [src]="imagePath" />
-    <span class="store-name">John Doe's Store</span>
-    <a href="#"><fa-icon [icon]="logout" size="lg"></fa-icon> </a>
-  </mat-toolbar>
-  <app-sidebar class="side-bar" [isOrders]="true"></app-sidebar>
+  <span class="logo">M</span>
+  <span class="market-name">MultiVendor</span>
+
+  <a href="#"><fa-icon [icon]="notification" size="lg"></fa-icon> </a>
+  <img class="store-logo" [src]="imagePath" />
+  <span class="store-name">John Doe's Store</span>
+  <a href="#"><fa-icon [icon]="logout" size="lg"></fa-icon> </a>
+</mat-toolbar>
+<app-sidebar class="side-bar" [isOrders]="true"></app-sidebar>
+<app-vendor-orders-table class="orders-table"></app-vendor-orders-table>
