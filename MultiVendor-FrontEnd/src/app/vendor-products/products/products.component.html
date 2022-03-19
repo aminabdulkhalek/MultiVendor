@@ -77,7 +77,7 @@
   <ng-container matColumnDef="action">
     <mat-header-cell *matHeaderCellDef> Products Action </mat-header-cell>
     <mat-cell *matCellDef="let product">
-      <Button class="update">Update</Button>
+      <Button class="update" (click)="openDialog1()">Update</Button>
       <button class="delete">
         <fa-icon
           class="icon-delete"

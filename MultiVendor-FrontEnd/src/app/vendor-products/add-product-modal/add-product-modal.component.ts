@@ -3,7 +3,7 @@ import { faDeaf, faFile, faImage, faTrashAlt } from '@fortawesome/free-solid-svg
 
 @Component({
   selector: 'app-add-product-modal',
-  templateUrl: './add-product-modal.component.html',
+  template: './add-product-modal.component.html',
   styleUrls: ['./add-product-modal.component.scss']
 })
 export class AddProductModalComponent implements OnInit {

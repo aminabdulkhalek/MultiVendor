@@ -1,0 +1,153 @@
+<h1 mat-dialog-title class="title">Update This Product</h1>
+<div mat-dialog-content class="content">
+  <div class="col1">
+    <form class="example-form">
+      <div class="cont">
+        <div class="cola">
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Product Name</mat-label>
+            <input matInput value="Iphone 13 Pro MAX" />
+          </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Feature 1</mat-label>
+            <input matInput value="Operating system: iOS 15" />
+          </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Feature 2</mat-label>
+            <input matInput value="Processor: Quad-core 2.5 GHz Vortex" />
+          </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Feature 3</mat-label>
+            <input matInput value="Memory: 64GB, RAM: 4 GB" />
+          </mat-form-field>
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Feature 4</mat-label>
+            <input matInput value="Color: Sky Blue" />
+          </mat-form-field>
+          <div class="col-6">
+            <mat-form-field
+              appearance="outline"
+              class="example-full-width"
+              floatLabel="always"
+            >
+              <mat-label>Price</mat-label>
+              <input
+                matInput
+                type="number"
+                placeholder="0"
+                min="0"
+                value="1299"
+              />
+              <span matPrefix>$&nbsp;</span>
+            </mat-form-field>
+            <mat-form-field
+              class="stock"
+              appearance="outline"
+              floatLabel="always"
+            >
+              <mat-label>Stock</mat-label>
+              <input
+                matInput
+                type="number"
+                placeholder="0"
+                min="0"
+                value="18"
+              />
+            </mat-form-field>
+          </div>
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Select Category</mat-label>
+            <mat-select value="electornic_devices">
+              <mat-option value="electornic_devices"
+                >Electronic Devices</mat-option
+              >
+              <mat-option value="furniture">Furniture</mat-option>
+              <mat-option value="women_clothes">Women Clothes</mat-option>
+              <mat-option value="men_clothes">Men Clothes</mat-option>
+              <mat-option value="Health_beauty">Health & Beauty</mat-option>
+              <mat-option value="tools">Tools</mat-option>
+              <mat-option value="food">Food</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="colb">
+          <p>
+            <mat-form-field
+              class="example-full-width"
+              appearance="outline"
+              floatLabel="always"
+            >
+              <mat-label>Description 1</mat-label>
+              <textarea
+                matInput
+                placeholder="Describe your product the way you like!..."
+                rows="12"
+                value="Unlocked and compatible with any carrier of choice on GSM and CDMA networks (e.g. AT&T, T-Mobile, Sprint, Verizon, US Cellular, Cricket, Metro, Tracfone, Mint Mobile, etc.).
+              Tested for battery health and guaranteed to come with a battery that exceeds 90% of original capacity.
+              Inspected and guaranteed to have minimal cosmetic damage, which is not noticeable when the device is held at arm's length. Successfully passed a full diagnostic test which ensures like-new functionality and removal of any prior-user personal information.
+              Includes a brand new, generic charging cable that is certified Mfi (Made for iPhone) "
+              >
+              </textarea>
+            </mat-form-field>
+            <mat-form-field
+              class="example-full-width"
+              appearance="outline"
+              floatLabel="always"
+            >
+              <mat-label>Description 2</mat-label>
+              <textarea
+                matInput
+                rows="12"
+                placeholder="Add more description to your product"
+                value="Camera: Rear image quality: Still image quality using the rear facing (main) camera. It is based on objective and subjective judgments of test images, which includes evaluating resolution, dynamic range, color accuracy, and visual noise.
+
+              Camera: Rear 1080p video quality: Video quality is based on the judgments of trained panelists who viewed recorded video images shot at the highest quality setting available (1080p max.) in multiple lighting conditions.
+              "
+              ></textarea>
+            </mat-form-field>
+          </p>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div>
+    <span>Please upoload 4 Images</span>
+    <div class="container" appDnd (fileDropped)="onFileDropped($event)">
+      <input
+        type="file"
+        #fileDropRef
+        id="fileDropRef"
+        multiple
+        (change)="fileBrowseHandler($event)"
+      />
+      <fa-icon class="image_icon" [icon]="image_icon" size="lg"></fa-icon>
+      <h3>Drag and drop file here</h3>
+      <h3>or</h3>
+      <label for="fileDropRef">Browse for file</label>
+    </div>
+    <div class="files-list">
+      <div class="single-file" *ngFor="let file of files; let i = index">
+        <fa-icon [icon]="file_icon" class="file_icon"></fa-icon>
+        <div class="info">
+          <h4 class="name">
+            {{ file?.name }}
+          </h4>
+          <p class="size">
+            {{ formatBytes(file?.size) }}
+          </p>
+          <app-progress [progress]="file?.progress"></app-progress>
+        </div>
+        <fa-icon
+          class="icon-delete"
+          [icon]="delete"
+          style="color: #ff5c5c"
+          (click)="deleteFile(i)"
+        ></fa-icon>
+      </div>
+    </div>
+  </div>
+</div>
+<div mat-dialog-actions align="end">
+  <button mat-dialog-close class="close">Close</button>
+  <button mat-dialog class="submit">Update Product</button>
+</div>
