@@ -4,51 +4,65 @@
     <form class="example-form">
       <div class="container">
         <div class="cola">
-          <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>First name</mat-label>
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Product Name</mat-label>
             <input matInput />
           </mat-form-field>
-          <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>First name</mat-label>
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Feature 1</mat-label>
             <input matInput />
           </mat-form-field>
-          <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>First name</mat-label>
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Feature 2</mat-label>
             <input matInput />
           </mat-form-field>
-          <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>First name</mat-label>
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Feature 3</mat-label>
             <input matInput />
           </mat-form-field>
-          <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>First name</mat-label>
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Feature 4</mat-label>
             <input matInput />
           </mat-form-field>
           <div class="col-6">
-            <mat-form-field class="example-full-width" appearance="fill">
-              <mat-label>First name</mat-label>
-              <input matInput />
-            </mat-form-field>
-            <mat-form-field class="stock" appearance="fill">
-              <mat-label>First name</mat-label>
-              <input matInput />
+            <mat-form-field
+              appearance="outline"
+              class="example-full-width"
+              floatLabel="always"
+            >
+              <mat-label>Price</mat-label>
+              <input matInput type="number" placeholder="0" min="0" />
+              <span matPrefix>$&nbsp;</span>
+            </mat-form-field >
+            <mat-form-field class="stock" appearance="outline" floatLabel="always">
+              <mat-label>Stock</mat-label>
+              <input matInput type="number" placeholder="0" min="0" />
             </mat-form-field>
           </div>
-          <mat-form-field class="example-full-width" appearance="fill">
-            <mat-label>First name</mat-label>
-            <input matInput />
+          <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Select Category</mat-label>
+            <mat-select>
+              <mat-option value="electornic_devices"
+                >Electronic Devices</mat-option
+              >
+              <mat-option value="furniture">Furniture</mat-option>
+              <mat-option value="women_clothes">Women Clothes</mat-option>
+              <mat-option value="men_clothes">Men Clothes</mat-option>
+              <mat-option value="Health_beauty">Health & Beauty</mat-option>
+              <mat-option value="tools">Tools</mat-option>
+              <mat-option value="food">Food</mat-option>
+            </mat-select>
           </mat-form-field>
         </div>
         <div class="colb">
           <p>
-            <mat-form-field class="example-full-width" appearance="fill">
-              <mat-label>Address</mat-label>
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Description 1</mat-label>
               <textarea matInput placeholder="Ex. 100 Main St" rows="12">
-    1600 Amphitheatre Pkwy</textarea
-              >
+              </textarea>
             </mat-form-field>
-            <mat-form-field class="example-full-width" appearance="fill">
-              <mat-label>Address 2</mat-label>
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Description 2</mat-label>
               <textarea matInput rows="12"></textarea>
             </mat-form-field>
           </p>
@@ -57,7 +71,7 @@
     </form>
   </div>
   <div class="col2">
-    <mat-form-field class="example-full-width" appearance="fill">
+    <mat-form-field class="example-full-width" appearance="outline">
       <mat-label>First name</mat-label>
       <input matInput />
     </mat-form-field>

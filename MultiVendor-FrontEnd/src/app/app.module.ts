@@ -26,6 +26,8 @@ import { MatSortModule } from '@angular/material/sort';
 // import { AddProductModalComponent } from './vendor-products/add-product-modal/add-product-modal.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -60,7 +62,9 @@ import {MatInputModule} from '@angular/material/input';
     MatPaginatorModule,
     MatSortModule,
     MatDialogModule,
-    MatInputModule
+    MatInputModule,
+    MatFormFieldModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
