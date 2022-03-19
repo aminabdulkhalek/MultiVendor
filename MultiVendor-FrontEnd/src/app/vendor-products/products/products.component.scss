@@ -4,11 +4,11 @@
   height: 60px;
 
   &:hover{
-      // transition: all 0.6s ease;
+      transition: all 0.3s ease;
       position:absolute;
       background-color: white;
-      top:25px;
-      left:60vh;
+      // top:25px;
+      // left:60vh;
       width:500px;
       height:auto;
       display:block;
