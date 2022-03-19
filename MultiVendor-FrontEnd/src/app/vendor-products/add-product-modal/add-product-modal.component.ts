@@ -1,4 +1,5 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, NgModule, OnInit } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, NgModule, OnInit, ViewChild } from '@angular/core';
+import { faDeaf, faFile, faImage, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-add-product-modal',
@@ -11,7 +12,6 @@ export class AddProductModalComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }
 @NgModule({
 	declarations: [AddProductModalComponent],

@@ -28,6 +28,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
+import { ProgressComponent } from './progress/progress.component';
+import { DndDirective } from './dnd.directive';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,9 @@ import {MatSelectModule} from '@angular/material/select';
     HomeComponent,
     VendorProductsComponent,
     ProductsComponent,
-    AddProductModalComponent
+    AddProductModalComponent,
+    ProgressComponent,
+    DndDirective
   ],
   entryComponents: [
     AddProductModalComponent,

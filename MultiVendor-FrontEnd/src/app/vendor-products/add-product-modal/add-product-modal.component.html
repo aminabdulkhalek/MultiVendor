@@ -2,7 +2,7 @@
 <div mat-dialog-content class="content">
   <div class="col1">
     <form class="example-form">
-      <div class="container">
+      <div class="cont">
         <div class="cola">
           <mat-form-field class="example-full-width" appearance="outline">
             <mat-label>Product Name</mat-label>
@@ -33,8 +33,12 @@
               <mat-label>Price</mat-label>
               <input matInput type="number" placeholder="0" min="0" />
               <span matPrefix>$&nbsp;</span>
-            </mat-form-field >
-            <mat-form-field class="stock" appearance="outline" floatLabel="always">
+            </mat-form-field>
+            <mat-form-field
+              class="stock"
+              appearance="outline"
+              floatLabel="always"
+            >
               <mat-label>Stock</mat-label>
               <input matInput type="number" placeholder="0" min="0" />
             </mat-form-field>
@@ -70,11 +74,34 @@
       </div>
     </form>
   </div>
-  <div class="col2">
-    <mat-form-field class="example-full-width" appearance="outline">
-      <mat-label>First name</mat-label>
-      <input matInput />
-    </mat-form-field>
+  <div >
+    <span>Please upoload 4 Images</span>
+    <div class="container" appDnd (fileDropped)="onFileDropped($event)">
+      <input type="file" #fileDropRef id="fileDropRef" multiple (change)="fileBrowseHandler($event)" />
+      <fa-icon class="image_icon" [icon]="image_icon"  size="lg"></fa-icon>
+      <h3>Drag and drop file here</h3>
+      <h3>or</h3>
+      <label for="fileDropRef">Browse for file</label>
+    </div>
+    <div class="files-list">
+      <div class="single-file" *ngFor="let file of files; let i = index">
+        <fa-icon [icon]="file_icon" width="45px" size="lg"></fa-icon>
+        <div class="info">
+          <h4 class="name">
+            {{ file?.name }}
+          </h4>
+          <p class="size">
+            {{ formatBytes(file?.size) }}
+          </p>
+          <app-progress [progress]="file?.progress"></app-progress>
+        </div>
+        <fa-icon
+          class="icon-delete"
+          [icon]="delete"
+          style="color: #ff5c5c"
+        (click)="deleteFile(i)"></fa-icon>
+      </div>
+    </div>
   </div>
 </div>
 <div mat-dialog-actions align="end">
