@@ -3,58 +3,58 @@
   aria-label="Select page of Products"
 >
 </mat-paginator>
-<mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8 " matSort>
   <ng-container matColumnDef="id">
-    <mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by id"> ID </mat-header-cell>
-    <mat-cell *matCellDef="let product"> {{ product.id }} </mat-cell>
+    <mat-header-cell class="center" *matHeaderCellDef mat-sort-header sortActionDescription="Sort by id"> ID </mat-header-cell>
+    <mat-cell class="center" *matCellDef="let product" > {{ product.id }} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="product_name">
-    <mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by product_name">Product Name </mat-header-cell>
-    <mat-cell *matCellDef="let product"> {{ product.product_name }} </mat-cell>
+    <mat-header-cell class="center" *matHeaderCellDef mat-sort-header sortActionDescription="Sort by product_name">Product Name </mat-header-cell>
+    <mat-cell class="center" *matCellDef="let product"> {{ product.product_name }} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="customer_name">
-    <mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by customer_name"> Customer Name </mat-header-cell>
-    <mat-cell *matCellDef="let product"> {{ product.customer_name }} </mat-cell>
+    <mat-header-cell class="center" *matHeaderCellDef mat-sort-header sortActionDescription="Sort by customer_name"> Customer Name </mat-header-cell>
+    <mat-cell class="center" *matCellDef="let product"> {{ product.customer_name }} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="customer_email">
-    <mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by customer_email"> Customer Email </mat-header-cell>
-    <mat-cell *matCellDef="let product"> {{ product.customer_email }} </mat-cell>
+    <mat-header-cell class="center" *matHeaderCellDef mat-sort-header sortActionDescription="Sort by customer_email"> Customer Email </mat-header-cell>
+    <mat-cell class="center" *matCellDef="let product"> {{ product.customer_email }} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="price">
-    <mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by price">
+    <mat-header-cell class="center" *matHeaderCellDef mat-sort-header sortActionDescription="Sort by price">
       Price
     </mat-header-cell>
-    <mat-cell *matCellDef="let product">
+    <mat-cell class="center" *matCellDef="let product">
         {{ product.price }} 
     </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="quanitity">
-    <mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by quanitity"> Quanitity </mat-header-cell>
-    <mat-cell *matCellDef="let product"> {{ product.quanitity }} </mat-cell>
+    <mat-header-cell class="center" *matHeaderCellDef mat-sort-header sortActionDescription="Sort by quanitity"> Qty </mat-header-cell>
+    <mat-cell class="center" *matCellDef="let product"> {{ product.quanitity }} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="total">
-    <mat-header-cell *matHeaderCellDef sortActionDescription="Sort by total"> total </mat-header-cell>
-    <mat-cell *matCellDef="let product">
+    <mat-header-cell class="center" *matHeaderCellDef sortActionDescription="Sort by total"> total </mat-header-cell>
+    <mat-cell class="center" *matCellDef="let product">
       {{ product.total }}
     </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="order_date">
-    <mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by order_date">
+    <mat-header-cell class="center" *matHeaderCellDef mat-sort-header sortActionDescription="Sort by order_date">
         Order Date
     </mat-header-cell>
-    <mat-cell *matCellDef="let product"> {{ product.order_date.toDateString() }} </mat-cell>
+    <mat-cell class="center" *matCellDef="let product"> {{ product.order_date.toDateString() }} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="order_status">
-    <mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by order_status"> Order Status </mat-header-cell>
-    <mat-cell *matCellDef="let product">
+    <mat-header-cell class="center" *matHeaderCellDef mat-sort-header sortActionDescription="Sort by order_status"> Order Status </mat-header-cell>
+    <mat-cell class="center" *matCellDef="let product">
         {{ product.order_status }}
     </mat-cell>
   </ng-container>

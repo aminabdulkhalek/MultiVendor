@@ -1,10 +1,22 @@
+.mat-column-id {
+  flex: 0.2;
+  
+}
+.mat-column-price,.mat-column-quanitity,.mat-column-total
+{
+  flex: 0.5;
+}
 .mat-cell {
   font-size: 16px;
   font-weight: 500;
   color: #3F3F3F;
   border: 0;
+  height: 4.5rem !important;
 }
 
+.center{
+  justify-content: center;
+}
 .mat-row {
   border-bottom: 0;
   background-color: #F7F7FF;
@@ -24,6 +36,7 @@
   font-size: 18px;
   font-weight: 600;
   letter-spacing: 1px;
+  text-align: center;
 }
 
 
@@ -92,6 +105,13 @@
   ::ng-deep #mat-select-value-1 {
     padding-top: 3px !important;
     padding-bottom: 3px !important;
+  }
+  ::ng-deep body > app-root > app-vendor-orders > app-vendor-orders-table > mat-paginator > div > div > div.mat-paginator-range-actions > button.mat-focus-indicator.mat-tooltip-trigger.mat-paginator-navigation-previous.mat-icon-button.mat-button-base {
+    height: 30px !important;
+    width: 30px !important;
+  }
+  ::ng-deep body > app-root > app-vendor-orders > app-vendor-orders-table > mat-paginator > div > div > div.mat-paginator-range-actions > button.mat-focus-indicator.mat-tooltip-trigger.mat-paginator-navigation-previous.mat-icon-button.mat-button-base > span.mat-button-wrapper > svg{
+    vertical-align: baseline;
   }
 }
 
