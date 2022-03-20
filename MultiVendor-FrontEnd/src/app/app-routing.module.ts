@@ -6,6 +6,7 @@ import { VendorDashboardComponent } from './vendor/vendor-dashboard/vendor-dashb
 import { VendorOrdersComponent } from './vendor/vendor-orders/vendor-orders.component';
 import { VendorProductsComponent } from './vendor/vendor-products/vendor-products.component';
 import { VendorReviewsComponent } from './vendor/vendor-reviews/vendor-reviews.component';
+import { VendorSettingsComponent } from './vendor/vendor-settings/vendor-settings.component';
 
 
 
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'vendor-orders', component: VendorOrdersComponent },
   { path: 'vendor-customers', component: VendorCustomersComponent },
   { path: 'vendor-reviews', component: VendorReviewsComponent },
+  { path: 'vendor-settings', component: VendorSettingsComponent },
 ];
 
 @NgModule({
