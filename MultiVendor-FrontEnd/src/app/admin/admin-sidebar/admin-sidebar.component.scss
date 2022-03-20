@@ -1,0 +1,132 @@
+body {
+    font-family: "Roboto";
+    font-size: 100%;
+    overflow-y: scroll;
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    background-color: #fefefe;
+  }
+  
+  a {
+    text-decoration: none;
+    transition: all 0.6s ease;
+  
+    &:hover {
+      transition: all 0.6s ease;
+    }
+  }
+  
+  .app {
+    height: 100%;
+  }
+  
+  /* -------------
+  Sidebar Nav
+  ----------------*/
+  .sidebar-nav {
+    position: fixed;
+    top: 64px;
+    width: min-content;
+    background-color: #f7f7ff;
+    height: 100%;
+    font-weight: 400;
+    font-size: 1.2em;
+    overflow: auto;
+    padding-bottom: 6em;
+    text-align: center;
+  
+    ul {
+      list-style: none;
+      display: block;
+      padding: 0;
+      margin: 0;
+  
+      li {
+        margin-left: 0;
+        padding-left: 0;
+        display: inline-block;
+        width: 100%;
+  
+        a {
+          color: #3f3f3f;
+          font-size: 18px;
+          padding: 1em 0.5em;
+          display: block;
+  
+          &:hover {
+            color: white;
+            background-color: #1060AF;
+            transition: all 0.6s ease;
+          }
+        }
+      }
+    }
+  }
+  
+  .active {
+    color: white !important;
+    background-color: #1060AF !important;
+    -moz-box-shadow:    inset 0 0 10px #000000;
+     -webkit-box-shadow: inset 0 0 10px #000000;
+     box-shadow:         inset 0 0 10px #000000;
+  }
+  
+  .icon {
+    margin-top: 10px;
+  }
+  
+  @media only screen and (max-width: 600px) {
+   .icon{
+     display: none;
+   }
+    .sidebar-nav {
+      all: unset;
+      position: fixed;
+      bottom: 0;
+      background-color: #f7f7ff;
+      font-weight: 400;
+      font-size: 0.5em;
+      overflow: auto;
+      width: 100vw;
+      text-align: center;
+      z-index: 100;
+  
+      ul {
+        all: unset;
+        display: flex;
+        justify-content: space-between;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+  
+        li {
+          flex: 1;
+          all: unset;
+          margin-left: 0;
+          padding-left: 0;
+          float: left;
+  
+          a {
+            all: unset;
+            color: #3f3f3f;
+            font-size: 18px;
+            padding: 1em 1em;
+            display: block;
+  
+            &:hover {
+              color: white;
+              background-color: #1060AF;
+              transition: all 0.6s ease;
+            }
+          }
+        }
+      }
+    }
+  }
+  

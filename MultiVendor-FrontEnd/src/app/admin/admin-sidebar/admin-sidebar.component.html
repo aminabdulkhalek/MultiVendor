@@ -1,0 +1,43 @@
+<section class="app">
+    <nav class="sidebar-nav">
+      <ul>
+        <li>
+          <a id="dashboard" href="vendor-dashboard" [class.active]="isDash"
+            ><fa-icon [icon]="home" size="lg"></fa-icon>
+            <div class="icon">Dashboard</div></a
+          >
+        </li>
+        <li>
+          <a id="products" href="vendor-products" [class.active]="isProducts">
+            <fa-icon [icon]="product" size="lg"></fa-icon>
+            <div class="icon">Products</div></a
+          >
+        </li>
+        <li>
+          <a id="orders" href="vendor-orders" [class.active]="isOrders">
+            <fa-icon [icon]="order" size="lg"></fa-icon>
+            <div class="icon">Orders</div></a
+          >
+        </li>
+        <li>
+          <a id="customers" href="vendor-customers" [class.active]="isCustomers"
+            ><fa-icon [icon]="customer" size="lg"></fa-icon>
+            <div class="icon">Customers</div></a
+          >
+        </li>
+        <li>
+          <a id="reviews" href="vendor-reviews" [class.active]="isReviews"
+            ><fa-icon [icon]="review" size="lg"></fa-icon>
+            <div class="icon">Reviews</div></a
+          >
+        </li>
+        <li>
+          <a id="settings" href="vendor-settings" [class.active]="isSettings"
+            ><fa-icon [icon]="settings" size="lg"></fa-icon>
+            <div class="icon">Settings</div></a
+          >
+        </li>
+      </ul>
+    </nav>
+  </section>
+  
