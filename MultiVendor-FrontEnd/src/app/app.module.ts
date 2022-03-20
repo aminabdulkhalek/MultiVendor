@@ -42,6 +42,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 import { AdminSidebarComponent } from './admin/admin-sidebar/admin-sidebar.component';
 import { OrdersBoxComponent } from './admin/admin-dashboard/orders-box/orders-box.component';
+import { ProductsBoxComponent } from './admin/admin-dashboard/products-box/products-box.component';
 
 @NgModule({
   declarations: [
@@ -72,7 +73,8 @@ import { OrdersBoxComponent } from './admin/admin-dashboard/orders-box/orders-bo
     BannerUploadComponent,
     AdminDashboardComponent,
     AdminSidebarComponent,
-    OrdersBoxComponent
+    OrdersBoxComponent,
+    ProductsBoxComponent
   ],
   entryComponents: [
     AddProductModalComponent,
