@@ -1,0 +1,35 @@
+
+$blue: #1060AF;
+$lblue: #F2FAFF;
+
+table {
+    border: 1px solid #E5E5E5;
+    border-radius: 4px;
+    width: 400px;
+    height: 250px;
+}
+
+
+.header {
+    font-size: x-large;
+    font-weight: 700;
+
+}
+
+.life{
+    font-size: 30px;
+    color: white;
+    background-color: $blue;
+    text-align: center;
+}
+
+.payout {
+    font-size: 30px;
+    color: #3F3F3F;
+    background-color: $lblue;
+    text-align: center;
+}
+
+span{
+    padding-left: 25px;
+}
