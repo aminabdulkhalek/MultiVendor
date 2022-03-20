@@ -32,6 +32,7 @@ import { DndDirective } from './dnd.directive';
 import { VendorOrdersComponent } from './vendor/vendor-orders/vendor-orders.component';
 import { VendorOrdersTableComponent } from './vendor/vendor-orders/vendor-orders-table/vendor-orders-table.component';
 import { VendorCustomersComponent } from './vendor/vendor-customers/vendor-customers.component';
+import { VendorCustomersTableComponent } from './vendor/vendor-customers/vendor-customers-table/vendor-customers-table.component';
 
 
 @NgModule({
@@ -54,7 +55,8 @@ import { VendorCustomersComponent } from './vendor/vendor-customers/vendor-custo
     UpdateProductModalComponent,
     VendorOrdersComponent,
     VendorOrdersTableComponent,
-    VendorCustomersComponent
+    VendorCustomersComponent,
+    VendorCustomersTableComponent
   ],
   entryComponents: [
     AddProductModalComponent,
