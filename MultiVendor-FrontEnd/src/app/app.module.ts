@@ -41,6 +41,7 @@ import { LogoUploadComponent } from './vendor/vendor-settings/logo-upload/logo-u
 import {MatIconModule} from '@angular/material/icon';
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 import { AdminSidebarComponent } from './admin/admin-sidebar/admin-sidebar.component';
+import { OrdersBoxComponent } from './admin/admin-dashboard/orders-box/orders-box.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +71,8 @@ import { AdminSidebarComponent } from './admin/admin-sidebar/admin-sidebar.compo
     LogoUploadComponent,
     BannerUploadComponent,
     AdminDashboardComponent,
-    AdminSidebarComponent
+    AdminSidebarComponent,
+    OrdersBoxComponent
   ],
   entryComponents: [
     AddProductModalComponent,
