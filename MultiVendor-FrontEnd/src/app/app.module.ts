@@ -47,6 +47,8 @@ import { CustomersBoxComponent } from './admin/admin-dashboard/customers-box/cus
 import { IncomeBoxComponent } from './admin/admin-dashboard/income-box/income-box.component';
 import { FeaturedBoxComponent } from './admin/admin-dashboard/featured-box/featured-box.component';
 import { AdminProductsComponent } from './admin-products/admin-products.component';
+import { AdminProductsTableComponent } from './admin-products/admin-products-table/admin-products-table.component';
+import {MatRadioModule} from '@angular/material/radio';
 
 @NgModule({
   declarations: [
@@ -82,7 +84,8 @@ import { AdminProductsComponent } from './admin-products/admin-products.componen
     CustomersBoxComponent,
     IncomeBoxComponent,
     FeaturedBoxComponent,
-    AdminProductsComponent
+    AdminProductsComponent,
+    AdminProductsTableComponent
   ],
   entryComponents: [
     AddProductModalComponent,
@@ -104,7 +107,8 @@ import { AdminProductsComponent } from './admin-products/admin-products.componen
     MatInputModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatIconModule
+    MatIconModule,
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]
