@@ -1,0 +1,67 @@
+
+
+.logo{
+
+    color: rgb(255, 65, 65);
+    font-size: 50px;
+    font-weight: 900;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.toolbar{
+    background-color: #1060AF;
+    color: white;
+    position: fixed;
+    z-index: 100;
+}
+.market-name{
+    flex:1;
+    font-size: x-large;
+}
+
+
+a{
+    text-decoration: none;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.store-logo{
+    margin: 10px;
+
+    border-radius: 100px;
+    width: 40px;
+    height: 40px;
+    border: 3px white solid;
+}
+
+.tables{
+    display: flex;
+    position: absolute;
+    top: 64px;
+    right: 0;
+    left: 107px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 5%;
+}
+
+
+.table{
+padding: 35px;
+}
+
+@media only screen and (max-width: 600px) {
+    .tables{
+        left: 0;
+        margin: 0;
+    }
+    .store-logo ,.store-name{
+        display: none;
+    }
+}

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 import { HomeComponent } from './home/home.component';
 import { VendorCustomersComponent } from './vendor/vendor-customers/vendor-customers.component';
 import { VendorDashboardComponent } from './vendor/vendor-dashboard/vendor-dashboard.component';
@@ -18,6 +19,8 @@ const routes: Routes = [
   { path: 'vendor-customers', component: VendorCustomersComponent },
   { path: 'vendor-reviews', component: VendorReviewsComponent },
   { path: 'vendor-settings', component: VendorSettingsComponent },
+
+  { path: 'admin-dashboard', component: AdminDashboardComponent },
 ];
 
 @NgModule({

@@ -39,6 +39,7 @@ import { VendorSettingsComponent } from './vendor/vendor-settings/vendor-setting
 import { BannerUploadComponent } from './vendor/vendor-settings/banner-upload/banner-upload.component';
 import { LogoUploadComponent } from './vendor/vendor-settings/logo-upload/logo-upload.component';
 import {MatIconModule} from '@angular/material/icon';
+import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import {MatIconModule} from '@angular/material/icon';
     VendorReviewsTableComponent,
     VendorSettingsComponent,
     LogoUploadComponent,
-    BannerUploadComponent
+    BannerUploadComponent,
+    AdminDashboardComponent
   ],
   entryComponents: [
     AddProductModalComponent,
