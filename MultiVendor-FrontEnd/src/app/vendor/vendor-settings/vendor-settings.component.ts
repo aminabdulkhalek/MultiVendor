@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { faSignOut, faBell, faFile, faImage, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { faSignOut, faBell, faFile, faImage, faTrashAlt, faStar, faPhone } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-vendor-settings',
@@ -10,6 +10,8 @@ export class VendorSettingsComponent implements OnInit {
   logout = faSignOut;
   notification = faBell;
   imagePath = "favicon.ico";
+  star=faStar;
+  phone=faPhone;
 
   file_icon=faFile;
   delete = faTrashAlt;

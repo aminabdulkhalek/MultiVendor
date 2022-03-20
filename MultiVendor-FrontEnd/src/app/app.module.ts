@@ -38,7 +38,7 @@ import { VendorReviewsTableComponent } from './vendor/vendor-reviews/vendor-revi
 import { VendorSettingsComponent } from './vendor/vendor-settings/vendor-settings.component';
 import { BannerUploadComponent } from './vendor/vendor-settings/banner-upload/banner-upload.component';
 import { LogoUploadComponent } from './vendor/vendor-settings/logo-upload/logo-upload.component';
-
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -87,7 +87,8 @@ import { LogoUploadComponent } from './vendor/vendor-settings/logo-upload/logo-u
     MatDialogModule,
     MatInputModule,
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
