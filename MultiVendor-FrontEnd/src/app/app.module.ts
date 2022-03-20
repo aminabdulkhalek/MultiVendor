@@ -43,6 +43,7 @@ import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard
 import { AdminSidebarComponent } from './admin/admin-sidebar/admin-sidebar.component';
 import { OrdersBoxComponent } from './admin/admin-dashboard/orders-box/orders-box.component';
 import { ProductsBoxComponent } from './admin/admin-dashboard/products-box/products-box.component';
+import { CustomersBoxComponent } from './admin/admin-dashboard/customers-box/customers-box.component';
 
 @NgModule({
   declarations: [
@@ -74,7 +75,8 @@ import { ProductsBoxComponent } from './admin/admin-dashboard/products-box/produ
     AdminDashboardComponent,
     AdminSidebarComponent,
     OrdersBoxComponent,
-    ProductsBoxComponent
+    ProductsBoxComponent,
+    CustomersBoxComponent
   ],
   entryComponents: [
     AddProductModalComponent,

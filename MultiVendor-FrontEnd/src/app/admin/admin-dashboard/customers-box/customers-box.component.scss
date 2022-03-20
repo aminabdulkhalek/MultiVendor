@@ -1,0 +1,46 @@
+$blue: #1060AF;
+$lblue: #F2FAFF;
+
+table {
+    border: 1px solid #E5E5E5;
+    border-radius: 4px;
+    width: 400px;
+    height: 250px;
+}
+
+
+.header {
+    font-size: x-large;
+    font-weight: 700;
+
+}
+
+.order {
+    font-size: 30px;
+    color: white;
+    background-color: $blue;
+    height: 75px;
+    width: 100px;
+    text-align: center;
+}
+
+.order-value {
+    font-size: 30px;
+    color: #3F3F3F;
+    background-color: $lblue;
+    width: 100px;
+    text-align: center;
+}
+
+.text{
+    color: #3F3F3F;
+    font-size: 18px;
+    text-align: center;
+}
+
+.value{
+    padding-left: 25px;
+    font-weight: bold;
+}
+
+
