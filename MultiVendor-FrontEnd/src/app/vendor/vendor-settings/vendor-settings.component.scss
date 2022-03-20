@@ -158,24 +158,26 @@ a {
 }
 .col2{
     padding-left: 50px;
-    padding-top: 15px;
     flex: 2;
     justify-content: center;
 }
 .preview{
     border: dashed 1.5px #979797;
+    border-radius: 4px;
     background-color: #F7F7FF;
-    height: 35vh;
+    height: 30vh;
     padding: 10px;
 }
 .inner-preview{
     align-self: center;
     background-color: white;
+    border-radius: 4px;
     width: 100%;
     height: 100%;
 }
 
 .upload-section{
+    margin: 20px auto;
     display: flex;
     flex-direction: row;
 }
@@ -186,4 +188,10 @@ a {
 .banner-upload{
     flex:2;
     margin-left: 10px !important;
+}
+
+.label{
+    
+    color: #3F3F3F;
+    font-weight: 600;
 }

@@ -18,9 +18,9 @@
     padding: 2rem;
     text-align: center;
     border: dashed 1.5px #979797;
+    border-radius: 4px;
     background-color: #F7F7FF;
     position: relative;
-    margin: 15px auto;
 
     input {
         opacity: 0;
@@ -148,4 +148,10 @@
     .borwse-label{
         font-size: 12px !important;
     }
+}
+
+.label{
+    
+    color: #3F3F3F;
+    font-weight: 600;
 }
