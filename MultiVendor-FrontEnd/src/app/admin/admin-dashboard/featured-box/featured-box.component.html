@@ -1,0 +1,19 @@
+<table>
+  <tr class="header">
+    <td class="order">Featuring</td>
+    <td class="order-value">{{selectedValue}}</td>
+  </tr>
+  <tr>
+    <td>
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Select Vendor</mat-label>
+        <mat-select [(value)]="selectedValue">
+          <mat-option value="John Doe">John Doe</mat-option>
+          <mat-option value="Amin Abdulkhalek">Amin Abdulkhalek</mat-option>
+          <mat-option value="Karim Kahlifeh">Karim Kahlifeh</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </td>
+    <td><button class="update">Update</button></td>
+  </tr>
+</table>

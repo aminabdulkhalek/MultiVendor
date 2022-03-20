@@ -1,0 +1,64 @@
+$blue: #1060AF;
+$lblue: #F2FAFF;
+
+table {
+    border: 1px solid #E5E5E5;
+    border-radius: 4px;
+    width: 400px;
+    height: 250px;
+}
+
+td{
+    text-align: center;
+}
+.header {
+    font-size: x-large;
+    font-weight: 700;
+
+}
+.update{
+    border: 0;
+    border-radius: 4px;
+    background-color: $blue;
+    color: white;
+    font-size: 18px;
+    width: 6rem;
+    height: 3.2rem;
+    margin-bottom: 18px;
+    cursor: pointer;
+    &:hover{
+        transition: all 0.3s ease;
+        background-color: $lblue;
+        color: $blue;
+        border: $blue 1px solid;
+    }
+}
+.order {
+    font-size: 30px;
+    color: white;
+    background-color: $blue;
+    height: 75px;
+    // width: 100px;
+    text-align: center;
+}
+
+.order-value {
+    font-size: 25px;
+    color: #3F3F3F;
+    background-color: $lblue;
+    // width: 100px;
+    text-align: center;
+}
+
+.text{
+    color: #3F3F3F;
+    font-size: 18px;
+    text-align: center;
+}
+
+.value{
+    padding-left: 25px;
+    font-weight: bold;
+}
+
+
