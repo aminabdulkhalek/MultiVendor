@@ -1,15 +1,12 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { faSignOut, faBell, faFile, faImage, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { faFile, faTrashAlt, faImage } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
-  selector: 'app-vendor-settings',
-  templateUrl: './vendor-settings.component.html',
-  styleUrls: ['./vendor-settings.component.scss']
+  selector: 'app-banner-upload',
+  templateUrl: './banner-upload.component.html',
+  styleUrls: ['./banner-upload.component.scss']
 })
-export class VendorSettingsComponent implements OnInit {
-  logout = faSignOut;
-  notification = faBell;
-  imagePath = "favicon.ico";
+export class BannerUploadComponent implements OnInit {
 
   file_icon=faFile;
   delete = faTrashAlt;
@@ -93,7 +90,6 @@ export class VendorSettingsComponent implements OnInit {
     const i = Math.floor(Math.log(bytes) / Math.log(k));
     return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + " " + sizes[i];
   }
-  
   constructor() { }
 
   ngOnInit(): void {

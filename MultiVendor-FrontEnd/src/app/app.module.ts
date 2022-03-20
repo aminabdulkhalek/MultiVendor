@@ -36,6 +36,8 @@ import { VendorCustomersTableComponent } from './vendor/vendor-customers/vendor-
 import { VendorReviewsComponent } from './vendor/vendor-reviews/vendor-reviews.component';
 import { VendorReviewsTableComponent } from './vendor/vendor-reviews/vendor-reviews-table/vendor-reviews-table.component';
 import { VendorSettingsComponent } from './vendor/vendor-settings/vendor-settings.component';
+import { BannerUploadComponent } from './vendor/vendor-settings/banner-upload/banner-upload.component';
+import { LogoUploadComponent } from './vendor/vendor-settings/logo-upload/logo-upload.component';
 
 
 @NgModule({
@@ -62,7 +64,9 @@ import { VendorSettingsComponent } from './vendor/vendor-settings/vendor-setting
     VendorCustomersTableComponent,
     VendorReviewsComponent,
     VendorReviewsTableComponent,
-    VendorSettingsComponent
+    VendorSettingsComponent,
+    LogoUploadComponent,
+    BannerUploadComponent
   ],
   entryComponents: [
     AddProductModalComponent,

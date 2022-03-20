@@ -1,10 +1,74 @@
 <mat-toolbar class="toolbar">
-    <span class="logo">M</span>
-    <span class="market-name">MultiVendor</span>
-  
-    <a href="#"><fa-icon [icon]="notification" size="lg"></fa-icon> </a>
-    <img class="store-logo" [src]="imagePath" />
-    <span class="store-name">John Doe's Store</span>
-    <a href="#"><fa-icon [icon]="logout" size="lg"></fa-icon> </a>
-  </mat-toolbar>
-  <app-sidebar class="side-bar" [isSettings]="true"></app-sidebar>
+  <span class="logo">M</span>
+  <span class="market-name">MultiVendor</span>
+
+  <a href="#"><fa-icon [icon]="notification" size="lg"></fa-icon> </a>
+  <img class="store-logo" [src]="imagePath" />
+  <span class="store-name">John Doe's Store</span>
+  <a href="#"><fa-icon [icon]="logout" size="lg"></fa-icon> </a>
+</mat-toolbar>
+<app-sidebar class="side-bar" [isSettings]="true"></app-sidebar>
+
+<H3 class="page_title">Settings</H3>
+
+<div class="settings-content">
+  <div mat-dialog-content class="content">
+    <div class="col1">
+      <form class="example-form">
+        <div class="cont">
+          <div class="cola">
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Product Name</mat-label>
+              <input matInput />
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Feature 1</mat-label>
+              <input matInput />
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Feature 2</mat-label>
+              <input matInput />
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Feature 3</mat-label>
+              <input matInput />
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Feature 4</mat-label>
+              <input matInput />
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Feature 4</mat-label>
+              <input matInput />
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Feature 4</mat-label>
+              <input matInput />
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Feature 4</mat-label>
+              <input matInput />
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Feature 4</mat-label>
+              <input matInput />
+            </mat-form-field>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="col2">
+      <div class="preview">
+        <div class="inner-preview">
+          <img src="" alt="" />
+        </div>
+      </div>
+      <div class="upload-section">
+        <app-logo-upload></app-logo-upload>
+        <app-banner-upload class="banner-upload"></app-banner-upload>
+      </div>
+    </div>
+  </div>
+
+  <button mat-dialog class="submit">Submit Changes</button>
+</div>
