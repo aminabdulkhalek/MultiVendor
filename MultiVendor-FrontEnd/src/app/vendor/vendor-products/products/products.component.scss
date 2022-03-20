@@ -3,17 +3,17 @@
   width: auto;
   height: 60px;
 
-  &:hover{
-      transition: all 0.3s ease;
-      position:absolute;
-      background-color: white;
-      // top:25px;
-      // left:60vh;
-      width:500px;
-      height:auto;
-      display:block;
-      z-index:999;
-      box-shadow: 0 2px 35px rgba(0,0,0,0.4);
+  &:hover {
+    transition: all 0.3s ease;
+    position: absolute;
+    background-color: white;
+    // top:25px;
+    // left:60vh;
+    width: 500px;
+    height: auto;
+    display: block;
+    z-index: 999;
+    box-shadow: 0 2px 35px rgba(0, 0, 0, 0.4);
     border: 1px solid #d7d7d7;
     border-radius: 4px;
   }
@@ -117,6 +117,12 @@
 
 @media only screen and (max-width: 800px) {
 
+  mat-cell:last-of-type,
+  mat-header-cell:last-of-type,
+  mat-footer-cell:last-of-type {
+    padding-right: 5px;
+  }
+
   .mat-column-id,
   .mat-column-reviews,
   .mat-column-preview {
@@ -138,18 +144,19 @@
   }
 
   .update {
-    font-size: 12px;
+    font-size: 11px !important; 
     color: white;
     background-color: #1B0067;
     border: 0;
     border-radius: 4px;
     height: 1.5rem;
+    width: min-content !important;
   }
 
   .mat-header-cell {
-    padding-right: 5px;
+    // padding-right: 5px;
     text-align: center;
-    flex: 1;
+    flex:1;
     color: white;
     font-size: 13px;
     font-weight: 500;
@@ -157,7 +164,7 @@
   }
 
   .mat-cell {
-    padding-right: 10px;
+    // padding-left: 5px;
     text-align: center;
     flex: 1;
     font-size: 12px;
@@ -168,7 +175,7 @@
 
   .mat-column-flags {
     justify-content: center;
-    flex: 0.6;
+    flex: 0.84 !important;
   }
 
   ::ng-deep .mat-paginator-page-size-label {
@@ -213,7 +220,7 @@
   ::ng-deep #mat-select-value-1 {
     padding-top: 3px !important;
     padding-bottom: 3px !important;
-}
+  }
 }
 
 @media only screen and (max-width: 1024px) {
@@ -290,10 +297,12 @@
 ::ng-deep body>app-root>app-vendor-products>app-products>mat-paginator>div>div>div.mat-paginator-range-actions>div {
   font-size: 15px;
 }
-::ng-deep #mat-select-0 > div > div.mat-select-arrow-wrapper{
+
+::ng-deep #mat-select-0>div>div.mat-select-arrow-wrapper {
   background-color: #1B0067;
   border-radius: 0px 4px 4px 0px;
 }
+
 ::ng-deep .mat-select-arrow {
   color: white;
 }
