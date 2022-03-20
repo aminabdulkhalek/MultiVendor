@@ -137,12 +137,12 @@
   }
 }
 
-@media only screen and (max-width: 1024px) {}
+@media only screen and (max-width: 1024px) {
 .mat-column-order_date,
 .mat-column-customer_email {
   display: none;
 }
-
+}
 ::ng-deep .mat-select-value-text {
   font-size: 18px;
 }
