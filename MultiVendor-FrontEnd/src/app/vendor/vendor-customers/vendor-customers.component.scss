@@ -46,6 +46,18 @@ a {
   margin-bottom: 5%;
   margin-top: 1%;
 }
+.page_title {
+  font-size: 24px;
+  font-weight: 600;
+  position: fixed;
+  top: 72px;
+  right: 0;
+  left: 107px;
+  margin-left: 5%;
+  margin-top: 1%;
+  z-index: 100;
+  color: #3F3F3F;
+}
 
 .add {
   width: 11rem;
@@ -79,6 +91,10 @@ a {
 }
 
 @media only screen and (max-width: 600px) {
+  .products-table {
+    left: 0;
+    margin-top: 20%;
+  }
   .customers-table {
       left: 0;
       margin-top: 10%;
