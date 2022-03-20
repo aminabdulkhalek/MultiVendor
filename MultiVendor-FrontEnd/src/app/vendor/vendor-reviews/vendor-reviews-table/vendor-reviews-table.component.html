@@ -1,0 +1,117 @@
+<mat-paginator
+  [pageSizeOptions]="[6, 10, 20]"
+  aria-label="Select page of Products"
+>
+</mat-paginator>
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+  <ng-container matColumnDef="id">
+    <mat-header-cell
+      class="center"
+      *matHeaderCellDef
+      mat-sort-header
+      sortActionDescription="Sort by id"
+    >
+      ID
+    </mat-header-cell>
+    <mat-cell class="center" *matCellDef="let product">
+      {{ product.id }}
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="product_name">
+    <mat-header-cell
+      class="center"
+      *matHeaderCellDef
+      mat-sort-header
+      sortActionDescription="Sort by product_name"
+      >Product Name
+    </mat-header-cell>
+    <mat-cell class="center" *matCellDef="let product">
+      {{ product.product_name }}
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="customer_name">
+    <mat-header-cell
+      class="center"
+      *matHeaderCellDef
+      mat-sort-header
+      sortActionDescription="Sort by customer_name"
+    >
+      Customer Name
+    </mat-header-cell>
+    <mat-cell class="center" *matCellDef="let product">
+      {{ product.customer_name }}
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="stars">
+    <mat-header-cell
+      class="center"
+      *matHeaderCellDef
+      mat-sort-header
+      sortActionDescription="Sort by stars"
+    >
+      Stars
+    </mat-header-cell>
+    <mat-cell class="center" *matCellDef="let product">
+      <bar-rating [rate]="product.stars" [readOnly]="true" [max]="5" >
+        <ng-template ratingInactive>
+          <fa-icon
+            [icon]="star"
+            [fixedWidth]="true"
+            style="color: #d2d2d2"
+            class="stars"
+          ></fa-icon>
+        </ng-template>
+        <ng-template ratingActive>
+          <fa-icon
+            [icon]="star"
+            [fixedWidth]="true"
+            style="color: #ffb800"
+            class="stars"
+          ></fa-icon>
+        </ng-template>
+        <ng-template ratingFraction>
+          <fa-icon
+            [icon]="half_star"
+            [fixedWidth]="true"
+            style="color: #ffb800"
+            class="stars"
+          ></fa-icon>
+        </ng-template>
+      </bar-rating>
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="reviews_comment">
+    <mat-header-cell
+      class="center"
+      *matHeaderCellDef
+      mat-sort-header
+      sortActionDescription="Sort by reviews_comment"
+    >
+      Comment
+    </mat-header-cell>
+    <mat-cell class="center" *matCellDef="let product">
+      {{ product.reviews_comment }}
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="review_date">
+    <mat-header-cell
+      class="center"
+      *matHeaderCellDef
+      mat-sort-header
+      sortActionDescription="Sort by review_date"
+    >
+      Review Date
+    </mat-header-cell>
+    <mat-cell class="center" *matCellDef="let product">
+      {{ product.review_date.toDateString() }}
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+</mat-table>

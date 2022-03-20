@@ -34,6 +34,7 @@ import { VendorOrdersTableComponent } from './vendor/vendor-orders/vendor-orders
 import { VendorCustomersComponent } from './vendor/vendor-customers/vendor-customers.component';
 import { VendorCustomersTableComponent } from './vendor/vendor-customers/vendor-customers-table/vendor-customers-table.component';
 import { VendorReviewsComponent } from './vendor/vendor-reviews/vendor-reviews.component';
+import { VendorReviewsTableComponent } from './vendor/vendor-reviews/vendor-reviews-table/vendor-reviews-table.component';
 
 
 @NgModule({
@@ -58,7 +59,8 @@ import { VendorReviewsComponent } from './vendor/vendor-reviews/vendor-reviews.c
     VendorOrdersTableComponent,
     VendorCustomersComponent,
     VendorCustomersTableComponent,
-    VendorReviewsComponent
+    VendorReviewsComponent,
+    VendorReviewsTableComponent
   ],
   entryComponents: [
     AddProductModalComponent,
