@@ -8,7 +8,7 @@ import { VendorDashboardComponent } from './vendor/vendor-dashboard/vendor-dashb
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
-import { SidebarComponent } from './vendor/vendor-dashboard/sidebar/sidebar.component';
+import { SidebarComponent } from './vendor/sidebar/sidebar.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { OrdersTableComponent } from './vendor/vendor-dashboard/orders-table/orders-table.component';
 import { ProductsTableComponent } from './vendor/vendor-dashboard/products-table/products-table.component';
@@ -31,6 +31,7 @@ import { ProgressComponent } from './vendor/vendor-products/progress/progress.co
 import { DndDirective } from './dnd.directive';
 import { VendorOrdersComponent } from './vendor/vendor-orders/vendor-orders.component';
 import { VendorOrdersTableComponent } from './vendor/vendor-orders/vendor-orders-table/vendor-orders-table.component';
+import { VendorCustomersComponent } from './vendor/vendor-customers/vendor-customers.component';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { VendorOrdersTableComponent } from './vendor/vendor-orders/vendor-orders
     DndDirective,
     UpdateProductModalComponent,
     VendorOrdersComponent,
-    VendorOrdersTableComponent
+    VendorOrdersTableComponent,
+    VendorCustomersComponent
   ],
   entryComponents: [
     AddProductModalComponent,
