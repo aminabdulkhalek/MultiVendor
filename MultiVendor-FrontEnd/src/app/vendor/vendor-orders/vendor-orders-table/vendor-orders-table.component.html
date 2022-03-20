@@ -29,7 +29,7 @@
       Price
     </mat-header-cell>
     <mat-cell class="center" *matCellDef="let product">
-        {{ product.price }} 
+        {{ product.price }}
     </mat-cell>
   </ng-container>
 
@@ -39,7 +39,7 @@
   </ng-container>
 
   <ng-container matColumnDef="total">
-    <mat-header-cell class="center" *matHeaderCellDef sortActionDescription="Sort by total"> total </mat-header-cell>
+    <mat-header-cell class="center" *matHeaderCellDef mat-sort-header sortActionDescription="Sort by total"> total </mat-header-cell>
     <mat-cell class="center" *matCellDef="let product">
       {{ product.total }}
     </mat-cell>
