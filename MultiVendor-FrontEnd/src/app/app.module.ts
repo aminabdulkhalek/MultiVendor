@@ -46,6 +46,7 @@ import { ProductsBoxComponent } from './admin/admin-dashboard/products-box/produ
 import { CustomersBoxComponent } from './admin/admin-dashboard/customers-box/customers-box.component';
 import { IncomeBoxComponent } from './admin/admin-dashboard/income-box/income-box.component';
 import { FeaturedBoxComponent } from './admin/admin-dashboard/featured-box/featured-box.component';
+import { AdminProductsComponent } from './admin-products/admin-products.component';
 
 @NgModule({
   declarations: [
@@ -80,7 +81,8 @@ import { FeaturedBoxComponent } from './admin/admin-dashboard/featured-box/featu
     ProductsBoxComponent,
     CustomersBoxComponent,
     IncomeBoxComponent,
-    FeaturedBoxComponent
+    FeaturedBoxComponent,
+    AdminProductsComponent
   ],
   entryComponents: [
     AddProductModalComponent,
