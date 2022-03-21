@@ -65,6 +65,33 @@ a {
     color: #3F3F3F;
 }
 
+.new {
+    width: 11rem;
+    height: 2.5rem;
+    background-color: $blue;
+    color: white;
+    font-size: 1rem;
+    border: 0;
+    border-radius: 4px;
+    float: right;
+    position: fixed;
+    top: 90px;
+    left: 107px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+    margin-top: 3%;
+    z-index: 100;
+    cursor: pointer;
+  
+    &:hover {
+      transition: all 0.6s ease;
+      background-color: white;
+      color: $blue;
+      border: $blue 1px solid;
+    }
+  }
+
 @media only screen and (max-width: 600px) {
     .page_title {
         left: 0;

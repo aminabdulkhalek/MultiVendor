@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { faSignOut, faBell } from '@fortawesome/free-solid-svg-icons';
+import { MatDialog } from '@angular/material/dialog';
+import { faSignOut, faBell, faPlusSquare } from '@fortawesome/free-solid-svg-icons';
+import { NewTransactionModalComponent } from './new-transaction-modal/new-transaction-modal.component';
 
 @Component({
   selector: 'app-admin-transactions',
@@ -9,7 +11,12 @@ import { faSignOut, faBell } from '@fortawesome/free-solid-svg-icons';
 export class AdminTransactionsComponent implements OnInit {
   logout = faSignOut;
   notification = faBell;
-  constructor() { }
+  add = faPlusSquare;
+
+  constructor(public dialog: MatDialog) { }
+  openDialog() {
+    this.dialog.open(NewTransactionModalComponent);
+  }
 
   ngOnInit(): void {
   }
