@@ -58,6 +58,7 @@ import { AdminOrdersTableComponent } from './admin/admin-orders/admin-orders-tab
 import { AdminTransactionsComponent } from './admin/admin-transactions/admin-transactions.component';
 import { AdminTransactionsTableComponent } from './admin/admin-transactions/admin-transactions-table/admin-transactions-table.component';
 import { NewTransactionModalComponent } from './admin/admin-transactions/new-transaction-modal/new-transaction-modal.component';
+import { AdminReviewsComponent } from './admin/admin-reviews/admin-reviews.component';
 
 @NgModule({
   declarations: [
@@ -103,7 +104,8 @@ import { NewTransactionModalComponent } from './admin/admin-transactions/new-tra
     AdminOrdersTableComponent,
     AdminTransactionsComponent,
     AdminTransactionsTableComponent,
-    NewTransactionModalComponent
+    NewTransactionModalComponent,
+    AdminReviewsComponent
   ],
   entryComponents: [
     AddProductModalComponent,
