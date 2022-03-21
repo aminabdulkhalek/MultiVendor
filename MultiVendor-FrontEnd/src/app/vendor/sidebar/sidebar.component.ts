@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { faBriefcase, faDollarSign, faHome, faStar, faTools, faUsers } from '@fortawesome/free-solid-svg-icons';
+import { faBriefcase, faDollarSign, faHome, faMoneyBill1Wave, faMoneyCheck, faMoneyCheckDollar, faShoppingBag, faShoppingBasket, faShoppingCart, faSitemap, faStar, faTools, faUsers } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-sidebar',
@@ -9,7 +9,7 @@ import { faBriefcase, faDollarSign, faHome, faStar, faTools, faUsers } from '@fo
 export class SidebarComponent {
   home = faHome;
   product = faBriefcase;
-  order = faDollarSign;
+  order = faMoneyCheckDollar;
   customer = faUsers;
   review = faStar;
   settings = faTools;
