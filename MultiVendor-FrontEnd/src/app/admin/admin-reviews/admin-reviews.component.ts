@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faSignOut, faBell } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-admin-reviews',
@@ -6,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin-reviews.component.scss']
 })
 export class AdminReviewsComponent implements OnInit {
-
+  logout = faSignOut;
+  notification = faBell;
   constructor() { }
 
   ngOnInit(): void {
