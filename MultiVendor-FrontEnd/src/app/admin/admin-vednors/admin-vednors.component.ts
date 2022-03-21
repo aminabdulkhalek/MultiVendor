@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faSignOut, faBell } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-admin-vednors',
@@ -6,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin-vednors.component.scss']
 })
 export class AdminVednorsComponent implements OnInit {
-
+  logout = faSignOut;
+  notification = faBell;
   constructor() { }
 
   ngOnInit(): void {
