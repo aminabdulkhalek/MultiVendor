@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { faHome, faBriefcase, faDollarSign, faUsers, faStar, faTools, faUserAlt, faMoneyBillTransfer, faMoneyBill, faShirt, faUser, faMoneyBills, faShop, faShopLock, faShoePrints, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faBriefcase, faDollarSign, faUsers, faStar, faTools, faUserAlt, faMoneyBillTransfer, faMoneyBill, faShirt, faUser, faMoneyBills, faShop, faShopLock, faShoePrints, faShoppingBasket, faUsersCog, faUsersGear, faUsersRays, faUsersLine, faUsersBetweenLines } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-admin-sidebar',
@@ -10,11 +10,12 @@ export class AdminSidebarComponent implements OnInit {
   home = faHome;
   product = faShirt;
   order = faShoppingBasket;
-  customer = faUsers;
+  customers = faUsers;
   review = faStar;
   vendor = faShop;
   commission = faMoneyBills;
   transaction = faMoneyBillTransfer;
+
  
   @Input()isDash: boolean = false;
   @Input()isVendors: boolean = false;
@@ -23,6 +24,7 @@ export class AdminSidebarComponent implements OnInit {
   @Input()isOrders: boolean = false;
   @Input()isTransaction: boolean = false;
   @Input()isReviews: boolean = false;
+  @Input()isCustomers: boolean = false;
   constructor() { }
 
   ngOnInit(): void {
