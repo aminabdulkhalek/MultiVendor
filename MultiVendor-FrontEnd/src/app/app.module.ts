@@ -51,6 +51,7 @@ import { AdminProductsTableComponent } from './admin/admin-products/admin-produc
 import {MatRadioModule} from '@angular/material/radio';
 import { AdminVednorsComponent } from './admin/admin-vednors/admin-vednors.component';
 import { AdminVendorsTableComponent } from './admin/admin-vednors/admin-vendors-table/admin-vendors-table.component';
+import { AdminComissionsComponent } from './admin/admin-comissions/admin-comissions.component';
 
 @NgModule({
   declarations: [
@@ -89,7 +90,8 @@ import { AdminVendorsTableComponent } from './admin/admin-vednors/admin-vendors-
     AdminProductsComponent,
     AdminProductsTableComponent,
     AdminVednorsComponent,
-    AdminVendorsTableComponent
+    AdminVendorsTableComponent,
+    AdminComissionsComponent
   ],
   entryComponents: [
     AddProductModalComponent,
