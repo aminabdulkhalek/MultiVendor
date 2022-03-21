@@ -50,6 +50,7 @@ import { AdminProductsComponent } from './admin/admin-products/admin-products.co
 import { AdminProductsTableComponent } from './admin/admin-products/admin-products-table/admin-products-table.component';
 import {MatRadioModule} from '@angular/material/radio';
 import { AdminVednorsComponent } from './admin/admin-vednors/admin-vednors.component';
+import { AdminVendorsTableComponent } from './admin/admin-vednors/admin-vendors-table/admin-vendors-table.component';
 
 @NgModule({
   declarations: [
@@ -87,7 +88,8 @@ import { AdminVednorsComponent } from './admin/admin-vednors/admin-vednors.compo
     FeaturedBoxComponent,
     AdminProductsComponent,
     AdminProductsTableComponent,
-    AdminVednorsComponent
+    AdminVednorsComponent,
+    AdminVendorsTableComponent
   ],
   entryComponents: [
     AddProductModalComponent,

@@ -1,0 +1,91 @@
+<mat-paginator
+  [pageSizeOptions]="[6, 10, 20]"
+  aria-label="Select page of Products"
+>
+</mat-paginator>
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+  <ng-container matColumnDef="logo">
+    <mat-header-cell
+      *matHeaderCellDef
+      mat-sort-header
+      sortActionDescription="Sort by logo"
+    >
+      Logo
+    </mat-header-cell>
+    <mat-cell *matCellDef="let product">
+        <div class="logo-preview-div">
+            <img
+              src="{{ product.logo }}"
+              alt="logo"
+              class="logo-preview"
+            />
+          </div>
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="seller_name">
+    <mat-header-cell
+      *matHeaderCellDef
+      mat-sort-header
+      sortActionDescription="Sort by seller_name"
+    >
+      Seller Name</mat-header-cell
+    >
+    <mat-cell *matCellDef="let product"> {{ product.seller_name }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="seller_email">
+    <mat-header-cell
+      *matHeaderCellDef
+      mat-sort-header
+      sortActionDescription="Sort by seller_email"
+    >
+      Seller Email
+    </mat-header-cell>
+    <mat-cell *matCellDef="let product"> {{ product.seller_email }}$ </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="flags">
+    <mat-header-cell
+      *matHeaderCellDef
+      mat-sort-header
+      sortActionDescription="Sort by flags"
+    >
+      Flags
+    </mat-header-cell>
+    <mat-cell *matCellDef="let product"> {{ product.flags }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="phone">
+    <mat-header-cell
+      *matHeaderCellDef
+      mat-sort-header
+      sortActionDescription="Sort by phone"
+    >
+      Phone Number
+    </mat-header-cell>
+    <mat-cell *matCellDef="let product">
+      {{ product.phone }}
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="seller_status">
+    <mat-header-cell *matHeaderCellDef> Seller Status </mat-header-cell>
+    <mat-cell *matCellDef="let product">
+      <mat-radio-group aria-label="Select an option">
+        <mat-radio-button value="0" class="radio"
+          ><span class="radio-text">Disapproved</span>
+        </mat-radio-button>
+        <mat-radio-button value="1"
+          ><span class="radio-text">Approved</span></mat-radio-button
+        >
+        <mat-radio-button value="2"
+          ><span class="radio-text">Processing</span></mat-radio-button
+        >
+      </mat-radio-group>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+</mat-table>
