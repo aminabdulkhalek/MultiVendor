@@ -1,0 +1,99 @@
+<mat-paginator
+  [pageSizeOptions]="[6, 10, 20]"
+  aria-label="Select page of Products"
+>
+</mat-paginator>
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+  <ng-container matColumnDef="logo">
+    <mat-header-cell *matHeaderCellDef> Logo </mat-header-cell>
+    <mat-cell *matCellDef="let product">
+      <div class="logo-preview-div">
+        <img src="{{ product.logo }}" alt="logo" class="logo-preview" />
+      </div>
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="seller_name">
+    <mat-header-cell
+      *matHeaderCellDef
+      mat-sort-header
+      sortActionDescription="Sort by seller_name"
+    >
+      Seller Name
+    </mat-header-cell>
+    <mat-cell *matCellDef="let product"> {{ product.seller_name }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="commission_rate">
+    <mat-header-cell
+      *matHeaderCellDef
+      mat-sort-header
+      sortActionDescription="Sort by commission_rate"
+    >
+      Commission Rate %</mat-header-cell
+    >
+    <mat-cell *matCellDef="let product">
+      {{ product.commission_rate }}
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="total_sales">
+    <mat-header-cell
+      *matHeaderCellDef
+      mat-sort-header
+      sortActionDescription="Sort by total_sales"
+    >
+      Total Sales
+    </mat-header-cell>
+    <mat-cell *matCellDef="let product"> ${{ product.total_sales }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="recevied_amount">
+    <mat-header-cell
+      *matHeaderCellDef
+      mat-sort-header
+      sortActionDescription="Sort by recevied_amount"
+    >
+      Recevied Amount
+    </mat-header-cell>
+    <mat-cell *matCellDef="let product">
+      ${{ product.recevied_amount }}
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="commission_amount">
+    <mat-header-cell
+      *matHeaderCellDef
+      mat-sort-header
+      sortActionDescription="Sort by commission_amount"
+    >
+      Commission Amount
+    </mat-header-cell>
+    <mat-cell *matCellDef="let product">
+      ${{ product.commission_amount }}
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="remaining_amount">
+    <mat-header-cell *matHeaderCellDef> Remaining Amount </mat-header-cell>
+    <mat-cell *matCellDef="let product">
+      ${{ product.remaining_amount }}
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="last_paid_amount">
+    <mat-header-cell *matHeaderCellDef> Last Paied Amount </mat-header-cell>
+    <mat-cell *matCellDef="let product">
+      ${{ product.last_paid_amount }}
+    </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="action">
+    <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+    <mat-cell *matCellDef="let product">
+      <button class="update">Update</button>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+</mat-table>

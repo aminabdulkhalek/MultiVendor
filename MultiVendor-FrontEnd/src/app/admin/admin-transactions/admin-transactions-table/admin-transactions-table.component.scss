@@ -1,0 +1,259 @@
+$blue: #1060AF;
+$lblue: #F2FAFF;
+
+.logo-preview-div {
+    background-color: white;
+    padding: 7px;
+    height: 3.5vw;
+    width: 3.5vw;
+    border-radius: 3.5rem;
+    box-shadow: 0px 1px 7px 3px rgba(218, 218, 218, 0.53);
+    margin: 10px auto;
+}
+
+.logo-preview {
+    object-fit: cover;
+    height: 3.5vw;
+    width: 3.5vw;
+    border-radius: 4rem;
+}
+
+
+mat-cell:first-of-type,
+mat-header-cell:first-of-type,
+mat-footer-cell:first-of-type {
+    padding: 0;
+}
+
+.mat-column-flags,
+.mat-column-logo {
+    flex: 0.5;
+
+}
+
+.mat-column-seller_status {
+    flex: 2;
+}
+
+.radio {
+    padding-right: 10px;
+    color: #3F3F3F;
+}
+
+.mat-cell {
+    font-size: 18px;
+    font-weight: 500;
+    color: #3F3F3F;
+    border: 0;
+    justify-content: center;
+}
+
+.mat-row {
+    border-bottom: 0;
+    background-color: $lblue;
+    margin: 15px auto;
+}
+
+.mat-elevation-z8 {
+    all: unset;
+}
+
+.mat-header-row {
+    background-color: $blue;
+}
+
+.mat-header-cell {
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    justify-content: center;
+    margin-left: 5px;
+}
+
+
+.delete {
+    font-size: 25px;
+    border: 0;
+    background-color: transparent;
+    padding-left: 30px;
+
+}
+
+.icon-delete {
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 800px) {
+    ::ng-deep .mat-radio-outer-circle {
+        height: 10px !important;
+        width: 10px !important;
+    }
+
+    ::ng-deep .mat-radio-inner-circle {
+        height: 10px !important;
+        width: 10px !important;
+    }
+
+    .mat-column-seller_status {
+        flex: 2.5 !important;
+    }
+
+    .mat-column-logo,
+    .mat-column-flags {
+        display: none;
+    }
+
+    .delete {
+        font-size: 15px;
+        border: 0;
+        background-color: transparent;
+        padding-left: 30px;
+
+    }
+
+    mat-cell:last-of-type,
+    mat-footer-cell:last-of-type {
+        padding-right: 5px;
+    }
+
+    .mat-header-cell {
+        text-align: center;
+        color: white;
+        font-size: 12px;
+        font-weight: 400;
+        letter-spacing: 0px;
+        flex-basis: content;
+    }
+
+    .mat-cell {
+        font-size: 12px;
+        font-weight: 500;
+        color: #3F3F3F;
+        border: 0;
+        flex-basis: content;
+    }
+
+    .mat-column-flags {
+        justify-content: center;
+        // flex: 0.5 !important;
+    }
+
+    ::ng-deep .mat-paginator-page-size-label {
+        font-size: small !important;
+    }
+
+    ::ng-deep body > app-root > app-admin-transactions > app-admin-transactions-table > mat-paginator > div > div > div.mat-paginator-range-actions > button.mat-focus-indicator.mat-tooltip-trigger.mat-paginator-navigation-next.mat-icon-button.mat-button-base {
+        color: white;
+        background-color: $blue;
+        border-radius: 4px;
+        height: 30px;
+        width: 30px;
+    }
+
+    ::ng-deep body > app-root > app-admin-transactions > app-admin-transactions-table > mat-paginator > div > div > div.mat-paginator-range-actions > button.mat-focus-indicator.mat-tooltip-trigger.mat-paginator-navigation-next.mat-icon-button.mat-button-base > span.mat-button-wrapper > svg,
+    ::ng-deep body > app-root > app-admin-transactions > app-admin-transactions-table > mat-paginator > div > div > div.mat-paginator-range-actions > button.mat-focus-indicator.mat-tooltip-trigger.mat-paginator-navigation-previous.mat-icon-button.mat-button-base.mat-button-disabled > span.mat-button-wrapper > svg {
+        vertical-align: baseline;
+    }
+
+    ::ng-deep body > app-root > app-admin-transactions > app-admin-transactions-table > mat-paginator > div > div > div.mat-paginator-range-actions > div {
+        font-size: 12px !important;
+    }
+
+    ::ng-deep body > app-root > app-admin-transactions > app-admin-transactions-table > mat-paginator > div > div > div.mat-paginator-range-actions > button.mat-focus-indicator.mat-tooltip-trigger.mat-paginator-navigation-previous.mat-icon-button.mat-button-base.mat-button-disabled {
+        height: 30px;
+        width: 30px;
+    }
+
+    ::ng-deep .mat-paginator-container {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 0 8px;
+        flex-wrap: nowrap !important;
+        width: 100%;
+    }
+
+    ::ng-deep .mat-paginator-range-label {
+        margin: 0px 11px 0 12px !important;
+    }
+
+    ::ng-deep #mat-select-value-1 {
+        padding-top: 3px !important;
+        padding-bottom: 3px !important;
+    }
+}
+
+::ng-deep .mat-select-value-text {
+    font-size: 18px;
+}
+
+::ng-deep .mat-paginator-page-size-label {
+    font-size: large;
+}
+
+::ng-deep #mat-select-value-1 {
+    border: 1px solid gainsboro;
+    border-radius: 4px 0px 0px 4px;
+    ;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}
+
+::ng-deep .mat-form-field-underline {
+    display: none;
+}
+
+::ng-deep body > app-root > app-admin-transactions > app-admin-transactions-table > mat-paginator > div > div > div.mat-paginator-range-actions > button.mat-focus-indicator.mat-tooltip-trigger.mat-paginator-navigation-next.mat-icon-button.mat-button-base {
+    color: white;
+    background-color: $blue;
+    border-radius: 4px;
+}
+
+::ng-deep body > app-root > app-admin-transactions > app-admin-transactions-table > mat-paginator > div > div > div.mat-paginator-range-actions > button.mat-focus-indicator.mat-tooltip-trigger.mat-paginator-navigation-previous.mat-icon-button.mat-button-base.mat-button-disabled {
+    border: 1px solid gainsboro;
+    border-radius: 4px;
+    margin-right: 15px;
+    background-color: gainsboro;
+}
+
+::ng-deep body > app-root > app-admin-transactions > app-admin-transactions-table > mat-paginator > div > div > div.mat-paginator-range-actions > button.mat-focus-indicator.mat-tooltip-trigger.mat-paginator-navigation-previous.mat-icon-button.mat-button-base {
+    border: 1px solid gainsboro;
+    border-radius: 4px;
+    margin-right: 15px;
+
+}
+
+::ng-deep body > app-root > app-admin-transactions > app-admin-transactions-table > mat-paginator > div > div > div.mat-paginator-range-actions > div {
+    font-size: 15px;
+}
+
+::ng-deep #mat-select-0 > div > div.mat-select-arrow-wrapper {
+    background-color: $blue;
+    border-radius: 0px 4px 4px 0px;
+}
+
+::ng-deep .mat-select-arrow {
+    color: white;
+}
+
+th.mat-sort-header-sorted {
+    color: black;
+}
+
+::ng-deep .mat-sort-header-arrow {
+    color: white;
+}
+
+::ng-deep mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+    border-color: #1060AF !important;
+}
+
+::ng-deep .mat-radio-button.mat-accent .mat-radio-inner-circle,
+.mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple),
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-persistent-ripple,
+.mat-radio-button.mat-accent:active .mat-radio-persistent-ripple {
+    background-color: #1060AF !important;
+}
