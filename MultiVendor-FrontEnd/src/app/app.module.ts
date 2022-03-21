@@ -46,10 +46,10 @@ import { ProductsBoxComponent } from './admin/admin-dashboard/products-box/produ
 import { CustomersBoxComponent } from './admin/admin-dashboard/customers-box/customers-box.component';
 import { IncomeBoxComponent } from './admin/admin-dashboard/income-box/income-box.component';
 import { FeaturedBoxComponent } from './admin/admin-dashboard/featured-box/featured-box.component';
-import { AdminProductsComponent } from './admin-products/admin-products.component';
-import { AdminProductsTableComponent } from './admin-products/admin-products-table/admin-products-table.component';
+import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
+import { AdminProductsTableComponent } from './admin/admin-products/admin-products-table/admin-products-table.component';
 import {MatRadioModule} from '@angular/material/radio';
-import { AdminVednorsComponent } from './admin-vednors/admin-vednors.component';
+import { AdminVednorsComponent } from './admin/admin-vednors/admin-vednors.component';
 
 @NgModule({
   declarations: [
