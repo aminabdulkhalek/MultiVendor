@@ -1,0 +1,87 @@
+<mat-paginator
+  [pageSizeOptions]="[6, 10, 20]"
+  aria-label="Select page of Orders"
+>
+</mat-paginator>
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+
+  <ng-container matColumnDef="product">
+    <mat-header-cell
+      *matHeaderCellDef
+      mat-sort-header
+      sortActionDescription="Sort by product"
+    >
+      Product</mat-header-cell
+    >
+    <mat-cell *matCellDef="let product"> {{ product.product }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="customer">
+    <mat-header-cell
+      *matHeaderCellDef
+      mat-sort-header
+      sortActionDescription="Sort by customer"
+    >
+      Customer
+    </mat-header-cell>
+    <mat-cell *matCellDef="let product"> {{ product.customer }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="vendor">
+    <mat-header-cell
+      *matHeaderCellDef
+      mat-sort-header
+      sortActionDescription="Sort by vendor"
+    >
+      Vendor
+    </mat-header-cell>
+    <mat-cell *matCellDef="let product"> {{ product.vendor }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="price">
+    <mat-header-cell
+      *matHeaderCellDef
+      mat-sort-header
+      sortActionDescription="Sort by price"
+    >
+      Price
+    </mat-header-cell>
+    <mat-cell *matCellDef="let product">
+      ${{ product.price }}
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="qty">
+    <mat-header-cell *matHeaderCellDef> Qty </mat-header-cell>
+    <mat-cell *matCellDef="let product">
+      {{ product.qty }}
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="total">
+    <mat-header-cell *matHeaderCellDef> Total </mat-header-cell>
+    <mat-cell *matCellDef="let product">
+      ${{product.total}}
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="order_status">
+    <mat-header-cell *matHeaderCellDef> Order order_status </mat-header-cell>
+    <mat-cell *matCellDef="let product">
+        <mat-radio-group aria-label="Select an option">
+            <mat-radio-button value="0" class="radio"><span class="radio-text">Disapproved</span> </mat-radio-button>
+            <mat-radio-button value="1"><span class="radio-text">Approved</span></mat-radio-button>
+          </mat-radio-group>
+          <button class="delete">
+            <fa-icon
+              class="icon-delete"
+              [icon]="delete"
+              style="color: #ff5c5c"
+            ></fa-icon>
+          </button>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+</mat-table>

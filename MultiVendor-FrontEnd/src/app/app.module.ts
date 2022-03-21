@@ -42,7 +42,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 import { AdminSidebarComponent } from './admin/admin-sidebar/admin-sidebar.component';
 import { OrdersBoxComponent } from './admin/admin-dashboard/orders-box/orders-box.component';
-import { ProductsBoxComponent } from './admin/admin-dashboard/products-box/products-box.component';
+import { ProductsBoxComponent } from './admin/admin-dashboard/orders-box/products-box/products-box.component';
 import { CustomersBoxComponent } from './admin/admin-dashboard/customers-box/customers-box.component';
 import { IncomeBoxComponent } from './admin/admin-dashboard/income-box/income-box.component';
 import { FeaturedBoxComponent } from './admin/admin-dashboard/featured-box/featured-box.component';
@@ -54,6 +54,7 @@ import { AdminVendorsTableComponent } from './admin/admin-vednors/admin-vendors-
 import { AdminComissionsComponent } from './admin/admin-comissions/admin-comissions.component';
 import { AdminCommissionsTableComponent } from './admin/admin-comissions/admin-commissions-table/admin-commissions-table.component';
 import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
+import { AdminOrdersTableComponent } from './admin/admin-orders/admin-orders-table/admin-orders-table.component';
 
 @NgModule({
   declarations: [
@@ -95,7 +96,8 @@ import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.componen
     AdminVendorsTableComponent,
     AdminComissionsComponent,
     AdminCommissionsTableComponent,
-    AdminOrdersComponent
+    AdminOrdersComponent,
+    AdminOrdersTableComponent
   ],
   entryComponents: [
     AddProductModalComponent,
