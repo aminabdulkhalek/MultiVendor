@@ -1,0 +1,112 @@
+<mat-paginator
+  [pageSizeOptions]="[6, 10, 20]"
+  aria-label="Select page of Products"
+>
+</mat-paginator>
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+  <ng-container matColumnDef="product_name">
+    <mat-header-cell
+      *matHeaderCellDef
+      mat-sort-header
+      sortActionDescription="Sort by product_name"
+    >
+      Product</mat-header-cell
+    >
+    <mat-cell *matCellDef="let product"> {{ product.product_name }} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="seller_name">
+    <mat-header-cell
+      *matHeaderCellDef
+      mat-sort-header
+      sortActionDescription="Sort by seller_name"
+    >
+      Seller
+    </mat-header-cell>
+    <mat-cell *matCellDef="let product"> {{ product.seller_name }} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="customer_name">
+    <mat-header-cell
+      *matHeaderCellDef
+      mat-sort-header
+      sortActionDescription="Sort by customer_name"
+    >
+      Customer
+    </mat-header-cell>
+    <mat-cell *matCellDef="let product"> {{ product.customer_name }} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="stars">
+    <mat-header-cell
+      *matHeaderCellDef
+      mat-sort-header
+      sortActionDescription="Sort by stars"
+    >
+      Rating
+    </mat-header-cell>
+    <mat-cell *matCellDef="let product">
+      <bar-rating [rate]="product.stars" [readOnly]="true" [max]="5">
+        <ng-template ratingInactive>
+          <fa-icon
+            [icon]="star"
+            [fixedWidth]="true"
+            style="color: #d2d2d2"
+          ></fa-icon>
+        </ng-template>
+        <ng-template ratingActive>
+          <fa-icon
+            [icon]="star"
+            [fixedWidth]="true"
+            style="color: #ffb800"
+          ></fa-icon>
+        </ng-template>
+        <ng-template ratingFraction>
+          <fa-icon
+            [icon]="half_star"
+            [fixedWidth]="true"
+            style="color: #ffb800"
+          ></fa-icon>
+        </ng-template>
+      </bar-rating>
+    </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="flags">
+    <mat-header-cell
+      *matHeaderCellDef
+      mat-sort-header
+      sortActionDescription="Sort by flags"
+    >
+      Flags
+    </mat-header-cell>
+    <mat-cell *matCellDef="let product"> {{ product.flags }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="comment">
+    <mat-header-cell *matHeaderCellDef> comment </mat-header-cell>
+    <mat-cell *matCellDef="let product">
+      {{ product.comment }}
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="review_status">
+    <mat-header-cell *matHeaderCellDef> Review Status </mat-header-cell>
+    <mat-cell *matCellDef="let product">
+      <mat-radio-group aria-label="Select an option">
+        <mat-radio-button value="0" class="radio"
+          ><span class="radio-text">Show</span>
+        </mat-radio-button>
+        <mat-radio-button value="1"
+          ><span class="radio-text">Hide</span></mat-radio-button
+        >
+      </mat-radio-group>
+      <button class="delete">
+        <fa-icon
+          class="icon-delete"
+          [icon]="delete"
+          style="color: #ff5c5c"
+        ></fa-icon>
+      </button>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+</mat-table>
