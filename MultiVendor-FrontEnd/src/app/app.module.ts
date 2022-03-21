@@ -49,6 +49,7 @@ import { FeaturedBoxComponent } from './admin/admin-dashboard/featured-box/featu
 import { AdminProductsComponent } from './admin-products/admin-products.component';
 import { AdminProductsTableComponent } from './admin-products/admin-products-table/admin-products-table.component';
 import {MatRadioModule} from '@angular/material/radio';
+import { AdminVednorsComponent } from './admin-vednors/admin-vednors.component';
 
 @NgModule({
   declarations: [
@@ -85,7 +86,8 @@ import {MatRadioModule} from '@angular/material/radio';
     IncomeBoxComponent,
     FeaturedBoxComponent,
     AdminProductsComponent,
-    AdminProductsTableComponent
+    AdminProductsTableComponent,
+    AdminVednorsComponent
   ],
   entryComponents: [
     AddProductModalComponent,
