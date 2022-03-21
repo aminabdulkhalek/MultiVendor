@@ -1,0 +1,86 @@
+$blue: #1060AF;
+$lblue: #F2FAFF;
+
+.logo {
+
+    color: rgb(255, 65, 65);
+    font-size: 50px;
+    font-weight: 900;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.toolbar {
+    background-color: $blue;
+    color: white;
+    position: fixed;
+    z-index: 100;
+}
+
+.market-name {
+    flex: 1;
+    font-size: x-large;
+}
+
+
+a {
+    text-decoration: none;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.store-logo {
+    margin: 10px;
+
+    border-radius: 100px;
+    width: 40px;
+    height: 40px;
+    border: 3px white solid;
+}
+
+
+.customers-table {
+    position: absolute;
+    top: 64px;
+    right: 0;
+    left: 107px;
+    justify-content: center;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+    margin-top: 3%;
+}
+
+.page_title {
+    font-size: 24px;
+    font-weight: 600;
+    position: fixed;
+    top: 72px;
+    right: 0;
+    left: 107px;
+    margin-left: 5%;
+    margin-top: 1%;
+    z-index: 100;
+    color: #3F3F3F;
+}
+
+@media only screen and (max-width: 600px) {
+    .page_title {
+        left: 0;
+    }
+
+    .text {
+        display: none;
+    }
+
+    .customers-table {
+        left: 0;
+        margin-top: 20%;
+    }
+
+    .store-logo,
+    .store-name {
+        display: none;
+    }
+}
