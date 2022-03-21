@@ -42,7 +42,7 @@
     >
       Seller Email
     </mat-header-cell>
-    <mat-cell *matCellDef="let product"> {{ product.seller_email }}$ </mat-cell>
+    <mat-cell *matCellDef="let product"> {{ product.seller_email }} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="flags">
@@ -74,13 +74,13 @@
     <mat-cell *matCellDef="let product">
       <mat-radio-group aria-label="Select an option">
         <mat-radio-button value="0" class="radio"
-          ><span class="radio-text">Disapproved</span>
+          ><span class="radio-text">Deny</span>
         </mat-radio-button>
-        <mat-radio-button value="1"
-          ><span class="radio-text">Approved</span></mat-radio-button
+        <mat-radio-button value="1" class="radio"
+          ><span class="radio-text">Approve</span></mat-radio-button
         >
-        <mat-radio-button value="2"
-          ><span class="radio-text">Processing</span></mat-radio-button
+        <mat-radio-button value="2" class="radio"
+          ><span class="radio-text">Pending</span></mat-radio-button
         >
       </mat-radio-group>
     </mat-cell>
