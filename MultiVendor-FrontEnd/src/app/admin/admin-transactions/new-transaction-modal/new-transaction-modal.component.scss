@@ -1,0 +1,158 @@
+$blue: #1060AF;
+$lblue: #F2FAFF;
+
+
+.content {
+    display: flex;
+    height: auto;
+    width: 25vw;
+}
+
+.cont,
+.col-6 {
+    display: flex;
+}
+
+.col1,
+.cola,
+.colb {
+    flex: 1;
+}
+
+.col2 {
+    flex: 0.5;
+}
+
+.colb,
+.cola {
+    margin: 10px;
+}
+
+.example-full-width {
+    width: 100%;
+}
+
+.stock {
+    width: 5rem;
+    margin-left: 10px;
+}
+
+td {
+    padding-right: 8px;
+}
+
+.close {
+    float: right;
+}
+
+.close,
+.submit {
+    width: 5rem;
+    height: 2.5rem;
+    background-color: $blue;
+    color: white;
+    font-size: 1rem;
+    border: 0;
+    border-radius: 4px;
+    margin-left: 1%;
+
+    cursor: pointer;
+
+    &:hover {
+        transition: all 0.6s ease;
+        background-color: white;
+        color: $blue;
+        border: $blue 1px solid;
+    }
+}
+
+.submit {
+    width: 15rem;
+    height: 2.5rem;
+    background-color: $blue;
+    color: white;
+    font-size: 1rem;
+    border: 0;
+    border-radius: 4px;
+    margin-left: 1%;
+
+    cursor: pointer;
+
+    &:hover {
+        transition: all 0.6s ease;
+        background-color: white;
+        color: bl;
+        border: $blue 1px solid;
+    }
+}
+
+.title {
+    font-weight: 700;
+    color: #3F3F3F;
+}
+
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+    background-color: $lblue;
+}
+
+::ng-deep .mat-form-field-flex {
+    align-items: center;
+}
+
+::ng-deep .mat-form-field-appearance-outline.mat-form-field-disabled .mat-form-field-outline{
+    background-color: gainsboro;
+    border-radius: 4px;
+}
+
+::ng-deep .mat-form-field-prefix, .mat-form-field-suffix{
+    color: #3F3F3F;
+}
+
+::ng-deep .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label, .mat-form-field-appearance-outline.mat-form-field-can-float .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label{
+    color: #3F3F3F;
+
+}
+
+::ng-deep #mat-form-field-label-11 > mat-label{
+    background-color: white !important;
+}
+.upload-header {
+    font-weight: 500;
+    padding-bottom: 5px;
+}
+
+.container {
+    width: 40vh;
+    height: 200px;
+    padding: 2rem;
+    text-align: center;
+    border: dashed 2px #979797;
+    background-color: $lblue;
+    position: relative;
+    margin: 0px auto;
+
+    input {
+        opacity: 0;
+        position: absolute;
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+
+    label {
+        color: white;
+        width: 183px;
+        height: 44px;
+        border-radius: 4px;
+        background-color: $blue;
+        padding: 8px 16px;
+    }
+
+    h3 {
+        font-size: 18px;
+        font-weight: 600;
+        color: #38424c;
+    }
+}
