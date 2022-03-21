@@ -12,6 +12,7 @@ import { VendorReviewsComponent } from './vendor/vendor-reviews/vendor-reviews.c
 import { VendorSettingsComponent } from './vendor/vendor-settings/vendor-settings.component';
 import { AdminComissionsComponent } from './admin/admin-comissions/admin-comissions.component';
 import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
+import { AdminTransactionsComponent } from './admin/admin-transactions/admin-transactions.component';
 
 
 
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: 'admin-vendors', component: AdminVednorsComponent },
   { path: 'admin-commissions', component: AdminComissionsComponent },
   { path: 'admin-orders', component: AdminOrdersComponent },
+  { path: 'admin-transactions', component: AdminTransactionsComponent },
 ];
 
 @NgModule({

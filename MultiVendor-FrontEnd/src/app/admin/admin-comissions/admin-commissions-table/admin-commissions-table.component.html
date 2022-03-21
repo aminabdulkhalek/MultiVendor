@@ -21,12 +21,12 @@
       mat-sort-header
       sortActionDescription="Sort by commission_rate"
     >
-     Commission Rate</mat-header-cell
+     Commission Rate %</mat-header-cell
     >
     <mat-cell *matCellDef="let product"> 
-        <mat-form-field floatLabel="always" class="input" appearance="outline">
-        <mat-label>Commission Rate</mat-label>
-        <input matInput  value="{{ product.commission_rate }}%"/>
+        <mat-form-field class="input" appearance="outline">
+       
+        <input matInput  value="{{ product.commission_rate }}"/>
       </mat-form-field>
     </mat-cell>
   </ng-container>
