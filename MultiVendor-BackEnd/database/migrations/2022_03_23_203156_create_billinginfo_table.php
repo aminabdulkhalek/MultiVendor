@@ -17,6 +17,8 @@ class CreateBillinginfoTable extends Migration
             $table->id();
             $table->bigInteger('customer_id')->unsigned()->index();
             $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
+            $table->bigInteger('order_id')->unsigned()->index();
+            $table->foreign('order_id')->references('id')->on('billinginfo')->onDelete('cascade');
             $table->string('country', 100);
             $table->string('street_address', 100);
             $table->string('city', 100);
