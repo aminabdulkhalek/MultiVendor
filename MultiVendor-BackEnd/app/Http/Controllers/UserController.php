@@ -13,12 +13,17 @@ class UserController extends Controller
         return response()->json($user);
     }
 
-    public function VendorProfile() {
+    public function vendorProfile() {
         $user = Auth::user();
         return response()->json($user);
     }
 
-    public function CustomerProfile() {
+    public function customerProfile() {
+        $user = Auth::user();
+        return response()->json($user);
+    }
+
+    public function adminProfile() {
         $user = Auth::user();
         return response()->json($user);
     }

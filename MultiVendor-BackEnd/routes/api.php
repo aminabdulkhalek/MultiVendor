@@ -26,12 +26,17 @@ Route::group(['middleware' => ['auth:api']], function () {
     });
     
     
-    Route::group(['prefix' => 'admin'], function () {
+    Route::group(['middleware' => ['role.admin']], function () {
+        Route::group(['prefix' => 'admin'], function () {
+            Route::get('/profile', [UserController::class, 'adminProfile'])->name("admin-profile"); 
+
+        });
     });
+
     
     Route::group(['middleware' => ['role.vednor']], function () {
         Route::group(['prefix' => 'vendor'], function () {
-            Route::get('/profile', [UserController::class, 'VendorProfile'])->name("vendor-profile"); 
+            Route::get('/profile', [UserController::class, 'vendorProfile'])->name("vendor-profile"); 
 
         });
     });
@@ -39,7 +44,7 @@ Route::group(['middleware' => ['auth:api']], function () {
     
     Route::group(['middleware' => ['role.customer']], function () {
         Route::group(['prefix' => 'customer'], function () {
-            Route::get('/profile', [UserController::class, 'CustomerProfile'])->name("customer-profile"); 
+            Route::get('/profile', [UserController::class, 'customerProfile'])->name("customer-profile"); 
 
         });
     });
