@@ -17,4 +17,9 @@ class UserController extends Controller
         $user = Auth::user();
         return response()->json($user);
     }
+
+    public function CustomerProfile() {
+        $user = Auth::user();
+        return response()->json($user);
+    }
 }

@@ -37,7 +37,11 @@ Route::group(['middleware' => ['auth:api']], function () {
     });
     
     
-    Route::group(['prefix' => 'customer'], function () {
+    Route::group(['middleware' => ['role.customer']], function () {
+        Route::group(['prefix' => 'customer'], function () {
+            Route::get('/profile', [UserController::class, 'CustomerProfile'])->name("customer-profile"); 
+
+        });
     });
 
     
