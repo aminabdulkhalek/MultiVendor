@@ -7,14 +7,7 @@ use Validator;
 
 class AuthController extends Controller
 {
-    /**
-     * Create a new AuthController instance.
-     *
-     * @return void
-     */
-    public function __construct() {
-        $this->middleware('auth:api', ['except' => ['login', 'register']]);
-    }
+
     /**
      * Get a JWT via given credentials.
      *
@@ -97,5 +90,9 @@ class AuthController extends Controller
             'expires_in' => auth()->factory()->getTTL() * 60,
             'user' => auth()->user()
         ]);
+    }
+
+    public function notFound(){
+        return response()->json(['error' => 'Unauthorized'], 401);
     }
 }
