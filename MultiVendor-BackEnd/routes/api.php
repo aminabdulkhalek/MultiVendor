@@ -2,6 +2,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\VendorController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -20,15 +22,18 @@ Route::group(['middleware' => ['auth:api']], function () {
     });
 
     Route::group(['prefix' => 'user'], function () {
-        Route::get('/profile', [AuthController::class, 'userProfile'])->name("user-profile"); 
+        Route::get('/profile', [UserController::class, 'userProfile'])->name("user-profile"); 
     });
     
     
     Route::group(['prefix' => 'admin'], function () {
     });
     
-    
-    Route::group(['prefix' => 'vendor'], function () {
+    Route::group(['middleware' => ['role.vednor']], function () {
+        Route::group(['prefix' => 'vendor'], function () {
+            Route::get('/profile', [UserController::class, 'VendorProfile'])->name("vendor-profile"); 
+
+        });
     });
     
     
