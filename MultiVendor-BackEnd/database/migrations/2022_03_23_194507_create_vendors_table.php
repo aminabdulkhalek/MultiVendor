@@ -24,7 +24,7 @@ class CreateVendorsTable extends Migration
             $table->string('instagram_link')->nullable();
             $table->string('facebook_link')->nullable();
             $table->string('twitter_link')->nullable();
-            $table->tinyInteger('commission_rate');
+            $table->tinyInteger('commission_rate')->unsigned();
             $table->timestamps();
         });
     }

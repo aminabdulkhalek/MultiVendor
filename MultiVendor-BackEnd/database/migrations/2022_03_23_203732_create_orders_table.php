@@ -20,7 +20,7 @@ class CreateOrdersTable extends Migration
             $table->bigInteger('billing_id')->unsigned()->index();
             $table->foreign('billing_id')->references('id')->on('billinginfo')->onDelete('cascade');
             $table->timestamps();
-            $table->bigInteger('total_price');
+            $table->bigInteger('total_price')->unsigned();
 
         });
     }

@@ -19,7 +19,7 @@ class CreateOrderItemsTable extends Migration
             $table->bigInteger('product_id')->unsigned()->index();;
             $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
             $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
-            $table->bigInteger('quanitiy')->default(0);
+            $table->bigInteger('quanitiy')->unsigned()->default(0);
             $table->timestamps();
         });
     }
