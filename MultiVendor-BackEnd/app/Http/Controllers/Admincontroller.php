@@ -84,4 +84,10 @@ class Admincontroller extends Controller
             
         ], 201);
     }
+
+    public function getTotalNBOrders(){
+        return response()->json([
+            'Total nb of orders' =>count( Order::get())
+        ], 201);
+    }
 }
