@@ -90,4 +90,19 @@ class Admincontroller extends Controller
             'Total nb of orders' =>count( Order::get())
         ], 201);
     }
+    public function numberOfPendingOrders(){
+        return response()->json([
+            'pending orders' =>count( Order::where('status','=','0')->get())
+        ], 201);
+    }
+    public function numberOfApprovedOrders(){
+        return response()->json([
+            'approved orders' =>count( Order::where('status','=','1')->get())
+        ], 201);
+    }
+    public function numberOfDeniedOrders(){
+        return response()->json([
+            'disapproved orders' =>count( Order::where('status','=','2')->get())
+        ], 201);
+    }
 }

@@ -34,7 +34,10 @@ Route::group(['middleware' => ['auth:api']], function () {
             Route::get('/pending-orders', [Admincontroller::class, 'getPendingOrders'])->name("pendning-orders");
             Route::get('/approved-orders', [Admincontroller::class, 'getApprovedOrders'])->name("Approved-orders"); 
             Route::get('/disapproved-orders', [Admincontroller::class, 'getDisapprovedOrders'])->name("disapproved-orders"); 
-            Route::get('/nb-orders', [Admincontroller::class, 'getTotalNBOrders'])->name("nb-orders");  
+            Route::get('/nb-orders', [Admincontroller::class, 'getTotalNBOrders'])->name("nb-orders"); 
+            Route::get('/nb-pending-orders', [Admincontroller::class, 'numberOfPendingOrders'])->name("nb-pending-orders");
+            Route::get('/nb-approved-orders', [Admincontroller::class, 'numberOfApprovedOrders'])->name("nb-approved-orders");
+            Route::get('/nb-disapproved-orders', [Admincontroller::class, 'numberOfDeniedOrders'])->name("nb-denied-orders"); 
 
 
         });
