@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\BillingInfo;
+use App\Models\OrderItme;
 
 class Order extends Model
 {
@@ -23,9 +25,18 @@ class Order extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function billingInfo(): HasOne
+    public function billingInfo()
     {
         return $this->hasOne(BillingInfo::class,'order_id');
 
+    }
+    /**
+     * Get all of the orderItems for the Order
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function orderItems()
+    {
+        return $this->hasMany(OrderItem::class, 'order_id');
     }
 }

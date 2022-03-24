@@ -29,8 +29,10 @@ Route::group(['middleware' => ['auth:api']], function () {
     
     Route::group(['middleware' => ['role.admin']], function () {
         Route::group(['prefix' => 'admin'], function () {
+            Route::get('/profile', [UserController::class, 'adminProfile'])->name("admin-profile"); 
             Route::get('/customers', [Admincontroller::class, 'getCustomers'])->name("customers"); 
- 
+            Route::get('/pending-orders', [Admincontroller::class, 'getPendingOrders'])->name("pendning-orders"); 
+
 
         });
     });
