@@ -19,6 +19,7 @@ class CreateProductsTable extends Migration
             $table->bigInteger('category_id')->unsigned()->index();
             $table->foreign('vendor_id')->references('id')->on('vendors')->onDelete('cascade');
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->string('product_name', 255);
             $table->bigInteger('price')->unsigned();
             $table->bigInteger('stock')->unsigned();
             $table->tinyInteger('status');
