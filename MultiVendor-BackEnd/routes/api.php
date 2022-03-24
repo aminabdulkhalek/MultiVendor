@@ -30,7 +30,7 @@ Route::group(['middleware' => ['auth:api']], function () {
     Route::group(['middleware' => ['role.admin']], function () {
         Route::group(['prefix' => 'admin'], function () {
             Route::get('/customers', [Admincontroller::class, 'getCustomers'])->name("customers"); 
-            Route::post('/updateInfo', [Admincontroller::class, 'updateInfo'])->name("updateInfo"); 
+ 
 
         });
     });
