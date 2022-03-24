@@ -38,7 +38,7 @@ Route::group(['middleware' => ['auth:api']], function () {
             Route::get('/nb-pending-orders', [Admincontroller::class, 'numberOfPendingOrders'])->name("nb-pending-orders");
             Route::get('/nb-approved-orders', [Admincontroller::class, 'numberOfApprovedOrders'])->name("nb-approved-orders");
             Route::get('/nb-disapproved-orders', [Admincontroller::class, 'numberOfDeniedOrders'])->name("nb-denied-orders"); 
-
+            Route::get('/nb-products', [Admincontroller::class, 'numberOfProducts'])->name("nb-products"); 
 
         });
     });

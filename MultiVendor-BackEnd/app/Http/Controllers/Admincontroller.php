@@ -8,7 +8,7 @@ use App\Models\User;
 use App\Models\Customer;
 use App\Models\Admin;
 use App\Models\Order;
-
+use App\Models\Product;
 
 class Admincontroller extends Controller
 {
@@ -103,6 +103,12 @@ class Admincontroller extends Controller
     public function numberOfDeniedOrders(){
         return response()->json([
             'disapproved orders' =>count( Order::where('status','=','2')->get())
+        ], 201);
+    }
+
+    public function numberOfProducts(){
+        return response()->json([
+            'nb of Products' =>count( Product::get())
         ], 201);
     }
 }
