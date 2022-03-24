@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\Admin;
 use Validator;
 
 class AuthController extends Controller
@@ -45,6 +46,18 @@ class AuthController extends Controller
                     $validator->validated(),
                     ['password' => bcrypt($request->password)]
                 ));
+        if($request->user_type == 0){
+            $admin = new Admin;
+            $admin ->user_id = $user->id;
+            $admin ->total_balance = 0;
+            $admin ->income = 0;
+            $admin ->save();
+
+            return response()->json([
+                'message' => 'Admin successfully registered',
+                'admin' => $admin,
+            ], 201);
+        }        
         return response()->json([
             'message' => 'User successfully registered',
             'user' => $user
