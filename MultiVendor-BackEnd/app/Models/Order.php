@@ -16,15 +16,7 @@ class Order extends Model
         'total_price'
     ];
 
-    /**
-     * Get all of the items for the Order
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function items(): HasMany
-    {
-        return $this->hasMany(CartItems::class, 'order_id');
-    }
+
 
     /**
      * Get the billingInfo associated with the Order
@@ -34,6 +26,6 @@ class Order extends Model
     public function billingInfo(): HasOne
     {
         return $this->hasOne(BillingInfo::class,'order_id');
-        
+
     }
 }
