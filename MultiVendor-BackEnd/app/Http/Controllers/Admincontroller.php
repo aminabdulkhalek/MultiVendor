@@ -111,4 +111,12 @@ class Admincontroller extends Controller
             'nb of Products' =>count( Product::get())
         ], 201);
     }
+
+    public function topSelling(){
+        $top = Product::orderby('sales','desc')->take(3)->get();
+
+        return response()->json([
+                'top Selling  Products' => $top
+            ], 201);
+    }
 }
