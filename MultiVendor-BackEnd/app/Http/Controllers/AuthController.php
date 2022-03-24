@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Admin;
+use App\Models\Customer;
 use Validator;
 
 class AuthController extends Controller
@@ -33,20 +34,22 @@ class AuthController extends Controller
      * @return \Illuminate\Http\JsonResponse
      */
     public function register(Request $request) {
-        $validator = Validator::make($request->all(), [
-            'name' => 'required|string|between:2,100',
-            'email' => 'required|string|email|max:100|unique:users',
-            'password' => 'required|string|confirmed|min:6',
-            'user_type' => 'required'
-        ]);
-        if($validator->fails()){
-            return response()->json($validator->errors()->toJson(), 400);
-        }
-        $user = User::create(array_merge(
-                    $validator->validated(),
-                    ['password' => bcrypt($request->password)]
-                ));
+        
         if($request->user_type == 0){
+            $validator = Validator::make($request->all(), [
+                'name' => 'required|string|between:2,100',
+                'email' => 'required|string|email|max:100|unique:users',
+                'password' => 'required|string|confirmed|min:6',
+                'user_type' => 'required'
+            ]);
+            if($validator->fails()){
+                return response()->json($validator->errors()->toJson(), 400);
+            }
+            $user = User::create(array_merge(
+                        $validator->validated(),
+                        ['password' => bcrypt($request->password)]
+                    ));
+
             $admin = new Admin;
             $admin ->user_id = $user->id;
             $admin ->total_balance = 0;
@@ -57,7 +60,40 @@ class AuthController extends Controller
                 'message' => 'Admin successfully registered',
                 'admin' => $admin,
             ], 201);
-        }        
+        } 
+        elseif($request->user_type == 2){
+           $validator = Validator::make($request->all(), [
+                'name' => 'required|string|between:2,100',
+                'email' => 'required|string|email|max:100|unique:users',
+                'password' => 'required|string|confirmed|min:6',
+                'user_type' => 'required',
+                'country' => 'required|string',
+                'state' => 'required|string',
+                'date_of_birth' => 'required|date',
+                'gender' => 'required|string',
+            ]);
+            if($validator->fails()){
+                return response()->json($validator->errors()->toJson(), 400);
+            }
+            $user = new User;
+            $user ->name = $request->name;
+            $user ->email = $request->email;
+            $user ->password = bcrypt($request->password);
+            $user ->user_type = $request->user_type;
+            $user ->save();
+           
+            $customer = new Customer;
+            $customer -> user_id = $user->id;
+            $customer -> country = $request->country;
+            $customer -> state = $request->state;
+            $customer -> dat_of_birth = $request->date_of_birth;
+            $customer ->save();
+
+            return response()->json([
+                'message' => 'Customer successfully registered',
+                'customer' => $customer,
+            ], 201);
+        }       
         return response()->json([
             'message' => 'User successfully registered',
             'user' => $user

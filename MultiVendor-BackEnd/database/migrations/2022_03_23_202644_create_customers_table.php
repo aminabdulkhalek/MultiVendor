@@ -19,7 +19,7 @@ class CreateCustomersTable extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('country', 255)->nullable();
             $table->string('state', 255)->nullable();
-            $table->dateTime('dat_of_birth')->nullable();
+            $table->date('date_of_birth')->nullable();
             $table->string('gender', 100)->nullable();
             $table->bigInteger('Tax_number')->nullable()->default(123456);
             $table->timestamps();
