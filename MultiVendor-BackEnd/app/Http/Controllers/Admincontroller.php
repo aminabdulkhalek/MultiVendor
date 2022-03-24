@@ -62,4 +62,26 @@ class Admincontroller extends Controller
             
         ], 201);
     }
+
+    public function getDisapprovedOrders(){
+        $disapproved_orders = Order::where('status','=','2')->get();
+        $result =[];
+        foreach($disapproved_orders as $disapproved_order){ 
+            $temp = [];
+            $temp = json_encode([
+               "id" => $disapproved_order->id,
+                "customer_id" => $disapproved_order->customer_id,
+                "order_date" => $disapproved_order-> created_at,
+                "order_items" => $disapproved_order->orderItems()->get(),
+                
+           ]) ;
+           array_push($result,json_decode($temp));
+        }
+        
+        return response()->json([
+            "Disapproved Orders" => $result,
+            
+            
+        ], 201);
+    }
 }

@@ -32,7 +32,8 @@ Route::group(['middleware' => ['auth:api']], function () {
             Route::get('/profile', [UserController::class, 'adminProfile'])->name("admin-profile"); 
             Route::get('/customers', [Admincontroller::class, 'getCustomers'])->name("customers"); 
             Route::get('/pending-orders', [Admincontroller::class, 'getPendingOrders'])->name("pendning-orders");
-            Route::get('/approved-orders', [Admincontroller::class, 'getApprovedOrders'])->name("Approved-orders");  
+            Route::get('/approved-orders', [Admincontroller::class, 'getApprovedOrders'])->name("Approved-orders"); 
+            Route::get('/disapproved-orders', [Admincontroller::class, 'getDisapprovedOrders'])->name("disapproved-orders");   
 
 
         });
