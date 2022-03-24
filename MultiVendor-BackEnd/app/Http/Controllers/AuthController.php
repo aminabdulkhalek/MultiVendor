@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Admin;
 use App\Models\Customer;
+use App\Models\vendor;
 use Validator;
 
 class AuthController extends Controller
@@ -93,11 +94,36 @@ class AuthController extends Controller
                 'message' => 'Customer successfully registered',
                 'customer' => $customer,
             ], 201);
-        }       
-        return response()->json([
-            'message' => 'User successfully registered',
-            'user' => $user
-        ], 201);
+        }     
+        
+        elseif($request->user_type == 1){
+            $validator = Validator::make($request->all(), [
+                 'name' => 'required|string|between:2,100',
+                 'email' => 'required|string|email|max:100|unique:users',
+                 'password' => 'required|string|confirmed|min:6',
+                 'user_type' => 'required',
+                 
+             ]);
+             if($validator->fails()){
+                 return response()->json($validator->errors()->toJson(), 400);
+             }
+             $user = new User;
+             $user ->name = $request->name;
+             $user ->email = $request->email;
+             $user ->password = bcrypt($request->password);
+             $user ->user_type = $request->user_type;
+             $user ->save();
+            
+             $vendor = new Vendor;
+             $vendor -> user_id = $user->id;
+             $vendor ->save();
+ 
+             return response()->json([
+                 'message' => 'Vendor successfully registered',
+                 'vendor' => $vendor,
+             ], 201);
+         }       
+        
     }
 
     /**

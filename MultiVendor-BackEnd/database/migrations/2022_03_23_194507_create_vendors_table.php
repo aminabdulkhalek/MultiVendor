@@ -17,14 +17,14 @@ class CreateVendorsTable extends Migration
             $table->id();
             $table->bigInteger('user_id')->unsigned()->index();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->string('address');
-            $table->bigInteger('phone')->unique();
-            $table->string('logo');
-            $table->string('banner');
+            $table->string('address')->nullable();
+            $table->bigInteger('phone')->nullable()->unique();
+            $table->string('logo')->nullable();
+            $table->string('banner')->nullable();
             $table->string('instagram_link')->nullable();
             $table->string('facebook_link')->nullable();
             $table->string('twitter_link')->nullable();
-            $table->tinyInteger('commission_rate')->unsigned();
+            $table->bigInteger('commission_rate')->unsigned()->default(0);
             $table->timestamps();
         });
     }
