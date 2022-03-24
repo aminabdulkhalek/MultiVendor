@@ -40,4 +40,26 @@ class Admincontroller extends Controller
             
         ], 201);
     }
+
+    public function getApprovedOrders(){
+        $approved_orders = Order::where('status','=','1')->get();
+        $result =[];
+        foreach($approved_orders as $approved_order){ 
+            $temp = [];
+            $temp = json_encode([
+               "id" => $approved_order->id,
+                "customer_id" => $approved_order->customer_id,
+                "order_date" => $approved_order-> created_at,
+                "order_items" => $approved_order->orderItems()->get(),
+                
+           ]) ;
+           array_push($result,json_decode($temp));
+        }
+        
+        return response()->json([
+            "Approved Orders" => $result,
+            
+            
+        ], 201);
+    }
 }
