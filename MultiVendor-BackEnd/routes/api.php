@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VendorController;
+use App\Http\Controllers\AdminController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -28,7 +29,7 @@ Route::group(['middleware' => ['auth:api']], function () {
     
     Route::group(['middleware' => ['role.admin']], function () {
         Route::group(['prefix' => 'admin'], function () {
-            Route::get('/profile', [UserController::class, 'adminProfile'])->name("admin-profile"); 
+            Route::get('/customers', [Admincontroller::class, 'getCustomers'])->name("customers"); 
 
         });
     });
