@@ -40,6 +40,9 @@ Route::group(['middleware' => ['auth:api']], function () {
             Route::get('/nb-disapproved-orders', [Admincontroller::class, 'numberOfDeniedOrders'])->name("nb-denied-orders"); 
             Route::get('/nb-products', [Admincontroller::class, 'numberOfProducts'])->name("nb-products"); 
             Route::get('/top-selling', [Admincontroller::class, 'topSelling'])->name("top-selling"); 
+            Route::get('/nb-customers', [Admincontroller::class, 'nbCustomers'])->name("nb-customers"); 
+            Route::get('/this-month-customers', [Admincontroller::class, 'thisMonthCustomers'])->name("this-month-customers"); 
+            Route::get('/last-month-customers', [Admincontroller::class, 'lastMonthCustomers'])->name("last-month-customers"); 
 
         });
     });

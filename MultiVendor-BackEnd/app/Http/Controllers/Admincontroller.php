@@ -9,6 +9,7 @@ use App\Models\Customer;
 use App\Models\Admin;
 use App\Models\Order;
 use App\Models\Product;
+use Carbon\Carbon;
 
 class Admincontroller extends Controller
 {
@@ -118,5 +119,30 @@ class Admincontroller extends Controller
         return response()->json([
                 'top Selling  Products' => $top
             ], 201);
+    }
+
+    public function nbCustomers(){
+        return response()->json([
+            'nb of customers' =>count( Customer::get())
+        ], 201);
+    }
+
+    public function thisMonthCustomers(){
+        $now = Carbon::now();
+        $month = $now->format('m');
+        $data = Customer::whereMonth('created_at',$month)->get();
+
+        return response()->json([
+            'this Month customers' => $data
+        ], 201);
+    }
+    public function lastMonthCustomers(){
+        $now = Carbon::now();
+        $month = $now->subMonth()->month;
+        $data = Customer::whereMonth('created_at',$month)->get();
+
+        return response()->json([
+            'Last Month customers' => $data
+        ], 201);
     }
 }
