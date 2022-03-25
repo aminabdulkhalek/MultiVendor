@@ -42,7 +42,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 import { AdminSidebarComponent } from './admin/admin-sidebar/admin-sidebar.component';
 import { OrdersBoxComponent } from './admin/admin-dashboard/orders-box/orders-box.component';
-import { ProductsBoxComponent } from './admin/admin-dashboard/orders-box/products-box/products-box.component';
+import { ProductsBoxComponent } from './admin/admin-dashboard/products-box/products-box.component';
 import { CustomersBoxComponent } from './admin/admin-dashboard/customers-box/customers-box.component';
 import { IncomeBoxComponent } from './admin/admin-dashboard/income-box/income-box.component';
 import { FeaturedBoxComponent } from './admin/admin-dashboard/featured-box/featured-box.component';
