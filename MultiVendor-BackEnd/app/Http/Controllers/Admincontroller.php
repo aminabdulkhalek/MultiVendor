@@ -186,9 +186,10 @@ class Admincontroller extends Controller
     }
 
     public function approveProduct(Request $request){
-        
-        $product = Product::where('id','=',$request->product_id)->get();
+        $product_id = $request->product_id;
+        $product = Product::where('id','=',$product_id)->get()->first();
         $product->status  = 1;
+        $product ->save();
 
         return response()->json([
             'message' => 'product approved',
