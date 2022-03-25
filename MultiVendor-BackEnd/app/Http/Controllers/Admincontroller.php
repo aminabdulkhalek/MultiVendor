@@ -184,4 +184,15 @@ class Admincontroller extends Controller
             "total number of products" => $total_nb_products
         ], 201);
     }
+
+    public function approveProduct(Request $request){
+        
+        $product = Product::where('id','=',$request->product_id)->get();
+        $product->status  = 1;
+
+        return response()->json([
+            'message' => 'product approved',
+            'product' => $product
+        ], 201);
+    }
 }
