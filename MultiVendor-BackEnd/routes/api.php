@@ -44,8 +44,8 @@ Route::group(['middleware' => ['auth:api']], function () {
             Route::get('/this-month-customers', [Admincontroller::class, 'thisMonthCustomers'])->name("this-month-customers");
             Route::get('/last-month-customers', [Admincontroller::class, 'lastMonthCustomers'])->name("last-month-customers");
             Route::post('/new-featured', [Admincontroller::class, 'newFeatured'])->name("new-featured");
-            Route::get('/total-sales', [Admincontroller::class, 'totalSales'])->name("total_sales");
-
+            Route::get('/total-sales', [Admincontroller::class, 'totalSales'])->name("total-sales");
+            Route::get('/total-income', [Admincontroller::class, 'totalIncome'])->name("total-income");
         });
     });
 

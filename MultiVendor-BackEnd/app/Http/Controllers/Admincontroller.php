@@ -167,4 +167,13 @@ class Admincontroller extends Controller
             'total sales' => $total_sales
         ], 201);
     }
+
+    public function totalIncome(){
+        $admin =  Auth::user();
+        $admin_info = Admin::where('user_id','=',$admin->id)->get()[0];
+
+        return response()->json([
+            'total income' => $admin_info->income
+        ], 201);
+    }
 }
