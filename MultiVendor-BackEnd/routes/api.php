@@ -55,7 +55,7 @@ Route::group(['middleware' => ['auth:api']], function () {
             Route::post('/disapprove-vendor', [Admincontroller::class, 'disapproveVendor'])->name("disapprove-vendor");
             Route::post('/pending-vendor', [Admincontroller::class, 'pendingVendor'])->name("pending-vendor");
             Route::get('/balances', [Admincontroller::class, 'getBalances'])->name("balances");
-
+            Route::post('/update-commission', [Admincontroller::class, 'updateCommission'])->name("update-com");
         });
     });
 

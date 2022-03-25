@@ -269,5 +269,17 @@ class Admincontroller extends Controller
             'Balances' => $balances
         ], 201);
     }
+
+    public function updateCommission(Request $request){
+        $vendor_id = $request->vendor_id;
+        $vendor = vendor::where('id','=',$vendor_id)->get()->first();
+        $vendor->commission_rate  = $request->commission_rate;
+        $vendor ->save();
+
+        return response()->json([
+            'message' => "commisssion rate updated",
+            'vendor' => $vendor
+        ], 201);
+    }
 }
 
