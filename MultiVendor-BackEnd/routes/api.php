@@ -59,6 +59,7 @@ Route::group(['middleware' => ['auth:api']], function () {
             Route::get('/reviews', [Admincontroller::class, 'getReviews'])->name("reviews");
             Route::post('/show-review', [Admincontroller::class, 'showReview'])->name("show-review");
             Route::post('/hide-review', [Admincontroller::class, 'hideReview'])->name("hide-review");
+            Route::post('/delete-review', [Admincontroller::class, 'deleteReview'])->name("delete-review");
 
         });
     });

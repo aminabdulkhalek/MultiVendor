@@ -313,5 +313,13 @@ class Admincontroller extends Controller
             'review' => $review
         ], 201);
     }
+    public function deleteReview(Request $request){
+        $review_id = $request->review_id;
+        Review::where('id','=',$review_id)->first()->delete();
+
+        return response()->json([
+            'message' => 'Review deleted'
+        ], 201);
+    }
 }
 
