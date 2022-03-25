@@ -5,7 +5,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Admin;
 use App\Models\Customer;
-use App\Models\vendor;
+use App\Models\Vendor;
+use App\Models\Balance;
 use Validator;
 
 class AuthController extends Controller
@@ -35,7 +36,7 @@ class AuthController extends Controller
      * @return \Illuminate\Http\JsonResponse
      */
     public function register(Request $request) {
-        
+
         if($request->user_type == 0){
             $validator = Validator::make($request->all(), [
                 'name' => 'required|string|between:2,100',
@@ -61,7 +62,7 @@ class AuthController extends Controller
                 'message' => 'Admin successfully registered',
                 'admin' => $admin,
             ], 201);
-        } 
+        }
         elseif($request->user_type == 2){
            $validator = Validator::make($request->all(), [
                 'name' => 'required|string|between:2,100',
@@ -82,7 +83,7 @@ class AuthController extends Controller
             $user ->password = bcrypt($request->password);
             $user ->user_type = $request->user_type;
             $user ->save();
-           
+
             $customer = new Customer;
             $customer -> user_id = $user->id;
             $customer -> country = $request->country;
@@ -94,15 +95,15 @@ class AuthController extends Controller
                 'message' => 'Customer successfully registered',
                 'customer' => $customer,
             ], 201);
-        }     
-        
+        }
+
         elseif($request->user_type == 1){
             $validator = Validator::make($request->all(), [
                  'name' => 'required|string|between:2,100',
                  'email' => 'required|string|email|max:100|unique:users',
                  'password' => 'required|string|confirmed|min:6',
                  'user_type' => 'required',
-                 
+
              ]);
              if($validator->fails()){
                  return response()->json($validator->errors()->toJson(), 400);
@@ -113,17 +114,22 @@ class AuthController extends Controller
              $user ->password = bcrypt($request->password);
              $user ->user_type = $request->user_type;
              $user ->save();
-            
+
              $vendor = new Vendor;
              $vendor -> user_id = $user->id;
              $vendor ->save();
- 
+
+             $balance = new Balance;
+             $balance->vendor_id = $user->id;
+             $balance->save();
+
+
              return response()->json([
                  'message' => 'Vendor successfully registered',
                  'vendor' => $vendor,
              ], 201);
-         }       
-        
+         }
+
     }
 
     /**
@@ -143,7 +149,7 @@ class AuthController extends Controller
     public function refresh() {
         return $this->createNewToken(auth()->refresh());
     }
-    
+
     /**
      * Get the token array structure.
      *

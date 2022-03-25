@@ -11,6 +11,7 @@ use App\Models\Order;
 use App\Models\Product;
 use Carbon\Carbon;
 use App\Models\Featured;
+use App\Models\Balance;
 
 class Admincontroller extends Controller
 {
@@ -24,66 +25,66 @@ class Admincontroller extends Controller
     public function getPendingOrders(){
         $pending_orders = Order::where('status','=','0')->get();
         $result =[];
-        foreach($pending_orders as $pending_order){ 
+        foreach($pending_orders as $pending_order){
             $temp = [];
             $temp = json_encode([
                "id" => $pending_order->id,
                 "customer_id" => $pending_order->customer_id,
                 "order_date" => $pending_order-> created_at,
                 "order_items" => $pending_order->orderItems()->get(),
-                
+
            ]) ;
            array_push($result,json_decode($temp));
         }
-        
+
         return response()->json([
             "Pending Orders" => $result,
-            
-            
+
+
         ], 201);
     }
 
     public function getApprovedOrders(){
         $approved_orders = Order::where('status','=','1')->get();
         $result =[];
-        foreach($approved_orders as $approved_order){ 
+        foreach($approved_orders as $approved_order){
             $temp = [];
             $temp = json_encode([
                "id" => $approved_order->id,
                 "customer_id" => $approved_order->customer_id,
                 "order_date" => $approved_order-> created_at,
                 "order_items" => $approved_order->orderItems()->get(),
-                
+
            ]) ;
            array_push($result,json_decode($temp));
         }
-        
+
         return response()->json([
             "Approved Orders" => $result,
-            
-            
+
+
         ], 201);
     }
 
     public function getDisapprovedOrders(){
         $disapproved_orders = Order::where('status','=','2')->get();
         $result =[];
-        foreach($disapproved_orders as $disapproved_order){ 
+        foreach($disapproved_orders as $disapproved_order){
             $temp = [];
             $temp = json_encode([
                "id" => $disapproved_order->id,
                 "customer_id" => $disapproved_order->customer_id,
                 "order_date" => $disapproved_order-> created_at,
                 "order_items" => $disapproved_order->orderItems()->get(),
-                
+
            ]) ;
            array_push($result,json_decode($temp));
         }
-        
+
         return response()->json([
             "Disapproved Orders" => $result,
-            
-            
+
+
         ], 201);
     }
 
@@ -156,6 +157,14 @@ class Admincontroller extends Controller
          return response()->json([
              'message'=> "new Vendor is Fetured",
              "vendor id" => $featured->id
-         ], 201);   
+         ], 201);
+    }
+
+    public function totalSales(Request $request){
+        $total_sales = Balance::sum('total_sales');
+
+        return response()->json([
+            'total sales' => $total_sales
+        ], 201);
     }
 }
