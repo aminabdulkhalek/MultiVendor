@@ -10,6 +10,7 @@ use App\Models\Admin;
 use App\Models\Order;
 use App\Models\Product;
 use Carbon\Carbon;
+use App\Models\Featured;
 
 class Admincontroller extends Controller
 {
@@ -144,5 +145,17 @@ class Admincontroller extends Controller
         return response()->json([
             'Last Month customers' => $data
         ], 201);
+    }
+
+    public function newFeatured(Request $request){
+            Featured::truncate();
+            $featured = new Featured;
+            $featured->vendor_id = $request->vendor_id;
+            $featured -> save();
+
+         return response()->json([
+             'message'=> "new Vendor is Fetured",
+             "vendor id" => $featured->id
+         ], 201);   
     }
 }
