@@ -405,36 +405,36 @@ class Admincontroller extends Controller
         ], 201);
     }
 
-    // public function makeTransaction(Request $request){
+    public function makeTransaction(Request $request){
         
-    //     $vendor_balance = Balance::where('vendor_id','=',$request->vendor_id)->get()->first();
-    //     $vendor_commission_rate = Vednor::where('id','=',$request->vendor_id)->get()->first()->commission_rate;
-    //     if ($vendor_balance->remaining_ammount == 0 ) {
-    //         return response()->json([
-    //             'message'=> 'vendor received all his payments'
-    //         ], 405);
-    //     }
-    //     elseif($request->amount > $vendor_balance->total_sales){
-    //         return response()->json([
-    //             'message'=> 'amount to be paid exceds sales made by this vendor'
-    //         ], 406);
-    //     }
-    //     $vendor_balance->received_ammount += ($request->amount - $request->amount*($vendor_commission_rate/100));
-    //     $vendor_balance->save();
-    //     $vendor_balance->remaining_ammount = ($vendor_balance->total_sales*($vendor_commission_rate/100) - $vendor_balance->received_ammount);
-    //     $vendor_balance->save();
+        $vendor_balance = Balance::where('vendor_id','=',$request->vendor_id)->get()->first();
+        $vendor_commission_rate = Vendor::where('id','=',$request->vendor_id)->get()->first()->commission_rate;
+        if ($vendor_balance->remaining_ammount == 0 ) {
+            return response()->json([
+                'message'=> 'vendor received all his payments'
+            ], 405);
+        }
+        elseif($request->amount > $vendor_balance->total_sales){
+            return response()->json([
+                'message'=> 'amount to be paid exceds sales made by this vendor'
+            ], 406);
+        }
+        $vendor_balance->received_ammount += ($request->amount - $request->amount*($vendor_commission_rate/100));
+        $vendor_balance->save();
+        $vendor_balance->remaining_ammount -= ($request->amount - $request->amount*($vendor_commission_rate/100));
+        $vendor_balance->save();
 
-    //     $admin =  Auth::user();
-    //     $admin_info = Admin::where('user_id','=',$admin->id)->get()[0];
-    //     $admin_info->total_balance -= $request->amount;
-    //     $admin_info->income += ($request->amount)*0.2;
-    //     $admin_info->save();
+        $admin =  Auth::user();
+        $admin_info = Admin::where('user_id','=',$admin->id)->get()[0];
+        $admin_info->total_balance -= $request->amount;
+        $admin_info->income += ($request->amount)*($vendor_commission_rate/100);
+        $admin_info->save();
         
-    //     return response()->json([
-    //         'message' => "transaction complete",
-    //         'Vendor balance'=> $vendor_balance,
-    //         'admin info' => $admin_info
-    //     ], 201);
-    // }
+        return response()->json([
+            'message' => "transaction complete",
+            'Vendor balance'=> $vendor_balance,
+            'admin info' => $admin_info
+        ], 201);
+    }
 }
 
