@@ -321,5 +321,27 @@ class Admincontroller extends Controller
             'message' => 'Review deleted'
         ], 201);
     }
+
+    public function getOrders(){
+        $orders = Order::get();
+        $result =[];
+        foreach($orders as $order){
+            $temp = [];
+            $temp = json_encode([
+               "id" => $order->id,
+                "customer_id" => $order->customer_id,
+                "order_date" => $order-> created_at,
+                "order_items" => $order->orderItems()->get(),
+
+           ]) ;
+           array_push($result,json_decode($temp));
+        }
+
+        return response()->json([
+            "Orders" => $result,
+
+
+        ], 201);
+    }
 }
 

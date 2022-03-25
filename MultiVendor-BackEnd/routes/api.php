@@ -60,6 +60,8 @@ Route::group(['middleware' => ['auth:api']], function () {
             Route::post('/show-review', [Admincontroller::class, 'showReview'])->name("show-review");
             Route::post('/hide-review', [Admincontroller::class, 'hideReview'])->name("hide-review");
             Route::post('/delete-review', [Admincontroller::class, 'deleteReview'])->name("delete-review");
+            Route::get('/orders', [Admincontroller::class, 'getOrders'])->name("orders");
+            Route::post('/approve-order', [Admincontroller::class, 'approveOrder'])->name("approve-order");
 
         });
     });

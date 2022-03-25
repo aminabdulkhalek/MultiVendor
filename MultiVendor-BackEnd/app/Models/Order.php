@@ -15,7 +15,8 @@ class Order extends Model
         'billing_id',
         'cart_id',
         'order_date',
-        'total_price'
+        'total_price',
+        'status'
     ];
 
 
