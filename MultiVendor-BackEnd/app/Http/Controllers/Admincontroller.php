@@ -363,17 +363,14 @@ class Admincontroller extends Controller
                 $vendor_balance = Balance::where('vendor_id','=',$item_vendor_id)->get()[0];
                 $vendor_balance->total_sales += $item_total;
                 $vendor_balance->save();
-                echo($vendor_balance);
+
                 $admin =  Auth::user();
                 $admin_info = Admin::where('user_id','=',$admin->id)->get()[0];
                 $admin_info->total_balance += $item_total;
-                $admin->save();
+                $admin_info->save();
             }
         }
 
-        
-        
-        echo($admin_info);
         return response()->json([
             'message' => 'order approved',
             'order' => $order
