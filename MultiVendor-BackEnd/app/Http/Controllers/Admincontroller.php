@@ -208,4 +208,13 @@ class Admincontroller extends Controller
             'product' => $product
         ], 201);
     }
+
+    public function deleteProduct(Request $request){
+        $product_id = $request->product_id;
+        Product::where('id','=',$product_id)->first()->delete();
+
+        return response()->json([
+            'message' => 'Product deleted'
+        ], 201);
+    }
 }

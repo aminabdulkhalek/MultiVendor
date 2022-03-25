@@ -49,6 +49,7 @@ Route::group(['middleware' => ['auth:api']], function () {
             Route::get('/nb-products', [Admincontroller::class, 'totalProducts'])->name("nb-products");
             Route::post('/approve-product', [Admincontroller::class, 'approveProduct'])->name("approve-product");
             Route::post('/disapprove-product', [Admincontroller::class, 'disapproveProduct'])->name("disapprove-product");
+            Route::post('/delete-product', [Admincontroller::class, 'deleteProduct'])->name("delete-product");
 
         });
     });
