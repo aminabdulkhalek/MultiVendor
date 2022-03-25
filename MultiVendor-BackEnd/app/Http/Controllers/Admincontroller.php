@@ -261,5 +261,13 @@ class Admincontroller extends Controller
             'vendor' => $vendor
         ], 201);
     }
+
+    public function getBalances(){
+        $balances = Balance::get();
+
+        return response()->json([
+            'Balances' => $balances
+        ], 201);
+    }
 }
 
