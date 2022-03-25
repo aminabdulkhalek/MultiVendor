@@ -376,5 +376,17 @@ class Admincontroller extends Controller
             'order' => $order
         ], 201);
     }
+
+    public function DisapproveOrder(Request $request){
+        $order_id = $request->order_id;
+        $order = Order::where('id','=',$order_id)->get()->first();
+        $order->status  = 0;
+
+        $order ->save();
+        return response()->json([
+            'message' => 'order disapproved',
+            'order' => $order
+        ], 201);
+    }
 }
 
