@@ -290,5 +290,28 @@ class Admincontroller extends Controller
             'Reviews'=> $reviews
         ], 201);
     }
+
+    public function showReview(Request $request){
+        $review_id = $request->review_id;
+        $review = review::where('id','=',$review_id)->get()->first();
+        $review->review_status  = 1;
+        $review ->save();
+
+        return response()->json([
+            'message' => "Review is now public",
+            'review' => $review
+        ], 201);
+    }
+    public function hideReview(Request $request){
+        $review_id = $request->review_id;
+        $review = review::where('id','=',$review_id)->get()->first();
+        $review->review_status  = 0;
+        $review ->save();
+
+        return response()->json([
+            'message' => "Review is hidden",
+            'review' => $review
+        ], 201);
+    }
 }
 
