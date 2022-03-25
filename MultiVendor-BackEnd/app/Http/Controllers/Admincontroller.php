@@ -12,6 +12,7 @@ use App\Models\Product;
 use Carbon\Carbon;
 use App\Models\Featured;
 use App\Models\Balance;
+use App\Models\Vendor;
 
 class Admincontroller extends Controller
 {
@@ -215,6 +216,13 @@ class Admincontroller extends Controller
 
         return response()->json([
             'message' => 'Product deleted'
+        ], 201);
+    }
+
+    public function getVendors(){
+        $vendor = Vendor::get();
+        return  response()->json([
+            'Vendors'=>$vendor
         ], 201);
     }
 }
