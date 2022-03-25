@@ -196,4 +196,16 @@ class Admincontroller extends Controller
             'product' => $product
         ], 201);
     }
+
+    public function disapproveProduct(Request $request){
+        $product_id = $request->product_id;
+        $product = Product::where('id','=',$product_id)->get()->first();
+        $product->status  = 2;
+        $product ->save();
+
+        return response()->json([
+            'message' => 'Product Disapproved',
+            'product' => $product
+        ], 201);
+    }
 }
