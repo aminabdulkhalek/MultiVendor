@@ -16,7 +16,7 @@ class CreateBalancesTable extends Migration
         Schema::create('balances', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('vendor_id')->unsigned()->index();
-            $table->foreign('vendor_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('vendor_id')->references('id')->on('vendors')->onDelete('cascade');
             $table->bigInteger('total_sales')->unsigned()->default(0);
             $table->bigInteger('received_ammount')->unsigned()->default(0);
             $table->bigInteger('remaining_ammount')->unsigned()->default(0);

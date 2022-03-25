@@ -14,6 +14,8 @@ use App\Models\Featured;
 use App\Models\Balance;
 use App\Models\Vendor;
 use App\Models\Review;
+use App\Models\OrderItem;
+
 
 class Admincontroller extends Controller
 {
@@ -341,6 +343,40 @@ class Admincontroller extends Controller
             "Orders" => $result,
 
 
+        ], 201);
+    }
+
+    public function approveOrder(Request $request){
+        $order_id = $request->order_id;
+        $order = Order::where('id','=',$order_id)->get()->first();
+        $order->status  = 1;
+        $order ->save();
+        $order_items =OrderItem::where('order_id','=',$order_id)->get();
+
+        for ($i=0; $i < count($order_items); $i++) { 
+            foreach($order_items as $order_item){
+                $item_price = product::where('id','=',$order_item->product_id)->get('price')[0]->price; 
+                $item_quantity = $order_items[$i]->quanitiy;
+                $item_total = $item_price*$item_quantity;
+                $item_vendor_id = product::where('id','=',$order_item->product_id)->get('vendor_id')[0]->vendor_id;
+
+                $vendor_balance = Balance::where('vendor_id','=',$item_vendor_id)->get()[0];
+                $vendor_balance->total_sales += $item_total;
+                $vendor_balance->save();
+                echo($vendor_balance);
+                $admin =  Auth::user();
+                $admin_info = Admin::where('user_id','=',$admin->id)->get()[0];
+                $admin_info->total_balance += $item_total;
+                $admin->save();
+            }
+        }
+
+        
+        
+        echo($admin_info);
+        return response()->json([
+            'message' => 'order approved',
+            'order' => $order
         ], 201);
     }
 }
