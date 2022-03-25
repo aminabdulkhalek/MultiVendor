@@ -13,6 +13,7 @@ use Carbon\Carbon;
 use App\Models\Featured;
 use App\Models\Balance;
 use App\Models\Vendor;
+use App\Models\Review;
 
 class Admincontroller extends Controller
 {
@@ -279,6 +280,14 @@ class Admincontroller extends Controller
         return response()->json([
             'message' => "commisssion rate updated",
             'vendor' => $vendor
+        ], 201);
+    }
+
+    public function getReviews(){
+        $reviews = Review::get();
+
+        return response()->json([
+            'Reviews'=> $reviews
         ], 201);
     }
 }

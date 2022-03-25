@@ -56,6 +56,7 @@ Route::group(['middleware' => ['auth:api']], function () {
             Route::post('/pending-vendor', [Admincontroller::class, 'pendingVendor'])->name("pending-vendor");
             Route::get('/balances', [Admincontroller::class, 'getBalances'])->name("balances");
             Route::post('/update-commission', [Admincontroller::class, 'updateCommission'])->name("update-com");
+            Route::get('/reviews', [Admincontroller::class, 'getReviews'])->name("reviews");
         });
     });
 
