@@ -63,6 +63,7 @@ Route::group(['middleware' => ['auth:api']], function () {
             Route::get('/orders', [Admincontroller::class, 'getOrders'])->name("orders");
             Route::post('/approve-order', [Admincontroller::class, 'approveOrder'])->name("approve-order");
             Route::post('/disapprove-order', [Admincontroller::class, 'disapproveOrder'])->name("disapprove-order");
+            Route::post('/delete-order', [Admincontroller::class, 'deleteOrder'])->name("delete-order");
 
 
         });

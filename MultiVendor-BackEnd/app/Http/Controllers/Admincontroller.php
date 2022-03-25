@@ -388,5 +388,14 @@ class Admincontroller extends Controller
             'order' => $order
         ], 201);
     }
+
+    public function deleteOrder(Request $request){
+        $order_id = $request->order_id;
+        Order::where('id','=',$order_id)->first()->delete();
+
+        return response()->json([
+            'message' => 'Order deleted'
+        ], 201);
+    }
 }
 
