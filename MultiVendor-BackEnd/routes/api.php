@@ -46,6 +46,7 @@ Route::group(['middleware' => ['auth:api']], function () {
             Route::post('/new-featured', [Admincontroller::class, 'newFeatured'])->name("new-featured");
             Route::get('/total-sales', [Admincontroller::class, 'totalSales'])->name("total-sales");
             Route::get('/total-income', [Admincontroller::class, 'totalIncome'])->name("total-income");
+            Route::get('/nb-products', [Admincontroller::class, 'totalProducts'])->name("nb-products");
         });
     });
 

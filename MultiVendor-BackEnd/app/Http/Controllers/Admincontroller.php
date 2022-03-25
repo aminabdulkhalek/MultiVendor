@@ -176,4 +176,12 @@ class Admincontroller extends Controller
             'total income' => $admin_info->income
         ], 201);
     }
+
+    public function totalProducts(){
+        $total_nb_products = count(Product::get());
+
+        return response()->json([
+            "total number of products" => $total_nb_products
+        ], 201);
+    }
 }
