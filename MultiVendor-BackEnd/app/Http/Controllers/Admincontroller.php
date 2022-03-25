@@ -225,4 +225,41 @@ class Admincontroller extends Controller
             'Vendors'=>$vendor
         ], 201);
     }
+
+    public function pendingVendor(Request $request){
+        $vendor_id = $request->vendor_id;
+        $vendor = Vendor::where('id','=',$vendor_id)->get()->first();
+        $vendor->status  = 0;
+        $vendor ->save();
+
+        return response()->json([
+            'message' => 'vendor status is Pending',
+            'vendor' => $vendor
+        ], 201);
+    }
+
+    public function approveVendor(Request $request){
+        $vendor_id = $request->vendor_id;
+        $vendor = Vendor::where('id','=',$vendor_id)->get()->first();
+        $vendor->status  = 1;
+        $vendor ->save();
+
+        return response()->json([
+            'message' => 'vendor approved',
+            'vendor' => $vendor
+        ], 201);
+    }
+
+    public function disapprovevendor(Request $request){
+        $vendor_id = $request->vendor_id;
+        $vendor = vendor::where('id','=',$vendor_id)->get()->first();
+        $vendor->status  = 2;
+        $vendor ->save();
+
+        return response()->json([
+            'message' => 'vendor Disapproved',
+            'vendor' => $vendor
+        ], 201);
+    }
 }
+
