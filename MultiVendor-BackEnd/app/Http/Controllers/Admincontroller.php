@@ -181,11 +181,11 @@ class Admincontroller extends Controller
         ], 201);
     }
 
-    public function totalProducts(){
-        $total_nb_products = count(Product::get());
+    public function products(){
+        $products = Product::get();
 
         return response()->json([
-            "total number of products" => $total_nb_products
+            "products" => $products
         ], 201);
     }
 

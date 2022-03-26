@@ -46,7 +46,7 @@ Route::group(['middleware' => ['auth:api']], function () {
             Route::post('/new-featured', [AdminController::class, 'newFeatured'])->name("new-featured");
             Route::get('/total-sales', [AdminController::class, 'totalSales'])->name("total-sales");
             Route::get('/total-income', [AdminController::class, 'totalIncome'])->name("total-income");
-            Route::get('/nb-products', [AdminController::class, 'totalProducts'])->name("nb-products");
+            Route::get('/products', [AdminController::class, 'products'])->name("products");
             Route::post('/approve-product', [AdminController::class, 'approveProduct'])->name("approve-product");
             Route::post('/disapprove-product', [AdminController::class, 'disapproveProduct'])->name("disapprove-product");
             Route::post('/delete-product', [AdminController::class, 'deleteProduct'])->name("delete-product");
