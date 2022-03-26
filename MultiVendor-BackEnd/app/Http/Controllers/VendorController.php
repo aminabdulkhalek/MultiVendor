@@ -15,6 +15,7 @@ use App\Models\Balance;
 use App\Models\Vendor;
 use App\Models\Review;
 use App\Models\OrderItem;
+use App\Models\Category;
 use Validator;
 
 class VendorController extends Controller
@@ -286,6 +287,14 @@ class VendorController extends Controller
             'message'=> 'product successfuly created',
             'product'=> $product    
         ], 201);
+    }
+
+    public function getCategories(){
+        $categories = Category::get();
+
+        return response()->json([
+            'categories'=>$categories
+        ], 200);
     }
 }
     
