@@ -353,11 +353,19 @@ class Admincontroller extends Controller
         $order ->save();
         $order_items =OrderItem::where('order_id','=',$order_id)->get();
 
-        for ($i=0; $i < count($order_items); $i++) { 
+        // for ($i=0; $i < count($order_items); $i++) { 
             foreach($order_items as $order_item){
                 $item_price = product::where('id','=',$order_item->product_id)->get('price')[0]->price; 
-                $item_quantity = $order_items[$i]->quanitiy;
+                $item = product::where('id','=',$order_item->product_id)->get()[0];
+                
+                $item_quantity = $order_item->quanitiy;
+                if ($item_quantity > $item->stock) {
+                    return response()->json([
+                        'error' => 'order quantity excceeds available stock'
+                    ], 406);
+                }
                 $item_total = $item_price*$item_quantity;
+                // echo($item_total);
                 $item_vendor_id = product::where('id','=',$order_item->product_id)->get('vendor_id')[0]->vendor_id;
                 $vendor_commission_rate = Vendor::where('id','=',$item_vendor_id)->get()->first()->commission_rate;
 
@@ -371,12 +379,12 @@ class Admincontroller extends Controller
                 $admin_info->total_balance += $item_total;
                 $admin_info->save();
 
-                $item = product::where('id','=',$order_item->product_id)->get()[0];
+                
                 $item->stock -= $item_quantity;
                 $item->sales += $item_quantity;
                 $item->save();
             }
-        }
+        // }
 
         return response()->json([
             'message' => 'order approved',
@@ -411,12 +419,12 @@ class Admincontroller extends Controller
         $vendor_commission_rate = Vendor::where('id','=',$request->vendor_id)->get()->first()->commission_rate;
         if ($vendor_balance->remaining_ammount == 0 ) {
             return response()->json([
-                'message'=> 'vendor received all his payments'
+                'error'=> 'vendor received all his payments'
             ], 405);
         }
-        elseif($request->amount > $vendor_balance->total_sales){
+        elseif($request->amount > ($vendor_balance->remaining_ammount)/($vendor_commission_rate/100)){
             return response()->json([
-                'message'=> 'amount to be paid exceds sales made by this vendor'
+                'error'=> 'amount to be paid excceeds sales made by this vendor'
             ], 406);
         }
         $vendor_balance->received_ammount += ($request->amount - $request->amount*($vendor_commission_rate/100));
