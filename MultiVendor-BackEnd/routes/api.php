@@ -80,6 +80,7 @@ Route::group(['middleware' => ['auth:api']], function () {
             Route::get('/nb-orders', [VendorController::class, 'getNBOrders'])->name("nb-orders");
             Route::get('/nb-products', [VendorController::class, 'numberOfProducts'])->name("nb-products");
             Route::get('/top-selling', [VendorController::class, 'topSelling'])->name("top-selling");
+            Route::get('/nb-customers', [VendorController::class, 'nbCustomers'])->name("nb-customers");
         });
     });
 
