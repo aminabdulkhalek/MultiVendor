@@ -219,5 +219,16 @@ class VendorController extends Controller
             'recent orders' => array_slice($vendor_orders,0,3)
         ], 200);
     }
+
+    public function totalsales(){
+        $vendor =  Auth::user();
+        $vendor_info = Vendor::where('user_id','=',$vendor->id)->get()->first();
+        $vendor_balance = Balance::where("vendor_id",'=',$vendor_info->id)->get()->first();
+        $total_sales = $vendor_balance->total_sales;
+
+        return response()->json([
+            'total Sales' => $total_sales
+        ], 200);
+    }
 }
     
