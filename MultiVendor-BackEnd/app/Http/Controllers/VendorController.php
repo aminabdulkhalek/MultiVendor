@@ -192,5 +192,15 @@ class VendorController extends Controller
             'Reviews'=> count($reviews)
         ], 200);
     }
+    public function recentReviews(){
+        $vendor =  Auth::user();
+        $vendor_info = Vendor::where('user_id','=',$vendor->id)->get()->first();
+        $products_ids = Product::where('vendor_id','=',$vendor_info->id)->get('id');
+        $reviews  = Review::whereIn('product_id',$products_ids)->take(3)->get();
+
+        return response()->json([
+            'Reviews'=> $reviews
+        ], 200);
+    }
 }
     
