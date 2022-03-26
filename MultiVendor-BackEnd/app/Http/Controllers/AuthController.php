@@ -7,6 +7,7 @@ use App\Models\Admin;
 use App\Models\Customer;
 use App\Models\Vendor;
 use App\Models\Balance;
+use App\Models\Cart;
 use Validator;
 
 class AuthController extends Controller
@@ -88,8 +89,13 @@ class AuthController extends Controller
             $customer -> user_id = $user->id;
             $customer -> country = $request->country;
             $customer -> state = $request->state;
+            $customer -> gender = $request->gender;
             $customer -> dat_of_birth = $request->date_of_birth;
             $customer ->save();
+
+            $cart = new Cart;
+            $cart->customer_id = $customer->id;
+            $cart->save();
 
             return response()->json([
                 'message' => 'Customer successfully registered',
