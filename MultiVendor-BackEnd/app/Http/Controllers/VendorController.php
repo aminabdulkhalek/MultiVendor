@@ -182,4 +182,15 @@ class VendorController extends Controller
         ], 200);
         
     }
+    public function nbReviews(){
+        $vendor =  Auth::user();
+        $vendor_info = Vendor::where('user_id','=',$vendor->id)->get()->first();
+        $products_ids = Product::where('vendor_id','=',$vendor_info->id)->get('id');
+        $reviews  = Review::whereIn('product_id',$products_ids)->get();
+
+        return response()->json([
+            'Reviews'=> count($reviews)
+        ], 200);
+    }
 }
+    

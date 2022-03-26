@@ -83,6 +83,7 @@ Route::group(['middleware' => ['auth:api']], function () {
             Route::get('/nb-customers', [VendorController::class, 'nbCustomers'])->name("nb-customers");
             Route::get('/this-month-customers', [VendorController::class, 'thisMonthCustomers'])->name("this-month-customers");
             Route::get('/last-month-customers', [VendorController::class, 'lastMonthCustomers'])->name("this-month-customers");
+            Route::get('/nb-reviews', [VendorController::class, 'nbReviews'])->name("nb-reviews");
         });
     });
 
