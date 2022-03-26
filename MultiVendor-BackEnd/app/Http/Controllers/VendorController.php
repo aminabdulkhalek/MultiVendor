@@ -240,5 +240,14 @@ class VendorController extends Controller
             'total payout' => $total_payout
         ], 200);
     }
+    public function getProducts(){
+        $vendor =  Auth::user();
+        $vendor_info = Vendor::where('user_id','=',$vendor->id)->get()->first();
+        $vendor_products = Product::where('vendor_id','=',$vendor_info->id)->get();
+
+        return response()->json([
+            'products' => $vendor_products
+        ], 200);
+    }
 }
     
