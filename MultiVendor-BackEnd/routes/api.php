@@ -74,7 +74,7 @@ Route::group(['middleware' => ['auth:api']], function () {
     Route::group(['middleware' => ['role.vednor']], function () {
         Route::group(['prefix' => 'vendor'], function () {
             Route::get('/profile', [UserController::class, 'vendorProfile'])->name("vendor-profile");
-
+            Route::get('/nb-pending-orders', [VendorController::class, 'getNBPendingOrders'])->name("nb-pendning-orders");
         });
     });
 
