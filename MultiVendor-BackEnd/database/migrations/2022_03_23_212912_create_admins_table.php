@@ -17,8 +17,8 @@ class CreateAdminsTable extends Migration
             $table->id();
             $table->bigInteger('user_id')->unsigned()->index();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->bigInteger('total_balance')->unsigned()->default(0);
-            $table->bigInteger('income')->unsigned()->default(0);
+            $table->float('total_balance')->unsigned()->default(0);
+            $table->float('income')->unsigned()->default(0);
             $table->timestamps();
         });
     }
