@@ -27,4 +27,13 @@ class UserController extends Controller
         $user = Auth::user();
         return response()->json($user);
     }
+
+    public function getName(Request $request){
+        $user = User::where('id','=',$request->id)->get()->first();
+        $user_name = $user->name;
+
+        return response()->json([
+            'Name' => $user_name
+        ], 200);
+    }
 }

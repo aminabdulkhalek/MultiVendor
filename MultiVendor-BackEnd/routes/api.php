@@ -24,6 +24,7 @@ Route::group(['middleware' => ['auth:api']], function () {
 
     Route::group(['prefix' => 'user'], function () {
         Route::get('/profile', [UserController::class, 'userProfile'])->name("user-profile");
+        Route::post('/name', [UserController::class, 'getName'])->name("Name");
     });
 
 
@@ -65,7 +66,6 @@ Route::group(['middleware' => ['auth:api']], function () {
             Route::post('/disapprove-order', [AdminController::class, 'disapproveOrder'])->name("disapprove-order");
             Route::post('/delete-order', [AdminController::class, 'deleteOrder'])->name("delete-order");
             Route::post('/make-transaction', [AdminController::class, 'makeTransaction'])->name("make-transaction");
-
 
         });
     });
