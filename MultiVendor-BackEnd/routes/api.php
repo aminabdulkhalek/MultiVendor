@@ -78,7 +78,7 @@ Route::group(['middleware' => ['auth:api']], function () {
             Route::get('/nb-approved-orders', [VendorController::class, 'getNBApprovedOrders'])->name("nb-approved-orders");
             Route::get('/nb-disapproved-orders', [VendorController::class, 'getNBDisapprovedOrders'])->name("nb-disapproved-orders");
             Route::get('/nb-orders', [VendorController::class, 'getNBOrders'])->name("nb-orders");
-            Route::get('/nb-products', [VendorController::class, 'numberOfProducts'])->name("nb-products");
+            Route::get('/nb-products', [VendorController::class, 'getNBProducts'])->name("nb-products");
             Route::get('/top-selling', [VendorController::class, 'topSelling'])->name("top-selling");
             Route::get('/nb-customers', [VendorController::class, 'nbCustomers'])->name("nb-customers");
             Route::get('/this-month-customers', [VendorController::class, 'thisMonthCustomers'])->name("this-month-customers");

@@ -100,6 +100,15 @@ class VendorController extends Controller
             'Nb of orders' => count($vendor_orders)
         ], 200);
     }
+    public function getNBProducts(){
+        $vendor =  Auth::user();
+        $vendor_info = Vendor::where('user_id','=',$vendor->id)->get()->first();
+        $vendor_products = Product::where('vendor_id','=',$vendor_info->id)->get();
+
+        return response()->json([
+            'products' => count($vendor_products)
+        ], 200);
+    }
     public function topSelling(){
         $user = Auth::user();
         $vendor = Vendor::where('user_id','=',$user->id)->get()->first();
