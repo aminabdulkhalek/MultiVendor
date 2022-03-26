@@ -360,5 +360,27 @@ class VendorController extends Controller
             'orders' => $vendor_orders
         ], 200);
     }
+    public function getCustomers(){
+        $vendor =  Auth::user();
+        $vendor_info = Vendor::where('user_id','=',$vendor->id)->get()->first();
+        
+        $order_items = OrderItem::get();
+        
+        $customers_ids = [];
+        foreach($order_items as $order_item){
+            $product = Product::where('id','=',$order_item->product_id)->get()->first();
+            $product_owner = Vendor::where('id','=',$product->vendor_id)->get()->first();
+            if ($product_owner->id == $vendor_info->id) {
+               $order = Order::where('id','=',$order_item->order_id)->get()->first();
+               $customer = Customer::where('id','=',$order->customer_id)->get()->first();
+               array_push($customers_ids, $customer->id);
+            }
+        }
+        $customers = Customer::whereIn('id',$customers_ids)->get();
+        return response()->json([
+            'customers' => $customers
+        ], 200);
+        
+    }
 }
     
