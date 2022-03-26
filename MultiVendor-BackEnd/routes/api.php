@@ -92,6 +92,7 @@ Route::group(['middleware' => ['auth:api']], function () {
             Route::get('/categories', [VendorController::class, 'getCategories'])->name("categories");
             Route::post('/new-product', [VendorController::class, 'newProduct'])->name("new-product");
             Route::post('/update-product', [VendorController::class, 'updateProduct'])->name("update-product");
+            Route::get('/orders', [VendorController::class, 'getOrders'])->name("orders");
 
         });
     });
