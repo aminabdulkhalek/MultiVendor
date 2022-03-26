@@ -39,4 +39,46 @@ class VendorController extends Controller
             'Nb of pending orders' => count($vendor_orders)
         ], 200);
     }
+    public function getNBApprovedOrders(){
+        $vendor =  Auth::user();
+        $vendor_info = Vendor::where('user_id','=',$vendor->id)->get()->first();
+        $pending_orders = Order::where('status','=',1)->get();
+        $pending_ids = [];
+        foreach($pending_orders as $pending_order){
+            array_push($pending_ids,$pending_order->id);
+        }
+        $order_items = OrderItem::whereIn('order_id',$pending_ids)->get();
+        $vendor_orders = [];
+        foreach($order_items as $order_item){
+            $product = Product::where('id','=',$order_item->product_id)->get()->first();
+            $product_owner = Vendor::where('id','=',$product->vendor_id)->get()->first();
+            if ($product_owner->id == $vendor_info->id) {
+                array_push($vendor_orders, $order_item);
+            }
+        }
+        return response()->json([
+            'Nb of approved orders' => count($vendor_orders)
+        ], 200);
+    }
+    public function getNBdisapprovedOrders(){
+        $vendor =  Auth::user();
+        $vendor_info = Vendor::where('user_id','=',$vendor->id)->get()->first();
+        $pending_orders = Order::where('status','=',2)->get();
+        $pending_ids = [];
+        foreach($pending_orders as $pending_order){
+            array_push($pending_ids,$pending_order->id);
+        }
+        $order_items = OrderItem::whereIn('order_id',$pending_ids)->get();
+        $vendor_orders = [];
+        foreach($order_items as $order_item){
+            $product = Product::where('id','=',$order_item->product_id)->get()->first();
+            $product_owner = Vendor::where('id','=',$product->vendor_id)->get()->first();
+            if ($product_owner->id == $vendor_info->id) {
+                array_push($vendor_orders, $order_item);
+            }
+        }
+        return response()->json([
+            'Nb of disapproved orders' => count($vendor_orders)
+        ], 200);
+    }
 }

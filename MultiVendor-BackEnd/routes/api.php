@@ -75,6 +75,8 @@ Route::group(['middleware' => ['auth:api']], function () {
         Route::group(['prefix' => 'vendor'], function () {
             Route::get('/profile', [UserController::class, 'vendorProfile'])->name("vendor-profile");
             Route::get('/nb-pending-orders', [VendorController::class, 'getNBPendingOrders'])->name("nb-pendning-orders");
+            Route::get('/nb-approved-orders', [VendorController::class, 'getNBApprovedOrders'])->name("nb-approved-orders");
+            Route::get('/nb-disapproved-orders', [VendorController::class, 'getNBDisapprovedOrders'])->name("nb-disapproved-orders");
         });
     });
 
