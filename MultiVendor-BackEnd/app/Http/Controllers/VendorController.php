@@ -86,7 +86,7 @@ class VendorController extends Controller
     public function getNBOrders(){
         $vendor =  Auth::user();
         $vendor_info = Vendor::where('user_id','=',$vendor->id)->get()->first();
-        
+
         $order_items = OrderItem::get();
         $vendor_orders = [];
         foreach($order_items as $order_item){
@@ -120,9 +120,9 @@ class VendorController extends Controller
     public function nbCustomers(){
         $vendor =  Auth::user();
         $vendor_info = Vendor::where('user_id','=',$vendor->id)->get()->first();
-        
+
         $order_items = OrderItem::get();
-        
+
         $customers_ids = [];
         foreach($order_items as $order_item){
             $product = Product::where('id','=',$order_item->product_id)->get()->first();
@@ -137,15 +137,15 @@ class VendorController extends Controller
         return response()->json([
             'Nb of customers' => count($customers)
         ], 200);
-        
+
     }
 
     public function thisMonthCustomers(){
         $vendor =  Auth::user();
         $vendor_info = Vendor::where('user_id','=',$vendor->id)->get()->first();
-        
+
         $order_items = OrderItem::get();
-        
+
         $customers_ids = [];
         foreach($order_items as $order_item){
             $product = Product::where('id','=',$order_item->product_id)->get()->first();
@@ -159,20 +159,20 @@ class VendorController extends Controller
         $now = Carbon::now();
         $month = $now->format('m');
         $customers = Customer::whereIn('id',$customers_ids)->whereMonth('created_at',$month)->get();
-        
+
 
         return response()->json([
             'This Month customers' => count($customers)
         ], 200);
-        
+
     }
 
     public function lastMonthCustomers(){
         $vendor =  Auth::user();
         $vendor_info = Vendor::where('user_id','=',$vendor->id)->get()->first();
-        
+
         $order_items = OrderItem::get();
-        
+
         $customers_ids = [];
         foreach($order_items as $order_item){
             $product = Product::where('id','=',$order_item->product_id)->get()->first();
@@ -186,12 +186,12 @@ class VendorController extends Controller
         $now = Carbon::now();
         $month = $now->subMonth()->month;
         $customers = Customer::whereIn('id',$customers_ids)->whereMonth('created_at',$month)->get();
-        
+
 
         return response()->json([
             'Last Month customers' => count($customers)
         ], 200);
-        
+
     }
     public function nbReviews(){
         $vendor =  Auth::user();
@@ -216,7 +216,7 @@ class VendorController extends Controller
     public function recentOrders(){
         $vendor =  Auth::user();
         $vendor_info = Vendor::where('user_id','=',$vendor->id)->get()->first();
-        
+
         $order_items = OrderItem::get();
         $vendor_orders = [];
         foreach($order_items as $order_item){
@@ -294,7 +294,7 @@ class VendorController extends Controller
 
         return response()->json([
             'message'=> 'product successfuly created',
-            'product'=> $product    
+            'product'=> $product
         ], 201);
     }
 
@@ -340,13 +340,13 @@ class VendorController extends Controller
 
         return response()->json([
             'message'=> 'product successfuly updated',
-            'product'=> $product    
+            'product'=> $product
         ], 201);
     }
     public function getOrders(){
         $vendor =  Auth::user();
         $vendor_info = Vendor::where('user_id','=',$vendor->id)->get()->first();
-        
+
         $order_items = OrderItem::get();
         $vendor_orders = [];
         foreach($order_items as $order_item){
@@ -363,9 +363,9 @@ class VendorController extends Controller
     public function getCustomers(){
         $vendor =  Auth::user();
         $vendor_info = Vendor::where('user_id','=',$vendor->id)->get()->first();
-        
+
         $order_items = OrderItem::get();
-        
+
         $customers_ids = [];
         foreach($order_items as $order_item){
             $product = Product::where('id','=',$order_item->product_id)->get()->first();
@@ -380,7 +380,7 @@ class VendorController extends Controller
         return response()->json([
             'customers' => $customers
         ], 200);
-        
+
     }
     public function getReviews(){
         $vendor =  Auth::user();
@@ -392,5 +392,31 @@ class VendorController extends Controller
             'Reviews'=> $reviews
         ], 200);
     }
+
+    public function updateProfile(Request $request){
+        $validator = Validator::make($request->all(), [
+            'first_name' => 'string',
+            'last_name' => 'string',
+            'address' => 'string',
+            'phone' => 'numeric',
+
+        ]);
+        if($validator->fails()){
+            return response()->json($validator->errors()->toJson(), 400);
+        }
+        $vendor =  Auth::user();
+        $vendor->name = $request->first_name.' '.$request->last_name;
+        $vendor->save();
+        $vendor_info = Vendor::where('user_id','=',$vendor->id)->get()->first();
+        $vendor_info->address = $request->address;
+        $vendor_info->phone = $request->phone;
+        $vendor_info->save();
+
+
+
+        return response()->json([
+            'message'=> 'profile successfuly updated',
+            'profile'=> $vendor_info
+        ], 200);
+    }
 }
-    
