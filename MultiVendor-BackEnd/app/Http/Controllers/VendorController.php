@@ -296,5 +296,43 @@ class VendorController extends Controller
             'categories'=>$categories
         ], 200);
     }
+
+    public function updateProduct(Request $request){
+        $validator = Validator::make($request->all(), [
+            'product_id' => 'required|numeric',
+            'product_name' => 'required|string',
+            'price' => 'required|numeric',
+            'stock' => 'required|integer|min:1',
+            'category_id'=>'required|integer',
+            'feature1' => 'required',
+            'feature2' => 'required',
+            'feature3' => 'required',
+            'desc1' => 'required',
+            'desc2' => 'required',
+        ]);
+        if($validator->fails()){
+            return response()->json($validator->errors()->toJson(), 400);
+        }
+        $vendor =  Auth::user();
+        $vendor_info = Vendor::where('user_id','=',$vendor->id)->get()->first();
+
+        $product = Product::where('id','=',$request->product_id)->get()->first();
+        $product->vendor_id = $vendor_info->id;
+        $product->product_name = $request->product_name;
+        $product->price = $request->price;
+        $product->stock = $request->stock;
+        $product->category_id = $request->category_id;
+        $product->feature1 = $request->feature1;
+        $product->feature2 = $request->feature2;
+        $product->feature3 = $request->feature3;
+        $product->desc1 = $request->desc1;
+        $product->desc2 = $request->desc2;
+        $product->save();
+
+        return response()->json([
+            'message'=> 'product successfuly updated',
+            'product'=> $product    
+        ], 201);
+    }
 }
     
