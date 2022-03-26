@@ -100,9 +100,10 @@ class VendorController extends Controller
     }
     public function numberOfProducts(){
         $user = Auth::user();
-        $vendor = Vendor::where('id','=',$user->id)->get()->first();
+        $vendor = Vendor::where('user_id','=',$user->id)->get()->first();
+        $vednor_products = Product::where('vendor_id','=',$vendor->id)->get();
         return response()->json([
-            'nb of Products' =>count( Product::get())
-        ], 201);
+            'nb of Products' =>count($vednor_products)
+        ], 200);
     }
 }
