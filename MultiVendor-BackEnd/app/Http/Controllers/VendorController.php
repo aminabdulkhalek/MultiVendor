@@ -15,6 +15,7 @@ use App\Models\Balance;
 use App\Models\Vendor;
 use App\Models\Review;
 use App\Models\OrderItem;
+use Validator;
 
 class VendorController extends Controller
 {
@@ -248,6 +249,43 @@ class VendorController extends Controller
         return response()->json([
             'products' => $vendor_products
         ], 200);
+    }
+
+    public function newProduct(Request $request){
+        $validator = Validator::make($request->all(), [
+            'product_name' => 'required|string',
+            'price' => 'required|numeric',
+            'stock' => 'required|integer|min:1',
+            'category_id'=>'required|integer',
+            'feature1' => 'required',
+            'feature2' => 'required',
+            'feature3' => 'required',
+            'desc1' => 'required',
+            'desc2' => 'required',
+        ]);
+        if($validator->fails()){
+            return response()->json($validator->errors()->toJson(), 400);
+        }
+        $vendor =  Auth::user();
+        $vendor_info = Vendor::where('user_id','=',$vendor->id)->get()->first();
+
+        $product = new Product;
+        $product->vendor_id = $vendor_info->id;
+        $product->product_name = $request->product_name;
+        $product->price = $request->price;
+        $product->stock = $request->stock;
+        $product->category_id = $request->category_id;
+        $product->feature1 = $request->feature1;
+        $product->feature2 = $request->feature2;
+        $product->feature3 = $request->feature3;
+        $product->desc1 = $request->desc1;
+        $product->desc2 = $request->desc2;
+        $product->save();
+
+        return response()->json([
+            'message'=> 'product successfuly created',
+            'product'=> $product    
+        ], 201);
     }
 }
     

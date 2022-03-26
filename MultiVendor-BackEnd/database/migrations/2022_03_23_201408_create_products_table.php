@@ -22,7 +22,7 @@ class CreateProductsTable extends Migration
             $table->string('product_name', 255);
             $table->float('price')->unsigned();
             $table->bigInteger('stock')->unsigned();
-            $table->tinyInteger('status');
+            $table->tinyInteger('status')->default(0);
             $table->bigInteger('sales')->default(0);
             $table->string('type', 255)->default('simple');
             $table->text('feature1')->nullable();
