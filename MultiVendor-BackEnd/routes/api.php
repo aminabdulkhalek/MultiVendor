@@ -25,6 +25,8 @@ Route::group(['middleware' => ['auth:api']], function () {
     Route::group(['prefix' => 'user'], function () {
         Route::get('/profile', [UserController::class, 'userProfile'])->name("user-profile");
         Route::post('/name', [UserController::class, 'getName'])->name("Name");
+        Route::post('/product', [UserController::class, 'getProduct'])->name("product");
+
     });
 
 
@@ -96,7 +98,6 @@ Route::group(['middleware' => ['auth:api']], function () {
             Route::get('/customers', [VendorController::class, 'getcustomers'])->name("customers");
             Route::get('/reviews', [VendorController::class, 'getReviews'])->name("reviews");
             Route::post('/update-profile', [VendorController::class, 'updateProfile'])->name("update-profile");
-
 
         });
     });

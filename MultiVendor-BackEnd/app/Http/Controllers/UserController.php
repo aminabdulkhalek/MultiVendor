@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Models\Product;
 
 class UserController extends Controller
 {
@@ -34,6 +35,14 @@ class UserController extends Controller
 
         return response()->json([
             'Name' => $user_name
+        ], 200);
+    }
+
+    public function getProduct(Request $request){
+        $product = Product::where('id','=',$request->product_id)->get()->first();
+
+        return response()->json([
+            'product' =>$product
         ], 200);
     }
 }
