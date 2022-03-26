@@ -98,12 +98,12 @@ class VendorController extends Controller
             'Nb of orders' => count($vendor_orders)
         ], 200);
     }
-    public function numberOfProducts(){
+    public function topSelling(){
         $user = Auth::user();
         $vendor = Vendor::where('user_id','=',$user->id)->get()->first();
-        $vednor_products = Product::where('vendor_id','=',$vendor->id)->get();
+        $vednor_products = Product::where('vendor_id','=',$vendor->id)->orderBy('sales', 'desc')->take(3)->get();
         return response()->json([
-            'nb of Products' =>count($vednor_products)
+            'top Selling products' =>$vednor_products
         ], 200);
     }
 }
