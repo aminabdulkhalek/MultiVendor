@@ -115,4 +115,12 @@ class CustomerController extends Controller
             'vendor' => $vendor
         ], 200);
     }
+
+    public function getVendorProducts(Request $request){
+        $vendor  = Vendor::where('id','=',$request->vendor_id)->get()->first();
+        $products = Product::where('vendor_id','=',$vendor->id)->get();
+        return response()->json([
+            'vendor products' => $products
+        ], 200);
+    }
 }
