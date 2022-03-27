@@ -108,6 +108,8 @@ Route::group(['middleware' => ['auth:api']], function () {
         Route::group(['prefix' => 'customer'], function () {
             Route::get('/profile', [UserController::class, 'customerProfile'])->name("customer-profile");
             Route::get('/featured', [CustomerController::class, 'getFeatured'])->name("featured");
+            Route::get('/featured-products', [CustomerController::class, 'featuredProducts'])->name("featured-products");
+
 
         });
     });

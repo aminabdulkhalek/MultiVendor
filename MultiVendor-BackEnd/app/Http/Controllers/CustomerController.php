@@ -22,4 +22,13 @@ class CustomerController extends Controller
             'vendor info' => $vendor
         ], 200);
     }
+
+    public function featuredProducts(){
+        $featured_user = Featured::get()->first();
+        $vendor_products = Product::where('vendor_id','=',$featured_user->vendor_id)->take(2)->get();
+
+        return response()->json([
+            'products' => $vendor_products
+        ], 200);
+    }
 }
