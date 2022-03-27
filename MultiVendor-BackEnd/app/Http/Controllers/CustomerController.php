@@ -73,4 +73,12 @@ class CustomerController extends Controller
             'message'=> 'products added to your Cart'
         ], 201);
     }
+
+    public function approvedVendors(){
+        $vendors = Vendor::where('status','=',1)->get();
+
+        return response()->json([
+            'approved vendors'=> $vendors   
+        ], 200);
+    }
 }
