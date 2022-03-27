@@ -14,6 +14,7 @@ use App\Models\Cart;
 use App\Models\CartItem;
 use App\Models\ProductFlag;
 use App\Models\VendorFlag;
+use App\Models\Review;
 
 class CustomerController extends Controller
 {
@@ -122,5 +123,20 @@ class CustomerController extends Controller
         return response()->json([
             'vendor products' => $products
         ], 200);
+    }
+
+    public function addReview(Request $request){
+        $user =  Auth::user();
+        $customer = Customer::where('user_id','=',$user->id)->get()->first();
+        $review = new Review;
+        $review->product_id = $request->product_id;
+        $review->customer_id = $customer->id;
+        $review->stars = $request->stars;
+        $review->review_comment = $request->review_comment;
+        $review->save();
+
+        return response()->json([
+            'message' => 'Review successfully added'
+        ], 201);
     }
 }
