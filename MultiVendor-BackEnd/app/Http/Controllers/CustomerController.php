@@ -16,6 +16,8 @@ use App\Models\ProductFlag;
 use App\Models\VendorFlag;
 use App\Models\Review;
 use App\Models\BillingInfo;
+use App\Models\Order;
+use App\Models\OrderItem;
 use Validator;
 
 class CustomerController extends Controller
@@ -263,6 +265,33 @@ class CustomerController extends Controller
         return response()->json([
             'message' => 'billing info added to ur order',
             'billing Info' => $billing_info
+        ], 201);
+    }
+
+    public function placeOrder(){
+        $user =  Auth::user();
+        $customer = Customer::where('user_id','=',$user->id)->get()->first();
+        $order  = new Order;
+        $order->customer_id = $customer->id;
+        $order->save();
+
+        $cart = Cart::where('customer_id','=',$customer->id)->get()->first();
+        $cart_items = CartItem::where('cart_id','=',$cart->id)->get();
+
+        foreach($cart_items as $cart_item){
+            $order_item = new OrderItem;
+            $order_item->order_id = $order->id;
+            $order_item->product_id = $cart_item->product_id;
+            $order_item->quantity = $cart_item->quantity;
+        }
+
+        $cart_items = CartItem::where('cart_id','=',$cart->id)->delete();
+
+        $cart->number_of_products = 0;
+        $cart->save();
+
+        return response()->json([
+            'message' => 'order placed and now waiting for aproval'
         ], 201);
     }
 }
