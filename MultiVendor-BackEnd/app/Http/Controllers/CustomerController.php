@@ -316,5 +316,18 @@ class CustomerController extends Controller
             'products' => $products
         ], 200);
     }
+
+    public function unflagProduct(Request $request){
+        $user =  Auth::user();
+        $customer = Customer::where('user_id','=',$user->id)->get()->first();
+
+        $flagged =  ProductFlag::where('customer_id','=',$customer->id)
+                                ->where('product_id','=',$request->product_id)
+                                ->delete();
+
+        return response()->json([
+            'message' => 'flag removed'
+        ], 201);
+    }
 }
 
