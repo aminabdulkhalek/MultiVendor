@@ -133,6 +133,7 @@ Route::group(['middleware' => ['auth:api']], function () {
             Route::post('/products-by-category', [CustomerController::class, 'productsByCategory'])->name("products-by-category");
             Route::post('/unflag-product', [CustomerController::class, 'unflagProduct'])->name("unflag-product");
             Route::post('/unflag-vendor', [CustomerController::class, 'unflagVendor'])->name("unflag-vendor");
+            Route::post('/remove-from-cart', [CustomerController::class, 'removeCartItem'])->name("remove-from-cart'");
         });
     });
 

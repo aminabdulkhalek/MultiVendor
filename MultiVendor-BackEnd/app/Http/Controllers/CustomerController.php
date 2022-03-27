@@ -342,5 +342,21 @@ class CustomerController extends Controller
             'message' => 'flag removed'
         ], 201);
     }
+    
+    public function removeCartItem(Request $request){
+        $user =  Auth::user();
+        $customer = Customer::where('user_id','=',$user->id)->get()->first();
+        $cart = Cart::where('customer_id','=',$customer->id)->get()->first();
+
+        $cart_item =  CartItem::where('cart_id','=',$cart->id)
+                                ->where('product_id','=',$request->product_id)
+                                ->delete();
+        $cart->number_of_product -= 1;
+        $cart->save();
+        
+        return response()->json([
+            'message' => 'item removed from your cart'
+        ], 201);
+    }
 }
 
