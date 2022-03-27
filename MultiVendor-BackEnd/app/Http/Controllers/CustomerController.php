@@ -154,7 +154,17 @@ class CustomerController extends Controller
         $wishlist_items = Wishlist::where('customer_id','=',$customer->id)->get('product_id');
 
         return response()->json([
-            'WishList' => $wishlist_items
+            'WishList items' => count($wishlist_items)
+        ], 200);
+    }
+    public function nbCartItems(){
+        $user =  Auth::user();
+        $customer = Customer::where('user_id','=',$user->id)->get()->first();
+        $cart = Cart::where('customer_id','=',$customer->id)->get()->first();
+        $cart_items = CartItem::where('cart_id','=',$cart->id)->get('product_id');
+
+        return response()->json([
+            'Cart items' => count($cart_items)
         ], 200);
     }
 }
