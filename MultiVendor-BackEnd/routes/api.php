@@ -117,7 +117,6 @@ Route::group(['middleware' => ['auth:api']], function () {
             Route::post('/flag-product', [CustomerController::class, 'flagProduct'])->name("flag-product");
             Route::post('/flag-vendor', [CustomerController::class, 'flagVendor'])->name("flag-vendor");
             Route::post('/get-vendor', [CustomerController::class, 'getVendor'])->name("get-vendor");
-            Route::post('/get-vendor-products', [CustomerController::class, 'getVendorProducts'])->name("get-vendor-products");
             Route::post('/add-review', [CustomerController::class, 'addReview'])->name("add-review");
             Route::post('/get-product-reviews', [CustomerController::class, 'getProductReviews'])->name("get-product-reviews");
             Route::get('/nb-wishlist', [CustomerController::class, 'nbWishlistItems'])->name("nb-wishlist");
@@ -126,6 +125,7 @@ Route::group(['middleware' => ['auth:api']], function () {
             Route::get('/cart-itmes', [CustomerController::class, 'getCartItems'])->name("cart-itmes");
             Route::get('/product-in-stock', [CustomerController::class, 'productsInStock'])->name("product-in-stock");
             Route::post('/get-product-owner', [CustomerController::class, 'getProductOwner'])->name("get-product-owner");
+            Route::post('/get-vendor-products', [CustomerController::class, 'getVendorProducts'])->name("get-vendor-products");
         });
     });
 

@@ -117,13 +117,6 @@ class CustomerController extends Controller
         ], 200);
     }
 
-    public function getVendorProducts(Request $request){
-        $vendor  = Vendor::where('id','=',$request->vendor_id)->get()->first();
-        $products = Product::where('vendor_id','=',$vendor->id)->get();
-        return response()->json([
-            'vendor products' => $products
-        ], 200);
-    }
 
     public function addReview(Request $request){
         $user =  Auth::user();
@@ -201,6 +194,15 @@ class CustomerController extends Controller
 
         return response()->json([
             'Vendor' => $product_owner
+        ], 200);
+    }
+    public function getVendorProducts(Request $request){
+        $products = Product::where('vendor_id','=',$request->vendor_id)
+                            ->where('status','=',1)
+                            ->get();
+
+        return response()->json([
+            "Vendor's Products" => $products
         ], 200);
     }
 }
