@@ -10,6 +10,8 @@ use App\Models\Featured;
 use App\Models\Vendor;
 use App\Models\WishList;
 use App\Models\Customer;
+use App\Models\Cart;
+use App\Models\CartItem;
 
 class CustomerController extends Controller
 {
@@ -52,6 +54,23 @@ class CustomerController extends Controller
 
         return response()->json([
             'message'=> 'products added to your wishlist'
+        ], 201);
+    }
+
+    public function addToCart(Request $request){
+        $user =  Auth::user();
+        $customer = Customer::where('user_id','=',$user->id)->get()->first();
+        $cart = Cart::where('customer_id','=',$customer->id)->get()->first();
+        $cart_item = new CartItem;
+        $cart_item->cart_id = $cart->id;
+        $cart_item->product_id = $request->product_id;
+        $cart_item->quantity = $request->quantity;
+        $cart_item->save();
+        $cart->number_of_products+=1;
+        $cart->save();
+
+        return response()->json([
+            'message'=> 'products added to your Cart'
         ], 201);
     }
 }

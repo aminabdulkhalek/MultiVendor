@@ -111,6 +111,7 @@ Route::group(['middleware' => ['auth:api']], function () {
             Route::get('/featured-products', [CustomerController::class, 'featuredProducts'])->name("featured-products");
             Route::get('/approved-products', [CustomerController::class, 'approvedProducts'])->name("approved-products");
             Route::post('/love-product', [CustomerController::class, 'loveProduct'])->name("love-product");
+            Route::post('/add-to-cart', [CustomerController::class, 'addToCart'])->name("add-to-cart");
 
         });
     });
