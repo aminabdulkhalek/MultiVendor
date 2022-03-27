@@ -108,4 +108,11 @@ class CustomerController extends Controller
             'message'=>'Vendor has been flagged'
         ], 201);
     }
+
+    public function getVendor(Request $request){
+        $vendor  = Vendor::where('id','=',$request->vendor_id)->get()->first();
+        return response()->json([
+            'vendor' => $vendor
+        ], 200);
+    }
 }

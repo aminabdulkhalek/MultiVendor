@@ -115,6 +115,7 @@ Route::group(['middleware' => ['auth:api']], function () {
             Route::get('/approved-vendors', [CustomerController::class, 'approvedVendors'])->name("approved-vendors");
             Route::post('/flag-product', [CustomerController::class, 'flagProduct'])->name("flag-product");
             Route::post('/flag-vendor', [CustomerController::class, 'flagVendor'])->name("flag-vendor");
+            Route::post('/get-vendor', [CustomerController::class, 'getVendor'])->name("get-vendor");
         });
     });
 
