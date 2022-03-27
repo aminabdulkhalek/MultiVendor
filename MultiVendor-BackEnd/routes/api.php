@@ -121,6 +121,7 @@ Route::group(['middleware' => ['auth:api']], function () {
             Route::post('/get-product-reviews', [CustomerController::class, 'getProductReviews'])->name("get-product-reviews");
             Route::get('/nb-wishlist', [CustomerController::class, 'nbWishlistItems'])->name("nb-wishlist");
             Route::get('/nb-cart-itmes', [CustomerController::class, 'nbCartItems'])->name("nb-cart-itmes");
+            Route::post('/product-by-type', [CustomerController::class, 'productByType'])->name("product-by-type");
         });
     });
 

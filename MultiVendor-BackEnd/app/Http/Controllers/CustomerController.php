@@ -167,4 +167,14 @@ class CustomerController extends Controller
             'Cart items' => count($cart_items)
         ], 200);
     }
+    public function productByType(Request $request){
+        $products = Product::where('status','=',1)
+                            ->where('type','=',$request->type)
+                            ->get();
+
+        return response()->json([
+            'products' => $products
+        ], 200);
+    }
 }
+
