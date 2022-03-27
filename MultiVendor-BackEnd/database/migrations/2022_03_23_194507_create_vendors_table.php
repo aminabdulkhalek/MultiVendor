@@ -18,6 +18,7 @@ class CreateVendorsTable extends Migration
             $table->bigInteger('user_id')->unsigned()->index();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->bigInteger('status')->unsigned()->default(0);
+            $table->bigInteger('flags')->unsigned()->default(0);
             $table->string('address')->nullable();
             $table->bigInteger('phone')->nullable()->unique();
             $table->string('logo')->nullable();
