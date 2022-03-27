@@ -307,5 +307,14 @@ class CustomerController extends Controller
             'message' => 'product removed form You wishlist'
         ], 201);
     }
+    public function productsByCategory(Request $request){
+        $products = Product::where('status','=',1)
+                            ->where('category_id','=',$request->category_id)
+                            ->get();
+
+        return response()->json([
+            'products' => $products
+        ], 200);
+    }
 }
 
