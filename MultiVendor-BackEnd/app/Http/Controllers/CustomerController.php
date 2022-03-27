@@ -329,5 +329,18 @@ class CustomerController extends Controller
             'message' => 'flag removed'
         ], 201);
     }
+
+    public function unflagVendor(Request $request){
+        $user =  Auth::user();
+        $customer = Customer::where('user_id','=',$user->id)->get()->first();
+
+        $flagged =  VendorFlag::where('customer_id','=',$customer->id)
+                                ->where('vendor_id','=',$request->vendor_id)
+                                ->delete();
+
+        return response()->json([
+            'message' => 'flag removed'
+        ], 201);
+    }
 }
 
