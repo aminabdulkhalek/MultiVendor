@@ -27,6 +27,7 @@ Route::group(['middleware' => ['auth:api']], function () {
         Route::get('/profile', [UserController::class, 'userProfile'])->name("user-profile");
         Route::post('/name', [UserController::class, 'getName'])->name("Name");
         Route::post('/product', [UserController::class, 'getProduct'])->name("product");
+        Route::get('/categories', [UserController::class, 'getCategories'])->name("categories");
 
     });
 
@@ -92,7 +93,7 @@ Route::group(['middleware' => ['auth:api']], function () {
             Route::get('/total-sales', [VendorController::class, 'totalSales'])->name("total-sales");
             Route::get('/total-payout', [VendorController::class, 'totalPayout'])->name("total-payout");
             Route::get('/products', [VendorController::class, 'getProducts'])->name("products");
-            Route::get('/categories', [VendorController::class, 'getCategories'])->name("categories");
+            
             Route::post('/new-product', [VendorController::class, 'newProduct'])->name("new-product");
             Route::post('/update-product', [VendorController::class, 'updateProduct'])->name("update-product");
             Route::get('/orders', [VendorController::class, 'getOrders'])->name("orders");

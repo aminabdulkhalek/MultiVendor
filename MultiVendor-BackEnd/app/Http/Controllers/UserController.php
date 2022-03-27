@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Product;
+use App\Models\Category;
 
 class UserController extends Controller
 {
@@ -43,6 +44,13 @@ class UserController extends Controller
 
         return response()->json([
             'product' =>$product
+        ], 200);
+    }
+    public function getCategories(){
+        $categories = Category::get();
+
+        return response()->json([
+            'categories'=>$categories
         ], 200);
     }
 }

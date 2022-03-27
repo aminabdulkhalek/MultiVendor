@@ -298,13 +298,7 @@ class VendorController extends Controller
         ], 201);
     }
 
-    public function getCategories(){
-        $categories = Category::get();
 
-        return response()->json([
-            'categories'=>$categories
-        ], 200);
-    }
 
     public function updateProduct(Request $request){
         $validator = Validator::make($request->all(), [
