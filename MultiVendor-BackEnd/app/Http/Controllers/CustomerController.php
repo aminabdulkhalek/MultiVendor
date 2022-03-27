@@ -195,5 +195,13 @@ class CustomerController extends Controller
             "products instock" => $products
         ], 200);
     }
+    public function getProductOwner(Request $request){
+        $product = product::where('id','=',$request->product_id)->get()->first();
+        $product_owner = Vendor::where('id','=',$product->vendor_id)->get()->first();
+
+        return response()->json([
+            'Vendor' => $product_owner
+        ], 200);
+    }
 }
 
