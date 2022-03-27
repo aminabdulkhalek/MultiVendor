@@ -31,4 +31,12 @@ class CustomerController extends Controller
             'products' => $vendor_products
         ], 200);
     }
+
+    public function approvedProducts(){
+        $products = Product::where('status','=',1)->get();
+
+        return response()->json([
+            "products" => $products
+        ], 200);
+    }
 }
