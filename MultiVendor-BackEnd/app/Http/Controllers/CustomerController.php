@@ -15,6 +15,8 @@ use App\Models\CartItem;
 use App\Models\ProductFlag;
 use App\Models\VendorFlag;
 use App\Models\Review;
+use App\Models\BillingInfo;
+use Validator;
 
 class CustomerController extends Controller
 {
@@ -222,6 +224,46 @@ class CustomerController extends Controller
             'message' => 'cart item successfuly updated',
             'cart item' => $cart_item
         ], 200);
+    }
+
+    public function addBillingInfo(Request $request){
+        
+        $validator = Validator::make($request->all(), [
+            'order_id' => 'required|numeric',
+            'country' => 'required|string',
+            'city' => 'required|string',
+            'state' => 'required|string',
+            'street_address'=>'required|string',
+            'state' => 'required|string',
+            'email' => 'required|email',
+            'zip_code' => 'required|integer|min:4',
+            'phone' => 'required|integer',
+            // 'notes' => 'required',
+        ]);
+        if($validator->fails()){
+            return response()->json($validator->errors()->toJson(), 400);
+        }
+        $user =  Auth::user();
+        $customer = Customer::where('user_id','=',$user->id)->get()->first();
+        $billing_info = new BillingInfo;
+
+        $billing_info->customer_id = $customer->id;
+        $billing_info->order_id = $request->order_id;
+        $billing_info->country = $request->country;
+        $billing_info->street_address = $request->street_address;
+        $billing_info->city = $request->city;
+        $billing_info->state = $request->state;
+        $billing_info->email = $request->email;
+        $billing_info->zip_code = $request->zip_code;
+        $billing_info->phone = $request->phone;
+        $billing_info->notes = $request->notes;
+
+        $billing_info->save();
+
+        return response()->json([
+            'message' => 'billing info added to ur order',
+            'billing Info' => $billing_info
+        ], 201);
     }
 }
 

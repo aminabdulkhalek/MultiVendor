@@ -127,6 +127,7 @@ Route::group(['middleware' => ['auth:api']], function () {
             Route::post('/get-product-owner', [CustomerController::class, 'getProductOwner'])->name("get-product-owner");
             Route::post('/get-vendor-products', [CustomerController::class, 'getVendorProducts'])->name("get-vendor-products");
             Route::post('/update-cart-item', [CustomerController::class, 'updateQuanitity'])->name("update-cart-item");
+            Route::post('/add-billing-info', [CustomerController::class, 'addBillingInfo'])->name("add-billing-info");
         });
     });
 

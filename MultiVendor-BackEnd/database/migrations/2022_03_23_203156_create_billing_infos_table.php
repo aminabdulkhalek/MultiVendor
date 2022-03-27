@@ -13,7 +13,7 @@ class CreateBillinginfoTable extends Migration
      */
     public function up()
     {
-        Schema::create('billinginfo', function (Blueprint $table) {
+        Schema::create('billing_infos', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('customer_id')->unsigned()->index();
             $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
@@ -38,6 +38,6 @@ class CreateBillinginfoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('billinginfo');
+        Schema::dropIfExists('billing_infos');
     }
 }
