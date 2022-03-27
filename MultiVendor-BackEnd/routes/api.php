@@ -118,6 +118,7 @@ Route::group(['middleware' => ['auth:api']], function () {
             Route::post('/get-vendor', [CustomerController::class, 'getVendor'])->name("get-vendor");
             Route::post('/get-vendor-products', [CustomerController::class, 'getVendorProducts'])->name("get-vendor-products");
             Route::post('/add-review', [CustomerController::class, 'addReview'])->name("add-review");
+            Route::post('/get-product-reviews', [CustomerController::class, 'getProductReviews'])->name("get-product-reviews");
         });
     });
 

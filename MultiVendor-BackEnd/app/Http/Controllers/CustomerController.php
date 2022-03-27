@@ -139,4 +139,12 @@ class CustomerController extends Controller
             'message' => 'Review successfully added'
         ], 201);
     }
+
+    public function getProductReviews(Request $request){
+        $reviews = Review::where('product_id','=',$request->product_id)->get();
+
+        return response()->json([
+            "reviews" => $reviews
+        ], 200);
+    }
 }
