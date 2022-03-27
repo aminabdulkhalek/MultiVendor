@@ -147,4 +147,14 @@ class CustomerController extends Controller
             "reviews" => $reviews
         ], 200);
     }
+
+    public function nbWishlistItems(){
+        $user =  Auth::user();
+        $customer = Customer::where('user_id','=',$user->id)->get()->first();
+        $wishlist_items = Wishlist::where('customer_id','=',$customer->id)->get('product_id');
+
+        return response()->json([
+            'WishList' => $wishlist_items
+        ], 200);
+    }
 }
