@@ -294,5 +294,18 @@ class CustomerController extends Controller
             'message' => 'order placed and now waiting for aproval'
         ], 201);
     }
+
+    public function removeProductFromWishlist(Request $request){
+        $user =  Auth::user();
+        $customer = Customer::where('user_id','=',$user->id)->get()->first();
+
+        $product = WishList::where('customer_id','=',$customer->id)
+                            ->where('product_id','=',$request->product_id)
+                            ->delete();
+
+        return response()->json([
+            'message' => 'product removed form You wishlist'
+        ], 201);
+    }
 }
 

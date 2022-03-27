@@ -129,6 +129,7 @@ Route::group(['middleware' => ['auth:api']], function () {
             Route::post('/update-cart-item', [CustomerController::class, 'updateQuanitity'])->name("update-cart-item");
             Route::post('/add-billing-info', [CustomerController::class, 'addBillingInfo'])->name("add-billing-info");
             Route::get('/place-order', [CustomerController::class, 'placeOrder'])->name("place-order");
+            Route::post('/remove-product-wishlist', [CustomerController::class, 'removeProductFromWishlist'])->name("remove-product-wishlist");
         });
     });
 
