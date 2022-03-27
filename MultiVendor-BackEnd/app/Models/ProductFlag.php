@@ -5,8 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class VendorFlags extends Model
+class ProductFlag extends Model
 {
     use HasFactory;
-    protected $fillable = [ 'product_id','customer_id'];
+    protected $fillable = ['customer_id','product_id'];
 }

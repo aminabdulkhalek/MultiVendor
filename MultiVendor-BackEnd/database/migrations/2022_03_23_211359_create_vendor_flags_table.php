@@ -15,9 +15,9 @@ class CreateVendorFlagsTable extends Migration
     {
         Schema::create('vendor_flags', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('product_id')->unsigned()->index();;
-            $table->bigInteger('vendor_id')->unsigned()->index();;
-            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+            $table->bigInteger('Vendor_id')->unsigned()->index();;
+            $table->bigInteger('customer_id')->unsigned()->index();;
+            $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
             $table->foreign('vendor_id')->references('id')->on('vendors')->onDelete('cascade');
             $table->timestamps();
         });

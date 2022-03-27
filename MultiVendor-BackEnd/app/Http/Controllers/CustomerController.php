@@ -12,6 +12,8 @@ use App\Models\WishList;
 use App\Models\Customer;
 use App\Models\Cart;
 use App\Models\CartItem;
+use App\Models\ProductFlag;
+use App\Models\VendorFlag;
 
 class CustomerController extends Controller
 {
@@ -80,5 +82,30 @@ class CustomerController extends Controller
         return response()->json([
             'approved vendors'=> $vendors   
         ], 200);
+    }
+
+    public function flagProduct(Request $request){
+        $user =  Auth::user();
+        $customer = Customer::where('user_id','=',$user->id)->get()->first();
+        $flag = new ProductFlag;
+        $flag->product_id = $request->product_id;
+        $flag->customer_id = $customer->id;
+        $flag->save();
+
+        return response()->json([
+            'message'=>'product has been flagged'
+        ], 201);
+    }
+    public function flagVendor(Request $request){
+        $user =  Auth::user();
+        $customer = Customer::where('user_id','=',$user->id)->get()->first();
+        $flag = new VendorFlag;
+        $flag->vendor_id = $request->vendor_id;
+        $flag->customer_id = $customer->id;
+        $flag->save();
+
+        return response()->json([
+            'message'=>'Vendor has been flagged'
+        ], 201);
     }
 }
