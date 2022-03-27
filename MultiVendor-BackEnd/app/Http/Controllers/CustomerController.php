@@ -176,5 +176,15 @@ class CustomerController extends Controller
             'products' => $products
         ], 200);
     }
+    public function getCartItems(){
+        $user =  Auth::user();
+        $customer = Customer::where('user_id','=',$user->id)->get()->first();
+        $cart = Cart::where('customer_id','=',$customer->id)->get()->first();
+        $cart_items = CartItem::where('cart_id','=',$cart->id)->get('product_id');
+
+        return response()->json([
+            'Cart items' => $cart_items
+        ], 200);
+    }
 }
 
