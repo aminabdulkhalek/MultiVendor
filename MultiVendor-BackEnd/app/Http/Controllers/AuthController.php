@@ -90,7 +90,7 @@ class AuthController extends Controller
             $customer -> country = $request->country;
             $customer -> state = $request->state;
             $customer -> gender = $request->gender;
-            $customer -> dat_of_birth = $request->date_of_birth;
+            $customer -> date_of_birth = $request->date_of_birth;
             $customer ->save();
 
             $cart = new Cart;

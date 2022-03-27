@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\VendorController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CustomerController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -106,6 +107,7 @@ Route::group(['middleware' => ['auth:api']], function () {
     Route::group(['middleware' => ['role.customer']], function () {
         Route::group(['prefix' => 'customer'], function () {
             Route::get('/profile', [UserController::class, 'customerProfile'])->name("customer-profile");
+            Route::get('/featured', [CustomerController::class, 'getFeatured'])->name("featured");
 
         });
     });
