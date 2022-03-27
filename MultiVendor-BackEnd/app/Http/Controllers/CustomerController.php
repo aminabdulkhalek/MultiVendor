@@ -205,5 +205,23 @@ class CustomerController extends Controller
             "Vendor's Products" => $products
         ], 200);
     }
+    public function updateQuanitity(Request $request){
+        $user =  Auth::user();
+        $customer = Customer::where('user_id','=',$user->id)->get()->first();
+        $cart_item  = CartItem::where('id','=',$request->cart_item_id)->get()->first();
+        $product = Product::where('id','=',$cart_item->product_id)->get()->first();
+        if($request->quantity > $product->stock){
+            return response()->json([
+                'error' => 'Quantity required excceeds product stock'
+            ], 406);
+        }
+        $cart_item->quantity = $request->quantity;
+        $cart_item->save();
+        
+        return response()->json([
+            'message' => 'cart item successfuly updated',
+            'cart item' => $cart_item
+        ], 200);
+    }
 }
 
