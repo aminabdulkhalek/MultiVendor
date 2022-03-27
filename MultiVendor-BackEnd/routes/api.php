@@ -123,6 +123,7 @@ Route::group(['middleware' => ['auth:api']], function () {
             Route::get('/nb-cart-itmes', [CustomerController::class, 'nbCartItems'])->name("nb-cart-itmes");
             Route::post('/product-by-type', [CustomerController::class, 'productByType'])->name("product-by-type");
             Route::get('/cart-itmes', [CustomerController::class, 'getCartItems'])->name("cart-itmes");
+            Route::get('/product-in-stock', [CustomerController::class, 'productsInStock'])->name("product-in-stock");
         });
     });
 

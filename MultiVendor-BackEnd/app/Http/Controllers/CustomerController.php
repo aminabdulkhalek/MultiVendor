@@ -186,5 +186,14 @@ class CustomerController extends Controller
             'Cart items' => $cart_items
         ], 200);
     }
+    public function productsInStock(){
+        $products = Product::where('stock','>=',1)
+                            ->where('status','=',1)
+                            ->get();
+
+        return response()->json([
+            "products instock" => $products
+        ], 200);
+    }
 }
 
