@@ -8,6 +8,8 @@ use App\Models\User;
 use App\Models\Product;
 use App\Models\Featured;
 use App\Models\Vendor;
+use App\Models\WishList;
+use App\Models\Customer;
 
 class CustomerController extends Controller
 {
@@ -38,5 +40,18 @@ class CustomerController extends Controller
         return response()->json([
             "products" => $products
         ], 200);
+    }
+
+    public function loveProduct(Request $request){
+        $user =  Auth::user();
+        $customer = Customer::where('user_id','=',$user->id)->get()->first();
+        $wish_item = new WishList;
+        $wish_item->customer_id = $customer->id;
+        $wish_item->product_id = $request->product_id;
+        $wish_item->save();
+
+        return response()->json([
+            'message'=> 'products added to your wishlist'
+        ], 201);
     }
 }
