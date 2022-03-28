@@ -38,7 +38,7 @@ class VendorController extends Controller
             }
         }
         return response()->json([
-            'Nb of pending orders' => count($vendor_orders)
+            'Nb_pending_orders' => count($vendor_orders)
         ], 200);
     }
     public function getNBApprovedOrders(){
@@ -59,7 +59,7 @@ class VendorController extends Controller
             }
         }
         return response()->json([
-            'Nb of approved orders' => count($vendor_orders)
+            'nb_approved_orders' => count($vendor_orders)
         ], 200);
     }
     public function getNBdisapprovedOrders(){
@@ -80,7 +80,7 @@ class VendorController extends Controller
             }
         }
         return response()->json([
-            'Nb of disapproved orders' => count($vendor_orders)
+            'nb_disapproved_orders' => count($vendor_orders)
         ], 200);
     }
     public function getNBOrders(){
@@ -97,7 +97,7 @@ class VendorController extends Controller
             }
         }
         return response()->json([
-            'Nb of orders' => count($vendor_orders)
+            'nbOrders' => count($vendor_orders)
         ], 200);
     }
     public function getNBProducts(){
@@ -114,7 +114,7 @@ class VendorController extends Controller
         $vendor = Vendor::where('user_id','=',$user->id)->get()->first();
         $vednor_products = Product::where('vendor_id','=',$vendor->id)->orderBy('sales', 'desc')->take(3)->get();
         return response()->json([
-            'top Selling products' =>$vednor_products
+            'top_selling' =>$vednor_products
         ], 200);
     }
     public function nbCustomers(){
@@ -135,7 +135,7 @@ class VendorController extends Controller
         }
         $customers = Customer::whereIn('id',$customers_ids)->get();
         return response()->json([
-            'Nb of customers' => count($customers)
+            'nbCustomers' => count($customers)
         ], 200);
 
     }
@@ -162,7 +162,7 @@ class VendorController extends Controller
 
 
         return response()->json([
-            'This Month customers' => count($customers)
+            'this_month_customers' => count($customers)
         ], 200);
 
     }
@@ -189,7 +189,7 @@ class VendorController extends Controller
 
 
         return response()->json([
-            'Last Month customers' => count($customers)
+            'last_month_customers' => count($customers)
         ], 200);
 
     }
@@ -227,7 +227,7 @@ class VendorController extends Controller
             }
         }
         return response()->json([
-            'recent orders' => array_slice($vendor_orders,0,3)
+            'recent_orders' => array_slice($vendor_orders,0,3)
         ], 200);
     }
 
@@ -238,7 +238,7 @@ class VendorController extends Controller
         $total_sales = $vendor_balance->total_sales;
 
         return response()->json([
-            'total Sales' => $total_sales
+            'total_Sales' => $total_sales
         ], 200);
     }
     public function totalPayout(){
@@ -248,7 +248,7 @@ class VendorController extends Controller
         $total_payout = $vendor_balance->received_ammount;
 
         return response()->json([
-            'total payout' => $total_payout
+            'total_payout' => $total_payout
         ], 200);
     }
     public function getProducts(){

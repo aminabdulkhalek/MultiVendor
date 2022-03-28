@@ -28,9 +28,9 @@ class CustomerController extends Controller
         $vendor_name = User::where('id','=',$vendor->user_id)->get('name')->first()->name;
 
         return response()->json([
-            'featured Vendor' => $featured_user,
-            'Vendor Name' =>$vendor_name,
-            'vendor info' => $vendor
+            'featured_Vendor' => $featured_user,
+            'Vendor_Name' =>$vendor_name,
+            'vendor_info' => $vendor
         ], 200);
     }
 
@@ -85,7 +85,7 @@ class CustomerController extends Controller
         $vendors = Vendor::where('status','=',1)->get();
 
         return response()->json([
-            'approved vendors'=> $vendors   
+            'approved_vendors'=> $vendors   
         ], 200);
     }
 
@@ -151,7 +151,7 @@ class CustomerController extends Controller
         $wishlist_items = Wishlist::where('customer_id','=',$customer->id)->get('product_id');
 
         return response()->json([
-            'WishList items' => count($wishlist_items)
+            'WishList_items' => count($wishlist_items)
         ], 200);
     }
     public function nbCartItems(){
@@ -161,7 +161,7 @@ class CustomerController extends Controller
         $cart_items = CartItem::where('cart_id','=',$cart->id)->get('product_id');
 
         return response()->json([
-            'Cart items' => count($cart_items)
+            'Cart_items' => count($cart_items)
         ], 200);
     }
     public function productByType(Request $request){
@@ -180,7 +180,7 @@ class CustomerController extends Controller
         $cart_items = CartItem::where('cart_id','=',$cart->id)->get('product_id');
 
         return response()->json([
-            'Cart items' => $cart_items
+            'Cart_items' => $cart_items
         ], 200);
     }
     public function productsInStock(){
@@ -189,7 +189,7 @@ class CustomerController extends Controller
                             ->get();
 
         return response()->json([
-            "products instock" => $products
+            "products_instock" => $products
         ], 200);
     }
     public function getProductOwner(Request $request){
@@ -206,7 +206,7 @@ class CustomerController extends Controller
                             ->get();
 
         return response()->json([
-            "Vendor's Products" => $products
+            "Vendor_Products" => $products
         ], 200);
     }
     public function updateQuanitity(Request $request){
@@ -224,7 +224,7 @@ class CustomerController extends Controller
         
         return response()->json([
             'message' => 'cart item successfuly updated',
-            'cart item' => $cart_item
+            'cart_item' => $cart_item
         ], 200);
     }
 
@@ -264,7 +264,7 @@ class CustomerController extends Controller
 
         return response()->json([
             'message' => 'billing info added to ur order',
-            'billing Info' => $billing_info
+            'billing_Info' => $billing_info
         ], 201);
     }
 

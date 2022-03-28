@@ -42,7 +42,7 @@ class Admincontroller extends Controller
         }
 
         return response()->json([
-            "Pending Orders" => $result,
+            "Pending_Orders" => $result,
 
 
         ], 201);
@@ -64,7 +64,7 @@ class Admincontroller extends Controller
         }
 
         return response()->json([
-            "Approved Orders" => $result,
+            "Approved_Orders" => $result,
 
 
         ], 201);
@@ -86,7 +86,7 @@ class Admincontroller extends Controller
         }
 
         return response()->json([
-            "Disapproved Orders" => $result,
+            "Disapproved_Orders" => $result,
 
 
         ], 201);
@@ -94,28 +94,28 @@ class Admincontroller extends Controller
 
     public function getTotalNBOrders(){
         return response()->json([
-            'Total nb of orders' =>count( Order::get())
+            'nbOrders' =>count( Order::get())
         ], 201);
     }
     public function numberOfPendingOrders(){
         return response()->json([
-            'pending orders' =>count( Order::where('status','=','0')->get())
+            'pending_orders' =>count( Order::where('status','=','0')->get())
         ], 201);
     }
     public function numberOfApprovedOrders(){
         return response()->json([
-            'approved orders' =>count( Order::where('status','=','1')->get())
+            'approved_orders' =>count( Order::where('status','=','1')->get())
         ], 201);
     }
     public function numberOfDeniedOrders(){
         return response()->json([
-            'disapproved orders' =>count( Order::where('status','=','2')->get())
+            'disapproved_orders' =>count( Order::where('status','=','2')->get())
         ], 201);
     }
 
     public function numberOfProducts(){
         return response()->json([
-            'nb of Products' =>count( Product::get())
+            'nbProducts' =>count( Product::get())
         ], 201);
     }
 
@@ -123,13 +123,13 @@ class Admincontroller extends Controller
         $top = Product::orderby('sales','desc')->take(3)->get();
 
         return response()->json([
-                'top Selling  Products' => $top
+                'top_Selling' => $top
             ], 201);
     }
 
     public function nbCustomers(){
         return response()->json([
-            'nb of customers' =>count( Customer::get())
+            'nbCustomers' =>count( Customer::get())
         ], 201);
     }
 
@@ -139,7 +139,7 @@ class Admincontroller extends Controller
         $data = Customer::whereMonth('created_at',$month)->get();
 
         return response()->json([
-            'this Month customers' => $data
+            'this_Month_customers' => $data
         ], 201);
     }
     public function lastMonthCustomers(){
@@ -148,7 +148,7 @@ class Admincontroller extends Controller
         $data = Customer::whereMonth('created_at',$month)->get();
 
         return response()->json([
-            'Last Month customers' => $data
+            'Last_Month_customers' => $data
         ], 201);
     }
 
@@ -160,7 +160,7 @@ class Admincontroller extends Controller
 
          return response()->json([
              'message'=> "new Vendor is Fetured",
-             "vendor id" => $featured->id
+             "vendor_id" => $featured->id
          ], 201);
     }
 
@@ -168,7 +168,7 @@ class Admincontroller extends Controller
         $total_sales = Balance::sum('total_sales');
 
         return response()->json([
-            'total sales' => $total_sales
+            'total_sales' => $total_sales
         ], 201);
     }
 
@@ -177,7 +177,7 @@ class Admincontroller extends Controller
         $admin_info = Admin::where('user_id','=',$admin->id)->get()[0];
 
         return response()->json([
-            'total income' => $admin_info->income
+            'total_income' => $admin_info->income
         ], 201);
     }
 
@@ -440,8 +440,8 @@ class Admincontroller extends Controller
         
         return response()->json([
             'message' => "transaction complete",
-            'Vendor balance'=> $vendor_balance,
-            'admin info' => $admin_info
+            'Vendor_balance'=> $vendor_balance,
+            'admin_info' => $admin_info
         ], 201);
     }
 }
