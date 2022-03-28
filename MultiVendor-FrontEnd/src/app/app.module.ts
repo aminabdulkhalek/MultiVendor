@@ -66,6 +66,8 @@ import { CustomerDashboardComponent } from './Customer/customer-dashboard/custom
 import { CarouselComponent } from './Customer/customer-dashboard/carousel/carousel.component';
 import {IvyCarouselModule} from 'angular-responsive-carousel';
 import { HttpClientModule } from '@angular/common/http';
+import { GalleryModule } from 'ng-gallery';
+import { GALLERY_CONFIG } from 'ng-gallery';
 
 @NgModule({
   declarations: [
@@ -142,9 +144,16 @@ import { HttpClientModule } from '@angular/common/http';
     MatIconModule,
     MatRadioModule,
     IvyCarouselModule,
-    HttpClientModule
+    HttpClientModule,
+    GalleryModule
   ],
-  providers: [],
+  providers: [{
+    provide: GALLERY_CONFIG,
+    useValue: {
+      dots: true,
+      imageSize: 'cover'
+    }
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

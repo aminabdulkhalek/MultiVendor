@@ -68,7 +68,17 @@ a{
     position: fixed;
     top: 100px;
 }
+.featured{
+    display: flex;
+}
+.left{
+//  margin: 50px;
+//  width: 50vw;
+ height: 20vh;
+}
+.right{
 
+}
 @media only screen and (max-width: 600px) {
     .tables{
         left: 0;
