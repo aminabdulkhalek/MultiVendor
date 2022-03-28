@@ -19,19 +19,16 @@ export class CarouselComponent implements OnInit {
 }
 const data = [
   {
-    srcUrl: 'https://preview.ibb.co/jrsA6R/img12.jpg',
-    previewUrl: 'https://preview.ibb.co/jrsA6R/img12.jpg'
+    srcUrl: '/assets/banner1.jpg',
+    previewUrl: '/assets/banner1.jpg'
   },
   {
-    srcUrl: 'https://preview.ibb.co/kPE1D6/clouds.jpg',
-    previewUrl: 'https://preview.ibb.co/kPE1D6/clouds.jpg'
+    srcUrl: '/assets/banner2.jpg',
+    previewUrl: '/assets/banner2.jpg'
   },
   {
-    srcUrl: 'https://preview.ibb.co/mwsA6R/img7.jpg',
-    previewUrl: 'https://preview.ibb.co/mwsA6R/img7.jpg'
+    srcUrl: '/assets/Banner3.jpg',
+    previewUrl: '/assets/Banner3.jpg'
   },
-  {
-    srcUrl: 'https://preview.ibb.co/kZGsLm/img8.jpg',
-    previewUrl: 'https://preview.ibb.co/kZGsLm/img8.jpg'
-  }
+
 ];
