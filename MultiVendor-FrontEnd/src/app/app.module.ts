@@ -62,6 +62,7 @@ import { AdminReviewsComponent } from './admin/admin-reviews/admin-reviews.compo
 import { AdminReviewsTableComponent } from './admin/admin-reviews/admin-reviews-table/admin-reviews-table.component';
 import { AdminCustomersComponent } from './admin/admin-customers/admin-customers.component';
 import { AdminCustomersTableComponent } from './admin/admin-customers/admin-customers-table/admin-customers-table.component';
+import { CustomerDashboardComponent } from './Customer/customer-dashboard/customer-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -111,7 +112,8 @@ import { AdminCustomersTableComponent } from './admin/admin-customers/admin-cust
     AdminReviewsComponent,
     AdminReviewsTableComponent,
     AdminCustomersComponent,
-    AdminCustomersTableComponent
+    AdminCustomersTableComponent,
+    CustomerDashboardComponent
   ],
   entryComponents: [
     AddProductModalComponent,
