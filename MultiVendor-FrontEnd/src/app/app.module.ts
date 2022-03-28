@@ -65,6 +65,7 @@ import { AdminCustomersTableComponent } from './admin/admin-customers/admin-cust
 import { CustomerDashboardComponent } from './Customer/customer-dashboard/customer-dashboard.component';
 import { CarouselComponent } from './Customer/customer-dashboard/carousel/carousel.component';
 import {IvyCarouselModule} from 'angular-responsive-carousel';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -140,7 +141,8 @@ import {IvyCarouselModule} from 'angular-responsive-carousel';
     MatSelectModule,
     MatIconModule,
     MatRadioModule,
-    IvyCarouselModule
+    IvyCarouselModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
