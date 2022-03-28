@@ -8,7 +8,7 @@
        <p class="bar-title">Pending</p> 
         <mat-progress-bar
           mode="determinate"
-          value="25.5"
+          value="{{pending}}"
         ></mat-progress-bar>
       </td>
     </tr>
@@ -17,7 +17,7 @@
           <p class="bar-title">Approved</p> 
           <mat-progress-bar
             mode="determinate"
-            value="60"
+            value="{{approved}}"
           ></mat-progress-bar>
         </td>
     </tr>
@@ -26,7 +26,7 @@
           <p class="bar-title">Disapproved</p> 
           <mat-progress-bar
             mode="determinate"
-            value="16"
+            value="{{disapproved}}"
           ></mat-progress-bar>
         </td>
     </tr>
