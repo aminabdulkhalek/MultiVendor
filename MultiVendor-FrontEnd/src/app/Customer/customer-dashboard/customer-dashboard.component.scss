@@ -125,7 +125,7 @@ hr{
 .type_section{
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 .type_section .type{
@@ -147,6 +147,37 @@ hr{
 
 .type_section .type img{
  width: 18vw;
+ background-color: white;
+ border-radius: 8vw;
+}
+
+.category_section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.category_section .category{
+    width: 15vw;
+    border-radius: 4px;
+    padding: 10px;
+    background-color: $lblue;
+    vertical-align: baseline;
+    text-align: center;
+    padding-bottom: 2.2vh;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+.category_section .category p{
+    margin-top: -2vh;
+    font-size: 0.8vw;
+    color: #5A5A5A;
+    font-weight: 800;
+}
+
+.category_section .category img{
+ width: 8vw;
  background-color: white;
  border-radius: 8vw;
 }
