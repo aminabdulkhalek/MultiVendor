@@ -64,6 +64,10 @@ a{
     padding-right: 20px;
 }
 
+.body{
+    position: fixed;
+    top: 100px;
+}
 
 @media only screen and (max-width: 600px) {
     .tables{
