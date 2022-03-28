@@ -23,6 +23,7 @@
     "@fortawesome/angular-fontawesome": "^0.10.1",
     "@fortawesome/fontawesome-svg-core": "^6.1.0",
     "@fortawesome/free-solid-svg-icons": "^6.1.0",
+    "angular-responsive-carousel": "^2.1.2",
     "ngx-bar-rating": "^3.0.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",

@@ -63,6 +63,8 @@ import { AdminReviewsTableComponent } from './admin/admin-reviews/admin-reviews-
 import { AdminCustomersComponent } from './admin/admin-customers/admin-customers.component';
 import { AdminCustomersTableComponent } from './admin/admin-customers/admin-customers-table/admin-customers-table.component';
 import { CustomerDashboardComponent } from './Customer/customer-dashboard/customer-dashboard.component';
+import { CarouselComponent } from './Customer/customer-dashboard/carousel/carousel.component';
+import {IvyCarouselModule} from 'angular-responsive-carousel';
 
 @NgModule({
   declarations: [
@@ -113,7 +115,8 @@ import { CustomerDashboardComponent } from './Customer/customer-dashboard/custom
     AdminReviewsTableComponent,
     AdminCustomersComponent,
     AdminCustomersTableComponent,
-    CustomerDashboardComponent
+    CustomerDashboardComponent,
+    CarouselComponent
   ],
   entryComponents: [
     AddProductModalComponent,
@@ -136,7 +139,8 @@ import { CustomerDashboardComponent } from './Customer/customer-dashboard/custom
     MatFormFieldModule,
     MatSelectModule,
     MatIconModule,
-    MatRadioModule
+    MatRadioModule,
+    IvyCarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]
