@@ -65,8 +65,9 @@ a{
 }
 
 .body{
-    position: fixed;
+    position: absolute;
     top: 100px;
+    margin: 0 50px;
 }
 .featured{
     display: flex;
@@ -79,14 +80,14 @@ a{
     background-color: $lblue;
     padding: 15px;
     border-radius: 5px;
-    margin-left: 50px;
+    // margin-left: 50px;
 }
 .featured_product{
     height:100%;
     cursor: pointer;
 }
+
 .img_container{
-    
     text-align: center;
     background-color: $lblue;
     height: 39vh;
@@ -96,12 +97,27 @@ a{
     border-radius: 4px;
     overflow: hidden;
 }
-@media only screen and (max-width: 600px) {
-    .tables{
-        left: 0;
-        margin: 0;
-    }
-    .store-logo ,.store-name{
-        display: none;
-    }
+
+.section_title{
+    font-size: 24px;
+    color: #5A5A5A;
+    font-weight: 500;
+    margin: 50px 0;
+    
+}
+
+hr{
+    border: 0;
+    border-top: 1px solid #c5c5c5;
+    z-index: -1;
+}
+.hr2{
+    text-align: left;
+    z-index: 10;
+    border: 1px solid $blue;
+    background-color: $blue;
+    margin-top: -14px;
+    width: 200px;
+    position: absolute;
+
 }
