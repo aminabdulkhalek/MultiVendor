@@ -121,3 +121,32 @@ hr{
     position: absolute;
 
 }
+
+.type_section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.type_section .type{
+    width: 25vw;
+    border-radius: 4px;
+    padding: 10px;
+    background-color: $lblue;
+    vertical-align: baseline;
+    text-align: center;
+    padding-bottom: 25px;
+    cursor: pointer;
+}
+.type_section .type p{
+    margin-top: -50px;
+    font-size: 25px;
+    color: #5A5A5A;
+    font-weight: 800;
+}
+
+.type_section .type img{
+ width: 18vw;
+ background-color: white;
+ border-radius: 8vw;
+}
