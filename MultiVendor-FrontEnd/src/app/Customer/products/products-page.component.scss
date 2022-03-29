@@ -1,8 +1,8 @@
-
 $blue: #62C6FF;
 $lblue: #F2FAFF;
 $red: #FF5C5C;
-.logo{
+
+.logo {
 
     color: $red;
     font-size: 30px;
@@ -11,14 +11,15 @@ $red: #FF5C5C;
 
 }
 
-.toolbar{
+.toolbar {
     height: 60px;
     background-color: white;
     color: #5A5A5A;
     position: fixed;
     z-index: 100;
 }
-.toolbar1{
+
+.toolbar1 {
     margin-top: 60px;
     background-color: $blue;
     color: #5A5A5A;
@@ -26,28 +27,31 @@ $red: #FF5C5C;
     z-index: 100;
     height: 40px;
 }
-.market-name{
-    flex:1;
+
+.market-name {
+    flex: 1;
     font-size: x-large;
-    font-weight:bolder ;
+    font-weight: bolder;
     padding-left: 10px;
 }
 
-.links, .links>a{
-    color: white ;
-    flex:1;
-    font-size:large;
+.links,
+.links>a {
+    color: white;
+    flex: 1;
+    font-size: large;
     padding-left: 5px;
 
 }
-.right_item{
+
+.right_item {
     color: white;
     font-size: 15px;
     padding-left: 15px;
     font-weight: lighter;
 }
 
-.phone{
+.phone {
     font-weight: 500;
     padding-left: 5px;
 }
@@ -57,19 +61,21 @@ $red: #FF5C5C;
     height: 20px;
     margin-left: 10px;
 }
-a{
+
+a {
     text-decoration: none;
     color: #5A5A5A;
     padding-left: 20px;
     padding-right: 20px;
 }
 
-.body{
+.body {
     position: absolute;
     top: 100px;
     margin: 0 50px;
 }
-.top_section{
+
+.top_section {
     position: absolute;
     top: 150px;
     margin: 0 18vw;
@@ -79,7 +85,7 @@ a{
     border-left: 0;
 }
 
-.left_section{
+.left_section {
     position: absolute;
     top: 150px;
     margin: 0 5vw;
@@ -88,24 +94,26 @@ a{
     width: 12.9vw;
 }
 
-.paginator{
+.paginator {
     position: absolute;
     bottom: 0;
     right: 190px;
 }
 
-.product_view{
+.product_view {
     color: #5A5A5A;
     position: absolute;
     bottom: 05px;
-    right: 40px; 
+    right: 40px;
 }
-.product_view p{
+
+.product_view p {
     position: absolute;
     bottom: 0px;
-    right: 80px; 
+    right: 80px;
 }
-.product_view a{
+
+.product_view a {
     margin: 0;
     padding: 0;
     padding-left: 10px;
@@ -113,40 +121,44 @@ a{
 }
 
 
-mat-icon{
+mat-icon {
     font-size: 40px;
     margin-left: 10px;
 }
-::ng-deep body > app-root > app-products > div.top_section > mat-paginator > div > div > div.mat-paginator-range-actions > button.mat-focus-indicator.mat-tooltip-trigger.mat-paginator-navigation-next.mat-icon-button.mat-button-base{
- background-color: $blue;
- border-radius: 0 4px 4px 0;
- color: white;
+
+::ng-deep body>app-root>app-products>div.top_section>mat-paginator>div>div>div.mat-paginator-range-actions>button.mat-focus-indicator.mat-tooltip-trigger.mat-paginator-navigation-next.mat-icon-button.mat-button-base {
+    background-color: $blue;
+    border-radius: 0 4px 4px 0;
+    color: white;
 }
-::ng-deep body > app-root > app-products > div.top_section > mat-paginator > div > div > div.mat-paginator-range-actions > button.mat-focus-indicator.mat-tooltip-trigger.mat-paginator-navigation-previous.mat-icon-button.mat-button-base.mat-button-disabled{
+
+::ng-deep body>app-root>app-products>div.top_section>mat-paginator>div>div>div.mat-paginator-range-actions>button.mat-focus-indicator.mat-tooltip-trigger.mat-paginator-navigation-previous.mat-icon-button.mat-button-base.mat-button-disabled {
     background-color: gainsboro;
     border-radius: 4px 0px 0px 4px;
 
 }
 
-::ng-deep body > app-root > app-products > div.top_section > mat-paginator > div > div > div.mat-paginator-range-actions > button.mat-focus-indicator.mat-tooltip-trigger.mat-paginator-navigation-previous.mat-icon-button.mat-button-base{
+::ng-deep body>app-root>app-products>div.top_section>mat-paginator>div>div>div.mat-paginator-range-actions>button.mat-focus-indicator.mat-tooltip-trigger.mat-paginator-navigation-previous.mat-icon-button.mat-button-base {
     background-color: white;
     border-radius: 4px 0px 0px 4px;
     border: 1px solid gainsboro;
 }
 
-::ng-deep .mat-select-arrow-wrapper{
+::ng-deep .mat-select-arrow-wrapper {
     background-color: $blue;
     height: 36px !important;
     border-radius: 0 4px 4px 0;
 }
-::ng-deep.mat-select-arrow{
+
+::ng-deep.mat-select-arrow {
     color: white;
 }
-::ng-deep .mat-form-field-appearance-legacy .mat-form-field-underline{
- height: 0 !important;
+
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-underline {
+    height: 0 !important;
 }
 
-::ng-deep .mat-select-value{
+::ng-deep .mat-select-value {
     border-radius: 4px 0 0 4px;
     border: 1px solid gainsboro;
 

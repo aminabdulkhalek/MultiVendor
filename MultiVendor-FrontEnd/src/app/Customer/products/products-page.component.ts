@@ -8,11 +8,11 @@ import { faSignOut, faUserCircle, faHeart, faShoppingCart, faShoppingBasket, faL
   styleUrls: ['./products-page.component.scss']
 })
 export class ProductsPageComponent implements OnInit {
-  logout=faSignOut;
+  logout = faSignOut;
   account = faUserCircle;
   wishlist = faHeart;
-  cart= faShoppingCart;
-  shopping_cart= faShoppingBasket;
+  cart = faShoppingCart;
+  shopping_cart = faShoppingBasket;
   products;
   @ViewChild(MatPaginator) paginator: MatPaginator;
   constructor() { }
