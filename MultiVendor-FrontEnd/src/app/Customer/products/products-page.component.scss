@@ -69,3 +69,86 @@ a{
     top: 100px;
     margin: 0 50px;
 }
+.top_section{
+    position: absolute;
+    top: 150px;
+    margin: 0 18vw;
+    height: 15vh;
+    width: 76vw;
+    border: 1.5px solid rgb(190, 190, 190);
+    border-left: 0;
+}
+
+.left_section{
+    position: absolute;
+    top: 150px;
+    margin: 0 5vw;
+    border: 1.5px solid rgb(190, 190, 190);
+    height: 100vh;
+    width: 12.9vw;
+}
+
+.paginator{
+    position: absolute;
+    bottom: 0;
+    right: 190px;
+}
+
+.product_view{
+    color: #5A5A5A;
+    position: absolute;
+    bottom: 05px;
+    right: 40px; 
+}
+.product_view p{
+    position: absolute;
+    bottom: 0px;
+    right: 80px; 
+}
+.product_view a{
+    margin: 0;
+    padding: 0;
+    padding-left: 10px;
+    margin-bottom: -100px;
+}
+
+
+mat-icon{
+    font-size: 40px;
+    margin-left: 10px;
+}
+::ng-deep body > app-root > app-products > div.top_section > mat-paginator > div > div > div.mat-paginator-range-actions > button.mat-focus-indicator.mat-tooltip-trigger.mat-paginator-navigation-next.mat-icon-button.mat-button-base{
+ background-color: $blue;
+ border-radius: 0 4px 4px 0;
+ color: white;
+}
+::ng-deep body > app-root > app-products > div.top_section > mat-paginator > div > div > div.mat-paginator-range-actions > button.mat-focus-indicator.mat-tooltip-trigger.mat-paginator-navigation-previous.mat-icon-button.mat-button-base.mat-button-disabled{
+    background-color: gainsboro;
+    border-radius: 4px 0px 0px 4px;
+
+}
+
+::ng-deep body > app-root > app-products > div.top_section > mat-paginator > div > div > div.mat-paginator-range-actions > button.mat-focus-indicator.mat-tooltip-trigger.mat-paginator-navigation-previous.mat-icon-button.mat-button-base{
+    background-color: white;
+    border-radius: 4px 0px 0px 4px;
+    border: 1px solid gainsboro;
+}
+
+::ng-deep .mat-select-arrow-wrapper{
+    background-color: $blue;
+    height: 36px !important;
+    border-radius: 0 4px 4px 0;
+}
+::ng-deep.mat-select-arrow{
+    color: white;
+}
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-underline{
+ height: 0 !important;
+}
+
+::ng-deep .mat-select-value{
+    border-radius: 4px 0 0 4px;
+    border: 1px solid gainsboro;
+
+    padding: 10px 5px;
+}

@@ -28,4 +28,22 @@
     Hotline: <Span class="phone">+961 81935140</Span>
   </div>
 </mat-toolbar>
+
+<div class="top_section">
+  <div class="product_view">
+    <p>View:</p>
+    <a href="#"><mat-icon style="color:#62C6FF;">view_module</mat-icon></a>
+    <a href="#"><mat-icon>list</mat-icon></a>
+  </div>
+
+  <mat-paginator
+    class="paginator"
+    [length]="100"
+    [pageSize]="10"
+    [pageSizeOptions]="[5, 10, 25, 100]"
+    aria-label="Select page"
+  >
+  </mat-paginator>
+</div>
+<div class="left_section"></div>
 <div class="body"></div>
