@@ -45,5 +45,40 @@
   >
   </mat-paginator>
 </div>
-<div class="left_section"></div>
+<div class="left_section">
+  <p class="left_header">Product Categories</p>
+  <mat-radio-group
+    aria-labelledby="example-radio-group-label"
+    class="example-radio-group"
+    [(ngModel)]="selectedCategory"
+  >
+    <mat-radio-button
+      class="example-radio-button"
+      *ngFor="let category of categories"
+      [value]="category"
+    >
+      {{ category }}
+    </mat-radio-button>
+  </mat-radio-group>
+  <hr />
+  <section class="check_box">
+    <ul>
+      <li><mat-checkbox>In Stock</mat-checkbox></li>
+      <li><mat-checkbox>On Sale</mat-checkbox></li>
+    </ul>
+  </section>
+  <hr />
+  <p class="left_header">Price</p>
+  <div class="slider">
+    <ngx-slider
+      [(value)]="minValue"
+      [(highValue)]="maxValue"
+      [options]="options"
+    ></ngx-slider>
+
+    <p>Min value: <input type="number" [(ngModel)]="minValue" /></p>
+    <p>Max value: <input type="number" [(ngModel)]="maxValue" /></p>
+  </div>
+  <button class="filter">Filter</button>
+</div>
 <div class="body"></div>

@@ -70,6 +70,9 @@ import { GalleryModule } from 'ng-gallery';
 import { GALLERY_CONFIG } from 'ng-gallery';
 import { ProductsGirdViewComponent } from './Customer/products/products-gird-view/products-gird-view.component';
 import {ProductsPageComponent} from './Customer/products/products-page.component';
+import { FormsModule } from '@angular/forms';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { NgxSliderModule } from '@angular-slider/ngx-slider';
 
 @NgModule({
   declarations: [
@@ -149,7 +152,10 @@ import {ProductsPageComponent} from './Customer/products/products-page.component
     MatRadioModule,
     IvyCarouselModule,
     HttpClientModule,
-    GalleryModule
+    GalleryModule,
+    FormsModule,
+    MatCheckboxModule,
+    NgxSliderModule,
   ],
   providers: [{
     provide: GALLERY_CONFIG,
