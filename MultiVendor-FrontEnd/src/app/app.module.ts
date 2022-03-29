@@ -68,6 +68,8 @@ import {IvyCarouselModule} from 'angular-responsive-carousel';
 import { HttpClientModule } from '@angular/common/http';
 import { GalleryModule } from 'ng-gallery';
 import { GALLERY_CONFIG } from 'ng-gallery';
+import { ProductsGirdViewComponent } from './Customer/products/products-gird-view/products-gird-view.component';
+import {ProductsPageComponent} from './Customer/products/products-page.component';
 
 @NgModule({
   declarations: [
@@ -119,7 +121,9 @@ import { GALLERY_CONFIG } from 'ng-gallery';
     AdminCustomersComponent,
     AdminCustomersTableComponent,
     CustomerDashboardComponent,
-    CarouselComponent
+    CarouselComponent,
+    ProductsGirdViewComponent,
+    ProductsPageComponent
   ],
   entryComponents: [
     AddProductModalComponent,

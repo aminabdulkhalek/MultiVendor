@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { faSignOut, faBell, faHeart, faShoppingCart, faUserCircle, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
+import {Router} from "@angular/router"
 
 @Component({
   selector: 'app-customer-dashboard',
@@ -12,9 +13,11 @@ export class CustomerDashboardComponent implements OnInit {
   wishlist = faHeart;
   cart= faShoppingCart;
   shopping_cart= faShoppingBasket;
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
-
+  productsPage() {
+    this.router.navigate(['products'])
+  }
 }

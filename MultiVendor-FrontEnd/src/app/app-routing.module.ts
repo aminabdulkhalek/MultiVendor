@@ -16,6 +16,7 @@ import { AdminTransactionsComponent } from './admin/admin-transactions/admin-tra
 import { AdminReviewsComponent } from './admin/admin-reviews/admin-reviews.component';
 import { AdminCustomersComponent } from './admin/admin-customers/admin-customers.component';
 import { CustomerDashboardComponent } from './Customer/customer-dashboard/customer-dashboard.component';
+import { ProductsPageComponent } from './Customer/products/products-page.component';
 
 
 
@@ -38,6 +39,7 @@ const routes: Routes = [
   { path: 'admin-customers', component: AdminCustomersComponent },
 
   { path: 'customer-dashboard', component: CustomerDashboardComponent },
+  { path: 'products', component: ProductsPageComponent },
 ];
 
 @NgModule({
