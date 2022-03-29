@@ -1,0 +1,136 @@
+
+$blue: #62C6FF;
+$lblue: #F2FAFF;
+$red: #FF5C5C;
+
+.background{
+  background-color: $lblue;
+  height: 100%;
+}
+.logo{
+
+    color: $red;
+    font-size: 30px;
+
+    padding: 10px;
+
+}
+
+.toolbar{
+    height: 60px;
+    background-color: white;
+    color: #5A5A5A;
+    position: fixed;
+    z-index: 100;
+}
+.toolbar1{
+    margin-top: 60px;
+    background-color: $blue;
+    color: #5A5A5A;
+    position: fixed;
+    z-index: 100;
+    height: 40px;
+}
+.market-name{
+    flex:1;
+    font-size: x-large;
+    font-weight:bolder ;
+    padding-left: 10px;
+}
+
+.links, .links>a{
+    color: white ;
+    flex:1;
+    font-size:large;
+    padding-left: 5px;
+
+}
+.right_item{
+    color: white;
+    font-size: 15px;
+    padding-left: 15px;
+    font-weight: lighter;
+}
+
+.phone{
+    font-weight: 500;
+    padding-left: 5px;
+}
+
+.vl {
+    border-left: 1.5px solid #7e7e7e;
+    height: 20px;
+    margin-left: 10px;
+}
+a{
+    text-decoration: none;
+    color: #5A5A5A;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.top_section {
+  background-color: white;
+  position: absolute;
+  top: 150px;
+  margin: 0 5vw;
+  height: 10vh;
+  width: 90vw;
+  border: 1.5px solid rgb(190, 190, 190);
+}
+
+.paginator {
+  position: absolute;
+  bottom: 1rem;
+  right: 2rem;
+}
+
+
+::ng-deep body>app-root>app-shops>div.top_section>mat-paginator>div>div>div.mat-paginator-range-actions>button.mat-focus-indicator.mat-tooltip-trigger.mat-paginator-navigation-next.mat-icon-button.mat-button-base {
+  background-color: $blue;
+  border-radius: 0 4px 4px 0;
+  color: white;
+}
+
+::ng-deep body>app-root>app-shops>div.top_section>mat-paginator>div>div>div.mat-paginator-range-actions>button.mat-focus-indicator.mat-tooltip-trigger.mat-paginator-navigation-previous.mat-icon-button.mat-button-base.mat-button-disabled {
+  background-color: gainsboro;
+  border-radius: 4px 0px 0px 4px;
+
+}
+
+::ng-deep body>app-root>app-shops>div.top_section>mat-paginator>div>div>div.mat-paginator-range-actions>button.mat-focus-indicator.mat-tooltip-trigger.mat-paginator-navigation-previous.mat-icon-button.mat-button-base {
+  background-color: white;
+  border-radius: 4px 0px 0px 4px;
+  border: 1px solid gainsboro;
+}
+
+::ng-deep .mat-select-arrow-wrapper {
+  background-color: $blue;
+  height: 36px !important;
+  border-radius: 0 4px 4px 0;
+}
+
+::ng-deep.mat-select-arrow {
+  color: white;
+}
+
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-underline {
+  height: 0 !important;
+}
+
+::ng-deep .mat-select-value {
+  border-radius: 4px 0 0 4px;
+  border: 1px solid gainsboro;
+
+  padding: 10px 5px;
+}
+
+::ng-deep body > app-root > app-shops > div.top_section > mat-paginator > div > div > div.mat-paginator-page-size.ng-star-inserted > div , ::ng-deep body > app-root > app-shops > div.top_section > mat-paginator > div > div > div.mat-paginator-range-actions > div{
+  font-size: 18px ;
+}
+
+.total_shops{
+  font-size: 18px;
+  color: #7a7a7a;
+  margin: 2.2rem 1rem;
+}

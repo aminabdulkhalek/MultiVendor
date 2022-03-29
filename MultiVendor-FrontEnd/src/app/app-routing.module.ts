@@ -17,6 +17,7 @@ import { AdminReviewsComponent } from './admin/admin-reviews/admin-reviews.compo
 import { AdminCustomersComponent } from './admin/admin-customers/admin-customers.component';
 import { CustomerDashboardComponent } from './Customer/customer-dashboard/customer-dashboard.component';
 import { ProductsPageComponent } from './Customer/products/products-page.component';
+import { ShopsComponent } from './Customer/shops/shops.component';
 
 
 
@@ -40,6 +41,7 @@ const routes: Routes = [
 
   { path: 'customer-dashboard', component: CustomerDashboardComponent },
   { path: 'products', component: ProductsPageComponent },
+  { path: 'shops', component: ShopsComponent },
 ];
 
 @NgModule({
