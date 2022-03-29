@@ -1,1 +1,54 @@
-<p>product-list-view works!</p>
+<div class="product">
+  <div class="section1">
+    <div class="backgorund">
+      <img class='product_img' src="/assets/img.png" alt="product" />
+      <mat-icon class="love0">favorite_border</mat-icon>
+      <mat-icon class="love1">favorite</mat-icon>
+    </div>
+  </div>
+  <div class="section2">
+    <p class="product_name">Iphone 13 Pro MAX</p>
+    <div class="rating">
+      <bar-rating [rate]="4" [readOnly]="true" [max]="5">
+        <ng-template ratingInactive>
+          <fa-icon
+            [icon]="star"
+            [fixedWidth]="true"
+            style="color: #d2d2d2"
+          ></fa-icon>
+        </ng-template>
+        <ng-template ratingActive>
+          <fa-icon
+            [icon]="star"
+            [fixedWidth]="true"
+            style="color: #ffb800"
+          ></fa-icon>
+        </ng-template>
+        <ng-template ratingFraction>
+          <fa-icon
+            [icon]="half_star"
+            [fixedWidth]="true"
+            style="color: #ffb800"
+          ></fa-icon>
+        </ng-template>
+      </bar-rating>
+    </div>
+    <ul class="product_features">
+      <li>Operating system: iOS 15</li>
+      <li>Processor: Quad-core 2.5 GHz Vortex</li>
+      <li>Memory: 256GB, RAM: 4 GB</li>
+      <li>Color: Space Gray</li>
+    </ul>
+    <p class="product_owner_text">
+      Sold by: <span class="product_owner">John Doe</span>
+    </p>
+  </div>
+  <div class="section3">
+    <p class="product_price">$1299</p>
+    <p class="product_sales">Solds: 12</p>
+    <p class="product_flags">Flags: 0</p>
+    <button class="add">
+      <mat-icon>add_shopping_cart</mat-icon> Add To Cart
+    </button>
+  </div>
+</div>

@@ -123,19 +123,19 @@ mat-icon {
     cursor: pointer;
 }
 
-::ng-deep body>app-root>app-products>div.top_section>mat-paginator>div>div>div.mat-paginator-range-actions>button.mat-focus-indicator.mat-tooltip-trigger.mat-paginator-navigation-next.mat-icon-button.mat-button-base {
+::ng-deep body>app-root>app-products-page>div.top_section>mat-paginator>div>div>div.mat-paginator-range-actions>button.mat-focus-indicator.mat-tooltip-trigger.mat-paginator-navigation-next.mat-icon-button.mat-button-base {
     background-color: $blue;
     border-radius: 0 4px 4px 0;
     color: white;
 }
 
-::ng-deep body>app-root>app-products>div.top_section>mat-paginator>div>div>div.mat-paginator-range-actions>button.mat-focus-indicator.mat-tooltip-trigger.mat-paginator-navigation-previous.mat-icon-button.mat-button-base.mat-button-disabled {
+::ng-deep body>app-root>app-products-page>div.top_section>mat-paginator>div>div>div.mat-paginator-range-actions>button.mat-focus-indicator.mat-tooltip-trigger.mat-paginator-navigation-previous.mat-icon-button.mat-button-base.mat-button-disabled {
     background-color: gainsboro;
     border-radius: 4px 0px 0px 4px;
 
 }
 
-::ng-deep body>app-root>app-products>div.top_section>mat-paginator>div>div>div.mat-paginator-range-actions>button.mat-focus-indicator.mat-tooltip-trigger.mat-paginator-navigation-previous.mat-icon-button.mat-button-base {
+::ng-deep body>app-root>app-products-page>div.top_section>mat-paginator>div>div>div.mat-paginator-range-actions>button.mat-focus-indicator.mat-tooltip-trigger.mat-paginator-navigation-previous.mat-icon-button.mat-button-base {
     background-color: white;
     border-radius: 4px 0px 0px 4px;
     border: 1px solid gainsboro;

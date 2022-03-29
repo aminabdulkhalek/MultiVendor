@@ -70,9 +70,10 @@ $red: #FF5C5C;
     // display: none;
 }
 .love1{
-    transition: all 0.3s ease;
-    display: none;
     color: $red;
     font-size: 50px;
     cursor: pointer;
+    margin-top: -1rem;
+    margin-left: 7rem;
+        display: none;
 }
