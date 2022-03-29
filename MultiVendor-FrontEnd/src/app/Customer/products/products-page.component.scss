@@ -120,6 +120,7 @@ a {
 mat-icon {
     font-size: 40px;
     margin-left: 10px;
+    cursor: pointer;
 }
 
 ::ng-deep body>app-root>app-products>div.top_section>mat-paginator>div>div>div.mat-paginator-range-actions>button.mat-focus-indicator.mat-tooltip-trigger.mat-paginator-navigation-next.mat-icon-button.mat-button-base {
@@ -235,7 +236,7 @@ input {
     width: min-content !important;
 }
 
-.body {
+.body0 {
     margin-left: 4rem;
     display: flex;
     flex-direction: row;
@@ -243,4 +244,17 @@ input {
     position: absolute;
     top: 31vh;
     left: 18.2vw;
+}
+.body1 {
+    margin-left: 4rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 31vh;
+    left: 18.2vw;
+}
+
+.hide{
+    display: none;
 }

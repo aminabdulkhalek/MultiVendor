@@ -73,6 +73,7 @@ import {ProductsPageComponent} from './Customer/products/products-page.component
 import { FormsModule } from '@angular/forms';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
+import { ProductListViewComponent } from './Customer/products/product-list-view/product-list-view.component';
 
 @NgModule({
   declarations: [
@@ -126,7 +127,8 @@ import { NgxSliderModule } from '@angular-slider/ngx-slider';
     CustomerDashboardComponent,
     CarouselComponent,
     ProductsGirdViewComponent,
-    ProductsPageComponent
+    ProductsPageComponent,
+    ProductListViewComponent
   ],
   entryComponents: [
     AddProductModalComponent,

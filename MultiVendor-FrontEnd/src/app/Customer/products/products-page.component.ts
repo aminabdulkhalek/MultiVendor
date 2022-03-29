@@ -32,5 +32,25 @@ export class ProductsPageComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  gridView(){
+    const grid = document.getElementById('grid_view_icon');
+    const list = document.getElementById('list_view_icon');
+    const gird_body = document.getElementById('gird_body');
+    const list_body = document.getElementById('list_body');
+    grid.style.color = '#62C6FF';
+    gird_body.classList.remove('hide');
+    list.style.color = '#5A5A5A';
+    list_body.classList.add('hide');
+  }
+  listView(){
+    const grid = document.getElementById('grid_view_icon');
+    const list = document.getElementById('list_view_icon');
+    const gird_body = document.getElementById('gird_body');
+    const list_body = document.getElementById('list_body');
+    grid.style.color = '#5A5A5A';
+    gird_body.classList.add('hide');
+    list.style.color = '#62C6FF';
+    list_body.classList.remove('hide');
+  }
 }
+
