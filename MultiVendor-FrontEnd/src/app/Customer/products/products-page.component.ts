@@ -21,13 +21,13 @@ export class ProductsPageComponent implements OnInit {
   wishlist = faHeart;
   cart = faShoppingCart;
   shopping_cart = faShoppingBasket;
-  products;
+  products = [1,2,3,4,5,6];
   selectedCategory: string;
   categories: string[] = ['All','Women Clothes', 'Men Clothes','Shoes', 'Furniture', 'Health & Hygine', 'Food', 'Tools', 'Electronic Devices','Medication', 'E-Books'];
   @ViewChild(MatPaginator) paginator: MatPaginator;
   constructor() { }
   ngAfterViewInit() {
-    this.products.paginator = this.paginator;
+    // this.products.paginator = this.paginator;
   }
 
   ngOnInit(): void {

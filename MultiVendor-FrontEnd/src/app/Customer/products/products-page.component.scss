@@ -69,11 +69,7 @@ a {
     padding-right: 20px;
 }
 
-.body {
-    position: absolute;
-    top: 100px;
-    margin: 0 50px;
-}
+
 
 .top_section {
     position: absolute;
@@ -226,14 +222,24 @@ mat-icon {
     margin-left: 20px;
     cursor: pointer;
 }
-.slider{
+
+.slider {
     color: #5A5A5A;
     margin: 20px;
 }
 
-input{
+input {
     border: 1px solid #dddddd !important;
     border-radius: 4px;
     height: 1.5rem;
     width: min-content !important;
+}
+
+.body {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 31vh;
+    left: 18.2vw;
 }
