@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -9,9 +10,11 @@ import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
 export class ProductsGirdViewComponent implements OnInit {
   star=faStar;
   half_star=faStarHalfAlt;
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
-
+  redirectToProduct(){
+    this.router.navigate(['product'])
+  }
 }

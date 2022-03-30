@@ -19,6 +19,7 @@ import { CustomerDashboardComponent } from './Customer/customer-dashboard/custom
 import { ProductsPageComponent } from './Customer/products/products-page.component';
 import { ShopsComponent } from './Customer/shops/shops.component';
 import { ShopComponent } from './Customer/shop/shop.component';
+import { ProductComponent } from './Customer/product/product.component';
 
 
 
@@ -42,6 +43,7 @@ const routes: Routes = [
 
   { path: 'customer-dashboard', component: CustomerDashboardComponent },
   { path: 'products', component: ProductsPageComponent },
+  { path: 'product', component: ProductComponent },
   { path: 'shops', component: ShopsComponent },
   { path: 'shop', component: ShopComponent },
 ];

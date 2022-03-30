@@ -77,6 +77,7 @@ import { ProductListViewComponent } from './Customer/products/product-list-view/
 import { ShopsComponent } from './Customer/shops/shops.component';
 import { ShopBoxComponent } from './Customer/shops/shop-box/shop-box.component';
 import { ShopComponent } from './Customer/shop/shop.component';
+import { ProductComponent } from './Customer/product/product.component';
 
 @NgModule({
   declarations: [
@@ -134,7 +135,8 @@ import { ShopComponent } from './Customer/shop/shop.component';
     ProductListViewComponent,
     ShopsComponent,
     ShopBoxComponent,
-    ShopComponent
+    ShopComponent,
+    ProductComponent
   ],
   entryComponents: [
     AddProductModalComponent,
