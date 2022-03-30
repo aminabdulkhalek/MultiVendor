@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
 import { faSignOut, faUserCircle, faHeart, faShoppingCart, faShoppingBasket, faPhone } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-shopping-cart',
@@ -12,10 +14,18 @@ export class ShoppingCartComponent implements OnInit {
   wishlist = faHeart;
   cart = faShoppingCart;
   shopping_cart = faShoppingBasket;
-  phone = faPhone
+  phone = faPhone;
+  value=0;
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  handleMinus() {
+    if (this.value>0) {
+      this.value--;  
+    }
+  }
+  handlePlus() {
+    this.value++;    
+  }
 }

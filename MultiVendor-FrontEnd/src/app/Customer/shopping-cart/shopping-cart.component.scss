@@ -78,3 +78,105 @@ a {
     top: 7rem;
     margin: 1rem 3vw;
 }
+
+.page_header {}
+
+.cart_items {}
+
+.sub_header {}
+
+.product_text {}
+
+.price_text {}
+
+.qty_text {}
+
+.total_text {}
+
+.content {}
+
+.img_container {}
+
+.product_info {}
+
+.product_name {}
+
+.product_owner {}
+
+.product_owener_value {}
+
+.product_price {}
+
+input[type="number"] {
+    -webkit-appearance: textfield !important;
+    -moz-appearance: textfield !important;
+    appearance: textfield !important;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+.wrapper {
+    border: 1px gainsboro solid;
+    width: 9rem;
+    height: 1.5rem;
+    padding: 0.5rem;
+    display: flex;
+    border-radius: 5px;
+    margin-right: 1rem;
+}
+
+.plusminus {
+    font-weight: 600;
+    margin-top: -0.4rem;
+    height: 100%;
+    width: 30%;
+    background: white;
+    border: none;
+    font-size: 24px;
+    color: $blue;
+    cursor: pointer;
+}
+
+.num {
+    color: #5a5a5a;
+    text-align: center;
+    height: 100%;
+    width: 39%;
+    border: none;
+    font-size: 18px;
+}
+
+.product_total {}
+
+.delete_icon {}
+
+.continue_update {}
+
+.continue {}
+
+.update {}
+
+.cart_summary {}
+
+.apply_coupon_lable {}
+
+.apply_coupon {}
+
+.input {}
+
+.apply {}
+
+.cart_total_box {}
+
+.cart_total_label {}
+
+.cart_info {}
+
+.lables {}
+
+.values {}
+
+.checkout {}
