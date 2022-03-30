@@ -75,7 +75,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
 import { ProductListViewComponent } from './Customer/products/product-list-view/product-list-view.component';
 import { ShopsComponent } from './Customer/shops/shops.component';
-import { ShopComponent } from './Customer/shops/shop/shop.component';
+import { ShopBoxComponent } from './Customer/shops/shop-box/shop-box.component';
 
 @NgModule({
   declarations: [
@@ -132,7 +132,7 @@ import { ShopComponent } from './Customer/shops/shop/shop.component';
     ProductsPageComponent,
     ProductListViewComponent,
     ShopsComponent,
-    ShopComponent
+    ShopBoxComponent
   ],
   entryComponents: [
     AddProductModalComponent,

@@ -29,7 +29,7 @@
   </div>
 </mat-toolbar>
 <div class="top_section">
-  <p class="total_shops">Total Stores: 8</p>
+  <p class="total_shops">Total Stores: {{shops.length}}</p>
   <mat-paginator
     class="paginator"
     [length]="100"
@@ -43,5 +43,5 @@
 <div class="background"></div>
 
 <div class="body">
-  <app-shop *ngFor="let shop of shops"></app-shop>
+  <app-shop-box *ngFor="let shop of shops"></app-shop-box>
 </div>
