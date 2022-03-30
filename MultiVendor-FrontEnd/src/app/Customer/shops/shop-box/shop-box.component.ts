@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { faPhone, faStar, faStarHalf } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -10,9 +11,11 @@ export class ShopBoxComponent implements OnInit {
   phone = faPhone;
   star = faStar;
   half_star = faStarHalf
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
-
+  redirectToShop(){
+    this.router.navigate(['shop'])
+  }
 }
