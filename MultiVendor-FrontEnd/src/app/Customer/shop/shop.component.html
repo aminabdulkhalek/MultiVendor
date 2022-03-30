@@ -77,25 +77,48 @@
           <mat-icon class="hide">flag</mat-icon>
         </div>
         <div class="social-media-icons">
-            <a href=""><img src="\assets\socail_media_icon\facebook0.png" alt=""></a>
-            <a href=""><img src="\assets\socail_media_icon\twitter0.png" alt=""></a>
-            <a href=""><img src="\assets\socail_media_icon\instagram0.png" alt=""></a>
-            <a href=""><img src="\assets\socail_media_icon\linkedin0.png" alt=""></a>
+          <a href=""
+            ><img src="\assets\socail_media_icon\facebook0.png" alt=""
+          /></a>
+          <a href=""
+            ><img src="\assets\socail_media_icon\twitter0.png" alt=""
+          /></a>
+          <a href=""
+            ><img src="\assets\socail_media_icon\instagram0.png" alt=""
+          /></a>
+          <a href=""
+            ><img src="\assets\socail_media_icon\linkedin0.png" alt=""
+          /></a>
         </div>
       </div>
     </div>
   </div>
   <div class="products_section">
     <div class="top_section">
-        <p class="total_products">Total Stores: {{products.length}}</p>
-        <mat-paginator
-          class="paginator"
-          [length]="100"
-          [pageSize]="10"
-          [pageSizeOptions]="[5, 10, 25, 100]"
-          aria-label="Select page"
-        >
-        </mat-paginator>
+      <p class="total_products">Total Stores: {{ products.length }}</p>
+      <div class="product_view">
+        <p>View:</p>
+        <a (click)="gridView()"><mat-icon id="grid_view_icon" style="color: #62c6ff">view_module</mat-icon></a>
+        <a (click)="listView()"><mat-icon id="list_view_icon">list</mat-icon></a>
       </div>
+      <mat-paginator
+        class="paginator"
+        [length]="100"
+        [pageSize]="10"
+        [pageSizeOptions]="[5, 10, 25, 100]"
+        aria-label="Select page"
+      >
+      </mat-paginator>
+    </div>
+    <div id="gird_body" class="body0">
+      <app-products-gird-view
+        *ngFor="let product of products"
+      ></app-products-gird-view>
+    </div>
+    <div id="list_body" class="body1 hide">
+      <app-product-list-view
+        *ngFor="let product of products"
+      ></app-product-list-view>
+    </div>
   </div>
 </div>

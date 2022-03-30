@@ -76,15 +76,15 @@ a {
 .body {
     position: absolute;
     top: 7rem;
-    margin: 0 5vw;
+    margin: 1rem 3vw;
 }
 
 .preview {
     border-radius: 4px;
     background-color: #F7F7FF;
     height: 35rem;
-    width: 88vw;
-    padding: 10px;
+    width: 94vw;
+    // padding: 10px;
 }
 
 .inner-preview {
@@ -188,30 +188,27 @@ a {
 .total_products {
     font-size: 18px;
     color: #7a7a7a;
-    margin: 2.2rem 1rem;
+    margin: 2.2rem 3rem;
 }
 
 .products_section {
+    position: relative;
     border-radius: 4px;
-    margin-left: 0.5rem;
     background-color: white;
-    width: 88vw;
+    width: 94vw;
     margin-top: 8rem;
 }
 
 .paginator {
     position: absolute;
-    bottom: 1rem;
-    right: 2rem;
+    top: 1.5rem;
+    right: 13rem;
 }
 
 .top_section {
     background-color: rgb(255, 255, 255);
-    // position: absolute;
-    // top: 150px;
-    // margin: 0 5vw;
     height: 10vh;
-    width:80vw;
+    width: 80vw;
     border: 1.5px solid rgb(255, 255, 255);
 }
 
@@ -257,4 +254,48 @@ a {
 ::ng-deep .mat-paginator-page-size.ng-star-inserted>div,
 ::ng-deep .mat-paginator-range-actions>div {
     font-size: 18px;
+}
+
+.body0 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.body1 {
+    margin-left: 15rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.hide {
+    display: none;
+}
+
+.product_view {
+    font-size: large;
+    color: #5A5A5A;
+    position: absolute;
+    top: 2rem;
+    right: 4.5rem;
+}
+
+.product_view p {
+    position: absolute;
+    bottom: 0.2rem;
+    right: 5rem;
+}
+
+.product_view a {
+    margin: 0;
+    padding: 0;
+    padding-left: 10px;
+    // margin-bottom: -2rem;
+}
+
+.product_view mat-icon {
+    font-size: 40px;
+    margin-left: 10px;
+    cursor: pointer;
 }
