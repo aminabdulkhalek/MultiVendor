@@ -56,7 +56,7 @@
         <img
           src="/assets/img.png"
           alt="img4"
-          (click)="changeImg('/assets/img3.png')"
+          (click)="changeImg('/assets/img.png')"
         />
       </div>
     </div>
@@ -66,11 +66,33 @@
     <div class="column3">
       <p class="product_name">Iphone 13 Pro MAX</p>
       <div class="product_info">
-        <div class="rating"></div>
+        <div class="rating"><bar-rating [rate]="4" [readOnly]="true" [max]="5">
+          <ng-template ratingInactive>
+            <fa-icon
+              [icon]="star"
+              [fixedWidth]="true"
+              style="color: #d2d2d2"
+            ></fa-icon>
+          </ng-template>
+          <ng-template ratingActive>
+            <fa-icon
+              [icon]="star"
+              [fixedWidth]="true"
+              style="color: #ffb800"
+            ></fa-icon>
+          </ng-template>
+          <ng-template ratingFraction>
+            <fa-icon
+              [icon]="half_star"
+              [fixedWidth]="true"
+              style="color: #ffb800"
+            ></fa-icon>
+          </ng-template>
+        </bar-rating></div>
         <p class="total_review">6 Reviews</p>
-        <p class="total_sales">Sold: <Span class="total_sales_value"></Span></p>
+        <p class="total_sales">Sold: <Span class="total_sales_value">1</Span></p>
         <p class="product_owner">
-          Vendor <span class="product_owner_value">Apple</span>
+          Vendor: <span class="product_owner_value">Apple</span>
         </p>
       </div>
       <hr />
@@ -83,16 +105,36 @@
         </ul>
       </div>
       <p class="availability">
-        Availability <span class="availability_value"> 12 in stock</span>
+        Availability: <span class="availability_value"> 12 in stock</span>
       </p>
       <div class="actions">
-        <input type="number" />
-        <button>Add to Cart</button>
-        <button>Buy Now</button>
-        <button><mat-icon>favorite_outline</mat-icon></button>
-        <button><mat-icon>outlined_flag</mat-icon></button>
+        <div class="wrapper">
+          <button class="plusminus" (click)="handleMinus()">-</button>
+          <input type="number" class="num" value="0" [(ngModel)]="value" />
+          <button class="plusminus" (click)="handlePlus()">+</button>
+        </div>
+        <button class="add">Add to Cart</button>
+        <button class="buy_now">Buy Now</button>
+        <button class="love"><mat-icon>favorite_outline</mat-icon></button>
+        <button class="love hide"><mat-icon>favorite</mat-icon></button>
+        <button class="flag"><mat-icon>outlined_flag</mat-icon></button>
+        <button class="flag hide"><mat-icon>flag</mat-icon></button>
       </div>
       <hr />
+      <div class="social-media-icons">
+        <a href=""
+          ><img src="\assets\socail_media_icon\facebook0.png" alt=""
+        /></a>
+        <a href=""
+          ><img src="\assets\socail_media_icon\twitter0.png" alt=""
+        /></a>
+        <a href=""
+          ><img src="\assets\socail_media_icon\instagram0.png" alt=""
+        /></a>
+        <a href=""
+          ><img src="\assets\socail_media_icon\linkedin0.png" alt=""
+        /></a>
+      </div>
     </div>
   </div>
   <div class="lower_section">
