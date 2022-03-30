@@ -31,13 +31,37 @@
 <div class="body">
   <div class="upper_section">
     <div class="column1">
-      <img src="" alt="" />
-      <img src="" alt="" />
-      <img src="" alt="" />
-      <img src="" alt="" />
+      <div class="img_container">
+        <img
+          src="/assets/img.png"
+          alt="img1"
+          (click)="changeImg('/assets/img.png')"
+        />
+      </div>
+      <div class="img_container">
+        <img
+          src="/assets/img1.png"
+          alt="img2"
+          (click)="changeImg('/assets/img1.png')"
+        />
+      </div>
+      <div class="img_container">
+        <img
+          src="/assets/img2.png"
+          alt="img3"
+          (click)="changeImg('/assets/img2.png')"
+        />
+      </div>
+      <div class="img_container">
+        <img
+          src="/assets/img.png"
+          alt="img4"
+          (click)="changeImg('/assets/img3.png')"
+        />
+      </div>
     </div>
     <div class="column2">
-      <img src="" alt="" />
+      <img src="{{ selected_img }}" alt="img" />
     </div>
     <div class="column3">
       <p class="product_name">Iphone 13 Pro MAX</p>
@@ -49,7 +73,7 @@
           Vendor <span class="product_owner_value">Apple</span>
         </p>
       </div>
-      <hr>
+      <hr />
       <div class="products_features">
         <ul>
           <li>Operating system: iOS 15</li>
@@ -68,7 +92,7 @@
         <button><mat-icon>favorite_outline</mat-icon></button>
         <button><mat-icon>outlined_flag</mat-icon></button>
       </div>
-      <hr>
+      <hr />
     </div>
   </div>
   <div class="lower_section">
@@ -90,9 +114,9 @@
       Backed by a one-year satisfaction guarantee.
     </p>
     <div class="product_imgs">
-      <img src="" alt="" />
-      <img src="" alt="" />
-      <img src="" alt="" />
+      <img src="/assets/img1.png" alt="img1" />
+      <img src="/assets/img2.png" alt="img2" />
+      <img src="/assets/img.png" alt="img3" />
     </div>
     <p class="desc2">
       Camera: Rear image quality: Still image quality using the rear facing
@@ -164,35 +188,41 @@
         <button>Submit</button>
       </div>
     </div>
-    <hr>
+    <hr />
     <div class="reviews_section">
-        <div class="review">
-            <img src="" alt="">
-            <div class="review_info">
-                <p class="review_name">John Doe <span class="review_date">November 27, 2019</span></p>
-                <div class="review_stars"></div>
-                <p class="review_comment">just buy it</p>
-            </div>
-            <hr>
+      <div class="review">
+        <img src="" alt="" />
+        <div class="review_info">
+          <p class="review_name">
+            John Doe <span class="review_date">November 27, 2019</span>
+          </p>
+          <div class="review_stars"></div>
+          <p class="review_comment">just buy it</p>
         </div>
-        <div class="review">
-            <img src="" alt="">
-            <div class="review_info">
-                <p class="review_name">John Doe <span class="review_date">November 27, 2019</span></p>
-                <div class="review_stars"></div>
-                <p class="review_comment">just buy it</p>
-            </div>
-            <hr>
+        <hr />
+      </div>
+      <div class="review">
+        <img src="" alt="" />
+        <div class="review_info">
+          <p class="review_name">
+            John Doe <span class="review_date">November 27, 2019</span>
+          </p>
+          <div class="review_stars"></div>
+          <p class="review_comment">just buy it</p>
         </div>
-        <div class="review">
-            <img src="" alt="">
-            <div class="review_info">
-                <p class="review_name">John Doe <span class="review_date">November 27, 2019</span></p>
-                <div class="review_stars"></div>
-                <p class="review_comment">just buy it</p>
-            </div>
-            <hr>
+        <hr />
+      </div>
+      <div class="review">
+        <img src="" alt="" />
+        <div class="review_info">
+          <p class="review_name">
+            John Doe <span class="review_date">November 27, 2019</span>
+          </p>
+          <div class="review_stars"></div>
+          <p class="review_comment">just buy it</p>
         </div>
+        <hr />
+      </div>
     </div>
   </div>
 </div>

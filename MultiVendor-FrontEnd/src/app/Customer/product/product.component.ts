@@ -12,9 +12,12 @@ export class ProductComponent implements OnInit {
   wishlist = faHeart;
   cart= faShoppingCart;
   shopping_cart= faShoppingBasket;
+  selected_img = '/assets/img.png'
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  changeImg(img){
+    this.selected_img = img;
+  }
 }
