@@ -3,9 +3,8 @@ $blue: #62C6FF;
 $lblue: #F2FAFF;
 $red: #FF5C5C;
 
-.background{
+::ng-deep body{
   background-color: $lblue;
-  height: 100%;
 }
 .logo{
 
@@ -70,7 +69,7 @@ a{
 }
 
 .top_section {
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   position: absolute;
   top: 150px;
   margin: 0 5vw;

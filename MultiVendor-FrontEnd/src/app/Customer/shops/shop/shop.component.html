@@ -1,1 +1,45 @@
-<p>shop works!</p>
+<div class="shop">
+  <div
+    class="top_section"
+    style="background: rgba(0, 0, 0, 0.3) URL(/assets/banner.jpg)"
+  >
+    <p class="vendor_name">Boston Hayden</p>
+    <div class="rating">
+      <bar-rating [rate]="4" [readOnly]="true" [max]="5">
+        <ng-template ratingInactive>
+          <fa-icon
+            [icon]="star"
+            [fixedWidth]="true"
+            style="color: #d2d2d2"
+          ></fa-icon>
+        </ng-template>
+        <ng-template ratingActive>
+          <fa-icon
+            [icon]="star"
+            [fixedWidth]="true"
+            style="color: #ffb800"
+          ></fa-icon>
+        </ng-template>
+        <ng-template ratingFraction>
+          <fa-icon
+            [icon]="half_star"
+            [fixedWidth]="true"
+            style="color: #ffb800"
+          ></fa-icon>
+        </ng-template>
+      </bar-rating>
+    </div>
+    <p class="vendor_address">
+      863 N. Stonybrook Ave. Tonawanda, NY 14150, Cusco, Peru
+    </p>
+  </div>
+  <div class="vendor_logo">
+    <img src="/assets/logo.png" alt="logo" />
+  </div>
+  <div class="bottom_section">
+    <div class="vendor_number">
+      <mat-icon>phone</mat-icon>
+      <p>(123) 389-4562</p>
+    </div>
+  </div>
+</div>
