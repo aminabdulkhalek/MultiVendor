@@ -137,5 +137,9 @@ a{
 .body{
   position: absolute;
   top: 16rem;
-  margin: 0 5vw;
+  margin: 0 7vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: absolute;
 }
