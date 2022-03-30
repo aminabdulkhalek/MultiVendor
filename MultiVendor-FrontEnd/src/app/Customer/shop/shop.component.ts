@@ -17,6 +17,7 @@ export class ShopComponent implements OnInit {
   phone = faPhone
   star = faStar;
   half_star = faStarHalf;
+  products=[1,2,3,4,5,6,7,8,9]
   constructor(
     private matIconRegistry:MatIconRegistry,
     private domSanitzer:DomSanitizer,

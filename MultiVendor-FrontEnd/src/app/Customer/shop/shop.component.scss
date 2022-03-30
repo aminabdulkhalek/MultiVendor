@@ -129,13 +129,14 @@ a {
     margin-top: -2.7rem;
     margin-right: 3rem;
 }
-.social-media-icons img{
+
+.social-media-icons img {
     padding-left: 0.5rem;
     height: auto;
     width: 3rem;
 }
 
-.social-media-icons a{
+.social-media-icons a {
     padding: 0.1rem;
 }
 
@@ -162,24 +163,98 @@ a {
     font-size: 20px;
 }
 
-.rating{
+.rating {
     display: flex;
     padding-top: 1rem;
     padding-left: 2rem;
 }
 
-.rating fa-icon{
+.rating fa-icon {
     font-size: 30px;
 }
 
-.rating mat-icon{
- font-size: 40px;
- color: #FF5C5C;
- padding-left: 1rem;
- cursor: pointer;
- margin-top: -0.3rem;
+.rating mat-icon {
+    font-size: 40px;
+    color: #FF5C5C;
+    padding-left: 1rem;
+    cursor: pointer;
+    margin-top: -0.3rem;
 }
 
-.hide{
- display: none;
+.hide {
+    display: none;
+}
+
+.total_products {
+    font-size: 18px;
+    color: #7a7a7a;
+    margin: 2.2rem 1rem;
+}
+
+.products_section {
+    border-radius: 4px;
+    margin-left: 0.5rem;
+    background-color: white;
+    width: 88vw;
+    margin-top: 8rem;
+}
+
+.paginator {
+    position: absolute;
+    bottom: 1rem;
+    right: 2rem;
+}
+
+.top_section {
+    background-color: rgb(255, 255, 255);
+    // position: absolute;
+    // top: 150px;
+    // margin: 0 5vw;
+    height: 10vh;
+    width:80vw;
+    border: 1.5px solid rgb(255, 255, 255);
+}
+
+::ng-deep .mat-focus-indicator.mat-tooltip-trigger.mat-paginator-navigation-next.mat-icon-button.mat-button-base {
+    background-color: $blue;
+    border-radius: 0 4px 4px 0;
+    color: white;
+}
+
+::ng-deep .mat-focus-indicator.mat-tooltip-trigger.mat-paginator-navigation-previous.mat-icon-button.mat-button-base.mat-button-disabled {
+    background-color: gainsboro;
+    border-radius: 4px 0px 0px 4px;
+
+}
+
+::ng-deep .mat-focus-indicator.mat-tooltip-trigger.mat-paginator-navigation-previous.mat-icon-button.mat-button-base {
+    background-color: white;
+    border-radius: 4px 0px 0px 4px;
+    border: 1px solid gainsboro;
+}
+
+::ng-deep .mat-select-arrow-wrapper {
+    background-color: $blue;
+    height: 36px !important;
+    border-radius: 0 4px 4px 0;
+}
+
+::ng-deep.mat-select-arrow {
+    color: white;
+}
+
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-underline {
+    height: 0 !important;
+}
+
+::ng-deep .mat-select-value {
+    border-radius: 4px 0 0 4px;
+    border: 1px solid gainsboro;
+
+    padding: 10px 5px;
+}
+
+::ng-deep .mat-paginator-page-size.ng-star-inserted>div,
+::ng-deep .mat-paginator-range-actions>div {
+    font-size: 18px;
 }
