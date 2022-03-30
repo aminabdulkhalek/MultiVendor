@@ -20,6 +20,7 @@ import { ProductsPageComponent } from './Customer/products/products-page.compone
 import { ShopsComponent } from './Customer/shops/shops.component';
 import { ShopComponent } from './Customer/shop/shop.component';
 import { ProductComponent } from './Customer/product/product.component';
+import { ShoppingCartComponent } from './Customer/shopping-cart/shopping-cart.component';
 
 
 
@@ -46,6 +47,7 @@ const routes: Routes = [
   { path: 'product', component: ProductComponent },
   { path: 'shops', component: ShopsComponent },
   { path: 'shop', component: ShopComponent },
+  { path: 'shopping-cart', component: ShoppingCartComponent },
 ];
 
 @NgModule({
