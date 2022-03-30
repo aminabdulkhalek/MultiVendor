@@ -28,3 +28,62 @@
     Hotline: <Span class="phone">+961 81935140</Span>
   </div>
 </mat-toolbar>
+
+<div class="body">
+  <div class="profile_section">
+    <div class="preview" id="preview-div">
+      <div class="inner-preview">
+        <img
+          src="assets/banner.jpg"
+          alt="banner"
+          class="profile-banner-preview"
+        />
+        <div class="profile-logo-preview-div">
+          <img src="assets/logo.png" alt="logo" class="profile-logo-preview" />
+        </div>
+
+        <h2 class="shop-name">Boston Hayden</h2>
+        <h4 class="shop-address">
+          863 N. Stonybrook Ave. Tonawanda, NY 14150,Cusco, Peru
+        </h4>
+        <h5 class="shop-number">
+          <fa-icon [icon]="phone" [fixedWidth]="true"></fa-icon>(123) 389-4562
+        </h5>
+        <div class="rating">
+          <bar-rating [rate]="4" [readOnly]="false" [max]="5">
+            <ng-template ratingInactive>
+              <fa-icon
+                [icon]="star"
+                [fixedWidth]="true"
+                style="color: #d2d2d2"
+              ></fa-icon>
+            </ng-template>
+            <ng-template ratingActive>
+              <fa-icon
+                [icon]="star"
+                [fixedWidth]="true"
+                style="color: #ffb800"
+              ></fa-icon>
+            </ng-template>
+            <ng-template ratingFraction>
+              <fa-icon
+                [icon]="half_star"
+                [fixedWidth]="true"
+                style="color: #ffb800"
+              ></fa-icon>
+            </ng-template>
+          </bar-rating>
+          <mat-icon class="">outlined_flag</mat-icon>
+          <mat-icon class="hide">flag</mat-icon>
+        </div>
+        <div class="social-media-icons">
+            <a href=""><img src="\assets\socail_media_icon\facebook0.png" alt=""></a>
+            <a href=""><img src="\assets\socail_media_icon\twitter0.png" alt=""></a>
+            <a href=""><img src="\assets\socail_media_icon\instagram0.png" alt=""></a>
+            <a href=""><img src="\assets\socail_media_icon\linkedin0.png" alt=""></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="products_section"></div>
+</div>

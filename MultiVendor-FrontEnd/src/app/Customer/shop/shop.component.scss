@@ -1,12 +1,12 @@
-
 $blue: #62C6FF;
 $lblue: #F2FAFF;
 $red: #FF5C5C;
 
- ::ng-deep body{
-  background-color: $lblue;
+::ng-deep body {
+    background-color: $lblue;
 }
-.logo{
+
+.logo {
 
     color: $red;
     font-size: 30px;
@@ -15,14 +15,15 @@ $red: #FF5C5C;
 
 }
 
-.toolbar{
+.toolbar {
     height: 60px;
     background-color: white;
     color: #5A5A5A;
     position: fixed;
     z-index: 100;
 }
-.toolbar1{
+
+.toolbar1 {
     margin-top: 60px;
     background-color: $blue;
     color: #5A5A5A;
@@ -30,28 +31,31 @@ $red: #FF5C5C;
     z-index: 100;
     height: 40px;
 }
-.market-name{
-    flex:1;
+
+.market-name {
+    flex: 1;
     font-size: x-large;
-    font-weight:bolder ;
+    font-weight: bolder;
     padding-left: 10px;
 }
 
-.links, .links>a{
-    color: white ;
-    flex:1;
-    font-size:large;
+.links,
+.links>a {
+    color: white;
+    flex: 1;
+    font-size: large;
     padding-left: 5px;
 
 }
-.right_item{
+
+.right_item {
     color: white;
     font-size: 15px;
     padding-left: 15px;
     font-weight: lighter;
 }
 
-.phone{
+.phone {
     font-weight: 500;
     padding-left: 5px;
 }
@@ -61,9 +65,121 @@ $red: #FF5C5C;
     height: 20px;
     margin-left: 10px;
 }
-a{
+
+a {
     text-decoration: none;
     color: #5A5A5A;
     padding-left: 20px;
     padding-right: 20px;
+}
+
+.body {
+    position: absolute;
+    top: 7rem;
+    margin: 0 5vw;
+}
+
+.preview {
+    border-radius: 4px;
+    background-color: #F7F7FF;
+    height: 35rem;
+    width: 88vw;
+    padding: 10px;
+}
+
+.inner-preview {
+    align-self: center;
+    background-color: white;
+    border-radius: 4px;
+    width: 100%;
+    height: 40rem;
+    overflow: hidden;
+}
+
+.profile-banner-preview {
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+}
+
+.profile-logo-preview-div {
+    background-color: white;
+    padding: 10px;
+    position: absolute;
+    right: 5vw;
+    top: 20rem;
+    height: 7rem;
+    width: 7rem;
+    border-radius: 6rem;
+    box-shadow: 0px 1px 7px 3px rgba(218, 218, 218, 0.53);
+}
+
+.profile-logo-preview {
+    object-fit: cover;
+    height: 7rem;
+    width: 7rem;
+    border-radius: 7rem;
+}
+
+.social-media-icons {
+    display: flex;
+    float: right;
+    z-index: 100;
+    font-size: 25px;
+    margin-top: -2.7rem;
+    margin-right: 3rem;
+}
+.social-media-icons img{
+    padding-left: 0.5rem;
+    height: auto;
+    width: 3rem;
+}
+
+.social-media-icons a{
+    padding: 0.1rem;
+}
+
+.shop-name {
+    padding-top: 1rem;
+    padding-left: 2rem;
+    font-size: 26px;
+    font-weight: 500;
+    color: #3F3F3F;
+}
+
+.shop-address {
+    padding-top: 1rem;
+    padding-left: 2rem;
+    font-size: 20px;
+    font-weight: 600;
+    color: #3F3F3F;
+}
+
+.shop-number {
+    padding-top: 1rem;
+    padding-left: 2rem;
+    color: #62C6FF;
+    font-size: 20px;
+}
+
+.rating{
+    display: flex;
+    padding-top: 1rem;
+    padding-left: 2rem;
+}
+
+.rating fa-icon{
+    font-size: 30px;
+}
+
+.rating mat-icon{
+ font-size: 40px;
+ color: #FF5C5C;
+ padding-left: 1rem;
+ cursor: pointer;
+ margin-top: -0.3rem;
+}
+
+.hide{
+ display: none;
 }
