@@ -66,31 +66,35 @@
     <div class="column3">
       <p class="product_name">Iphone 13 Pro MAX</p>
       <div class="product_info">
-        <div class="rating"><bar-rating [rate]="4" [readOnly]="true" [max]="5">
-          <ng-template ratingInactive>
-            <fa-icon
-              [icon]="star"
-              [fixedWidth]="true"
-              style="color: #d2d2d2"
-            ></fa-icon>
-          </ng-template>
-          <ng-template ratingActive>
-            <fa-icon
-              [icon]="star"
-              [fixedWidth]="true"
-              style="color: #ffb800"
-            ></fa-icon>
-          </ng-template>
-          <ng-template ratingFraction>
-            <fa-icon
-              [icon]="half_star"
-              [fixedWidth]="true"
-              style="color: #ffb800"
-            ></fa-icon>
-          </ng-template>
-        </bar-rating></div>
+        <div class="rating">
+          <bar-rating [rate]="4" [readOnly]="true" [max]="5">
+            <ng-template ratingInactive>
+              <fa-icon
+                [icon]="star"
+                [fixedWidth]="true"
+                style="color: #d2d2d2"
+              ></fa-icon>
+            </ng-template>
+            <ng-template ratingActive>
+              <fa-icon
+                [icon]="star"
+                [fixedWidth]="true"
+                style="color: #ffb800"
+              ></fa-icon>
+            </ng-template>
+            <ng-template ratingFraction>
+              <fa-icon
+                [icon]="half_star"
+                [fixedWidth]="true"
+                style="color: #ffb800"
+              ></fa-icon>
+            </ng-template>
+          </bar-rating>
+        </div>
         <p class="total_review">6 Reviews</p>
-        <p class="total_sales">Sold: <Span class="total_sales_value">1</Span></p>
+        <p class="total_sales">
+          Sold: <Span class="total_sales_value">1</Span>
+        </p>
         <p class="product_owner">
           Vendor: <span class="product_owner_value">Apple</span>
         </p>
@@ -161,110 +165,259 @@
       <img src="/assets/img.png" alt="img3" />
     </div>
     <p class="desc2">
-      Camera: Rear image quality: Still image quality using the rear facing
-      (main) camera. It is based on objective and subjective judgments of test
-      images, which includes evaluating resolution, dynamic range, color
-      accuracy, and visual noise. Camera: Rear 1080p video quality: Video
-      quality is based on the judgments of trained panelists who viewed recorded
-      video images shot at the highest quality setting available (1080p max.) in
-      multiple lighting conditions. Camera: Selfie image quality: Still image
-      quality using the front facing (selfie) camera. It is based on objective
-      and subjective judgments of test images, which includes evaluating
-      resolution, color accuracy, and visual noise in multiple lighting
-      conditions.
+      <b>Camera: Rear image quality:</b> Still image quality using the rear
+      facing (main) camera. It is based on objective and subjective judgments of
+      test images, which includes evaluating resolution, dynamic range, color
+      accuracy, and visual noise. <br />
+      <br />
+      <b>Camera: Rear 1080p video quality: </b> Video quality is based on the
+      judgments of trained panelists who viewed recorded video images shot at
+      the highest quality setting available (1080p max.) in multiple lighting
+      conditions. <br />
+      <br />
+      <b>Camera: Selfie image quality: </b> Still image quality using the front
+      facing (selfie) camera. It is based on objective and subjective judgments
+      of test images, which includes evaluating resolution, color accuracy, and
+      visual noise in multiple lighting conditions.
     </p>
     <div class="submit_review_section">
       <div class="product_review_status">
         <div class="product_review_status0">
           <p class="customer_reivews">Customer Reviews</p>
           <p class="product_stars_value">4.50</p>
-          <div class="product_stars_icons"></div>
+          <div class="product_stars_icons">
+            <bar-rating [rate]="4" [readOnly]="true" [max]="5">
+              <ng-template ratingInactive>
+                <fa-icon
+                  [icon]="star"
+                  [fixedWidth]="true"
+                  style="color: #d2d2d2"
+                ></fa-icon>
+              </ng-template>
+              <ng-template ratingActive>
+                <fa-icon
+                  [icon]="star"
+                  [fixedWidth]="true"
+                  style="color: #ffb800"
+                ></fa-icon>
+              </ng-template>
+              <ng-template ratingFraction>
+                <fa-icon
+                  [icon]="half_star"
+                  [fixedWidth]="true"
+                  style="color: #ffb800"
+                ></fa-icon>
+              </ng-template>
+            </bar-rating>
+          </div>
           <p class="based_on">Based on 6 Reviews</p>
         </div>
         <div class="product_review_status1">
           <div class="row">
-            <div class="stars"></div>
-            <div class="bar"></div>
-            <p class="stars_value"></p>
+            <div class="stars">
+              <bar-rating [rate]="5" [readOnly]="true" [max]="5">
+                <ng-template ratingInactive>
+                  <fa-icon
+                    [icon]="star"
+                    [fixedWidth]="true"
+                    style="color: #d2d2d2"
+                  ></fa-icon>
+                </ng-template>
+                <ng-template ratingActive>
+                  <fa-icon
+                    [icon]="star"
+                    [fixedWidth]="true"
+                    style="color: #ffb800"
+                  ></fa-icon>
+                </ng-template>
+                <ng-template ratingFraction>
+                  <fa-icon
+                    [icon]="half_star"
+                    [fixedWidth]="true"
+                    style="color: #ffb800"
+                  ></fa-icon>
+                </ng-template>
+              </bar-rating>
+            </div>
+            <p class="stars_value">4</p>
           </div>
           <div class="row">
-            <div class="stars"></div>
-            <div class="bar"></div>
-            <p class="stars_value"></p>
+            <div class="stars">
+              <bar-rating [rate]="4" [readOnly]="true" [max]="5">
+                <ng-template ratingInactive>
+                  <fa-icon
+                    [icon]="star"
+                    [fixedWidth]="true"
+                    style="color: #d2d2d2"
+                  ></fa-icon>
+                </ng-template>
+                <ng-template ratingActive>
+                  <fa-icon
+                    [icon]="star"
+                    [fixedWidth]="true"
+                    style="color: #ffb800"
+                  ></fa-icon>
+                </ng-template>
+                <ng-template ratingFraction>
+                  <fa-icon
+                    [icon]="half_star"
+                    [fixedWidth]="true"
+                    style="color: #ffb800"
+                  ></fa-icon>
+                </ng-template>
+              </bar-rating>
+            </div>
+            <p class="stars_value">2</p>
           </div>
           <div class="row">
-            <div class="stars"></div>
-            <div class="bar"></div>
-            <p class="stars_value"></p>
+            <div class="stars">
+              <bar-rating [rate]="3" [readOnly]="true" [max]="5">
+                <ng-template ratingInactive>
+                  <fa-icon
+                    [icon]="star"
+                    [fixedWidth]="true"
+                    style="color: #d2d2d2"
+                  ></fa-icon>
+                </ng-template>
+                <ng-template ratingActive>
+                  <fa-icon
+                    [icon]="star"
+                    [fixedWidth]="true"
+                    style="color: #ffb800"
+                  ></fa-icon>
+                </ng-template>
+                <ng-template ratingFraction>
+                  <fa-icon
+                    [icon]="half_star"
+                    [fixedWidth]="true"
+                    style="color: #ffb800"
+                  ></fa-icon>
+                </ng-template>
+              </bar-rating>
+            </div>
+            <p class="stars_value">0</p>
           </div>
           <div class="row">
-            <div class="stars"></div>
-            <div class="bar"></div>
-            <p class="stars_value"></p>
+            <div class="stars">
+              <bar-rating [rate]="2" [readOnly]="true" [max]="5">
+                <ng-template ratingInactive>
+                  <fa-icon
+                    [icon]="star"
+                    [fixedWidth]="true"
+                    style="color: #d2d2d2"
+                  ></fa-icon>
+                </ng-template>
+                <ng-template ratingActive>
+                  <fa-icon
+                    [icon]="star"
+                    [fixedWidth]="true"
+                    style="color: #ffb800"
+                  ></fa-icon>
+                </ng-template>
+                <ng-template ratingFraction>
+                  <fa-icon
+                    [icon]="half_star"
+                    [fixedWidth]="true"
+                    style="color: #ffb800"
+                  ></fa-icon>
+                </ng-template>
+              </bar-rating>
+            </div>
+            <p class="stars_value">0</p>
           </div>
           <div class="row">
-            <div class="stars"></div>
-            <div class="bar"></div>
-            <p class="stars_value"></p>
+            <div class="stars">
+              <bar-rating [rate]="1" [readOnly]="true" [max]="5">
+                <ng-template ratingInactive>
+                  <fa-icon
+                    [icon]="star"
+                    [fixedWidth]="true"
+                    style="color: #d2d2d2"
+                  ></fa-icon>
+                </ng-template>
+                <ng-template ratingActive>
+                  <fa-icon
+                    [icon]="star"
+                    [fixedWidth]="true"
+                    style="color: #ffb800"
+                  ></fa-icon>
+                </ng-template>
+                <ng-template ratingFraction>
+                  <fa-icon
+                    [icon]="half_star"
+                    [fixedWidth]="true"
+                    style="color: #ffb800"
+                  ></fa-icon>
+                </ng-template>
+              </bar-rating>
+            </div>
+            <p class="stars_value">0</p>
           </div>
         </div>
       </div>
       <div class="leave_review_box">
-        <p class="box_header"></p>
+        <p class="box_header">Leave a Review</p>
         <div class="select_box_section">
           <p class="select_box">1</p>
           <p class="select_box">2</p>
           <p class="select_box">3</p>
           <p class="select_box">4</p>
           <p class="select_box">5</p>
-          <p class="select_box_section_label"><mat-icon>star</mat-icon>Stars</p>
+          <mat-icon class="star_icon">star</mat-icon>
+          <p class="select_box_section_label">Stars</p>
         </div>
         <p class="comment_box_label">Anything that can be Improved?</p>
         <textarea
           name="comment"
-          id="commnet"
-          cols="30"
+          id="comment"
+          cols="50"
           rows="10"
           placeholder="Your feedback (optional)"
         ></textarea>
-        <button>Submit</button>
+        <div style="text-align: right">
+          <button class="submit">Submit</button>
+        </div>
       </div>
     </div>
     <hr />
     <div class="reviews_section">
-      <div class="review">
-        <img src="" alt="" />
+      <div class="review" *ngFor="review; of: reviews">
+        <mat-icon class="account_circle">account_circle</mat-icon>
         <div class="review_info">
           <p class="review_name">
             John Doe <span class="review_date">November 27, 2019</span>
           </p>
-          <div class="review_stars"></div>
+          <div class="review_stars">
+            <bar-rating [rate]="3.5" [readOnly]="true" [max]="5">
+              <ng-template ratingInactive>
+                <fa-icon
+                  [icon]="star"
+                  [fixedWidth]="true"
+                  style="color: #d2d2d2"
+                ></fa-icon>
+              </ng-template>
+              <ng-template ratingActive>
+                <fa-icon
+                  [icon]="star"
+                  [fixedWidth]="true"
+                  style="color: #ffb800"
+                ></fa-icon>
+              </ng-template>
+              <ng-template ratingFraction>
+                <fa-icon
+                  [icon]="half_star"
+                  [fixedWidth]="true"
+                  style="color: #ffb800"
+                ></fa-icon>
+              </ng-template>
+            </bar-rating>
+          </div>
           <p class="review_comment">just buy it</p>
+          
         </div>
-        <hr />
+        
       </div>
-      <div class="review">
-        <img src="" alt="" />
-        <div class="review_info">
-          <p class="review_name">
-            John Doe <span class="review_date">November 27, 2019</span>
-          </p>
-          <div class="review_stars"></div>
-          <p class="review_comment">just buy it</p>
-        </div>
-        <hr />
-      </div>
-      <div class="review">
-        <img src="" alt="" />
-        <div class="review_info">
-          <p class="review_name">
-            John Doe <span class="review_date">November 27, 2019</span>
-          </p>
-          <div class="review_stars"></div>
-          <p class="review_comment">just buy it</p>
-        </div>
-        <hr />
-      </div>
+      <hr />
     </div>
   </div>
 </div>
