@@ -16,6 +16,7 @@ export class ShoppingCartComponent implements OnInit {
   shopping_cart = faShoppingBasket;
   phone = faPhone;
   value=0;
+  items=[1,2,3]
   constructor() { }
 
   ngOnInit(): void {

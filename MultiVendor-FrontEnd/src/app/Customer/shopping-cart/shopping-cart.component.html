@@ -31,14 +31,16 @@
 <div class="body">
   <p class="page_header">Shopping Cart</p>
   <div class="content">
-    <div class="cart_items">
-      <div class="sub_header">
-        <p class="product_text">Product</p>
-        <p class="price_text">Price</p>
-        <p class="qty_text">Qty</p>
-        <p class="total_text">Total</p>
-      </div>
-      <hr />
+    <div class="cart_items" >
+        <div class="sub_header">
+            <p class="product_text">Product</p>
+            <p class="price_text">Price</p>
+            <p class="qty_text">Qty</p>
+            <p class="total_text">Total</p>
+          </div>
+          <hr />
+        <div class="item" *ngFor="item of items">
+      
       <div class="content">
         <div class="img_container"><img src="/assets/img.png" alt="" /></div>
         <div class="product_info">
@@ -57,6 +59,7 @@
         <mat-icon class="delete_icon">delete_outline</mat-icon>
       </div>
       <hr />
+    </div>
       <div class="continue_update">
         <button class="continue">Continue Shopping</button>
         <button class="update">Update Cart</button>
