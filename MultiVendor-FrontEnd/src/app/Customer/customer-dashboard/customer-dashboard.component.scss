@@ -125,11 +125,11 @@ hr{
 .type_section{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .type_section .type{
-    width: 25vw;
+    width: 15vw;
     border-radius: 4px;
     padding: 10px;
     background-color: $lblue;
@@ -140,14 +140,14 @@ hr{
 }
 .type_section .type p{
     margin-top: -5vh;
-    font-size: 1.8vw;
+    font-size: 20px;
     color: #5A5A5A;
     font-weight: 800;
 }
 
 
 .type_section .type img{
- width: 18vw;
+ width: 10vw;
  border-radius: 8vw;
 }
 
@@ -174,7 +174,7 @@ hr{
 
 .category_section .category p{
     margin-top: -2vh;
-    font-size: 1vw;
+    font-size: 20px;
     color: #5A5A5A;
     font-weight: 800;
 }
