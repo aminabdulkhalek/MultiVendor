@@ -1,0 +1,74 @@
+$blue: #62C6FF;
+$lblue: #F2FAFF;
+$red: #FF5C5C;
+
+::ng-deep body {
+    background-color: $lblue;
+}
+
+.logo {
+
+    color: $red;
+    font-size: 30px;
+
+    padding: 10px;
+
+}
+
+.toolbar {
+    height: 60px;
+    background-color: white;
+    color: #5A5A5A;
+    position: fixed;
+    z-index: 100;
+}
+
+.toolbar1 {
+    margin-top: 60px;
+    background-color: $blue;
+    color: #5A5A5A;
+    position: fixed;
+    z-index: 100;
+    height: 40px;
+}
+
+.market-name {
+    flex: 1;
+    font-size: x-large;
+    font-weight: bolder;
+    padding-left: 10px;
+}
+
+.links,
+.links>a {
+    color: white;
+    flex: 1;
+    font-size: large;
+    padding-left: 5px;
+
+}
+
+.right_item {
+    color: white;
+    font-size: 15px;
+    padding-left: 15px;
+    font-weight: lighter;
+}
+
+.phone {
+    font-weight: 500;
+    padding-left: 5px;
+}
+
+.vl {
+    border-left: 1.5px solid #7e7e7e;
+    height: 20px;
+    margin-left: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #5A5A5A;
+    padding-left: 20px;
+    padding-right: 20px;
+}
