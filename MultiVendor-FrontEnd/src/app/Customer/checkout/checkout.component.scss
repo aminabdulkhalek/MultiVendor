@@ -3,123 +3,255 @@ $lblue: #f2faff;
 $red: #ff5c5c;
 
 ::ng-deep body {
-    background-color: $lblue;
+  background-color: $lblue;
 }
 
 .logo {
-    color: $red;
-    font-size: 30px;
+  color: $red;
+  font-size: 30px;
 
-    padding: 10px;
+  padding: 10px;
 }
 
 .toolbar {
-    height: 60px;
-    background-color: white;
-    color: #5a5a5a;
-    position: fixed;
-    z-index: 100;
+  height: 60px;
+  background-color: white;
+  color: #5a5a5a;
+  position: fixed;
+  z-index: 100;
 }
 
 .toolbar1 {
-    margin-top: 60px;
-    background-color: $blue;
-    color: #5a5a5a;
-    position: fixed;
-    z-index: 100;
-    height: 40px;
+  margin-top: 60px;
+  background-color: $blue;
+  color: #5a5a5a;
+  position: fixed;
+  z-index: 100;
+  height: 40px;
 }
 
 .market-name {
-    flex: 1;
-    font-size: x-large;
-    font-weight: bolder;
-    padding-left: 10px;
+  flex: 1;
+  font-size: x-large;
+  font-weight: bolder;
+  padding-left: 10px;
 }
 
 .links,
-.links>a {
-    color: white;
-    flex: 1;
-    font-size: large;
-    padding-left: 5px;
+.links > a {
+  color: white;
+  flex: 1;
+  font-size: large;
+  padding-left: 5px;
 }
 
 .right_item {
-    color: white;
-    font-size: 15px;
-    padding-left: 15px;
-    font-weight: lighter;
+  color: white;
+  font-size: 15px;
+  padding-left: 15px;
+  font-weight: lighter;
 }
 
 .phone {
-    font-weight: 500;
-    padding-left: 5px;
+  font-weight: 500;
+  padding-left: 5px;
 }
 
 .vl {
-    border-left: 1.5px solid #7e7e7e;
-    height: 20px;
-    margin-left: 10px;
+  border-left: 1.5px solid #7e7e7e;
+  height: 20px;
+  margin-left: 10px;
 }
 
 a {
-    text-decoration: none;
-    color: #5a5a5a;
-    padding-left: 20px;
-    padding-right: 20px;
+  text-decoration: none;
+  color: #5a5a5a;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .body {
-    position: absolute;
-    top: 100px;
-    margin: 0 50px;
-    display: flex;
+  position: absolute;
+  top: 100px;
+  margin: 4rem;
+  padding: 1rem 4rem;
+  background-color: white;
+  border-radius: 4px;
+  width: 85vw;
+}
+.page_label {
+  margin: 3rem 0;
+  color: #5a5a5a;
+  font-size: 30px;
+  font-weight: 600;
 }
 
-.billing_section {}
+.content {
+  display: flex;
+  justify-content: space-between;
+}
 
-.billing_lable {}
+.billing_lable {
+  color: #5a5a5a;
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
 
 .form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  width: 45vw;
 }
 
-.example-full-width {}
+.notes_text_area {
+  border: 1px solid gainsboro;
+  border-radius: 4px;
+  font-family: Roboto;
+  padding: 2rem 0.5rem;
+}
 
-.notes_text_area {}
+.order_section {
+  width: 35vw;
+}
 
-.order_section {}
+.order_section_label {
+  margin-bottom: 3rem;
+  color: #5a5a5a;
+  font-size: 24px;
+  font-weight: 500;
+}
 
-.order_section_label {}
+.headers {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 1.5rem;
+}
 
-.headers {}
+.header,
+.subtotal {
+  color: #5a5a5a;
+  font-size: 18px;
+  font-weight: 500;
+}
 
-.header {}
+hr {
+  border: 0;
+  border-top: 1px solid gainsboro;
+}
 
-.item {}
+.item_content {
+  display: flex;
+  justify-content: space-between;
+}
 
-.item_content {}
+.image_container img {
+  height: 6rem;
+  width: auto;
+}
 
-.image_container {}
+.item_info {
+  margin: 1rem 0;
+}
 
-.item_info {}
+.item_name {
+  color: #5a5a5a;
+  font-size: 16px;
+}
 
-.item_name {}
+.item_quantity {
+  color: #a0a0a0;
+  font-weight: lighter;
+}
 
-.item_quantity {}
+.item_owner {
+  color: #7e7e7e;
+  font-size: 16px;
+}
 
-.item_owner {}
+.item_price {
+  color: $blue;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 2.5rem 2rem;
+}
 
-.item_owner_value {}
+.cart_info {
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem;
+}
 
-.item_price {}
+.lables {
+  color: #5a5a5a;
+  font-size: 16px;
+}
 
-.cart_info {}
+.total {
+  margin: 3rem 0;
+  font-weight: 600;
+}
 
-.lables {}
+.values {
+  text-align: end;
+  color: #62c6ff;
+  font-size: 16px;
+  font-weight: 500;
+}
+.payment_method_label {
+  margin-bottom: 3rem;
+  color: #5a5a5a;
+  font-size: 24px;
+  font-weight: 500;
+}
+.option {
 
-.total {}
+  cursor: pointer;
+  margin: 1rem 0;
+  border-radius: 4px;
+  padding: 1rem;
+  border: 1px solid gainsboro;
+  color: #5a5a5a;
+  font-size: 16px;
+  &:hover{
+    border: 2px solid $blue;
 
-.values {}
+  }
+}
+.selected{
+  border: 2px solid $blue;
+}
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-ripple .mat-ripple-element {
+  opacity: 0.03 !important;
+  background-color: $blue !important;
+}
+
+::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background,
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+  background-color: $blue;
+}
+.terms {
+  color: #5a5a5a;
+  font-size: 14px;
+  margin: 0.5rem 0;
+}
+.terms_conditions{
+  color: $blue;
+  font-weight: 500;
+}
+.place_order {
+  margin: 1rem 0;
+  color: white;
+  border: 0;
+  border-radius: 4px;
+  padding: 1rem;
+  background-color: $blue;
+  width: 100%;
+  font-size: 18px;
+  cursor: pointer;
+  &:hover{
+    background-color: white;
+    border: 1px solid $blue;
+    color: $blue
+  };
+}

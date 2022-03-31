@@ -30,91 +30,111 @@
 </mat-toolbar>
 
 <div class="body">
-  <div class="billing_section">
-    <p class="billing_lable">Billing Details</p>
-    <div class="form">
-      <mat-form-field class="example-full-width" appearance="outline">
-        <mat-label>Name</mat-label>
-        <input matInput />
-      </mat-form-field>
-      <mat-form-field class="example-full-width" appearance="outline">
-        <mat-label>Country / Region</mat-label>
-        <input matInput />
-      </mat-form-field>
-      <mat-form-field class="example-full-width" appearance="outline">
-        <mat-label>Street Address</mat-label>
-        <input matInput placeholder="Street name" />
-        <input matInput placeholder="Apartment, suit, unit, etc. (optional)" />
-      </mat-form-field>
-      <mat-form-field class="example-full-width" appearance="outline">
-        <mat-label>Town / city</mat-label>
-        <input matInput />
-      </mat-form-field>
-      <mat-form-field class="example-full-width" appearance="outline">
-        <mat-label>State</mat-label>
-        <input matInput />
-      </mat-form-field>
-      <mat-form-field class="example-full-width" appearance="outline">
-        <mat-label>ZIP Code</mat-label>
-        <input matInput />
-      </mat-form-field>
-      <mat-form-field class="example-full-width" appearance="outline">
-        <mat-label>Phone</mat-label>
-        <input matInput />
-      </mat-form-field>
-      <mat-form-field class="example-full-width" appearance="outline">
-        <mat-label>Email Address</mat-label>
-        <input matInput />
-      </mat-form-field>
+  <p class="page_label">Checkout</p>
+  <div class="content">
+    <div class="billing_section">
+      <p class="billing_lable">Billing Details</p>
+      <div class="form">
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Name</mat-label>
+          <input matInput required />
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Country / Region</mat-label>
+          <input matInput required />
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Street Address</mat-label>
+          <input matInput required />
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Town / city</mat-label>
+          <input matInput required />
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>State</mat-label>
+          <input matInput required />
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>ZIP Code</mat-label>
+          <input matInput required />
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Phone</mat-label>
+          <input matInput required />
+        </mat-form-field>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Email Address</mat-label>
+          <input matInput required />
+        </mat-form-field>
 
-      <textarea
-        class="notes_text_area"
-        name="order_notes"
-        id="order_notes"
-        cols="30"
-        rows="10"
-        placeholder="Notes about your order, e.g. special notes for delivery"
-      ></textarea>
+        <textarea
+          class="notes_text_area"
+          name="order_notes"
+          id="order_notes"
+          cols="30"
+          rows="10"
+          placeholder="Notes about your order, e.g. special notes for delivery"
+        ></textarea>
+      </div>
     </div>
-  </div>
-  <div class="order_section">
-    <p class="order_section_label">Your Order</p>
-    <div class="headers">
-      <p class="header">Product</p>
-      <p class="header">subtotal</p>
-    </div>
-    <hr />
-    <div class="item">
-      <div class="item_content">
-        <div class="image_container">
-          <img src="/assets/img.png" alt="" />
-        </div>
-        <div class="item_info">
-          <p class="item_name">
-            iPhone 13 Pro MAX Space Gray
-            <span class="item_quantity">(x1)</span>
-          </p>
-          <p class="item_owner">
-            Vendor: <span class="item_owner_value">Apple</span>
-          </p>
-        </div>
-        <p class="item_price">$1299</p>
+    <div class="order_section">
+      <p class="order_section_label">Your Order</p>
+      <div class="headers">
+        <p class="header">Product</p>
+        <p class="subtotal">Subtotal</p>
       </div>
       <hr />
-    </div>
-    <div class="cart_info">
-      <div class="lables">
-        <p>Subtotal</p>
-        <p>TAX 11%</p>
-        <p>Shipping</p>
-        <p class="total">Total</p>
+      <div class="item">
+        <div class="item_content">
+          <div class="image_container">
+            <img src="/assets/img.png" alt="" />
+          </div>
+          <div class="item_info">
+            <p class="item_name">
+              iPhone 13 Pro MAX Space Gray
+              <span class="item_quantity">(x1)</span>
+            </p>
+            <p class="item_owner">
+              Vendor: <span class="item_owner_value">Apple</span>
+            </p>
+          </div>
+          <p class="item_price">$1299</p>
+        </div>
+        <hr />
       </div>
-      <div class="values">
-        <p>$3897</p>
-        <p>$428.67</p>
-        <p>$50.99</p>
-        <p class="total">$4376.66</p>
+      <div class="cart_info">
+        <div class="lables">
+          <p>Subtotal</p>
+          <p>TAX 11%</p>
+          <p>Shipping</p>
+          <p class="total">Total</p>
+        </div>
+        <div class="values">
+          <p>$3897</p>
+          <p>$428.67</p>
+          <p>$50.99</p>
+          <p class="total">$4376.66</p>
+        </div>
       </div>
+      <div class="payment_method">
+        <p class="payment_method_label">Payment Method</p>
+        <div class="option selected">
+          <mat-checkbox>Cash on delivery</mat-checkbox>
+        </div>
+        <div class="option">
+          <mat-checkbox>Direct bank transfere</mat-checkbox>
+        </div>
+        <div class="option">
+          <mat-checkbox>Paypal</mat-checkbox>
+        </div>
+        <mat-checkbox
+          class="terms">I have read and agree to all the
+          <span class="terms_conditions">terms and conditions *</span>
+        </mat-checkbox>
+
+      </div>
+      <button class="place_order">Place Order</button>
     </div>
   </div>
 </div>
