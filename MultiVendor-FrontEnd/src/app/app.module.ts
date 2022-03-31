@@ -83,6 +83,8 @@ import { CheckoutComponent } from './Customer/checkout/checkout.component';
 import { WishlistComponent } from './Customer/wishlist/wishlist.component';
 import { WishlistItemComponent } from './Customer/wishlist/wishlist-item/wishlist-item.component';
 import { OrderPlacedModalComponent } from './Customer/checkout/order-placed-modal/order-placed-modal.component';
+import { LoginComponent } from './home/login/login.component';
+import { SignupComponent } from './home/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -146,7 +148,9 @@ import { OrderPlacedModalComponent } from './Customer/checkout/order-placed-moda
     CheckoutComponent,
     WishlistComponent,
     WishlistItemComponent,
-    OrderPlacedModalComponent
+    OrderPlacedModalComponent,
+    LoginComponent,
+    SignupComponent
   ],
   entryComponents: [
     AddProductModalComponent,
