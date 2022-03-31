@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 import { faSignOut, faUserCircle, faHeart, faShoppingCart, faShoppingBasket, faPhone } from '@fortawesome/free-solid-svg-icons';
 
 
@@ -17,7 +18,7 @@ export class ShoppingCartComponent implements OnInit {
   phone = faPhone;
   value=0;
   items=[1,2,3]
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -28,5 +29,8 @@ export class ShoppingCartComponent implements OnInit {
   }
   handlePlus() {
     this.value++;    
+  }
+  redirectToCheckout(){
+    this.router.navigate(['checkout'])
   }
 }
