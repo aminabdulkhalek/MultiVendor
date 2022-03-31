@@ -23,6 +23,8 @@ import { ProductComponent } from './Customer/product/product.component';
 import { ShoppingCartComponent } from './Customer/shopping-cart/shopping-cart.component';
 import { CheckoutComponent } from './Customer/checkout/checkout.component';
 import { WishlistComponent } from './Customer/wishlist/wishlist.component';
+import { LoginComponent } from './home/login/login.component';
+import { SignupComponent } from './home/signup/signup.component';
 
 
 
@@ -52,6 +54,9 @@ const routes: Routes = [
   { path: 'shopping-cart', component: ShoppingCartComponent },
   { path: 'checkout', component: CheckoutComponent },
   { path: 'wishlist', component: WishlistComponent },
+
+  { path: 'login', component: LoginComponent },
+  { path: 'signup', component: SignupComponent },
 ];
 
 @NgModule({
