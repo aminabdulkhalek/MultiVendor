@@ -1,0 +1,41 @@
+<div class="product">
+  <div class="backgorund">
+    <img
+      class="product_img"
+      src="/assets/img.png"
+      alt=""
+      (click)="redirectToProduct()"
+    />
+  </div>
+  <p class="product_name">Iphone 13 Pro MAX</p>
+  <p class="product_price">$1299</p>
+  <div class="rating">
+    <bar-rating [rate]="4" [readOnly]="true" [max]="5">
+      <ng-template ratingInactive>
+        <fa-icon
+          [icon]="star"
+          [fixedWidth]="true"
+          style="color: #d2d2d2"
+        ></fa-icon>
+      </ng-template>
+      <ng-template ratingActive>
+        <fa-icon
+          [icon]="star"
+          [fixedWidth]="true"
+          style="color: #ffb800"
+        ></fa-icon>
+      </ng-template>
+      <ng-template ratingFraction>
+        <fa-icon
+          [icon]="half_star"
+          [fixedWidth]="true"
+          style="color: #ffb800"
+        ></fa-icon>
+      </ng-template>
+    </bar-rating>
+  </div>
+  <button class="add">
+    <mat-icon>add_shopping_cart</mat-icon> Add To Cart
+  </button>
+  <button class="remove">Remove</button>
+</div>
