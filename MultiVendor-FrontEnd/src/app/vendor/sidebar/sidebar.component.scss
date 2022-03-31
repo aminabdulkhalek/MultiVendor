@@ -33,7 +33,7 @@ Sidebar Nav
   position: fixed;
   top: 64px;
   width: min-content;
-  background-color: #F3FCFF;
+  background-color: #1A385B;
   height: 100%;
   font-weight: 400;
   font-size: 1.2em;
@@ -45,7 +45,7 @@ Sidebar Nav
     list-style: none;
     display: block;
     padding: 0;
-    margin: 0;
+    margin: 15vh 1rem;
 
     li {
       margin-left: 0;
@@ -54,7 +54,8 @@ Sidebar Nav
       width: 100%;
 
       a {
-        color: #3f3f3f;
+        color: white;
+        opacity: 25%;
         font-size: 18px;
         padding: 1em 0.5em;
         display: block;
@@ -72,9 +73,7 @@ Sidebar Nav
 .active {
   color: white !important;
   background-color: #1A385B !important;
-  -moz-box-shadow:    inset 0 0 10px #000000;
-   -webkit-box-shadow: inset 0 0 10px #000000;
-   box-shadow:         inset 0 0 10px #000000;
+  opacity: 100% !important;
 }
 
 .icon {
