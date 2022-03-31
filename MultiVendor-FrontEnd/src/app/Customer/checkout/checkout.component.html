@@ -1,30 +1,121 @@
 <mat-toolbar class="toolbar">
-    <span class="logo"><fa-icon [icon]="shopping_cart" size="lg"></fa-icon></span>
-    <span class="market-name">MultiVendor</span>
-  
-    <a href="#"><fa-icon [icon]="account" size="lg"></fa-icon></a>
-    <a href="#"><fa-icon [icon]="wishlist" size="lg"></fa-icon></a>
-    <a href="shopping-cart"><fa-icon [icon]="cart" size="lg"></fa-icon></a>
-    <a href="#"><fa-icon [icon]="logout" size="lg"></fa-icon> </a>
-  </mat-toolbar>
-  <mat-toolbar class="toolbar1">
-    <span class="links">
-      <a href="customer-dashboard">Home</a>
-      <a href="shops">Shops</a>
-      <a href="customer-dashboard">Become a Vendor</a>
-      <a href="customer-dashboard">Contact Us</a>
-    </span>
-  
-    <div class="vl"></div>
-    <img
-      class="right_item"
-      src="/assets/USD.png"
-      alt=""
-      style="width: 30px; vertical-align: baseline"
-    />
-    <div class="right_item">USD $</div>
-    <div class="vl"></div>
-    <div class="right_item">
-      Hotline: <Span class="phone">+961 81935140</Span>
+  <span class="logo"><fa-icon [icon]="shopping_cart" size="lg"></fa-icon></span>
+  <span class="market-name">MultiVendor</span>
+
+  <a href="#"><fa-icon [icon]="account" size="lg"></fa-icon></a>
+  <a href="#"><fa-icon [icon]="wishlist" size="lg"></fa-icon></a>
+  <a href="shopping-cart"><fa-icon [icon]="cart" size="lg"></fa-icon></a>
+  <a href="#"><fa-icon [icon]="logout" size="lg"></fa-icon> </a>
+</mat-toolbar>
+<mat-toolbar class="toolbar1">
+  <span class="links">
+    <a href="customer-dashboard">Home</a>
+    <a href="shops">Shops</a>
+    <a href="customer-dashboard">Become a Vendor</a>
+    <a href="customer-dashboard">Contact Us</a>
+  </span>
+
+  <div class="vl"></div>
+  <img
+    class="right_item"
+    src="/assets/USD.png"
+    alt=""
+    style="width: 30px; vertical-align: baseline"
+  />
+  <div class="right_item">USD $</div>
+  <div class="vl"></div>
+  <div class="right_item">
+    Hotline: <Span class="phone">+961 81935140</Span>
+  </div>
+</mat-toolbar>
+
+<div class="body">
+  <div class="billing_section">
+    <p class="billing_lable">Billing Details</p>
+    <div class="form">
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput />
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Country / Region</mat-label>
+        <input matInput />
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Street Address</mat-label>
+        <input matInput placeholder="Street name" />
+        <input matInput placeholder="Apartment, suit, unit, etc. (optional)" />
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Town / city</mat-label>
+        <input matInput />
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>State</mat-label>
+        <input matInput />
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>ZIP Code</mat-label>
+        <input matInput />
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Phone</mat-label>
+        <input matInput />
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Email Address</mat-label>
+        <input matInput />
+      </mat-form-field>
+      <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Email Address</mat-label>
+        <textarea
+          name="order_notes"
+          id="order_notes"
+          cols="30"
+          rows="10"
+          placeholder="Notes about your order, e.g. special notes for delivery"
+        ></textarea>
+      </mat-form-field>
     </div>
-  </mat-toolbar>
+  </div>
+  <div class="order_section">
+    <p class="order_section_label">Your Order</p>
+    <div class="headers">
+      <p class="header">Product</p>
+      <p class="header">subtotal</p>
+    </div>
+    <hr />
+    <div class="item">
+      <div class="item_content">
+        <div class="image_container">
+          <img src="/assets/img.png" alt="" />
+        </div>
+        <div class="item_info">
+          <p class="item_name">
+            iPhone 13 Pro MAX Space Gray
+            <span class="item_quantity">(x1)</span>
+          </p>
+          <p class="item_owner">
+            Vendor: <span class="item_owner_value">Apple</span>
+          </p>
+        </div>
+        <p class="item_price">$1299</p>
+      </div>
+      <hr />
+    </div>
+    <div class="cart_info">
+      <div class="lables">
+        <p>Subtotal</p>
+        <p>TAX 11%</p>
+        <p>Shipping</p>
+        <p class="total">Total</p>
+      </div>
+      <div class="values">
+        <p>$3897</p>
+        <p>$428.67</p>
+        <p>$50.99</p>
+        <p class="total">$4376.66</p>
+      </div>
+    </div>
+  </div>
+</div>
