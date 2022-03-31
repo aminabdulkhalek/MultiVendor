@@ -80,6 +80,7 @@ import { ShopComponent } from './Customer/shop/shop.component';
 import { ProductComponent } from './Customer/product/product.component';
 import { ShoppingCartComponent } from './Customer/shopping-cart/shopping-cart.component';
 import { CheckoutComponent } from './Customer/checkout/checkout.component';
+import { WishlistComponent } from './Customer/wishlist/wishlist.component';
 
 @NgModule({
   declarations: [
@@ -140,7 +141,8 @@ import { CheckoutComponent } from './Customer/checkout/checkout.component';
     ShopComponent,
     ProductComponent,
     ShoppingCartComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    WishlistComponent
   ],
   entryComponents: [
     AddProductModalComponent,
