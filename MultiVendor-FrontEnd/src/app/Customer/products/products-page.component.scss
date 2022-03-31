@@ -2,6 +2,9 @@ $blue: #62C6FF;
 $lblue: #F2FAFF;
 $red: #FF5C5C;
 
+::ng-deep body{
+    background-color: white !important;
+}
 .logo {
 
     color: $red;

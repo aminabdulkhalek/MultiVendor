@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-order-placed-modal',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrderPlacedModalComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router,public dialog: MatDialog) { }
 
   ngOnInit(): void {
+  }
+  redirectToShopping(){
+    this.router.navigate(['products'])
+    this.dialog.closeAll()
   }
 
 }
