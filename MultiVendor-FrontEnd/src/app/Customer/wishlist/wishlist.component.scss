@@ -34,7 +34,7 @@ $red: #FF5C5C;
 
 .market-name {
     flex: 1;
-    font-size: x-large;
+    font-size: 40px;
     font-weight: bolder;
     padding-left: 10px;
 }
@@ -71,4 +71,26 @@ a {
     color: #5A5A5A;
     padding-left: 20px;
     padding-right: 20px;
+}
+
+
+.body{
+    position: absolute;
+    top: 5rem;
+    width: 94vw;
+    background-color: white;
+    margin-top: 4rem;
+    margin-left: 4rem;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+.header{
+    color: #5A5A5A;
+    font-size: 30px;
+    font-weight: 600;
+    margin: 4rem 3rem;
 }
