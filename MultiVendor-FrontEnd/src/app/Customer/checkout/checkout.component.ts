@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { faSignOut, faUserCircle, faHeart, faShoppingCart, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
+import { OrderPlacedModalComponent } from './order-placed-modal/order-placed-modal.component';
 
 @Component({
   selector: 'app-checkout',
@@ -12,7 +14,10 @@ export class CheckoutComponent implements OnInit {
   wishlist = faHeart;
   cart = faShoppingCart;
   shopping_cart = faShoppingBasket;
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
+  openDialog() {
+    this.dialog.open(OrderPlacedModalComponent);
+  }
 
   ngOnInit(): void {
   }

@@ -82,7 +82,7 @@ import { ShoppingCartComponent } from './Customer/shopping-cart/shopping-cart.co
 import { CheckoutComponent } from './Customer/checkout/checkout.component';
 import { WishlistComponent } from './Customer/wishlist/wishlist.component';
 import { WishlistItemComponent } from './Customer/wishlist/wishlist-item/wishlist-item.component';
-import { OrderPlacedModalComponent } from './order-placed-modal/order-placed-modal.component';
+import { OrderPlacedModalComponent } from './Customer/checkout/order-placed-modal/order-placed-modal.component';
 
 @NgModule({
   declarations: [
