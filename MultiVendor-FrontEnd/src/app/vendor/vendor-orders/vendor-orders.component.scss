@@ -7,7 +7,7 @@
 }
 
 .toolbar {
-    background-color: #1B0067;
+    background-color: #1A385B;
     color: white;
     position: fixed;
     z-index: 100;
@@ -62,7 +62,7 @@ a {
 .add {
     width: 11rem;
     height: 2.5rem;
-    background-color: #1B0067;
+    background-color: #1A385B;
     color: white;
     font-size: 1rem;
     border: 0;
@@ -81,8 +81,8 @@ a {
     &:hover {
         transition: all 0.6s ease;
         background-color: white;
-        color: #1B0067;
-        border: #1B0067 1px solid;
+        color: #1A385B;
+        border: #1A385B 1px solid;
     }
 }
 
