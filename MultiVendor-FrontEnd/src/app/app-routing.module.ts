@@ -29,7 +29,7 @@ import { SignupComponent } from './home/signup/signup.component';
 
 
 const routes: Routes = [
-  { path: '', component: LoginComponent },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'vendor-dashboard', component: VendorDashboardComponent },
   { path: 'vendor-products', component: VendorProductsComponent },
   { path: 'vendor-orders', component: VendorOrdersComponent },
@@ -56,6 +56,8 @@ const routes: Routes = [
   { path: 'wishlist', component: WishlistComponent },
 
   { path: 'signup', component: SignupComponent },
+  { path: 'login', component: LoginComponent },
+
 ];
 
 @NgModule({
