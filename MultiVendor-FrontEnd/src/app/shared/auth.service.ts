@@ -39,3 +39,4 @@ export class AuthService {
     this.router.navigate(['login']);
   }
 }
+export const API_URL: string = "http://localhost:8000/api/"

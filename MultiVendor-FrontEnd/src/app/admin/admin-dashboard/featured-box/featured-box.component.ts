@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { API_URL } from '../../../shared/auth.service';
 
 @Component({
   selector: 'app-featured-box',
@@ -23,7 +24,7 @@ export class FeaturedBoxComponent implements OnInit {
 
   getVendors(){
 
-    this.http.get<any>('http://localhost:8000/api/admin/vendors').subscribe({
+    this.http.get<any>(API_URL+'admin/vendors').subscribe({
       next: data => {
         this.options = data.Vendors;
 
@@ -31,7 +32,7 @@ export class FeaturedBoxComponent implements OnInit {
           const vendor = this.options[i];
           const body = { id: vendor.user_id };
 
-          this.http.post<any>('http://localhost:8000/api/user/name', body).subscribe({
+          this.http.post<any>(API_URL+'user/name', body).subscribe({
             next: data => {
               this.options[i].name = data.Name;
 
@@ -50,7 +51,7 @@ export class FeaturedBoxComponent implements OnInit {
     })
   }
   getFeatured(){
-    this.http.get<any>('http://localhost:8000/api/admin/featured').subscribe({
+    this.http.get<any>(API_URL+'admin/featured').subscribe({
       next: data => {
         this.featured = data.Vendor_Name;
       },
@@ -63,7 +64,7 @@ export class FeaturedBoxComponent implements OnInit {
   newFeatured(selected_value) {
      
     const body = { vendor_id: selected_value };
-    this.http.post<any>('http://localhost:8000/api/admin/new-featured', body).subscribe({
+    this.http.post<any>(API_URL+'admin/new-featured', body).subscribe({
       next: data => {
         console.log(data.message)
         this.getFeatured();
