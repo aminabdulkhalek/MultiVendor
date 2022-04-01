@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { faSignOut, faBell } from '@fortawesome/free-solid-svg-icons';
 import { AuthStateService } from 'src/app/shared/auth-state.service';
+import { AuthService } from 'src/app/shared/auth.service';
 import { TokenService } from 'src/app/shared/token.service';
 
 @Component({
@@ -19,7 +20,8 @@ export class AdminDashboardComponent implements OnInit {
   constructor(
     private auth: AuthStateService,
     public router: Router,
-    public token: TokenService
+    public token: TokenService,
+    public authService :AuthService
 
   ) { }
 
@@ -36,9 +38,7 @@ export class AdminDashboardComponent implements OnInit {
     }
   }
   signOut() {
-    this.auth.setAuthState(false);
-    this.token.removeToken();
-    this.router.navigate(['login']);
+    this.authService.signOut();
   }
 
 }
