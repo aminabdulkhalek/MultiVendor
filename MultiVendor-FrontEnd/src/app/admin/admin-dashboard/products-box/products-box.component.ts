@@ -19,7 +19,6 @@ export class ProductsBoxComponent implements OnInit {
   initBox(){
     this.http.get<any>(API_URL+'admin/top-selling').subscribe({
       next: data => {
-        console.log(data)
         this.products = data.top_Selling;
       },
       error: error => {
@@ -29,7 +28,6 @@ export class ProductsBoxComponent implements OnInit {
     })
     this.http.get<any>(API_URL+'admin/products').subscribe({
       next: data => {
-        console.log(data)
         this.nb_products = data.products.length;
       },
       error: error => {
