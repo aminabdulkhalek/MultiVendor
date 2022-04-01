@@ -30,7 +30,10 @@ export class AdminDashboardComponent implements OnInit {
         this.router.navigate(['login']);
       }
     });
-
+    if (localStorage.getItem('user_type') != '0'){
+      localStorage.removeItem('user_type');
+      this.signOut()
+    }
   }
   signOut() {
     this.auth.setAuthState(false);
