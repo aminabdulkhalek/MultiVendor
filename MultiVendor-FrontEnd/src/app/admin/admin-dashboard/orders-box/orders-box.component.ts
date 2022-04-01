@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { API_URL } from '../../../shared/auth.service';
+
 
 @Component({
   selector: 'app-orders-box',
@@ -15,8 +17,7 @@ export class OrdersBoxComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    const headers = { 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY0ODQ3ODA3MCwiZXhwIjoxNjQ4NDgxNjcwLCJuYmYiOjE2NDg0NzgwNzAsImp0aSI6IjR0MFI5OXVOZThaSWQ4eFEiLCJzdWIiOjEsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.IBraaqwUIqpGwlNl_bEkHzhOGRThsmav1T1B3FpcWkM' };
-    this.http.get<any>('http://localhost:8000/api/admin/nb-orders', { headers }).subscribe({
+    this.http.get<any>(API_URL+'admin/nb-orders').subscribe({
       next: data => {
         this.orders = data.nbOrders;
       },
@@ -26,7 +27,7 @@ export class OrdersBoxComponent implements OnInit {
       }
     })
 
-    this.http.get<any>('http://localhost:8000/api/admin/nb-pending-orders', { headers }).subscribe({
+    this.http.get<any>(API_URL+'admin/nb-pending-orders').subscribe({
       next: data => {
         this.pending = data.pending_orders*100/this.orders;
       },
@@ -36,7 +37,7 @@ export class OrdersBoxComponent implements OnInit {
       }
     })
 
-    this.http.get<any>('http://localhost:8000/api/admin/nb-approved-orders', { headers }).subscribe({
+    this.http.get<any>(API_URL+'admin/nb-approved-orders').subscribe({
       next: data => {
         this.approved = data.approved_orders*100/this.orders;
       },
@@ -46,7 +47,7 @@ export class OrdersBoxComponent implements OnInit {
       }
     })
 
-    this.http.get<any>('http://localhost:8000/api/admin/nb-disapproved-orders', { headers }).subscribe({
+    this.http.get<any>(API_URL+'admin/nb-disapproved-orders').subscribe({
       next: data => {
         this.disapproved = data.disapproved_orders*100/this.orders;
       },

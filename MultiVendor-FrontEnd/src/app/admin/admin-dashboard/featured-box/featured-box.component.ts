@@ -66,7 +66,6 @@ export class FeaturedBoxComponent implements OnInit {
     const body = { vendor_id: selected_value };
     this.http.post<any>(API_URL+'admin/new-featured', body).subscribe({
       next: data => {
-        console.log(data.message)
         this.getFeatured();
       },
       error: error => {
