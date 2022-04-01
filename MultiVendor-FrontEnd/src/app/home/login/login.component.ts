@@ -53,6 +53,7 @@ export class LoginComponent implements OnInit {
   // Handle response
   responseHandler(data: any) {
     this.token.handleData(data.access_token);
+    localStorage.setItem('user_type', data.user.user_type);
     if (data.user.user_type == 0) {
       this.router.navigate(['admin-dashboard'])
     }
