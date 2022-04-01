@@ -18,8 +18,8 @@ export class AuthService {
     return this.http.post('http://127.0.0.1:8000/api/auth/register', user);
   }
   // Login
-  signin(user: User): Observable<any> {
-    return this.http.post<any>('http://127.0.0.1:8000/api/auth/login', user);
+  signin(email,password): Observable<any> {
+    return this.http.post<any>('http://127.0.0.1:8000/api/auth/login', {email,password});
   }
   // Access user profile
   profileUser(): Observable<any> {
