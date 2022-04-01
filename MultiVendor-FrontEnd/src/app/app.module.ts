@@ -70,7 +70,7 @@ import { GalleryModule } from 'ng-gallery';
 import { GALLERY_CONFIG } from 'ng-gallery';
 import { ProductsGirdViewComponent } from './Customer/products/products-gird-view/products-gird-view.component';
 import {ProductsPageComponent} from './Customer/products/products-page.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule ,ReactiveFormsModule} from '@angular/forms';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
 import { ProductListViewComponent } from './Customer/products/product-list-view/product-list-view.component';
@@ -85,6 +85,7 @@ import { WishlistItemComponent } from './Customer/wishlist/wishlist-item/wishlis
 import { OrderPlacedModalComponent } from './Customer/checkout/order-placed-modal/order-placed-modal.component';
 import { LoginComponent } from './home/login/login.component';
 import { SignupComponent } from './home/signup/signup.component';
+
 
 @NgModule({
   declarations: [
@@ -178,6 +179,7 @@ import { SignupComponent } from './home/signup/signup.component';
     HttpClientModule,
     GalleryModule,
     FormsModule,
+    ReactiveFormsModule,
     MatCheckboxModule,
     NgxSliderModule,
   ],
