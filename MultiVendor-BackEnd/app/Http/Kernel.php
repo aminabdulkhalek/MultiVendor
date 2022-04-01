@@ -66,5 +66,6 @@ class Kernel extends HttpKernel
         'role.vednor' => \App\Http\Middleware\VendorMiddleware::class,
         'role.customer' => \App\Http\Middleware\CustomerMiddleware::class,
         'role.admin' => \App\Http\Middleware\AdminMiddleware::class,
+        'guest' => \App\Http\Middleware\CORS::class,
     ];
 }
