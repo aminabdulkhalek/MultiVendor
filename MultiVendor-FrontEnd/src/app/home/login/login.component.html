@@ -1,15 +1,25 @@
 <div class="body">
   <div class="section1">
     <div class="login_box">
+      <div *ngIf="errors?.error" class="alert0">
+        {{ errors?.error }}
+      </div>
       <p class="header">Welcome to MultiVendor</p>
       <p class="sub_hedaer">Please enter your credentials</p>
+      <div *ngIf="errors?.email" class="alert">
+        {{ errors?.email }}
+      </div>
+
       <mat-form-field class="example-full-width input" appearance="outline">
         <mat-label>Email</mat-label>
-        <input matInput required type="email" [(ngModel)]='email'/>
+        <input matInput required type="email" [(ngModel)]="email" />
       </mat-form-field>
+      <div *ngIf="errors?.password" class="alert alert-danger mt-3">
+        {{ errors?.password }}
+      </div>
       <mat-form-field class="example-full-width input" appearance="outline">
         <mat-label>Password</mat-label>
-        <input matInput required type="password" [(ngModel)]='password'/>
+        <input matInput required type="password" [(ngModel)]="password" />
       </mat-form-field>
       <button class="login" (click)="login()">Login</button>
     </div>

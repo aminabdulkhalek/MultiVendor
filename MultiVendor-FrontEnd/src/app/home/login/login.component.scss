@@ -95,3 +95,13 @@ $red: #ff5c5c;
     border: 1px solid $blue;
   }
 }
+
+.alert , .alert0{
+  color: $red;
+}
+
+.alert0{
+  text-align: center;
+  font-weight: 500;
+  font-size: 18px;
+}

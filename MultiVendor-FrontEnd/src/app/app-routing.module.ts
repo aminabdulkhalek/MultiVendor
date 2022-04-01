@@ -29,7 +29,7 @@ import { SignupComponent } from './home/signup/signup.component';
 
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: LoginComponent },
   { path: 'vendor-dashboard', component: VendorDashboardComponent },
   { path: 'vendor-products', component: VendorProductsComponent },
   { path: 'vendor-orders', component: VendorOrdersComponent },
@@ -55,7 +55,6 @@ const routes: Routes = [
   { path: 'checkout', component: CheckoutComponent },
   { path: 'wishlist', component: WishlistComponent },
 
-  { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
 ];
 
