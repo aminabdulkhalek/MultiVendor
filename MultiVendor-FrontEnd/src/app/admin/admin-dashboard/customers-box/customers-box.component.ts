@@ -15,12 +15,11 @@ export class CustomersBoxComponent implements OnInit {
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    this.totalCustomers()
-    this.thisCustomers()
-    this.lastCustomers()
+    this.initBox()
+
   }
 
-  totalCustomers(){
+  initBox(){
     this.http.get<any>(API_URL+'admin/nb-customers').subscribe({
       next: data => {
         this.total_customers = data.nbCustomers;
@@ -30,9 +29,6 @@ export class CustomersBoxComponent implements OnInit {
         console.error('There was an error!', this.errorMessage);
       }
     })
-
-  }
-  thisCustomers(){
     this.http.get<any>(API_URL+'admin/this-month-customers').subscribe({
       next: data => {
         this.this_customers = data.this_Month_customers.length;
@@ -42,8 +38,6 @@ export class CustomersBoxComponent implements OnInit {
         console.error('There was an error!', this.errorMessage);
       }
     })
-  }
-  lastCustomers(){
     this.http.get<any>(API_URL+'admin/last-month-customers').subscribe({
       next: data => {
         this.last_customers = data.Last_Month_customers.length;
@@ -54,4 +48,5 @@ export class CustomersBoxComponent implements OnInit {
       }
     })
   }
+
 }
