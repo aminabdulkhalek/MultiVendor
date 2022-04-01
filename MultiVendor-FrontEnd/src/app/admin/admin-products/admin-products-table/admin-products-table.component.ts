@@ -1,33 +1,12 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { faStar, faStarHalfAlt, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { API_URL } from 'src/app/shared/auth.service';
 
-export interface Products {
-  seller_name:string;
-  product_name:string;
-  flags: number;
-  price: number;
-  qty:number;
-  preview: string;
-  product_status:number
-}
 
-const Product_DATA: Products[] = [
-  { seller_name: "John Doe",product_name:"iPhone 13 Pro",flags:2, price:1299,qty:12,preview:"/assets/img.png" ,product_status:0},
-  { seller_name: "John Doe",product_name:"iPhone 13 Pro",flags:2, price:1299,qty:12,preview:"/assets/img.png",product_status:0},
-  { seller_name: "John Doe",product_name:"iPhone 13 Pro",flags:2, price:1299,qty:12,preview:"/assets/img.png",product_status:0},
-  { seller_name: "John Doe",product_name:"iPhone 13 Pro",flags:2, price:1299,qty:12,preview:"/assets/img.png",product_status:0},
-  { seller_name: "John Doe",product_name:"iPhone 13 Pro",flags:2, price:1299,qty:12,preview:"/assets/img.png",product_status:0},
-  { seller_name: "John Doe",product_name:"iPhone 13 Pro",flags:2, price:1299,qty:12,preview:"/assets/img.png",product_status:0},
-  { seller_name: "John Doe",product_name:"iPhone 13 Pro",flags:2, price:1299,qty:12,preview:"/assets/img.png",product_status:0},
-  { seller_name: "John Doe",product_name:"iPhone 13 Pro",flags:2, price:1299,qty:12,preview:"/assets/img.png",product_status:0},
-  { seller_name: "John Doe",product_name:"iPhone 13 Pro",flags:2, price:1299,qty:12,preview:"/assets/img.png",product_status:0},
-  { seller_name: "John Doe",product_name:"iPhone 13 Pro",flags:2, price:1299,qty:12,preview:"/assets/img.png",product_status:0},
-  { seller_name: "John Doe",product_name:"iPhone 13 Pro",flags:2, price:1299,qty:12,preview:"/assets/img.png",product_status:0},
-  
-];
 
 @Component({
   selector: 'app-admin-products-table',
@@ -35,12 +14,12 @@ const Product_DATA: Products[] = [
   styleUrls: ['./admin-products-table.component.scss']
 })
 export class AdminProductsTableComponent implements OnInit {
+  dataSource = new MatTableDataSource<any>(null);
   star = faStar;
   half_star = faStarHalfAlt;
   delete = faTrashAlt
-
-  displayedColumns: string[] = ["seller_name","product_name","flags","price","qty", "preview","product_status"];
-  dataSource = new MatTableDataSource<Products>(Product_DATA);
+  errorMessage;
+  displayedColumns: string[] = ["seller_name", "product_name", "flags", "price", "qty", "preview", "product_status"];
 
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
@@ -51,9 +30,26 @@ export class AdminProductsTableComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
   }
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
+    this.getAllProducts();
   }
+  getAllProducts() {
+    this.http.get<any>(API_URL + 'admin/products').subscribe({
+      next: data => {
+        this.dataSource = new MatTableDataSource<any>(data.products); //pass the array you want in the table
+        this.dataSource.sort = this.sort;
+        this.dataSource.paginator = this.paginator;
+        return data
+      },
+      error: error => {
+        this.errorMessage = error.message;
+        console.error('There was an error!', this.errorMessage);
+      }
+    })
 
-}
+  }
+ }
+
+

@@ -57,14 +57,14 @@
       Qty
     </mat-header-cell>
     <mat-cell *matCellDef="let product">
-      {{ product.qty }}
+      {{ product.stock }}
     </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="preview">
     <mat-header-cell *matHeaderCellDef> Preview </mat-header-cell>
     <mat-cell *matCellDef="let product">
-      <img class="preview-img" src="{{ product.preview }}" alt="img" />
+      <img class="preview-img" src="{{ product.img1 }}" alt="img" />
     </mat-cell>
   </ng-container>
 
