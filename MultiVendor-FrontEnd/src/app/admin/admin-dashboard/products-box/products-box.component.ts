@@ -26,9 +26,9 @@ export class ProductsBoxComponent implements OnInit {
         console.error('There was an error!', this.errorMessage);
       }
     })
-    this.http.get<any>(API_URL+'admin/products').subscribe({
+    this.http.get<any>(API_URL+'admin/nb-products').subscribe({
       next: data => {
-        this.nb_products = data.products.length;
+        this.nb_products = data.nbProducts;
       },
       error: error => {
         this.errorMessage = error.message;
