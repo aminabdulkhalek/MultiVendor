@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
-    protected $fillable = [ 
+    protected $fillable = [
         'vendor_id',
         'category_id',
         'price',
@@ -34,19 +34,19 @@ class Product extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function category(): HasOne
+    public function category()
     {
         return $this->hasOne(Category::class, 'product_id');
     }
-    
+
     /**
      * Get all of the reviews for the Product
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function reviews(): HasMany
+    public function reviews()
     {
-        return $this->hasMany(Reviews::class,'product_id');
+        return $this->hasMany(Review::class,'product_id');
     }
 
     /**
@@ -54,8 +54,8 @@ class Product extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function flags(): HasMany
+    public function flags()
     {
-        return $this->hasMany(productFlags::class,'product_id');
+        return $this->hasMany(ProductFlag::class,'product_id');
     }
 }

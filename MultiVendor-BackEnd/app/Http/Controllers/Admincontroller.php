@@ -15,6 +15,8 @@ use App\Models\Balance;
 use App\Models\Vendor;
 use App\Models\Review;
 use App\Models\OrderItem;
+use App\Models\ProductFlag;
+
 
 
 class Admincontroller extends Controller
@@ -183,9 +185,19 @@ class Admincontroller extends Controller
 
     public function products(){
         $products = Product::get();
+        $result = [];
+        foreach ($products as $product) {
+            $product_owner = Vendor::where('id','=',$product->vendor_id)->get()->first();
+            $owner_name = User::where('id','=',$product_owner->user_id)->get('name')->first();
+            // $product_flags = ProductFlag::where('product_id','=',$product->id)->get();
+            array_add($product,'vendor_name',$owner_name->name);
+            array_add($product, 'flags','');
+            array_add($product, 'reviews','');
+            array_push($result,$product);
+        }
 
         return response()->json([
-            "products" => $products
+            "products" => $result
         ], 201);
     }
 
@@ -353,11 +365,11 @@ class Admincontroller extends Controller
         $order ->save();
         $order_items =OrderItem::where('order_id','=',$order_id)->get();
 
-        // for ($i=0; $i < count($order_items); $i++) { 
+        // for ($i=0; $i < count($order_items); $i++) {
             foreach($order_items as $order_item){
-                $item_price = product::where('id','=',$order_item->product_id)->get('price')[0]->price; 
+                $item_price = product::where('id','=',$order_item->product_id)->get('price')[0]->price;
                 $item = product::where('id','=',$order_item->product_id)->get()[0];
-                
+
                 $item_quantity = $order_item->quanitiy;
                 if ($item_quantity > $item->stock) {
                     return response()->json([
@@ -379,7 +391,7 @@ class Admincontroller extends Controller
                 $admin_info->total_balance += $item_total;
                 $admin_info->save();
 
-                
+
                 $item->stock -= $item_quantity;
                 $item->sales += $item_quantity;
                 $item->save();
@@ -414,7 +426,7 @@ class Admincontroller extends Controller
     }
 
     public function makeTransaction(Request $request){
-        
+
         $vendor_balance = Balance::where('vendor_id','=',$request->vendor_id)->get()->first();
         $vendor_commission_rate = Vendor::where('id','=',$request->vendor_id)->get()->first()->commission_rate;
         if ($vendor_balance->remaining_ammount == 0 ) {
@@ -437,7 +449,7 @@ class Admincontroller extends Controller
         $admin_info->total_balance -= $request->amount;
         $admin_info->income += ($request->amount)*($vendor_commission_rate/100);
         $admin_info->save();
-        
+
         return response()->json([
             'message' => "transaction complete",
             'Vendor_balance'=> $vendor_balance,
