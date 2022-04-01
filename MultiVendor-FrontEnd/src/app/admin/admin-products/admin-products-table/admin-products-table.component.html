@@ -45,7 +45,7 @@
     >
       Flags
     </mat-header-cell>
-    <mat-cell *matCellDef="let product"> {{ product.flags }} </mat-cell>
+    <mat-cell *matCellDef="let product"> {{ product.flags.length }} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="qty">
@@ -72,8 +72,12 @@
     <mat-header-cell *matHeaderCellDef> Products Status </mat-header-cell>
     <mat-cell *matCellDef="let product">
       <mat-radio-group aria-label="Select an option">
-        <mat-radio-button value="0" class="radio"><span class="radio-text">Disapproved</span> </mat-radio-button>
-        <mat-radio-button value="1"><span class="radio-text">Approved</span></mat-radio-button>
+        <mat-radio-button value="0" class="radio"
+          ><span class="radio-text">Disapproved</span>
+        </mat-radio-button>
+        <mat-radio-button value="1"
+          ><span class="radio-text">Approved</span></mat-radio-button
+        >
       </mat-radio-group>
       <button class="delete">
         <fa-icon

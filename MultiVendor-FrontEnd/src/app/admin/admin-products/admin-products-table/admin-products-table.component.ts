@@ -26,10 +26,6 @@ export class AdminProductsTableComponent implements OnInit {
   @ViewChild(MatSort)
   sort!: MatSort;
 
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
-  }
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
@@ -38,7 +34,7 @@ export class AdminProductsTableComponent implements OnInit {
   getAllProducts() {
     this.http.get<any>(API_URL + 'admin/products').subscribe({
       next: data => {
-        this.dataSource = new MatTableDataSource<any>(data.products); //pass the array you want in the table
+        this.dataSource = new MatTableDataSource<any>(data.products);
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
         return data
