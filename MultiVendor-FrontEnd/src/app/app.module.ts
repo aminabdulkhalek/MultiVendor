@@ -5,9 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { VendorDashboardComponent } from './vendor/vendor-dashboard/vendor-dashboard.component';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { SidebarComponent } from './vendor/sidebar/sidebar.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { OrdersTableComponent } from './vendor/vendor-dashboard/orders-table/orders-table.component';
@@ -17,16 +17,16 @@ import { RecentOrdersTableComponent } from './vendor/vendor-dashboard/recent-ord
 import { RecentReviewsTableComponent } from './vendor/vendor-dashboard/recent-reviews-table/recent-reviews-table.component';
 import { IncomeTableComponent } from './vendor/vendor-dashboard/income-table/income-table.component';
 import { HomeComponent } from './home/home.component';
-import { VendorProductsComponent ,AddProductModalComponent} from './vendor/vendor-products/vendor-products.component';
-import { ProductsComponent ,UpdateProductModalComponent} from './vendor/vendor-products/products/products.component';
-import {MatTableModule} from '@angular/material/table';
+import { VendorProductsComponent, AddProductModalComponent } from './vendor/vendor-products/vendor-products.component';
+import { ProductsComponent, UpdateProductModalComponent } from './vendor/vendor-products/products/products.component';
+import { MatTableModule } from '@angular/material/table';
 import { BarRatingModule } from "ngx-bar-rating";
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatDialogModule } from '@angular/material/dialog';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatSelectModule} from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
 import { ProgressComponent } from './vendor/vendor-products/progress/progress.component';
 import { DndDirective } from './dnd.directive';
 import { VendorOrdersComponent } from './vendor/vendor-orders/vendor-orders.component';
@@ -38,7 +38,7 @@ import { VendorReviewsTableComponent } from './vendor/vendor-reviews/vendor-revi
 import { VendorSettingsComponent } from './vendor/vendor-settings/vendor-settings.component';
 import { BannerUploadComponent } from './vendor/vendor-settings/banner-upload/banner-upload.component';
 import { LogoUploadComponent } from './vendor/vendor-settings/logo-upload/logo-upload.component';
-import {MatIconModule} from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
 import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
 import { AdminSidebarComponent } from './admin/admin-sidebar/admin-sidebar.component';
 import { OrdersBoxComponent } from './admin/admin-dashboard/orders-box/orders-box.component';
@@ -48,7 +48,7 @@ import { IncomeBoxComponent } from './admin/admin-dashboard/income-box/income-bo
 import { FeaturedBoxComponent } from './admin/admin-dashboard/featured-box/featured-box.component';
 import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
 import { AdminProductsTableComponent } from './admin/admin-products/admin-products-table/admin-products-table.component';
-import {MatRadioModule} from '@angular/material/radio';
+import { MatRadioModule } from '@angular/material/radio';
 import { AdminVednorsComponent } from './admin/admin-vednors/admin-vednors.component';
 import { AdminVendorsTableComponent } from './admin/admin-vednors/admin-vendors-table/admin-vendors-table.component';
 import { AdminComissionsComponent } from './admin/admin-comissions/admin-comissions.component';
@@ -64,14 +64,15 @@ import { AdminCustomersComponent } from './admin/admin-customers/admin-customers
 import { AdminCustomersTableComponent } from './admin/admin-customers/admin-customers-table/admin-customers-table.component';
 import { CustomerDashboardComponent } from './Customer/customer-dashboard/customer-dashboard.component';
 import { CarouselComponent } from './Customer/customer-dashboard/carousel/carousel.component';
-import {IvyCarouselModule} from 'angular-responsive-carousel';
-import { HttpClientModule } from '@angular/common/http';
+import { IvyCarouselModule } from 'angular-responsive-carousel';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './shared/auth.interceptor';
 import { GalleryModule } from 'ng-gallery';
 import { GALLERY_CONFIG } from 'ng-gallery';
 import { ProductsGirdViewComponent } from './Customer/products/products-gird-view/products-gird-view.component';
-import {ProductsPageComponent} from './Customer/products/products-page.component';
-import { FormsModule ,ReactiveFormsModule} from '@angular/forms';
-import {MatCheckboxModule} from '@angular/material/checkbox';
+import { ProductsPageComponent } from './Customer/products/products-page.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
 import { ProductListViewComponent } from './Customer/products/product-list-view/product-list-view.component';
 import { ShopsComponent } from './Customer/shops/shops.component';
@@ -185,10 +186,11 @@ import { SignupComponent } from './home/signup/signup.component';
   ],
   providers: [{
     provide: GALLERY_CONFIG,
-    useValue: {
-      dots: true,
-      imageSize: 'cover'
-    }
+    useValue: { dots: true, imageSize: 'cover' },
+  }, {
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true
   }],
   bootstrap: [AppComponent]
 })
