@@ -22,9 +22,8 @@ export class FeaturedBoxComponent implements OnInit {
   }
 
   getVendors(){
-    const headers = { 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY0ODQ4NDA0OSwiZXhwIjoxNjQ4NDg3NjQ5LCJuYmYiOjE2NDg0ODQwNDksImp0aSI6Ims2SmVtUlA5T2pTZjlkQ0YiLCJzdWIiOjEsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.xGsl3aY92J6G_oTjRJB2BGgNzXDIPI4d346-8vnL14k' };
 
-    this.http.get<any>('http://localhost:8000/api/admin/vendors', { headers }).subscribe({
+    this.http.get<any>('http://localhost:8000/api/admin/vendors').subscribe({
       next: data => {
         this.options = data.Vendors;
 
@@ -32,7 +31,7 @@ export class FeaturedBoxComponent implements OnInit {
           const vendor = this.options[i];
           const body = { id: vendor.user_id };
 
-          this.http.post<any>('http://localhost:8000/api/user/name', body, { headers }).subscribe({
+          this.http.post<any>('http://localhost:8000/api/user/name', body).subscribe({
             next: data => {
               this.options[i].name = data.Name;
 
@@ -51,10 +50,8 @@ export class FeaturedBoxComponent implements OnInit {
     })
   }
   getFeatured(){
-    const headers = { 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY0ODQ4NDA0OSwiZXhwIjoxNjQ4NDg3NjQ5LCJuYmYiOjE2NDg0ODQwNDksImp0aSI6Ims2SmVtUlA5T2pTZjlkQ0YiLCJzdWIiOjEsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.xGsl3aY92J6G_oTjRJB2BGgNzXDIPI4d346-8vnL14k' };
-    this.http.get<any>('http://localhost:8000/api/admin/featured', { headers }).subscribe({
+    this.http.get<any>('http://localhost:8000/api/admin/featured').subscribe({
       next: data => {
-        console.log(data);
         this.featured = data.Vendor_Name;
       },
       error: error => {
@@ -66,8 +63,7 @@ export class FeaturedBoxComponent implements OnInit {
   newFeatured(selected_value) {
      
     const body = { vendor_id: selected_value };
-    const headers = { 'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTY0ODQ4NDA0OSwiZXhwIjoxNjQ4NDg3NjQ5LCJuYmYiOjE2NDg0ODQwNDksImp0aSI6Ims2SmVtUlA5T2pTZjlkQ0YiLCJzdWIiOjEsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.xGsl3aY92J6G_oTjRJB2BGgNzXDIPI4d346-8vnL14k' };
-    this.http.post<any>('http://localhost:8000/api/admin/new-featured', body, { headers }).subscribe({
+    this.http.post<any>('http://localhost:8000/api/admin/new-featured', body).subscribe({
       next: data => {
         console.log(data.message)
         this.getFeatured();
