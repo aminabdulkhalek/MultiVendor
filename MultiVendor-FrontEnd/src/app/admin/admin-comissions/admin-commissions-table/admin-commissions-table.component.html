@@ -1,6 +1,6 @@
 <mat-paginator
   [pageSizeOptions]="[6, 10, 20]"
-  aria-label="Select page of Products"
+  aria-label="Select page of Sellers"
 >
 </mat-paginator>
 <mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
@@ -12,7 +12,7 @@
     >
       Seller Name
     </mat-header-cell>
-    <mat-cell *matCellDef="let product"> {{ product.seller_name }} </mat-cell>
+    <mat-cell *matCellDef="let vendor"> {{ vendor.seller_name }} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="commission_rate">
@@ -23,10 +23,10 @@
     >
      Commission Rate %</mat-header-cell
     >
-    <mat-cell *matCellDef="let product"> 
+    <mat-cell *matCellDef="let vendor"> 
         <mat-form-field class="input" appearance="outline">
        
-        <input matInput  value="{{ product.commission_rate }}"/>
+        <input matInput  value="{{ vendor.commission_rate }}"/>
       </mat-form-field>
     </mat-cell>
   </ng-container>
@@ -39,7 +39,7 @@
     >
       Total Sales
     </mat-header-cell>
-    <mat-cell *matCellDef="let product"> ${{ product.total_sales }} </mat-cell>
+    <mat-cell *matCellDef="let vendor"> ${{ vendor.total_sales }} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="recevied_amount">
@@ -50,7 +50,7 @@
     >
       Recevied Amount
     </mat-header-cell>
-    <mat-cell *matCellDef="let product"> ${{ product.recevied_amount }} </mat-cell>
+    <mat-cell *matCellDef="let vendor"> ${{ vendor.received_ammount }} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="commission_amount">
@@ -61,27 +61,27 @@
     >
       Commission Amount
     </mat-header-cell>
-    <mat-cell *matCellDef="let product">
-      ${{ product.commission_amount }}
+    <mat-cell *matCellDef="let vendor">
+      ${{ vendor.total_sales * vendor.commission_rate/100  }}
     </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="remaining_amount">
     <mat-header-cell *matHeaderCellDef> Remaining Amount </mat-header-cell>
-    <mat-cell *matCellDef="let product">
-      ${{ product.remaining_amount }}
+    <mat-cell *matCellDef="let vendor">
+      ${{ vendor.remaining_ammount }}
     </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="last_paid_amount">
     <mat-header-cell *matHeaderCellDef> Last Paid Amount </mat-header-cell>
-    <mat-cell *matCellDef="let product">
-      ${{product.last_paid_amount}}
+    <mat-cell *matCellDef="let vendor">
+      ${{vendor.last_paid_amount}}
     </mat-cell>
   </ng-container>
   <ng-container matColumnDef="action">
     <mat-header-cell *matHeaderCellDef> </mat-header-cell>
-    <mat-cell *matCellDef="let product">
+    <mat-cell *matCellDef="let vendor">
       <button class="update">Update</button>
     </mat-cell>
   </ng-container>

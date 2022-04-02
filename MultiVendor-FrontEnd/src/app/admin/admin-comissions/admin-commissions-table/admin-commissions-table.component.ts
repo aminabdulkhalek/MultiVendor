@@ -1,33 +1,12 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { faStar, faStarHalfAlt, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import { API_URL } from 'src/app/shared/auth.service';
 
-export interface Commissions {
-  seller_name: string;
-  commission_rate: number;
-  total_sales: number;
-  recevied_amount: number;
-  commission_amount: number;
-  remaining_amount: number;
-  last_paid_amount: number
-}
 
-const Product_DATA: Commissions[] = [
-  { seller_name: "John Doe", commission_rate: 20.0, total_sales: 1050.00, recevied_amount: 0.00, commission_amount: 0.00, remaining_amount: 1050.00, last_paid_amount: 0.00 },
-  { seller_name: "John Doe", commission_rate: 20.0, total_sales: 1050.00, recevied_amount: 0.00, commission_amount: 0.00, remaining_amount: 1050.00, last_paid_amount: 0.00 },
-  { seller_name: "John Doe", commission_rate: 20.0, total_sales: 1050.00, recevied_amount: 0.00, commission_amount: 0.00, remaining_amount: 1050.00, last_paid_amount: 0.00 },
-  { seller_name: "John Doe", commission_rate: 20.0, total_sales: 1050.00, recevied_amount: 0.00, commission_amount: 0.00, remaining_amount: 1050.00, last_paid_amount: 0.00 },
-  { seller_name: "John Doe", commission_rate: 20.0, total_sales: 1050.00, recevied_amount: 0.00, commission_amount: 0.00, remaining_amount: 1050.00, last_paid_amount: 0.00 },
-  { seller_name: "John Doe", commission_rate: 20.0, total_sales: 1050.00, recevied_amount: 0.00, commission_amount: 0.00, remaining_amount: 1050.00, last_paid_amount: 0.00 },
-  { seller_name: "John Doe", commission_rate: 20.0, total_sales: 1050.00, recevied_amount: 0.00, commission_amount: 0.00, remaining_amount: 1050.00, last_paid_amount: 0.00 },
-  { seller_name: "John Doe", commission_rate: 20.0, total_sales: 1050.00, recevied_amount: 0.00, commission_amount: 0.00, remaining_amount: 1050.00, last_paid_amount: 0.00 },
-  { seller_name: "John Doe", commission_rate: 20.0, total_sales: 1050.00, recevied_amount: 0.00, commission_amount: 0.00, remaining_amount: 1050.00, last_paid_amount: 0.00 },
-  { seller_name: "John Doe", commission_rate: 20.0, total_sales: 1050.00, recevied_amount: 0.00, commission_amount: 0.00, remaining_amount: 1050.00, last_paid_amount: 0.00 },
-  { seller_name: "John Doe", commission_rate: 20.0, total_sales: 1050.00, recevied_amount: 0.00, commission_amount: 0.00, remaining_amount: 1050.00, last_paid_amount: 0.00 },
-
-];
 
 @Component({
   selector: 'app-admin-commissions-table',
@@ -39,21 +18,41 @@ export class AdminCommissionsTableComponent implements OnInit {
   half_star = faStarHalfAlt;
   delete = faTrashAlt
 
-  displayedColumns: string[] = ["seller_name","commission_rate","total_sales","recevied_amount","commission_amount","remaining_amount","last_paid_amount","action"];
-  dataSource = new MatTableDataSource<Commissions>(Product_DATA);
+  displayedColumns: string[] = ["seller_name","commission_rate","total_sales","recevied_amount","commission_amount","remaining_amount","action"];
 
+  dataSource = new MatTableDataSource<any>(null);
+  vendors = [];
+  errorMessage;
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
   @ViewChild(MatSort)
   sort!: MatSort;
 
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
-  }
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
+    this.getBalances();
   }
+  getBalances() {
+    this.http.get<any>(API_URL + 'admin/balances').subscribe({
+      next: data => {
+        // console.log(data)
+        this.dataSource = new MatTableDataSource<any>(data.Balances);
+        this.dataSource.sort = this.sort;
+        this.dataSource.paginator = this.paginator;
+        this.vendors = data.Balances;
+        return data
+      },
+      error: error => {
+        this.errorMessage = error.message;
+        console.error('There was an error!', this.errorMessage);
+      }
+    })
+
+  }
+  isEmptyObject() {
+    return (this.vendors.length === 0);
+  }
+
 
 }
