@@ -1,9 +1,9 @@
 <mat-toolbar class="toolbar">
     <span class="logo">M</span>
     <span class="market-name">MultiVendor</span>
-  
+
     <a href="admin-products"><fa-icon [icon]="notification" size="lg"></fa-icon> </a>
-    <span class="store-name">Admin Name</span>
+    <span class="store-name">{{admin_name}}</span>
     <a href="products"><fa-icon [icon]="logout" size="lg" (click)="signOut()"></fa-icon> </a>
   </mat-toolbar>
   <app-admin-sidebar [isProducts]="true"></app-admin-sidebar>
