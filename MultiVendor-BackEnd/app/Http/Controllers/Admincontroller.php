@@ -320,7 +320,17 @@ class Admincontroller extends Controller
 
     public function getReviews(){
         $reviews = Review::get();
+        foreach ($reviews as $review ) {
+            $product = Product::where('id','=',$review->product_id)->get()->first();
+            $seller = Vendor::where('id','=',$product->vendor_id)->get()->first();
+            $customer = Customer::where('id','=',$review->customer_id)->get()->first();
+            $seller_name = User::where('id','=',$seller->user_id)->get()->first()->name;
+            $customer_name = User::where('id','=',$customer->user_id)->get()->first()->name;
+            array_add($review, 'seller_name', $seller_name);
+            array_add($review, 'product_name', $product->product_name);
+            array_add($review, 'customer_name', $customer_name);
 
+        }
         return response()->json([
             'Reviews'=> $reviews
         ], 201);
