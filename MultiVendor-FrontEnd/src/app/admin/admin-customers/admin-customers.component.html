@@ -2,9 +2,9 @@
     <span class="logo">M</span>
     <span class="market-name">MultiVendor</span>
   
-    <a href="#"><fa-icon [icon]="notification" size="lg"></fa-icon> </a>
-    <span class="store-name">Admin Name</span>
-    <a href="#"><fa-icon [icon]="logout" size="lg"></fa-icon> </a>
+    <a href="admin-customers"><fa-icon [icon]="notification" size="lg"></fa-icon> </a>
+    <span class="store-name">{{admin_name}}</span>
+    <a href="login"><fa-icon [icon]="logout" size="lg" (click)="signOut()"></fa-icon> </a>
   </mat-toolbar>
   <app-admin-sidebar [isCustomers]="true"></app-admin-sidebar>
   <H3 class="page_title">Customers</H3>
