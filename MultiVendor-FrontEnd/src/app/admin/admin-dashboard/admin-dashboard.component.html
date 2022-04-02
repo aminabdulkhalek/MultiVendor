@@ -3,7 +3,7 @@
   <span class="market-name">MultiVendor</span>
 
   <a href="admin-dashboard"><fa-icon [icon]="notification" size="lg"></fa-icon> </a>
-  <span class="store-name">Admin Name</span>
+  <span class="store-name">{{admin_name}}</span>
   <a href="#"><fa-icon [icon]="logout" size="lg" (click)="signOut()"></fa-icon> </a>
 </mat-toolbar>
 <app-admin-sidebar [isDash]="true"></app-admin-sidebar>
