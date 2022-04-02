@@ -306,6 +306,13 @@ class Admincontroller extends Controller
             'Balances' => $balances
         ], 201);
     }
+    public function getBalance(Request $request){
+        $balance = Balance::where('vendor_id','=',$request->vendor_id)->get()->first();
+        
+        return response()->json([
+            'Balance' => $balance
+        ], 201);
+    }
 
     public function updateCommission(Request $request){
         $vendor_id = $request->vendor_id;
@@ -464,12 +471,12 @@ class Admincontroller extends Controller
         if ($vendor_balance->remaining_ammount == 0 ) {
             return response()->json([
                 'error'=> 'vendor received all his payments'
-            ], 405);
+            ], 200);
         }
         elseif($request->amount > ($vendor_balance->remaining_ammount)/($vendor_commission_rate/100)){
             return response()->json([
                 'error'=> 'amount to be paid excceeds sales made by this vendor'
-            ], 406);
+            ], 200);
         }
         $vendor_balance->received_ammount += ($request->amount - $request->amount*($vendor_commission_rate/100));
         $vendor_balance->save();
