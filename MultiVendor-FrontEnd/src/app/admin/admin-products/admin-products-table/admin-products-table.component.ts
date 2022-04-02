@@ -19,7 +19,7 @@ export class AdminProductsTableComponent implements OnInit {
   half_star = faStarHalfAlt;
   delete = faTrashAlt
   errorMessage;
-  displayedColumns: string[] = ["seller_name", "product_name", "flags", "price", "qty", "preview", "product_status"];
+  displayedColumns: string[] = ["seller_name", "product_name", "flags", "price", "stock", "preview", "product_status"];
   products =[];
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
