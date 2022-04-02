@@ -20,7 +20,7 @@ export class AdminProductsTableComponent implements OnInit {
   delete = faTrashAlt
   errorMessage;
   displayedColumns: string[] = ["seller_name", "product_name", "flags", "price", "qty", "preview", "product_status"];
-
+  products =[];
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
   @ViewChild(MatSort)
@@ -37,6 +37,7 @@ export class AdminProductsTableComponent implements OnInit {
         this.dataSource = new MatTableDataSource<any>(data.products);
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
+        this.products = data.products
         return data
       },
       error: error => {
@@ -46,12 +47,29 @@ export class AdminProductsTableComponent implements OnInit {
     })
 
   }
+  isEmptyObject() {
+    return (this.products.length === 0);
+  }
 
   approveProduct(product_id) {
     const body ={
       product_id :product_id
     }
     this.http.post<any>(API_URL + 'admin/approve-product', body).subscribe({
+      next: data => {
+        this.getAllProducts()
+      },
+      error: error => {
+        this.errorMessage = error.message;
+        console.error('There was an error!', this.errorMessage);
+      }
+    })
+  }
+  disapproveProduct(product_id) {
+    const body ={
+      product_id :product_id
+    }
+    this.http.post<any>(API_URL + 'admin/disapprove-product', body).subscribe({
       next: data => {
         this.getAllProducts()
       },
