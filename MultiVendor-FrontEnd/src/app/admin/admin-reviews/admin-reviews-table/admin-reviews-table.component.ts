@@ -36,7 +36,6 @@ export class AdminReviewsTableComponent implements OnInit {
   getAllReviews() {
     this.http.get<any>(API_URL + 'admin/reviews').subscribe({
       next: data => {
-        console.log(data)
         this.dataSource = new MatTableDataSource<any>(data.Reviews);
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
@@ -54,13 +53,14 @@ export class AdminReviewsTableComponent implements OnInit {
     return (this.reviews.length === 0);
   }
 
-  showReview(product_id) {
-    const body ={
-      product_id :product_id
+  showReview(review_id) {
+    const body = {
+      review_id: review_id
     }
     this.http.post<any>(API_URL + 'admin/show-review', body).subscribe({
       next: data => {
-        console.log(data)
+        this.getAllReviews()
+
       },
       error: error => {
         this.errorMessage = error.message;
@@ -68,13 +68,13 @@ export class AdminReviewsTableComponent implements OnInit {
       }
     })
   }
-  HideReview(product_id) {
-    const body ={
-      product_id :product_id
+  hideReview(review_id) {
+    const body = {
+      review_id: review_id
     }
     this.http.post<any>(API_URL + 'admin/hide-review', body).subscribe({
       next: data => {
-        console.log(data)
+        this.getAllReviews()
       },
       error: error => {
         this.errorMessage = error.message;
