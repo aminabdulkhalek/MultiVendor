@@ -319,7 +319,7 @@ class Admincontroller extends Controller
     }
 
     public function getReviews(){
-        $reviews = Review::get();
+        $reviews = Review::where('review_status','=','0')->get();
         foreach ($reviews as $review ) {
             $product = Product::where('id','=',$review->product_id)->get()->first();
             $seller = Vendor::where('id','=',$product->vendor_id)->get()->first();
@@ -350,7 +350,7 @@ class Admincontroller extends Controller
     public function hideReview(Request $request){
         $review_id = $request->review_id;
         $review = review::where('id','=',$review_id)->get()->first();
-        $review->review_status  = 0;
+        $review->review_status  = 2;
         $review ->save();
 
         return response()->json([
