@@ -12,10 +12,10 @@
     >
       Logo
     </mat-header-cell>
-    <mat-cell *matCellDef="let product">
+    <mat-cell *matCellDef="let vendor">
         <div class="logo-preview-div">
             <img
-              src="{{ product.logo }}"
+              src="{{ vendor.logo }}"
               alt="logo"
               class="logo-preview"
             />
@@ -31,7 +31,7 @@
     >
       Seller Name</mat-header-cell
     >
-    <mat-cell *matCellDef="let product"> {{ product.seller_name }} </mat-cell>
+    <mat-cell *matCellDef="let vendor"> {{ vendor.seller_name }} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="seller_email">
@@ -42,7 +42,7 @@
     >
       Seller Email
     </mat-header-cell>
-    <mat-cell *matCellDef="let product"> {{ product.seller_email }} </mat-cell>
+    <mat-cell *matCellDef="let vendor"> {{ vendor.seller_email }} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="flags">
@@ -53,7 +53,7 @@
     >
       Flags
     </mat-header-cell>
-    <mat-cell *matCellDef="let product"> {{ product.flags }} </mat-cell>
+    <mat-cell *matCellDef="let vendor"> {{ vendor.flags }} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="phone">
@@ -64,28 +64,23 @@
     >
       Phone Number
     </mat-header-cell>
-    <mat-cell *matCellDef="let product">
-      {{ product.phone }}
+    <mat-cell *matCellDef="let vendor">
+      {{ vendor.phone }}
     </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="seller_status">
     <mat-header-cell *matHeaderCellDef> Seller Status </mat-header-cell>
-    <mat-cell *matCellDef="let product">
-      <mat-radio-group aria-label="Select an option">
-        <mat-radio-button value="0" class="radio"
-          ><span class="radio-text">Deny</span>
-        </mat-radio-button>
-        <mat-radio-button value="1" class="radio"
-          ><span class="radio-text">Approve</span></mat-radio-button
-        >
-        <mat-radio-button value="2" class="radio"
-          ><span class="radio-text">Pending</span></mat-radio-button
-        >
-      </mat-radio-group>
+    <mat-cell *matCellDef="let vendor">
+      <mat-icon class="approve" (click)="approveProduct(vendor.id)">check</mat-icon>
+      <mat-icon class="disapprove" (click)="disapproveProduct(vendor.id)">close</mat-icon>
     </mat-cell>
   </ng-container>
 
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
   <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
 </mat-table>
+
+<div class="empty" *ngIf="isEmptyObject()">
+  All Vendors in the market have been approved/disapproved
+</div>
