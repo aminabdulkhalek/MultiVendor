@@ -25,7 +25,7 @@ class vendor extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function products() : HasMany
+    public function products()
     {
         return $this->hasMany(Products::class, 'vendor_id');
     }
@@ -34,16 +34,16 @@ class vendor extends Model
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function flags(): HasMany
+    public function flags()
     {
-        return $this->hasMany(VendorFlags::class, 'vendor_id');
+        return $this->hasMany(VendorFlag::class, 'vendor_id');
     }
     /**
      * Get the balance associated with the vendor
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function balance(): HasOne
+    public function balance()
     {
         return $this->hasOne(Balance::class, 'vendor_id');
     }

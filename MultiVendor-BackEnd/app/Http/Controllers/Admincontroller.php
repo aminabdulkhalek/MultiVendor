@@ -16,6 +16,7 @@ use App\Models\Vendor;
 use App\Models\Review;
 use App\Models\OrderItem;
 use App\Models\ProductFlag;
+use App\Models\VendorFlag;
 
 
 
@@ -235,9 +236,17 @@ class Admincontroller extends Controller
     }
 
     public function getVendors(){
-        $vendor = Vendor::get();
+        $vendors = Vendor::where('status','=','0')->get();
+        foreach ($vendors as $vendor ) {
+            $vendor_name = User::where('id','=',$vendor->user_id)->get('name')->first();
+            $vendor_email = User::where('id','=',$vendor->user_id)->get('email')->first();
+            $vendor_flags = VendorFlag::where('vendor_id','=',$vendor->id)->get();
+            array_add($vendor,'name',$vendor_name->name);
+            array_add($vendor,'email',$vendor_email->email);
+            array_add($vendor,'flags',$vendor_flags);
+        }
         return  response()->json([
-            'Vendors'=>$vendor
+            'Vendors'=>$vendors
         ], 201);
     }
 
