@@ -68,21 +68,12 @@
       </bar-rating>
     </mat-cell>
   </ng-container>
-  <ng-container matColumnDef="flags">
-    <mat-header-cell
-      *matHeaderCellDef
-      mat-sort-header
-      sortActionDescription="Sort by flags"
-    >
-      Flags
-    </mat-header-cell>
-    <mat-cell *matCellDef="let product"> {{ product.flags }} </mat-cell>
-  </ng-container>
+  
 
   <ng-container matColumnDef="comment">
     <mat-header-cell *matHeaderCellDef> comment </mat-header-cell>
     <mat-cell *matCellDef="let product">
-      {{ product.comment }}
+      {{ product.review_comment }}
     </mat-cell>
   </ng-container>
 
