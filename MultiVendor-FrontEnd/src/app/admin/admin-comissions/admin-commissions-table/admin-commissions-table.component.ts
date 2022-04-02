@@ -17,8 +17,8 @@ export class AdminCommissionsTableComponent implements OnInit {
   star = faStar;
   half_star = faStarHalfAlt;
   delete = faTrashAlt
-
-  displayedColumns: string[] = ["seller_name","commission_rate","total_sales","recevied_amount","commission_amount","remaining_amount","action"];
+  rate!: String;
+  displayedColumns: string[] = ["seller_name", "commission_rate", "total_sales", "recevied_amount", "commission_amount", "remaining_amount", "action"];
 
   dataSource = new MatTableDataSource<any>(null);
   vendors = [];
@@ -54,5 +54,22 @@ export class AdminCommissionsTableComponent implements OnInit {
     return (this.vendors.length === 0);
   }
 
+  updateCommission(id) {
+    var inputValue = (<HTMLInputElement>document.getElementById(id)).value;
+    const body = {
+      'vendor_id': id,
+      'commission_rate': inputValue,
+    }
+    this.http.post<any>(API_URL + 'admin/update-commission', body).subscribe({
+      next: data => {
+        this.rate=''
+        this.getBalances()
+      },
+      error: error => {
+        this.errorMessage = error.message;
+        console.error('There was an error!', this.errorMessage);
+      }
+    })
+  }
 
 }

@@ -25,8 +25,7 @@
     >
     <mat-cell *matCellDef="let vendor"> 
         <mat-form-field class="input" appearance="outline">
-       
-        <input matInput  value="{{ vendor.commission_rate }}"/>
+        <input matInput type="number" max="100" placeholder="{{ vendor.commission_rate }}" id="{{vendor.vendor_id}}" />
       </mat-form-field>
     </mat-cell>
   </ng-container>
@@ -62,7 +61,7 @@
       Commission Amount
     </mat-header-cell>
     <mat-cell *matCellDef="let vendor">
-      ${{ vendor.total_sales * vendor.commission_rate/100  }}
+      ${{ vendor.total_sales - vendor.received_ammount  }}
     </mat-cell>
   </ng-container>
 
@@ -82,7 +81,7 @@
   <ng-container matColumnDef="action">
     <mat-header-cell *matHeaderCellDef> </mat-header-cell>
     <mat-cell *matCellDef="let vendor">
-      <button class="update">Update</button>
+      <button class="update" (click)="updateCommission(vendor.vendor_id)">Update</button>
     </mat-cell>
   </ng-container>
 
