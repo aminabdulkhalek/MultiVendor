@@ -16,10 +16,10 @@ export class LoginComponent implements OnInit {
   password_confirmation!: String;
 
   errors: any = null;
-  user: User = { 
-    name: '', 
-    email: this.email, 
-    password: this.password, 
+  user: User = {
+    name: '',
+    email: this.email,
+    password: this.password,
     password_confirmation: ''
   };
 
@@ -54,6 +54,7 @@ export class LoginComponent implements OnInit {
   responseHandler(data: any) {
     this.token.handleData(data.access_token);
     localStorage.setItem('user_type', data.user.user_type);
+    localStorage.setItem('user_id',data.user.id)
     if (data.user.user_type == 0) {
       this.router.navigate(['admin-dashboard'])
     }
