@@ -46,6 +46,21 @@ export class AdminProductsTableComponent implements OnInit {
     })
 
   }
- }
+
+  approveProduct(product_id) {
+    const body ={
+      product_id :product_id
+    }
+    this.http.post<any>(API_URL + 'admin/approve-product', body).subscribe({
+      next: data => {
+        this.getAllProducts()
+      },
+      error: error => {
+        this.errorMessage = error.message;
+        console.error('There was an error!', this.errorMessage);
+      }
+    })
+  }
+}
 
 

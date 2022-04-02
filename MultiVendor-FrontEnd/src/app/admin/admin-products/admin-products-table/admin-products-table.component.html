@@ -71,7 +71,7 @@
   <ng-container matColumnDef="product_status">
     <mat-header-cell *matHeaderCellDef> Products Status </mat-header-cell>
     <mat-cell *matCellDef="let product">
-      <mat-icon class="approve">check</mat-icon>
+      <mat-icon class="approve" (click)="approveProduct(product.id)">check</mat-icon>
       <mat-icon class="disapprove">close</mat-icon>
     </mat-cell>
   </ng-container>
