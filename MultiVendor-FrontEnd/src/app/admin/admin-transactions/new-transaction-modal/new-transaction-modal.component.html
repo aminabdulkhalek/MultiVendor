@@ -1,21 +1,23 @@
+
 <h1 mat-dialog-title class="title">
   Make new Transaction <button mat-dialog-close class="close">Close</button>
 </h1>
+<div *ngIf="error" class="alert">
+  {{ error}}
+</div>
+<div *ngIf="message" class="success">
+  {{ message}}
+</div>
 <div mat-dialog-content class="content">
+
   <div class="col1">
     <form class="example-form">
       <div class="cont">
         <div class="cola">
           <mat-form-field class="example-full-width" appearance="outline">
             <mat-label>Select Vendor</mat-label>
-            <mat-select>
-              <mat-option value="0">John Doe</mat-option>
-              <mat-option value="1">Amin Abdulkhalek</mat-option>
-              <mat-option value="2">Karim Khalifeh</mat-option>
-              <mat-option value="3">Charbel Daoud</mat-option>
-              <mat-option value="4">Caline</mat-option>
-              <mat-option value="5">Ahmad</mat-option>
-              <mat-option value="6">Nour</mat-option>
+            <mat-select [(value)]="selected_value" (valueChange)="getinfo(selected_value)">
+              <mat-option *ngFor="let option of options" [value]="option.id">{{option.name}}</mat-option>
             </mat-select>
           </mat-form-field>
           <mat-form-field
@@ -24,7 +26,7 @@
             appearance="outline"
           >
             <mat-label>Commission</mat-label>
-            <input matInput disabled value="20%" />
+            <input matInput disabled value="{{commission}}" />
           </mat-form-field>
           <mat-form-field
             floatLabel="always"
@@ -32,7 +34,7 @@
             appearance="outline"
           >
             <mat-label>Total Sales</mat-label>
-            <input matInput disabled value="1255$" />
+            <input matInput disabled value="{{total_sales}}" />
           </mat-form-field>
 
           <mat-form-field
@@ -41,7 +43,7 @@
             floatLabel="always"
           >
             <mat-label>Admin amount to be recevied</mat-label>
-            <input matInput type="number" placeholder="0" min="0" disabled />
+            <input matInput type="number" placeholder="0" min="0" disabled  value="{{commission * amount_to_pay /100}}"/>
             <span matPrefix>$&nbsp;</span>
           </mat-form-field>
           <mat-form-field
@@ -50,7 +52,7 @@
             floatLabel="always"
           >
             <mat-label>Amount to Pay</mat-label>
-            <input matInput type="number" placeholder="0" min="0" />
+            <input matInput type="number" placeholder="0" min="0" [(ngModel)]="amount_to_pay" name="amount_to_pay"/>
           </mat-form-field>
         </div>
       </div>
@@ -58,5 +60,5 @@
   </div>
 </div>
 <div mat-dialog-actions align="center">
-  <button mat-dialog class="submit">Submit Payment</button>
+  <button mat-dialog class="submit" (click)="submitPayment(selected_value,amount_to_pay)">Submit Payment</button>
 </div>
