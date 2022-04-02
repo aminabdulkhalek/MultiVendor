@@ -18,7 +18,7 @@ export class AdminVendorsTableComponent implements OnInit {
   half_star = faStarHalfAlt;
   delete = faTrashAlt
   errorMessage;
-  displayedColumns: string[] = ["logo", "seller_name", "seller_email", "flags", "phone", "seller_status"];
+  displayedColumns: string[] = ["logo", "name", "email", "flags", "phone", "seller_status"];
   vendors =[];
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
@@ -34,7 +34,7 @@ export class AdminVendorsTableComponent implements OnInit {
   getAllVendors() {
     this.http.get<any>(API_URL + 'admin/vendors').subscribe({
       next: data => {
-        console.log(data)
+        // console.log(data)
         this.dataSource = new MatTableDataSource<any>(data.Vendors);
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
@@ -52,9 +52,9 @@ export class AdminVendorsTableComponent implements OnInit {
     return (this.vendors.length === 0);
   }
 
-  approveProduct(product_id) {
+  approveProduct(vendor_id) {
     const body ={
-      product_id :product_id
+      vendor_id :vendor_id
     }
     this.http.post<any>(API_URL + 'admin/approve-vendor', body).subscribe({
       next: data => {
@@ -66,9 +66,9 @@ export class AdminVendorsTableComponent implements OnInit {
       }
     })
   }
-  disapproveProduct(product_id) {
+  disapproveProduct(vendor_id) {
     const body ={
-      product_id :product_id
+      vendor_id :vendor_id
     }
     this.http.post<any>(API_URL + 'admin/disapprove-vendor', body).subscribe({
       next: data => {

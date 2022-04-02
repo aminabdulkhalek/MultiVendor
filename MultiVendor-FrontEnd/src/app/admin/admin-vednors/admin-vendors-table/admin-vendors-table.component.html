@@ -23,26 +23,26 @@
     </mat-cell>
   </ng-container>
 
-  <ng-container matColumnDef="seller_name">
+  <ng-container matColumnDef="name">
     <mat-header-cell
       *matHeaderCellDef
       mat-sort-header
-      sortActionDescription="Sort by seller_name"
+      sortActionDescription="Sort by name"
     >
       Seller Name</mat-header-cell
     >
-    <mat-cell *matCellDef="let vendor"> {{ vendor.seller_name }} </mat-cell>
+    <mat-cell *matCellDef="let vendor"> {{ vendor.name }} </mat-cell>
   </ng-container>
 
-  <ng-container matColumnDef="seller_email">
+  <ng-container matColumnDef="email">
     <mat-header-cell
       *matHeaderCellDef
       mat-sort-header
-      sortActionDescription="Sort by seller_email"
+      sortActionDescription="Sort by email"
     >
       Seller Email
     </mat-header-cell>
-    <mat-cell *matCellDef="let vendor"> {{ vendor.seller_email }} </mat-cell>
+    <mat-cell *matCellDef="let vendor"> {{ vendor.email }} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="flags">
@@ -53,7 +53,7 @@
     >
       Flags
     </mat-header-cell>
-    <mat-cell *matCellDef="let vendor"> {{ vendor.flags }} </mat-cell>
+    <mat-cell *matCellDef="let vendor"> {{ vendor.flags.length }} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="phone">
