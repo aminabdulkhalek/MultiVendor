@@ -184,7 +184,7 @@ class Admincontroller extends Controller
     }
 
     public function products(){
-        $products = Product::get();
+        $products = Product::where('status','=','0')->get();
         $result = [];
         foreach ($products as $product) {
             $product_owner = Vendor::where('id','=',$product->vendor_id)->get()->first();
