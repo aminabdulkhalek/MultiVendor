@@ -24,6 +24,13 @@ class Admincontroller extends Controller
 {
     public function getCustomers(){
         $customers = Customer::get();
+        foreach ($customers as $customer ) {
+            $customer_name = User::where('id','=',$customer->user_id)->get('name')->first()->name;
+            $customer_email =User::where('id','=',$customer->user_id)->get('email')->first()->email;
+            array_add($customer, 'name', $customer_name);
+            array_add($customer, 'email', $customer_email);
+            array_add($customer, 'since', date("d/m/Y", strtotime($customer->created_at)));
+        }
         return  response()->json([
             'Customers'=>$customers
         ], 201);
