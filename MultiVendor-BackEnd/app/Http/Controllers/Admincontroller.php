@@ -295,7 +295,12 @@ class Admincontroller extends Controller
 
     public function getBalances(){
         $balances = Balance::get();
-
+        foreach ($balances as $balance ) {
+            $balance_owner = Vendor::where('id','=',$balance->vendor_id)->get()->first();
+            $vendor_name = User::where('id','=',$balance_owner->user_id)->get('name')->first()->name;
+            array_add($balance, 'seller_name', $vendor_name);
+            array_add($balance, 'commission_rate', $balance_owner->commission_rate);
+        }
         return response()->json([
             'Balances' => $balances
         ], 201);
