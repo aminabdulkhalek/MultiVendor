@@ -282,11 +282,12 @@ class VendorController extends Controller
             'feature1' => 'required',
             'feature2' => 'required',
             'feature3' => 'required',
+            'feature4' => 'required',
             'desc1' => 'required',
             'desc2' => 'required',
         ]);
         if($validator->fails()){
-            return response()->json($validator->errors()->toJson(), 400);
+            return response()->json($validator->errors(), 400);
         }
         $vendor =  Auth::user();
         $vendor_info = Vendor::where('user_id','=',$vendor->id)->get()->first();
@@ -300,6 +301,7 @@ class VendorController extends Controller
         $product->feature1 = $request->feature1;
         $product->feature2 = $request->feature2;
         $product->feature3 = $request->feature3;
+        $product->feature4 = $request->feature3;
         $product->desc1 = $request->desc1;
         $product->desc2 = $request->desc2;
         $product->save();

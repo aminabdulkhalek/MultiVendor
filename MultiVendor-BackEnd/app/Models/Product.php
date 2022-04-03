@@ -20,7 +20,7 @@ class Product extends Model
         'feature1',
         'feature2',
         'feature3',
-        'feature1',
+        'feature4',
         'img1',
         'img2',
         'img3',

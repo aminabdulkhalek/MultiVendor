@@ -21,7 +21,6 @@ class CreateProductsTable extends Migration
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->string('product_name', 255);
             $table->float('price')->unsigned();
-            $table->bigInteger('stock')->unsigned();
             $table->bigInteger('stock')->unsigned()->defualt(0);
             $table->tinyInteger('status')->default(0);
             $table->bigInteger('sales')->default(0);
@@ -29,6 +28,7 @@ class CreateProductsTable extends Migration
             $table->text('feature1')->nullable();
             $table->text('feature2')->nullable();
             $table->text('feature3')->nullable();
+            $table->text('feature4')->nullable();
             $table->string('img1', 255)->nullable();
             $table->string('img2', 255)->nullable();
             $table->string('img3', 255)->nullable();
