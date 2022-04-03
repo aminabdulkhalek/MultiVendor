@@ -60,7 +60,6 @@ export class ProductsPageComponent implements OnInit {
   getProducts(){
     this.http.get<any>(API_URL+'customer/approved-products').subscribe({
       next: data => {
-        console.log(data)
         this.products = data.products;
       },
       error: error => {
