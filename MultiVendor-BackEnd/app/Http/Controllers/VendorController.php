@@ -386,6 +386,13 @@ class VendorController extends Controller
             'Reviews'=> $reviews
         ], 200);
     }
+    public function getProfile(){
+        $vendor =  Auth::user();
+        $vendor_info = Vendor::where('user_id','=',$vendor->id)->get()->first();
+        return response()->json([
+            'vendor'=> $vendor_info
+        ], 200);
+    }
 
     public function updateProfile(Request $request){
         $validator = Validator::make($request->all(), [
