@@ -376,19 +376,27 @@ class Admincontroller extends Controller
     }
 
     public function getOrders(){
-        $orders = Order::get();
+        $orders = Order::where('status','=','0')->get();
         $result =[];
-        foreach($orders as $order){
-            $temp = [];
-            $temp = json_encode([
-               "id" => $order->id,
-                "customer_id" => $order->customer_id,
-                "order_date" => $order-> created_at,
-                "order_items" => $order->orderItems()->get(),
 
-           ]) ;
-           array_push($result,json_decode($temp));
-        }
+            foreach ($orders as $order ) {
+                $order_items = $order->orderItems()->get();
+                foreach ($order_items as $item ) {
+                    $product = Product::where('id','=',$item->product_id)->get()->first();
+                    $vendor = Vendor::where('id','=',$product->vendor_id)->get()->first();
+                    $customer = Customer::where('id','=',$order->customer_id)->get()->first();
+                    $product_name= $product->product_name;
+                    $customer_name = User::where('id','=',$customer->user_id)->get('name')->first()->name;
+                    $vendor_name = User::where('id','=',$vendor->user_id)->get('name')->first()->name;
+                    $order_id = $order->id;
+                    array_add($item, 'order_id', $order_id);
+                    array_add($item, 'product_name', $product_name);
+                    array_add($item, 'product_price', $product->price);
+                    array_add($item, 'vendor_name', $vendor_name);
+                    array_add($item, 'customer_name', $customer_name);
+                    array_push($result,$item);
+                }
+            }
 
         return response()->json([
             "Orders" => $result,
