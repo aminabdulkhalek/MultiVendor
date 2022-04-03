@@ -216,13 +216,21 @@ class VendorController extends Controller
     public function recentOrders(){
         $vendor =  Auth::user();
         $vendor_info = Vendor::where('user_id','=',$vendor->id)->get()->first();
-
         $order_items = OrderItem::get();
         $vendor_orders = [];
         foreach($order_items as $order_item){
             $product = Product::where('id','=',$order_item->product_id)->get()->first();
             $product_owner = Vendor::where('id','=',$product->vendor_id)->get()->first();
             if ($product_owner->id == $vendor_info->id) {
+                $order = Order::where('id','=',$order_item->order_id)->get()->first();
+                $customer = Customer::where('id','=',$order->customer_id)->get()->first();
+                $customer_name = User::where('id','=',$customer->user_id)->get('name')->first()->name;
+                $product_name = $product->product_name;
+                array_add($order_item, 'customer_name', $customer_name);
+                array_add($order_item, 'product_name', $product_name);
+                array_add($order_item, 'product_price', $product->price);
+
+
                 array_push($vendor_orders, $order_item);
             }
         }
