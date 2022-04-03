@@ -1,9 +1,9 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Inject, OnInit, ViewChild } from '@angular/core';
 import { faFile, faImage, faMoneyBill1Wave, faStar, faStarHalfAlt, faTrash, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort, Sort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { AddProductModalComponent } from '../vendor-products.component';
 import { HttpClient } from '@angular/common/http';
 import { API_URL } from 'src/app/shared/auth.service';
@@ -33,8 +33,8 @@ export class ProductsComponent  {
     public dialog: MatDialog,
     private http: HttpClient,
     ) { }
-  openDialog1() {
-    this.dialog.open(UpdateProductModalComponent);
+  openDialog1(product_id) {
+    this.dialog.open(UpdateProductModalComponent ,{data:{'product_id':product_id}});
   }
   getAllProducts() {
     this.http.get<any>(API_URL + 'vendor/products').subscribe({
@@ -83,6 +83,33 @@ export class UpdateProductModalComponent implements OnInit {
   file_icon = faFile;
   delete = faTrashAlt;
   image_icon = faImage;
+  success;
+  errorMessage;
+
+  pname;
+  f1;
+  f2;
+  f3;
+  f4;
+  pprice;
+  pstock;
+  pdesc1;
+  pdesc2;
+  pcategory;
+
+  categories;
+  selected_value
+
+  product_name;
+  feature1;
+  feature2;
+  feature3;
+  feature4;
+  price;
+  stock;
+  desc1;
+  desc2;
+  
   @ViewChild("fileDropRef", { static: false })
   fileDropEl!: ElementRef;
 
@@ -172,10 +199,61 @@ export class UpdateProductModalComponent implements OnInit {
     const i = Math.floor(Math.log(bytes) / Math.log(k));
     return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + " " + sizes[i];
   }
-  constructor() { }
+  constructor(private http: HttpClient,
+    @Inject(MAT_DIALOG_DATA) public data) { }
 
+  product_id = this.data.product_id;  
   ngOnInit(): void {
+    this.getProductinfo(this.product_id)
+    this.getCategories()
+  }
+  getProductinfo(product_id){
+    const body ={
+      'product_id':product_id
+    }
+    this.http.post<any>(API_URL + 'user/product',body).subscribe({
+      next: data => {
+        this.pname = data.product.product_name;
+        this.f1= data.product.feature1;
+        this.f2= data.product.feature2;
+        this.f3= data.product.feature3;
+        this.f4= data.product.feature4;
+        this.pprice= data.product.price;
+        this.pstock= data.product.stock;
+        this.pdesc1= data.product.desc1;
+        this.pdesc2= data.product.desc2;
+        this.selected_value= data.product.category_id;
+        
+      },
+      error: error => {
+        this.errorMessage = error.message;
+        console.error('There was an error!', this.errorMessage);
+      }
+    })
   }
 
+  getCategories() {
+
+    this.http.get<any>(API_URL + 'user/categories').subscribe({
+      next: data => {
+        this.categories = data.categories;
+
+        for (let i = 0; i < this.categories.length; i++) {
+          this.categories[i].name = data.categories[i].category_name;
+        }
+      },
+      error: error => {
+        this.errorMessage = error.message;
+        console.error('There was an error!', this.errorMessage);
+      }
+    })
+
+  }
+
+  submitChanges(product_id){
+    console.log(product_id)
+  }
 }
+
+
 

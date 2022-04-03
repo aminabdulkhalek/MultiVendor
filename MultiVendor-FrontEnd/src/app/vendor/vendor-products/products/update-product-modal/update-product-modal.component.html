@@ -1,30 +1,31 @@
 <h1 mat-dialog-title class="title">
   Update This Product <button mat-dialog-close class="close">Close</button>
 </h1>
+<div class="success" *ngIf="success?.message" >{{success?.message}}</div>
 <div mat-dialog-content class="content">
   <div class="col1">
     <form class="example-form">
       <div class="cont">
         <div class="cola">
-          <mat-form-field class="example-full-width" appearance="outline">
+          <mat-form-field class="example-full-width" appearance="outline" floatLabel="always">
             <mat-label>Product Name</mat-label>
-            <input matInput value="Iphone 13 Pro MAX" />
+            <input matInput placeholder="{{pname}}" [(ngModel)]="product_name" name="product_name"/>
           </mat-form-field>
-          <mat-form-field class="example-full-width" appearance="outline">
+          <mat-form-field class="example-full-width" appearance="outline" floatLabel="always">
             <mat-label>Feature 1</mat-label>
-            <input matInput value="Operating system: iOS 15" />
+            <input matInput placeholder="{{f1}}" [(ngModel)]="feature1" name="feature1"/>
           </mat-form-field>
-          <mat-form-field class="example-full-width" appearance="outline">
+          <mat-form-field class="example-full-width" appearance="outline" floatLabel="always">
             <mat-label>Feature 2</mat-label>
-            <input matInput value="Processor: Quad-core 2.5 GHz Vortex" />
+            <input matInput placeholder="{{f2}}" [(ngModel)]="feature2" name="feature2"/>
           </mat-form-field>
-          <mat-form-field class="example-full-width" appearance="outline">
+          <mat-form-field class="example-full-width" appearance="outline" floatLabel="always">
             <mat-label>Feature 3</mat-label>
-            <input matInput value="Memory: 64GB, RAM: 4 GB" />
+            <input matInput placeholder="{{f3}}" [(ngModel)]="feature3" name="feature3"/>
           </mat-form-field>
-          <mat-form-field class="example-full-width" appearance="outline">
+          <mat-form-field class="example-full-width" appearance="outline" floatLabel="always">
             <mat-label>Feature 4</mat-label>
-            <input matInput value="Color: Sky Blue" />
+            <input matInput placeholder="{{f4}}" [(ngModel)]="feature4" name="feature4"/>
           </mat-form-field>
           <div class="col-6">
             <mat-form-field
@@ -38,7 +39,9 @@
                 type="number"
                 placeholder="0"
                 min="0"
-                value="1299"
+                [(ngModel)]="price"
+                name="price"
+                value="{{pprice}}"
               />
               <span matPrefix>$&nbsp;</span>
             </mat-form-field>
@@ -53,22 +56,20 @@
                 type="number"
                 placeholder="0"
                 min="0"
-                value="18"
+                [(ngModel)]="stock"
+                name="stock"
+                value="{{pstock}}"
               />
             </mat-form-field>
           </div>
-          <mat-form-field class="example-full-width" appearance="outline">
+          <mat-form-field class="example-full-width" appearance="outline" floatLabel="always">
             <mat-label>Select Category</mat-label>
-            <mat-select value="electornic_devices">
-              <mat-option value="electornic_devices"
-                >Electronic Devices</mat-option
+            <mat-select value="{{pcategory}}" [(value)]="selected_value">
+              <mat-option
+                *ngFor="let category of categories"
+                [value]="category.id"
+                >{{ category.category_name }}</mat-option
               >
-              <mat-option value="furniture">Furniture</mat-option>
-              <mat-option value="women_clothes">Women Clothes</mat-option>
-              <mat-option value="men_clothes">Men Clothes</mat-option>
-              <mat-option value="Health_beauty">Health & Beauty</mat-option>
-              <mat-option value="tools">Tools</mat-option>
-              <mat-option value="food">Food</mat-option>
             </mat-select>
           </mat-form-field>
         </div>
@@ -84,10 +85,9 @@
                 matInput
                 placeholder="Describe your product the way you like!..."
                 rows="12"
-                value="Unlocked and compatible with any carrier of choice on GSM and CDMA networks (e.g. AT&T, T-Mobile, Sprint, Verizon, US Cellular, Cricket, Metro, Tracfone, Mint Mobile, etc.).
-              Tested for battery health and guaranteed to come with a battery that exceeds 90% of original capacity.
-              Inspected and guaranteed to have minimal cosmetic damage, which is not noticeable when the device is held at arm's length. Successfully passed a full diagnostic test which ensures like-new functionality and removal of any prior-user personal information.
-              Includes a brand new, generic charging cable that is certified Mfi (Made for iPhone) "
+                [(ngModel)]="desc1"
+                name="desc1"
+                value="{{pdesc1}}"
               >
               </textarea>
             </mat-form-field>
@@ -101,10 +101,9 @@
                 matInput
                 rows="12"
                 placeholder="Add more description to your product"
-                value="Camera: Rear image quality: Still image quality using the rear facing (main) camera. It is based on objective and subjective judgments of test images, which includes evaluating resolution, dynamic range, color accuracy, and visual noise.
-
-              Camera: Rear 1080p video quality: Video quality is based on the judgments of trained panelists who viewed recorded video images shot at the highest quality setting available (1080p max.) in multiple lighting conditions.
-              "
+                [(ngModel)]="desc2"
+                name="desc2"
+                value="{{pdesc2}}"
               ></textarea>
             </mat-form-field>
           </p>
@@ -150,5 +149,5 @@
   </div>
 </div>
 <div mat-dialog-actions align="end">
-  <button mat-dialog class="submit">Update Product</button>
+  <button mat-dialog class="submit" (click)="submitChanges(product_id)">Update Product</button>
 </div>
