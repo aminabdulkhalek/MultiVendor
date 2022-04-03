@@ -28,7 +28,6 @@ export class VendorCustomersTableComponent implements OnInit {
   getAllCustomers() {
     this.http.get<any>(API_URL + 'vendor/customers').subscribe({
       next: data => {
-        console.log(data)
         this.dataSource = new MatTableDataSource<any>(data.customers);
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
