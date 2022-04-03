@@ -2,8 +2,8 @@
   <div class="section1">
     <div class="backgorund">
       <img class='product_img' src="{{product.img1}}" alt="product"  (click)="redirectToProduct()"/>
-      <mat-icon class="love0">favorite_border</mat-icon>
-      <mat-icon class="love1">favorite</mat-icon>
+      <mat-icon id='love0{{index}}' class="love0" (click)="addToWishlist()">favorite_border</mat-icon>
+      <mat-icon id='love1{{index}}'class="love1 hide" (click)="removeFromWishlist()">favorite</mat-icon>
     </div>
   </div>
   <div class="section2">

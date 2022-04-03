@@ -33,13 +33,16 @@ $black: #5E5E5E;
     width: max-content;
 }
 
+.hide{
+    display: none;
+}
 .love0 {
     cursor: pointer;
     color: $red;
     font-size: 50px;
     margin-left: 14.2rem;
     margin-top: -6rem;
-    // display: none;
+   
 }
 
 .love1 {
@@ -48,7 +51,7 @@ $black: #5E5E5E;
     font-size: 50px;
     margin-left: 14.2rem;
     margin-top: -6rem;
-    display: none;
+
 }
 
 .section2 {
