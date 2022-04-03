@@ -318,7 +318,7 @@ class VendorController extends Controller
         $product->feature1 = $request->feature1;
         $product->feature2 = $request->feature2;
         $product->feature3 = $request->feature3;
-        $product->feature4 = $request->feature3;
+        $product->feature4 = $request->feature4;
         $product->desc1 = $request->desc1;
         $product->desc2 = $request->desc2;
         $product->save();
@@ -341,6 +341,7 @@ class VendorController extends Controller
             'feature1' => 'required',
             'feature2' => 'required',
             'feature3' => 'required',
+            'feature4' => 'required',
             'desc1' => 'required',
             'desc2' => 'required',
         ]);
@@ -359,6 +360,7 @@ class VendorController extends Controller
         $product->feature1 = $request->feature1;
         $product->feature2 = $request->feature2;
         $product->feature3 = $request->feature3;
+        $product->feature4 = $request->feature4;
         $product->desc1 = $request->desc1;
         $product->desc2 = $request->desc2;
         $product->save();
