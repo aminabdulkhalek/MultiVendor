@@ -16,7 +16,7 @@ export class VendorReviewsTableComponent implements OnInit {
   star = faStar;
   half_star = faStarHalfAlt;
   delete = faTrashAlt
-  displayedColumns: string[] = ['id', 'product_name', 'customer_name', 'stars', 'reviews_comment', 'review_date'];
+  displayedColumns: string[] = ['id', 'product_name', 'customer_name', 'stars', 'reviews_comment', 'review_date','review_status'];
   dataSource = new MatTableDataSource<any>(null);
   reviews = [];
   errorMessage;

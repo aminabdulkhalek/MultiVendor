@@ -111,6 +111,20 @@
       {{ product.review_date }}
     </mat-cell>
   </ng-container>
+  <ng-container matColumnDef="review_status">
+    <mat-header-cell class="center" *matHeaderCellDef mat-sort-header sortActionDescription="Sort by order_status"> Review Status </mat-header-cell>
+    <mat-cell class="center" *matCellDef="let product">
+      <div *ngIf="product.review_status == 1">
+        Review is public
+      </div>
+      <div *ngIf="product.review_status == 2">
+        Review is hidden
+      </div>
+      <div *ngIf="product.review_status == 0 ">
+        Pending
+      </div>
+    </mat-cell>
+  </ng-container>
 
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
   <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
