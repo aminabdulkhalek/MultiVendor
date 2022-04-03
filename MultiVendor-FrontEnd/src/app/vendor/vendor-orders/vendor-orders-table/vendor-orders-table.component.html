@@ -29,19 +29,19 @@
       Price
     </mat-header-cell>
     <mat-cell class="center" *matCellDef="let product">
-        {{ product.price }}
+        ${{ product.product_price }}
     </mat-cell>
   </ng-container>
 
-  <ng-container matColumnDef="quanitity">
-    <mat-header-cell class="center" *matHeaderCellDef mat-sort-header sortActionDescription="Sort by quanitity"> Qty </mat-header-cell>
-    <mat-cell class="center" *matCellDef="let product"> {{ product.quanitity }} </mat-cell>
+  <ng-container matColumnDef="quanitiy">
+    <mat-header-cell class="center" *matHeaderCellDef mat-sort-header sortActionDescription="Sort by quanitiy"> Qty </mat-header-cell>
+    <mat-cell class="center" *matCellDef="let product"> {{ product.quanitiy }} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="total">
-    <mat-header-cell class="center" *matHeaderCellDef mat-sort-header sortActionDescription="Sort by total"> total </mat-header-cell>
+    <mat-header-cell class="center" *matHeaderCellDef mat-sort-header > total </mat-header-cell>
     <mat-cell class="center" *matCellDef="let product">
-      {{ product.total }}
+      ${{ product.quanitiy * product.product_price}}
     </mat-cell>
   </ng-container>
 
@@ -49,13 +49,21 @@
     <mat-header-cell class="center" *matHeaderCellDef mat-sort-header sortActionDescription="Sort by order_date">
         Order Date
     </mat-header-cell>
-    <mat-cell class="center" *matCellDef="let product"> {{ product.order_date.toDateString() }} </mat-cell>
+    <mat-cell class="center" *matCellDef="let product"> {{ product.order_date}} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="order_status">
     <mat-header-cell class="center" *matHeaderCellDef mat-sort-header sortActionDescription="Sort by order_status"> Order Status </mat-header-cell>
     <mat-cell class="center" *matCellDef="let product">
-        {{ product.order_status }}
+      <div *ngIf="product.order_status == 1">
+        Approved
+      </div>
+      <div *ngIf="product.order_status == 2">
+        Dispproved
+      </div>
+      <div *ngIf="product.order_status == 0 ">
+        Pending
+      </div>
     </mat-cell>
   </ng-container>
 
