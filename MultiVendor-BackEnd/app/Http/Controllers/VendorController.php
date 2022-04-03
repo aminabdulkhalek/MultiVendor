@@ -208,6 +208,10 @@ class VendorController extends Controller
         $vendor_info = Vendor::where('user_id','=',$vendor->id)->get()->first();
         $products_ids = Product::where('vendor_id','=',$vendor_info->id)->get('id');
         $reviews  = Review::whereIn('product_id',$products_ids)->take(3)->get();
+        foreach ($reviews as $review ) {
+            $product_name = Product::where('id','=',$review->product_id)->get('product_name')->first()->product_name;
+            array_add($review, 'product_name', $product_name);
+        }
 
         return response()->json([
             'Reviews'=> $reviews
