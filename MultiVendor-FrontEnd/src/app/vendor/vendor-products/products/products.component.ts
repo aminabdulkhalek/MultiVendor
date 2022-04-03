@@ -14,7 +14,7 @@ import { API_URL } from 'src/app/shared/auth.service';
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.scss']
 })
-export class ProductsComponent implements AfterViewInit {
+export class ProductsComponent  {
   star = faStar;
   half_star = faStarHalfAlt;
   delete = faTrashAlt
@@ -27,10 +27,7 @@ export class ProductsComponent implements AfterViewInit {
   @ViewChild(MatSort)
   sort!: MatSort;
 
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
-  }
+
 
   constructor(
     public dialog: MatDialog,
@@ -42,7 +39,6 @@ export class ProductsComponent implements AfterViewInit {
   getAllProducts() {
     this.http.get<any>(API_URL + 'vendor/products').subscribe({
       next: data => {
-        console.log(data)
         this.dataSource = new MatTableDataSource<any>(data.products);
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
@@ -58,6 +54,18 @@ export class ProductsComponent implements AfterViewInit {
   }
   isEmptyObject() {
     return (this.products.length === 0);
+  }
+  deleteProduct(product_id){
+    const body = {'product_id':product_id}
+    this.http.post<any>(API_URL+'vendor/delete-product',body).subscribe({
+      next: data => {
+        this.getAllProducts();
+      },
+      error: error => {
+        this.errorMessage = error.message;
+        console.error('There was an error!', this.errorMessage);
+      }
+    })
   }
   ngOnInit(): void {
     this.getAllProducts()
