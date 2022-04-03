@@ -16,6 +16,7 @@ use App\Models\Vendor;
 use App\Models\Review;
 use App\Models\OrderItem;
 use App\Models\Category;
+use App\Models\ProductFlag;
 use Validator;
 
 class VendorController extends Controller
@@ -267,6 +268,22 @@ class VendorController extends Controller
         $vendor =  Auth::user();
         $vendor_info = Vendor::where('user_id','=',$vendor->id)->get()->first();
         $vendor_products = Product::where('vendor_id','=',$vendor_info->id)->get();
+        $average_stars = 0;
+        foreach ($vendor_products as $product ) {
+            $flags = ProductFlag::where('product_id','=',$product->id)->get()->count();
+            array_add($product, 'flag', $flags);
+            $reviews = Review::where('product_id','=',$product->id)->get('stars');
+            if (count($reviews)>0) {
+                foreach ($reviews as $review) { 
+                $average_stars = $average_stars+ $review->stars;
+                }
+                $average_stars = $average_stars/count($reviews);
+                array_add($product, 'average_reviews', $average_stars);
+            }
+            array_add($product, 'average_reviews', 0);
+            
+            
+        }
 
         return response()->json([
             'products' => $vendor_products
