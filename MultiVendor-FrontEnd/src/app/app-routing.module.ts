@@ -48,7 +48,7 @@ const routes: Routes = [
 
   { path: 'customer-dashboard', component: CustomerDashboardComponent },
   { path: 'products', component: ProductsPageComponent },
-  { path: 'product', component: ProductComponent },
+  { path: 'product/:id', component: ProductComponent },
   { path: 'shops', component: ShopsComponent },
   { path: 'shop', component: ShopComponent },
   { path: 'shopping-cart', component: ShoppingCartComponent },

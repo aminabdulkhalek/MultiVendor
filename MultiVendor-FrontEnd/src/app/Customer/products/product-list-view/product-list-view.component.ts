@@ -14,7 +14,7 @@ export class ProductListViewComponent implements OnInit {
   product;
   @Input()
   index;
-  
+
   errorMessage
   star=faStar;
   half_star=faStarHalfAlt;
@@ -22,10 +22,10 @@ export class ProductListViewComponent implements OnInit {
     private http: HttpClient) { }
 
   ngOnInit(): void {
-    
+
   }
-  redirectToProduct(){
-    this.router.navigate(['product'])
+  redirectToProduct(product_id) {
+    this.router.navigate([`product/${product_id}`])
   }
   addToWishlist(){
     document.getElementById(`love0${this.index}`).classList.add('hide')

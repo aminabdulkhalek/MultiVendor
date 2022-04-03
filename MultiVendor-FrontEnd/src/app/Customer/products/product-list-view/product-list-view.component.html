@@ -1,7 +1,7 @@
 <div class="product">
   <div class="section1">
     <div class="backgorund">
-      <img class='product_img' src="{{product.img1}}" alt="product"  (click)="redirectToProduct()"/>
+      <img class='product_img' src="{{product.img1}}" alt="product"  (click)="redirectToProduct(product.id)"/>
       <mat-icon id='love0{{index}}' class="love0" (click)="addToWishlist()">favorite_border</mat-icon>
       <mat-icon id='love1{{index}}'class="love1 hide" (click)="removeFromWishlist()">favorite</mat-icon>
     </div>

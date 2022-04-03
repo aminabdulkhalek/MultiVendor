@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { faSignOut, faUserCircle, faHeart, faShoppingCart, faShoppingBasket, faStar, faStarHalf, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-product',
@@ -17,21 +19,30 @@ export class ProductComponent implements OnInit {
   half_star= faStarHalfAlt;
   value = 0;
   reviews = [1,2,3,4]
-  constructor() { }
+
+  private routeSub: Subscription
+
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.routeSub = this.route.params.subscribe(params => {
+      console.log(params['id'])
+    });
+  }
+  ngOnDestroy() {
+    this.routeSub.unsubscribe();
   }
   changeImg(img){
     this.selected_img = img;
   }
-  
+
 
   handleMinus() {
     if (this.value>0) {
-      this.value--;  
+      this.value--;
     }
   }
   handlePlus() {
-    this.value++;    
+    this.value++;
   }
 }

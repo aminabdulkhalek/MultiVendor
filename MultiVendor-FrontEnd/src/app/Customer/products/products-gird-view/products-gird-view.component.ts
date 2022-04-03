@@ -14,7 +14,7 @@ export class ProductsGirdViewComponent implements OnInit {
   product;
   @Input()
   index;
-  
+
   errorMessage
   star = faStar;
   half_star = faStarHalfAlt;
@@ -24,7 +24,7 @@ export class ProductsGirdViewComponent implements OnInit {
   ngOnInit(): void {
   }
   redirectToProduct(product_id) {
-    this.router.navigate(['product'])
+    this.router.navigate([`product/${product_id}`])
   }
   addToWishlist(){
     document.getElementById(`love0${this.index}`).classList.add('hide')
