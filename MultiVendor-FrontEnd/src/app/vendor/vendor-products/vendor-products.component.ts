@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { faBell, faFile, faImage, faPlusSquare, faSignOut, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
-import {MatDialog} from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { AuthStateService } from 'src/app/shared/auth-state.service';
@@ -27,7 +27,7 @@ export class VendorProductsComponent {
     private auth: AuthStateService,
     public router: Router,
     public token: TokenService,
-    public authService :AuthService,
+    public authService: AuthService,
     private http: HttpClient) { }
 
   openDialog() {
@@ -40,7 +40,7 @@ export class VendorProductsComponent {
         this.router.navigate(['login']);
       }
     });
-    if (localStorage.getItem('user_type') != '1'){
+    if (localStorage.getItem('user_type') != '1') {
       localStorage.removeItem('user_type');
       this.signOut()
     }
@@ -49,9 +49,9 @@ export class VendorProductsComponent {
   signOut() {
     this.authService.signOut();
   }
-  getInfo(){
-    const body = {id: localStorage.getItem('user_id')}
-    this.http.post<any>(API_URL+'user/name',body).subscribe({
+  getInfo() {
+    const body = { id: localStorage.getItem('user_id') }
+    this.http.post<any>(API_URL + 'user/name', body).subscribe({
       next: data => {
         this.vendor_name = data.Name;
       },
@@ -60,7 +60,7 @@ export class VendorProductsComponent {
         console.error('There was an error!', this.errorMessage);
       }
     })
-    this.http.get<any>(API_URL+'vendor/get-profile').subscribe({
+    this.http.get<any>(API_URL + 'vendor/get-profile').subscribe({
       next: data => {
         this.imagePath = data.vendor.logo;
       },
@@ -77,11 +77,24 @@ export class VendorProductsComponent {
   templateUrl: 'add-product-modal/add-product-modal.component.html',
   styleUrls: ['add-product-modal/add-product-modal.component.scss']
 })
-export class AddProductModalComponent  {
-  file_icon=faFile;
+export class AddProductModalComponent {
+  file_icon = faFile;
   delete = faTrashAlt;
   image_icon = faImage;
-@ViewChild("fileDropRef", { static: false })
+  product_name;
+  price;
+  feature1;
+  feature2;
+  feature3;
+  feature4;
+  stock;
+  categories;
+  selected_value;
+  desc1;
+  desc2;
+  errorMessage;
+  success;
+  @ViewChild("fileDropRef", { static: false })
   fileDropEl!: ElementRef;
   files: any[] = [];
 
@@ -159,9 +172,67 @@ export class AddProductModalComponent  {
     const i = Math.floor(Math.log(bytes) / Math.log(k));
     return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + " " + sizes[i];
   }
-  constructor() { }
+  constructor(private auth: AuthStateService,
+    public router: Router,
+    public token: TokenService,
+    public authService: AuthService,
+    private http: HttpClient) { }
 
   ngOnInit(): void {
+    this.getCategories()
   }
+  getCategories() {
 
+    this.http.get<any>(API_URL + 'user/categories').subscribe({
+      next: data => {
+        this.categories = data.categories;
+
+        for (let i = 0; i < this.categories.length; i++) {
+          this.categories[i].name = data.categories[i].category_name;
+        }
+      },
+      error: error => {
+        this.errorMessage = error.message;
+        console.error('There was an error!', this.errorMessage);
+      }
+    })
+
+  }
+  submitProduct() {
+
+    const body = {
+      'product_name': this.product_name,
+      'feature1': this.feature1,
+      'feature2': this.feature2,
+      'feature3': this.feature3,
+      'feature4': this.feature4,
+      'price': this.price,
+      'category_id': this.selected_value,
+      'stock': this.stock,
+      'desc1': this.desc1,
+      'desc2': this.desc2,
+    }
+    console.log(this.selected_value)
+    this.http.post<any>(API_URL + 'vendor/new-product', body).subscribe({
+      next: data => {
+        console.log(data);
+        this.success = data;
+        this.errorMessage = null;
+        this.product_name= null;
+          this.feature1= null;
+          this.feature2= null;
+          this.feature3= null;
+          this.feature4= null;
+          this.price= null;
+          this.selected_value= null;
+          this.stock= null;
+          this.desc1= null;
+          this.desc2= null;
+      },
+      error: error => {
+        this.errorMessage = error.error;
+      }
+    })
+
+  }
 }

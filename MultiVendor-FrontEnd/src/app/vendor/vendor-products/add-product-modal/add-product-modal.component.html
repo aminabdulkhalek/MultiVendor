@@ -1,39 +1,67 @@
 <h1 mat-dialog-title class="title">
   Add New Product <button mat-dialog-close class="close">Close</button>
 </h1>
+<div class="success" *ngIf="success?.message" >{{success?.message}}</div>
 <div mat-dialog-content class="content">
+  
   <div class="col1">
     <form class="example-form">
       <div class="cont">
         <div class="cola">
+          <div *ngIf="errorMessage?.product_name" class="alert">
+            {{ errorMessage.product_name }}
+          </div>
           <mat-form-field class="example-full-width" appearance="outline">
             <mat-label>Product Name</mat-label>
-            <input matInput />
+            <input matInput [(ngModel)]="product_name" name="product_name" />
           </mat-form-field>
+          <div *ngIf="errorMessage?.feature1" class="alert">
+            {{ errorMessage.feature1 }}
+          </div>
           <mat-form-field class="example-full-width" appearance="outline">
             <mat-label>Feature 1</mat-label>
-            <input matInput />
+            <input matInput [(ngModel)]="feature1" name="feature1" />
           </mat-form-field>
+          <div *ngIf="errorMessage?.feature2" class="alert">
+            {{ errorMessage.feature2 }}
+          </div>
           <mat-form-field class="example-full-width" appearance="outline">
             <mat-label>Feature 2</mat-label>
-            <input matInput />
+            <input matInput [(ngModel)]="feature2" name="feature2" />
           </mat-form-field>
+          <div *ngIf="errorMessage?.feature3" class="alert">
+            {{ errorMessage.feature3 }}
+          </div>
           <mat-form-field class="example-full-width" appearance="outline">
             <mat-label>Feature 3</mat-label>
-            <input matInput />
+            <input matInput [(ngModel)]="feature3" name="feature3" />
           </mat-form-field>
+          <div *ngIf="errorMessage?.feature4" class="alert">
+            {{ errorMessage.feature4 }}
+          </div>
           <mat-form-field class="example-full-width" appearance="outline">
             <mat-label>Feature 4</mat-label>
-            <input matInput />
+            <input matInput [(ngModel)]="feature4" name="feature4" />
           </mat-form-field>
           <div class="col-6">
+            
             <mat-form-field
               appearance="outline"
               class="example-full-width"
               floatLabel="always"
             >
+            <div *ngIf="errorMessage?.price" class="alert">
+              {{ errorMessage.price }}
+            </div>
               <mat-label>Price</mat-label>
-              <input matInput type="number" placeholder="0" min="0" />
+              <input
+                matInput
+                type="number"
+                placeholder="0"
+                min="0"
+                [(ngModel)]="price"
+                name="price"
+              />
               <span matPrefix>$&nbsp;</span>
             </mat-form-field>
             <mat-form-field
@@ -42,35 +70,61 @@
               floatLabel="always"
             >
               <mat-label>Stock</mat-label>
-              <input matInput type="number" placeholder="0" min="0" />
+              <div *ngIf="errorMessage?.stock" class="alert">
+                {{ errorMessage.stock }}
+              </div>
+              <input
+                matInput
+                type="number"
+                placeholder="0"
+                min="0"
+                [(ngModel)]="stock"
+                name="stock"
+              />
             </mat-form-field>
+          </div>
+          <div *ngIf="errorMessage?.category_id" class="alert">
+            {{ errorMessage.category_id }}
           </div>
           <mat-form-field class="example-full-width" appearance="outline">
             <mat-label>Select Category</mat-label>
-            <mat-select>
-              <mat-option value="electornic_devices"
-                >Electronic Devices</mat-option
+
+            <mat-select [(value)]="selected_value">
+              <mat-option
+                *ngFor="let category of categories"
+                [value]="category.id"
+                >{{ category.category_name }}</mat-option
               >
-              <mat-option value="furniture">Furniture</mat-option>
-              <mat-option value="women_clothes">Women Clothes</mat-option>
-              <mat-option value="men_clothes">Men Clothes</mat-option>
-              <mat-option value="Health_beauty">Health & Beauty</mat-option>
-              <mat-option value="tools">Tools</mat-option>
-              <mat-option value="food">Food</mat-option>
             </mat-select>
           </mat-form-field>
         </div>
         <div class="colb">
-          <p>
+          <div *ngIf="errorMessage?.desc1" class="alert">
+            {{ errorMessage.desc1 }}
+          </div>
             <mat-form-field class="example-full-width" appearance="outline">
               <mat-label>Description 1</mat-label>
-              <textarea matInput rows="12" placeholder="Describe your product the way you like!..."></textarea>
+              <textarea
+                matInput
+                rows="12"
+                placeholder="Describe your product the way you like!..."
+                [(ngModel)]="desc1"
+                name="desc1"
+              ></textarea>
             </mat-form-field>
+            <div *ngIf="errorMessage?.desc2" class="alert">
+              {{ errorMessage.desc2 }}
+            </div>
             <mat-form-field class="example-full-width" appearance="outline">
               <mat-label>Description 2</mat-label>
-              <textarea matInput rows="12"></textarea>
+              <textarea
+                matInput
+                rows="12"
+                [(ngModel)]="desc2"
+                name="desc2"
+              ></textarea>
             </mat-form-field>
-          </p>
+          
         </div>
       </div>
     </form>
@@ -113,5 +167,5 @@
   </div>
 </div>
 <div mat-dialog-actions align="end">
-  <button mat-dialog class="submit">Submit Product</button>
+  <button mat-dialog class="submit" (click)="submitProduct()">Submit Product</button>
 </div>
