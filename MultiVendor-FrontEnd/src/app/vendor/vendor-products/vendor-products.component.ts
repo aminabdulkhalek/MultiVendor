@@ -1,6 +1,11 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { faBell, faFile, faImage, faPlusSquare, faSignOut, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import {MatDialog} from '@angular/material/dialog';
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { AuthStateService } from 'src/app/shared/auth-state.service';
+import { API_URL, AuthService } from 'src/app/shared/auth.service';
+import { TokenService } from 'src/app/shared/token.service';
 
 @Component({
   selector: 'app-vendor-products',
@@ -10,16 +15,61 @@ import {MatDialog} from '@angular/material/dialog';
 export class VendorProductsComponent {
   logout = faSignOut;
   notification = faBell;
-  imagePath = "favicon.ico";
-  add = faPlusSquare;
 
-  constructor(public dialog: MatDialog) { }
+  add = faPlusSquare;
+  imagePath = "";
+  isSignedIn!: boolean;
+  vendor_name;
+  errorMessage;
+
+  constructor(
+    public dialog: MatDialog,
+    private auth: AuthStateService,
+    public router: Router,
+    public token: TokenService,
+    public authService :AuthService,
+    private http: HttpClient) { }
+
   openDialog() {
     this.dialog.open(AddProductModalComponent);
   }
   ngOnInit(): void {
+    this.auth.userAuthState.subscribe((val) => {
+      this.isSignedIn = val;
+      if (!val) {
+        this.router.navigate(['login']);
+      }
+    });
+    if (localStorage.getItem('user_type') != '1'){
+      localStorage.removeItem('user_type');
+      this.signOut()
+    }
+    this.getInfo()
   }
-  
+  signOut() {
+    this.authService.signOut();
+  }
+  getInfo(){
+    const body = {id: localStorage.getItem('user_id')}
+    this.http.post<any>(API_URL+'user/name',body).subscribe({
+      next: data => {
+        this.vendor_name = data.Name;
+      },
+      error: error => {
+        this.errorMessage = error.message;
+        console.error('There was an error!', this.errorMessage);
+      }
+    })
+    this.http.get<any>(API_URL+'vendor/get-profile').subscribe({
+      next: data => {
+        this.imagePath = data.vendor.logo;
+      },
+      error: error => {
+        this.errorMessage = error.message;
+        console.error('There was an error!', this.errorMessage);
+      }
+    })
+  }
 }
 
 @Component({

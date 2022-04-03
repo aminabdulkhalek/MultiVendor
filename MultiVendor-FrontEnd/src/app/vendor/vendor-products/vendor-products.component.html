@@ -3,9 +3,9 @@
   <span class="market-name">MultiVendor</span>
 
   <a href="#"><fa-icon [icon]="notification" size="lg"></fa-icon> </a>
-  <img class="store-logo" [src]="imagePath" />
-  <span class="store-name">John Doe's Store</span>
-  <a href="#"><fa-icon [icon]="logout" size="lg"></fa-icon> </a>
+  <img class="store-logo" [src]="imagePath" >
+  <span class="store-name">{{vendor_name}}'s Store</span>
+  <a href="#"><fa-icon [icon]="logout" size="lg" (click)="signOut()"></fa-icon> </a>
 </mat-toolbar>
 <app-sidebar class="side-bar" [isProducts]="true"></app-sidebar>
 <H3 class="page_title">Product Mangment</H3>
