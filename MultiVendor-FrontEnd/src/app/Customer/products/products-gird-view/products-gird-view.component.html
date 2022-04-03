@@ -1,16 +1,16 @@
 
   <div class="product" >
     <div class="backgorund">
-      <img class="product_img" src="/assets/img.png" alt=""  (click)="redirectToProduct()"/>
+      <img class="product_img" src="{{product.img1}}" alt=""  (click)="redirectToProduct(product.id)"/>
     </div>
     <button class="add">
       <mat-icon>add_shopping_cart</mat-icon> Add To Cart
     </button>
 
-    <p class="product_name">Iphone 13 Pro MAX</p>
-    <p class="product_price">$1299</p>
+    <p class="product_name">{{product.name}}</p>
+    <p class="product_price">${{product.price}}</p>
     <div class="rating">
-      <bar-rating [rate]="4" [readOnly]="true" [max]="5">
+      <bar-rating [rate]="product.average_reviews" [readOnly]="true" [max]="5">
         <ng-template ratingInactive>
           <fa-icon
             [icon]="star"

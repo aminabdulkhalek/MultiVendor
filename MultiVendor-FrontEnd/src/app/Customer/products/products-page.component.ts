@@ -5,7 +5,7 @@ import { Options } from '@angular-slider/ngx-slider';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { AuthStateService } from 'src/app/shared/auth-state.service';
-import { AuthService } from 'src/app/shared/auth.service';
+import { API_URL, AuthService } from 'src/app/shared/auth.service';
 import { TokenService } from 'src/app/shared/token.service';
 
 @Component({
@@ -27,7 +27,7 @@ export class ProductsPageComponent implements OnInit {
   wishlist = faHeart;
   cart = faShoppingCart;
   shopping_cart = faShoppingBasket;
-  products = [1, 2, 3, 4, 5, 6];
+  products = [];
   selectedCategory: string;
   categories: string[] = ['All', 'Women Clothes', 'Men Clothes', 'Shoes', 'Furniture', 'Health & Hygine', 'Food', 'Tools', 'Electronic Devices', 'Medication', 'E-Books'];
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -51,10 +51,23 @@ export class ProductsPageComponent implements OnInit {
       localStorage.removeItem('user_type');
       this.signOut()
     }
+    this.getProducts()
     
   }
   signOut() {
     this.authService.signOut();
+  }
+  getProducts(){
+    this.http.get<any>(API_URL+'customer/approved-products').subscribe({
+      next: data => {
+        console.log(data)
+        this.products = data.products;
+      },
+      error: error => {
+        this.errorMessage = error.message;
+        console.error('There was an error!', this.errorMessage);
+      }
+    })
   }
 
   gridView() {
