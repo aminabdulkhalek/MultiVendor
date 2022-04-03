@@ -38,7 +38,7 @@ export class AdminOrdersTableComponent implements OnInit {
         this.dataSource = new MatTableDataSource<any>(data.Orders);
         this.dataSource.sort = this.sort;
         this.dataSource.paginator = this.paginator;
-        this.orders = data.products
+        this.orders = data.Orders
         return data
       },
       error: error => {
@@ -52,7 +52,36 @@ export class AdminOrdersTableComponent implements OnInit {
     return (this.orders.length === 0);
   }
 
-
+  approveOrder(order_id) {
+    const body ={
+      order_id :order_id
+    }
+    this.http.post<any>(API_URL + 'admin/approve-order', body).subscribe({
+      next: data => {
+        console.log(data)
+        this.getAllOrders()
+      },
+      error: error => {
+        this.errorMessage = error.message;
+        console.error('There was an error!', this.errorMessage);
+      }
+    })
+  }
+  disapproveOrder(order_id) {
+    const body ={
+      order_id :order_id
+    }
+    this.http.post<any>(API_URL + 'admin/disapprove-order', body).subscribe({
+      next: data => {
+        console.log(data)
+        this.getAllOrders()
+      },
+      error: error => {
+        this.errorMessage = error.message;
+        console.error('There was an error!', this.errorMessage);
+      }
+    })
+  }
 }
 
 
