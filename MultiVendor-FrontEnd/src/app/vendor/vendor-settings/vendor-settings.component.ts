@@ -1,5 +1,10 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { faSignOut, faBell, faFile, faImage, faTrashAlt, faStar, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { AuthStateService } from 'src/app/shared/auth-state.service';
+import { AuthService, API_URL } from 'src/app/shared/auth.service';
+import { TokenService } from 'src/app/shared/token.service';
 
 @Component({
   selector: 'app-vendor-settings',
@@ -9,10 +14,13 @@ import { faSignOut, faBell, faFile, faImage, faTrashAlt, faStar, faPhone } from 
 export class VendorSettingsComponent implements OnInit {
   logout = faSignOut;
   notification = faBell;
-  imagePath = "favicon.ico";
   star=faStar;
   phone=faPhone;
-
+  
+  imagePath = "";
+  isSignedIn!: boolean;
+  vendor_name;
+  errorMessage;
   file_icon=faFile;
   delete = faTrashAlt;
   image_icon = faImage;
@@ -95,10 +103,55 @@ export class VendorSettingsComponent implements OnInit {
     const i = Math.floor(Math.log(bytes) / Math.log(k));
     return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + " " + sizes[i];
   }
-  
-  constructor() { }
+
+
+  constructor(
+    private auth: AuthStateService,
+    public router: Router,
+    public token: TokenService,
+    public authService :AuthService,
+    private http: HttpClient
+
+
+  ) { }
 
   ngOnInit(): void {
+    this.auth.userAuthState.subscribe((val) => {
+      this.isSignedIn = val;
+      if (!val) {
+        this.router.navigate(['login']);
+      }
+    });
+    if (localStorage.getItem('user_type') != '1'){
+      localStorage.removeItem('user_type');
+      this.signOut()
+    }
+    this.getInfo()
+  }
+  signOut() {
+    this.authService.signOut();
+  }
+  getInfo(){
+    const body = {id: localStorage.getItem('user_id')}
+    this.http.post<any>(API_URL+'user/name',body).subscribe({
+      next: data => {
+        this.vendor_name = data.Name;
+      },
+      error: error => {
+        this.errorMessage = error.message;
+        console.error('There was an error!', this.errorMessage);
+      }
+    })
+    this.http.get<any>(API_URL+'vendor/get-profile').subscribe({
+      next: data => {
+        this.imagePath = data.vendor.logo;
+      },
+      error: error => {
+        this.errorMessage = error.message;
+        console.error('There was an error!', this.errorMessage);
+      }
+    })
   }
 
 }
+
