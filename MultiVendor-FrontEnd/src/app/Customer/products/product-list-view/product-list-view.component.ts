@@ -57,4 +57,19 @@ export class ProductListViewComponent implements OnInit {
       }
     })
   }
+  addToCart(){
+    const body = {
+      'product_id':this.product.id,
+      'quantity':1
+    }
+    this.http.post<any>(API_URL+'customer/add-to-cart',body).subscribe({
+      next: data => {
+        console.log(data)
+      },
+      error: error => {
+        this.errorMessage = error.message;
+        console.error('There was an error!', this.errorMessage);
+      }
+    })
+  }
 }
