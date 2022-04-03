@@ -2,18 +2,9 @@
     <tr class="header">
       <td colspan="2" class="order">Recent Reviews</td>
     </tr>
+    <tr *ngFor="let review of reviews">
+      <td class="product">{{review.product_name}}</td>
+      <td class="review">{{review.review_comment}}</td>
+    </tr>
 
-    <tr>
-      <td class="product">Iphone  13 pro max </td>
-      <td class="review">Amazing product, highly recomended</td>
-    </tr>
-    <tr>
-      <td class="product" class="product">Gray Coat</td>
-      <td class="review">Amazing product, quality is very good </td>
-    </tr>
-    <tr>
-      <td class="product">Red Scarf</td>
-      <td class="review">color is very vibrent, i like it</td>
-    </tr>
   </table>
-  
