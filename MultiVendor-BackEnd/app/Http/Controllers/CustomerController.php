@@ -47,9 +47,26 @@ class CustomerController extends Controller
 
     public function approvedProducts(){
         $products = Product::where('status','=',1)->get();
+        
+        foreach ($products as $product ) {
+            $flags = ProductFlag::where('product_id','=',$product->id)->get()->count();
+            array_add($product, 'flag', $flags);
+            $reviews = Review::where('product_id','=',$product->id)->get('stars');
+            $average_stars = 0;
+            if (count($reviews)>0) {
+                foreach ($reviews as $review) { 
+                $average_stars = $average_stars+ $review->stars;
+                }
+                $average_stars = $average_stars/count($reviews);
+                array_add($product, 'average_reviews', $average_stars);
+            }
+            array_add($product, 'average_reviews', 0);
+            
+            
+        }
 
         return response()->json([
-            "products" => $products
+            'products' => $products
         ], 200);
     }
 

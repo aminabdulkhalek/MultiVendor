@@ -268,11 +268,12 @@ class VendorController extends Controller
         $vendor =  Auth::user();
         $vendor_info = Vendor::where('user_id','=',$vendor->id)->get()->first();
         $vendor_products = Product::where('vendor_id','=',$vendor_info->id)->get();
-        $average_stars = 0;
+        
         foreach ($vendor_products as $product ) {
             $flags = ProductFlag::where('product_id','=',$product->id)->get()->count();
             array_add($product, 'flag', $flags);
             $reviews = Review::where('product_id','=',$product->id)->get('stars');
+            $average_stars = 0;
             if (count($reviews)>0) {
                 foreach ($reviews as $review) { 
                 $average_stars = $average_stars+ $review->stars;
