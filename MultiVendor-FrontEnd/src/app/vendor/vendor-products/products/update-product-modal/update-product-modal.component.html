@@ -1,7 +1,7 @@
 <h1 mat-dialog-title class="title">
   Update This Product <button mat-dialog-close class="close">Close</button>
 </h1>
-<div class="success" *ngIf="success?.message" >{{success?.message}}</div>
+<div class="success" *ngIf="success?.message" >{{success.message}}</div>
 <div mat-dialog-content class="content">
   <div class="col1">
     <form class="example-form">
@@ -9,23 +9,23 @@
         <div class="cola">
           <mat-form-field class="example-full-width" appearance="outline" floatLabel="always">
             <mat-label>Product Name</mat-label>
-            <input matInput placeholder="{{pname}}" [(ngModel)]="product_name" name="product_name"/>
+            <input matInput  [(ngModel)]="product_name" name="product_name"/>
           </mat-form-field>
           <mat-form-field class="example-full-width" appearance="outline" floatLabel="always">
             <mat-label>Feature 1</mat-label>
-            <input matInput placeholder="{{f1}}" [(ngModel)]="feature1" name="feature1"/>
+            <input matInput  [(ngModel)]="feature1" name="feature1"/>
           </mat-form-field>
           <mat-form-field class="example-full-width" appearance="outline" floatLabel="always">
             <mat-label>Feature 2</mat-label>
-            <input matInput placeholder="{{f2}}" [(ngModel)]="feature2" name="feature2"/>
+            <input matInput  [(ngModel)]="feature2" name="feature2"/>
           </mat-form-field>
           <mat-form-field class="example-full-width" appearance="outline" floatLabel="always">
             <mat-label>Feature 3</mat-label>
-            <input matInput placeholder="{{f3}}" [(ngModel)]="feature3" name="feature3"/>
+            <input matInput  [(ngModel)]="feature3" name="feature3"/>
           </mat-form-field>
           <mat-form-field class="example-full-width" appearance="outline" floatLabel="always">
             <mat-label>Feature 4</mat-label>
-            <input matInput placeholder="{{f4}}" [(ngModel)]="feature4" name="feature4"/>
+            <input matInput  [(ngModel)]="feature4" name="feature4"/>
           </mat-form-field>
           <div class="col-6">
             <mat-form-field
@@ -41,7 +41,6 @@
                 min="0"
                 [(ngModel)]="price"
                 name="price"
-                value="{{pprice}}"
               />
               <span matPrefix>$&nbsp;</span>
             </mat-form-field>
@@ -58,13 +57,12 @@
                 min="0"
                 [(ngModel)]="stock"
                 name="stock"
-                value="{{pstock}}"
               />
             </mat-form-field>
           </div>
           <mat-form-field class="example-full-width" appearance="outline" floatLabel="always">
             <mat-label>Select Category</mat-label>
-            <mat-select value="{{pcategory}}" [(value)]="selected_value">
+            <mat-select  [(value)]="selected_value">
               <mat-option
                 *ngFor="let category of categories"
                 [value]="category.id"
@@ -87,7 +85,6 @@
                 rows="12"
                 [(ngModel)]="desc1"
                 name="desc1"
-                value="{{pdesc1}}"
               >
               </textarea>
             </mat-form-field>
@@ -103,7 +100,6 @@
                 placeholder="Add more description to your product"
                 [(ngModel)]="desc2"
                 name="desc2"
-                value="{{pdesc2}}"
               ></textarea>
             </mat-form-field>
           </p>

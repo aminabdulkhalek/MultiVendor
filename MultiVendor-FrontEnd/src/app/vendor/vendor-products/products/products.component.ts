@@ -86,16 +86,7 @@ export class UpdateProductModalComponent implements OnInit {
   success;
   errorMessage;
 
-  pname;
-  f1;
-  f2;
-  f3;
-  f4;
-  pprice;
-  pstock;
-  pdesc1;
-  pdesc2;
-  pcategory;
+
 
   categories;
   selected_value
@@ -213,15 +204,15 @@ export class UpdateProductModalComponent implements OnInit {
     }
     this.http.post<any>(API_URL + 'user/product',body).subscribe({
       next: data => {
-        this.pname = data.product.product_name;
-        this.f1= data.product.feature1;
-        this.f2= data.product.feature2;
-        this.f3= data.product.feature3;
-        this.f4= data.product.feature4;
-        this.pprice= data.product.price;
-        this.pstock= data.product.stock;
-        this.pdesc1= data.product.desc1;
-        this.pdesc2= data.product.desc2;
+        this.product_name = data.product.product_name;
+        this.feature1= data.product.feature1;
+        this.feature2= data.product.feature2;
+        this.feature3= data.product.feature3;
+        this.feature4= data.product.feature4;
+        this.price= data.product.price;
+        this.stock= data.product.stock;
+        this.desc1= data.product.desc1;
+        this.desc2= data.product.desc2;
         this.selected_value= data.product.category_id;
         
       },
@@ -251,8 +242,36 @@ export class UpdateProductModalComponent implements OnInit {
   }
 
   submitChanges(product_id){
-    console.log(product_id)
+    const body ={
+      'product_id':product_id,
+      'product_name':this.product_name,
+      'feature1':this.feature1,
+      'feature2':this.feature2,
+      'feature3':this.feature3,
+      'feature4':this.feature4,
+      'price':this.price,
+      'stock':this.stock,
+      'desc1':this.desc1,
+      'desc2':this.desc2,
+      'category_id': this.selected_value
+      
+    }
+    this.http.post<any>(API_URL + 'vendor/update-product',body).subscribe({
+      next: data => {
+        console.log(data)
+        this.getProductinfo(product_id)
+        this.success=data
+        
+      },
+      error: error => {
+        console.log(error)
+        this.errorMessage = error.message;
+        console.error('There was an error!', this.errorMessage);
+      }
+    })
   }
+
+
 }
 
 
