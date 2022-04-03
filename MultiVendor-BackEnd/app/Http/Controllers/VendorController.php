@@ -362,8 +362,29 @@ class VendorController extends Controller
                 array_push($vendor_orders, $order_item);
             }
         }
+        $result =[];
+        foreach ($vendor_orders as $order ) {
+                $order_details = Order::where('id','=',$order->order_id)->get();
+                foreach ($order_details as $order_info ) {
+                    $product = Product::where('id','=',$order->product_id)->get()->first();
+                    $customer = Customer::where('id','=',$order_info->customer_id)->get()->first();
+                    $product_name= $product->product_name;
+                    $customer_name = User::where('id','=',$customer->user_id)->get('name')->first()->name;
+                    $customer_email = User::where('id','=',$customer->user_id)->get('email')->first()->email;
+
+                    array_add($order, 'product_name', $product_name);
+                    array_add($order, 'product_price', $product->price);
+                    array_add($order, 'customer_name', $customer_name);
+                    array_add($order, 'customer_email', $customer_email);
+                    array_add($order, 'order_status', $order_info->status);
+                    array_add($order, 'order_date', date("d/m/Y", strtotime($order_info->created_at)));
+                    array_push($result,$order);
+                }
+
+
+        }
         return response()->json([
-            'orders' => $vendor_orders
+            'orders' => $result
         ], 200);
     }
     public function getCustomers(){
