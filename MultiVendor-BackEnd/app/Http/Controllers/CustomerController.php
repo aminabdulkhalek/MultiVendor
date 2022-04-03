@@ -36,7 +36,9 @@ class CustomerController extends Controller
 
     public function featuredProducts(){
         $featured_user = Featured::get()->first();
-        $vendor_products = Product::where('vendor_id','=',$featured_user->vendor_id)->take(2)->get();
+        $vendor_products = Product::where('vendor_id','=',$featured_user->vendor_id)
+                                    ->where('status','=',1)
+                                    ->take(2)->get();
 
         return response()->json([
             'products' => $vendor_products
