@@ -15,7 +15,6 @@ export class RecentReviewsTableComponent implements OnInit {
   ngOnInit(): void {
     this.http.get<any>(API_URL+'vendor/recent-reviews').subscribe({
       next: data => {
-        console.log(data)
         this.reviews = data.Reviews;
       },
       error: error => {

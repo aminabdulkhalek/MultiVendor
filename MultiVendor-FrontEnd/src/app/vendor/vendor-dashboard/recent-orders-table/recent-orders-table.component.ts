@@ -11,7 +11,7 @@ export class RecentOrdersTableComponent implements OnInit {
   orders;
   errorMessage;
   constructor(private http: HttpClient) {}
-  
+
   ngOnInit(){
     this.getRecent()
   }
@@ -19,7 +19,6 @@ export class RecentOrdersTableComponent implements OnInit {
   getRecent(){
       this.http.get<any>(API_URL+'vendor/recent-orders').subscribe({
         next: data => {
-          console.log(data)
           this.orders = data.recent_orders;
         },
         error: error => {
