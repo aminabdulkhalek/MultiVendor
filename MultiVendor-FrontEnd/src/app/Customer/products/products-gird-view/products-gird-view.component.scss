@@ -65,13 +65,17 @@ $red: #FF5C5C;
     font-size: 20px;
 }
 
+.hide{
+    display: none;
+}
+
 .love0{
     color: $red;
     font-size: 50px;
     cursor: pointer;
     margin-top: -1rem;
     margin-left: 7rem;
-    // display: none;
+   
 }
 .love1{
     color: $red;
@@ -79,5 +83,4 @@ $red: #FF5C5C;
     cursor: pointer;
     margin-top: -1rem;
     margin-left: 7rem;
-        display: none;
 }
