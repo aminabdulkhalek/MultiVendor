@@ -50,7 +50,10 @@ class CustomerController extends Controller
         
         foreach ($products as $product ) {
             $flags = ProductFlag::where('product_id','=',$product->id)->get()->count();
+            $product_owner = Vendor::where("id",'=',$product->vendor_id)->get()->first();
+            $vendor_name = User::where('id','=',$product_owner->user_id)->get('name')->first()->name;
             array_add($product, 'flag', $flags);
+            array_add($product, 'product_owner', $vendor_name);
             $reviews = Review::where('product_id','=',$product->id)->get('stars');
             $average_stars = 0;
             if (count($reviews)>0) {
