@@ -3,7 +3,7 @@ import { faSignOut, faBell, faHeart, faShoppingCart, faUserCircle, faShoppingBas
 import { Router } from "@angular/router"
 import { HttpClient } from '@angular/common/http';
 import { AuthStateService } from 'src/app/shared/auth-state.service';
-import { AuthService } from 'src/app/shared/auth.service';
+import { API_URL, AuthService } from 'src/app/shared/auth.service';
 import { TokenService } from 'src/app/shared/token.service';
 
 @Component({
@@ -18,7 +18,9 @@ export class CustomerDashboardComponent implements OnInit {
   cart = faShoppingCart;
   shopping_cart = faShoppingBasket;
   isSignedIn!: boolean;
-
+  errorMessage;
+  img1;
+  img2;
   constructor(
     private auth: AuthStateService,
     public router: Router,
@@ -37,11 +39,26 @@ export class CustomerDashboardComponent implements OnInit {
       localStorage.removeItem('user_type');
       this.signOut()
     }
+
+    this.getFeaturedProducts()
   }
   signOut() {
     this.authService.signOut();
   }
   productsPage() {
     this.router.navigate(['products'])
+  }
+  getFeaturedProducts(){
+    this.http.get<any>(API_URL+'customer/featured-products').subscribe({
+      next: data => {
+        console.log(data)
+        this.img1 = data.products[0].img1;
+        this.img2 = data.products[1].img1;
+      },
+      error: error => {
+        this.errorMessage = error.message;
+        console.error('There was an error!', this.errorMessage);
+      }
+    })
   }
 }
