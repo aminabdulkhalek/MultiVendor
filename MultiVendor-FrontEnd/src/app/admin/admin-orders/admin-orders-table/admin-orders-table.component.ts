@@ -1,31 +1,10 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { faStar, faStarHalfAlt, faTrashAlt } from '@fortawesome/free-solid-svg-icons';
-export interface Orders {
-
-product:string;
-customer:string;
-vendor: string;
-price:number;
-qty:number;
-total:number;
-order_status:number;
-}
-
-const Product_DATA: Orders[] = [
-  {product:"Iphone 13 pro",customer:"John Doe",vendor:"Sarah Itani",price:1299,qty:1,total:1299,order_status:0},
-  {product:"Iphone 13 pro",customer:"John Doe",vendor:"Sarah Itani",price:1299,qty:1,total:1299,order_status:0},
-  {product:"Iphone 13 pro",customer:"John Doe",vendor:"Sarah Itani",price:1299,qty:1,total:1299,order_status:0},
-  {product:"Iphone 13 pro",customer:"John Doe",vendor:"Sarah Itani",price:1299,qty:1,total:1299,order_status:0},
-  {product:"Iphone 13 pro",customer:"John Doe",vendor:"Sarah Itani",price:1299,qty:1,total:1299,order_status:0},
-  {product:"Iphone 13 pro",customer:"John Doe",vendor:"Sarah Itani",price:1299,qty:1,total:1299,order_status:0},
-  {product:"Iphone 13 pro",customer:"John Doe",vendor:"Sarah Itani",price:1299,qty:1,total:1299,order_status:0},
-  {product:"Iphone 13 pro",customer:"John Doe",vendor:"Sarah Itani",price:1299,qty:1,total:1299,order_status:0},
-  
-];
-
+import { API_URL } from 'src/app/shared/auth.service';
 @Component({
   selector: 'app-admin-orders-table',
   templateUrl: './admin-orders-table.component.html',
@@ -37,20 +16,43 @@ export class AdminOrdersTableComponent implements OnInit {
   delete = faTrashAlt
 
   displayedColumns: string[] = ['product','customer','vendor','price','qty','total','order_status'];
-  dataSource = new MatTableDataSource<Orders>(Product_DATA);
+  dataSource = new MatTableDataSource<any>(null);
+
+  errorMessage;
+  orders =[];
 
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
   @ViewChild(MatSort)
   sort!: MatSort;
 
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
-  }
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
+    this.getAllOrders();
+  }
+  getAllOrders() {
+    this.http.get<any>(API_URL + 'admin/orders').subscribe({
+      next: data => {
+        console.log(data)
+        this.dataSource = new MatTableDataSource<any>(data.Orders);
+        this.dataSource.sort = this.sort;
+        this.dataSource.paginator = this.paginator;
+        this.orders = data.products
+        return data
+      },
+      error: error => {
+        this.errorMessage = error.message;
+        console.error('There was an error!', this.errorMessage);
+      }
+    })
+
+  }
+  isEmptyObject() {
+    return (this.orders.length === 0);
   }
 
+
 }
+
+

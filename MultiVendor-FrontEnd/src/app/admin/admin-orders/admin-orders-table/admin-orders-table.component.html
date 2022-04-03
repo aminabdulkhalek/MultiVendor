@@ -13,7 +13,7 @@
     >
       Product</mat-header-cell
     >
-    <mat-cell *matCellDef="let product"> {{ product.product }} </mat-cell>
+    <mat-cell *matCellDef="let order"> {{ order.product_name }} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="customer">
@@ -24,7 +24,7 @@
     >
       Customer
     </mat-header-cell>
-    <mat-cell *matCellDef="let product"> {{ product.customer }} </mat-cell>
+    <mat-cell *matCellDef="let order"> {{ order.customer_name }} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="vendor">
@@ -35,7 +35,7 @@
     >
       Vendor
     </mat-header-cell>
-    <mat-cell *matCellDef="let product"> {{ product.vendor }} </mat-cell>
+    <mat-cell *matCellDef="let order"> {{ order.vendor_name }} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="price">
@@ -46,28 +46,28 @@
     >
       Price
     </mat-header-cell>
-    <mat-cell *matCellDef="let product">
-      ${{ product.price }}
+    <mat-cell *matCellDef="let order">
+      ${{ order.product_price }}
     </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="qty">
     <mat-header-cell *matHeaderCellDef> Qty </mat-header-cell>
-    <mat-cell *matCellDef="let product">
-      {{ product.qty }}
+    <mat-cell *matCellDef="let order">
+      {{ order.quanitiy }}
     </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="total">
     <mat-header-cell *matHeaderCellDef> Total </mat-header-cell>
-    <mat-cell *matCellDef="let product">
-      ${{product.total}}
+    <mat-cell *matCellDef="let order">
+      ${{order.quanitiy * order.product_price }}
     </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="order_status">
     <mat-header-cell *matHeaderCellDef> Order Status </mat-header-cell>
-    <mat-cell *matCellDef="let product">
+    <mat-cell *matCellDef="let order">
         <mat-radio-group aria-label="Select an option">
             <mat-radio-button value="0" class="radio"><span class="radio-text">Disapproved</span> </mat-radio-button>
             <mat-radio-button value="1"><span class="radio-text">Approved</span></mat-radio-button>
