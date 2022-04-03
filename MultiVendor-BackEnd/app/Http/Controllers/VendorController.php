@@ -448,7 +448,10 @@ class VendorController extends Controller
             'last_name' => 'string',
             'address' => 'string',
             'phone' => 'numeric',
-
+            'facebook'=> 'url',
+            'twitter'=> 'url',
+            'instagram'=> 'url',
+            'linkedin'=> 'url'
         ]);
         if($validator->fails()){
             return response()->json($validator->errors()->toJson(), 400);
@@ -459,6 +462,11 @@ class VendorController extends Controller
         $vendor_info = Vendor::where('user_id','=',$vendor->id)->get()->first();
         $vendor_info->address = $request->address;
         $vendor_info->phone = $request->phone;
+        $vendor_info->instagram_link = $request->instagram;
+        $vendor_info->twitter_link = $request->twitter;
+        $vendor_info->facebook_link = $request->facebook;
+        $vendor_info->linkedin_link = $request->linkedin;
+
         $vendor_info->save();
 
 
