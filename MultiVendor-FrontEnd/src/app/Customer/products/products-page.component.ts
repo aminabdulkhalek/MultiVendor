@@ -51,22 +51,53 @@ export class ProductsPageComponent implements OnInit {
       localStorage.removeItem('user_type');
       this.signOut()
     }
-    this.getProducts()
+    this.getProducts('All')
     
   }
   signOut() {
     this.authService.signOut();
   }
-  getProducts(){
-    this.http.get<any>(API_URL+'customer/approved-products').subscribe({
-      next: data => {
-        this.products = data.products;
-      },
-      error: error => {
-        this.errorMessage = error.message;
-        console.error('There was an error!', this.errorMessage);
+  getProducts(category){
+    if (category =='All') {
+      this.http.get<any>(API_URL+'customer/approved-products').subscribe({
+        next: data => {
+          this.products = data.products;
+        },
+        error: error => {
+          this.errorMessage = error.message;
+          console.error('There was an error!', this.errorMessage);
+        }
+      })
+    }
+    if (category =='Women Clothes') {
+      const body = {
+        'category_id': 2
       }
-    })
+      this.http.post<any>(API_URL+'customer/products-by-category',body).subscribe({
+        next: data => {
+          this.products = data.products;
+        },
+        error: error => {
+          this.errorMessage = error.message;
+          console.error('There was an error!', this.errorMessage);
+        }
+      })
+    }
+    if (category =='Men Clothes') {
+      const body = {
+        'category_id': 3
+      }
+      this.http.post<any>(API_URL+'customer/products-by-category',body).subscribe({
+        next: data => {
+          this.products = data.products;
+        },
+        error: error => {
+          this.errorMessage = error.message;
+          console.error('There was an error!', this.errorMessage);
+        }
+      })
+    }
+    
   }
 
   gridView() {

@@ -53,6 +53,7 @@
     [(ngModel)]="selectedCategory"
   >
     <mat-radio-button
+    (tapClick)="getProducts(selectedCategory)"
       class="example-radio-button"
       *ngFor="let category of categories"
       [value]="category"
