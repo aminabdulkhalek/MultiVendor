@@ -16,7 +16,7 @@
 
   <ng-container matColumnDef="price">
     <mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by price"> Price </mat-header-cell>
-    <mat-cell *matCellDef="let product"> {{ product.price }} </mat-cell>
+    <mat-cell *matCellDef="let product"> ${{ product.price }} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="flags">
