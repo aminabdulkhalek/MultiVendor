@@ -14,18 +14,32 @@ import { TokenService } from 'src/app/shared/token.service';
 export class VendorSettingsComponent implements OnInit {
   logout = faSignOut;
   notification = faBell;
-  star=faStar;
-  phone=faPhone;
-  
+  star = faStar;
+  phone = faPhone;
+
   imagePath = "";
+  banner;
   isSignedIn!: boolean;
   vendor_name;
   errorMessage;
-  file_icon=faFile;
+  file_icon = faFile;
   delete = faTrashAlt;
   image_icon = faImage;
-  
-@ViewChild("fileDropRef", { static: false })
+
+  fname ;
+  lname ;
+  phonenb ;
+  address ;
+  facebook ;
+  instagram ;
+  linkedin ;
+  twitter ;
+
+  vendor_phone_number;
+  vendor_address;
+
+
+  @ViewChild("fileDropRef", { static: false })
   fileDropEl!: ElementRef;
   files: any[] = [];
 
@@ -109,7 +123,7 @@ export class VendorSettingsComponent implements OnInit {
     private auth: AuthStateService,
     public router: Router,
     public token: TokenService,
-    public authService :AuthService,
+    public authService: AuthService,
     private http: HttpClient
 
 
@@ -122,7 +136,7 @@ export class VendorSettingsComponent implements OnInit {
         this.router.navigate(['login']);
       }
     });
-    if (localStorage.getItem('user_type') != '1'){
+    if (localStorage.getItem('user_type') != '1') {
       localStorage.removeItem('user_type');
       this.signOut()
     }
@@ -131,9 +145,9 @@ export class VendorSettingsComponent implements OnInit {
   signOut() {
     this.authService.signOut();
   }
-  getInfo(){
-    const body = {id: localStorage.getItem('user_id')}
-    this.http.post<any>(API_URL+'user/name',body).subscribe({
+  getInfo() {
+    const body = { id: localStorage.getItem('user_id') }
+    this.http.post<any>(API_URL + 'user/name', body).subscribe({
       next: data => {
         this.vendor_name = data.Name;
       },
@@ -142,9 +156,12 @@ export class VendorSettingsComponent implements OnInit {
         console.error('There was an error!', this.errorMessage);
       }
     })
-    this.http.get<any>(API_URL+'vendor/get-profile').subscribe({
+    this.http.get<any>(API_URL + 'vendor/get-profile').subscribe({
       next: data => {
         this.imagePath = data.vendor.logo;
+        this.banner = data.vendor.banner
+        this.vendor_address=data.vendor.address;
+        this.vendor_phone_number =data.vendor.phone
       },
       error: error => {
         this.errorMessage = error.message;
@@ -152,6 +169,35 @@ export class VendorSettingsComponent implements OnInit {
       }
     })
   }
-
+  submitChanges() {
+    const body = {
+      'first_name': this.fname,
+      'last_name': this.lname,
+      'address': this.address,
+      'phone' :this.phonenb,
+      'facebook':this.facebook,
+      'instagram':this.instagram,
+      'twitter':this.twitter,
+    }
+    this.http.post<any>(API_URL + 'vendor/update-profile', body).subscribe({
+      next: data => {
+        console.log(data);
+        this.vendor_name = data.Name;
+        this.getInfo()
+        this.fname = null;
+        this.lname = null;
+        this.phonenb = null;
+        this.address = null;
+        this.facebook = null;
+        this.instagram = null;
+        this.linkedin = null;
+        this.twitter = null;
+        this.errorMessage=null;
+      },
+      error: error => {
+        this.errorMessage = error.error;
+      }
+    })
+  }
 }
 

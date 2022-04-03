@@ -17,37 +17,62 @@
       <form class="example-form">
         <div class="cont">
           <div class="cola">
+
+            <div *ngIf="errorMessage?.first_name" class="alert">
+              {{ errorMessage.first_name }}
+            </div>
             <mat-form-field class="example-full-width" appearance="outline">
               <mat-label>First Name</mat-label>
-              <input matInput />
+
+              <input matInput [(ngModel)]="fname" name="fname"/>
             </mat-form-field>
+
+            <div *ngIf="errorMessage?.last_name" class="alert">
+              {{ errorMessage.last_name }}
+            </div>
             <mat-form-field class="example-full-width" appearance="outline">
               <mat-label>Last Name</mat-label>
-              <input matInput />
+              <input matInput [(ngModel)]="lname" name="lname"/>
             </mat-form-field>
+
+            <div *ngIf="errorMessage?.address" class="alert">
+              {{ errorMessage.address }}
+            </div>
             <mat-form-field class="example-full-width" appearance="outline">
               <mat-label>Address</mat-label>
-              <input matInput />
+              <input matInput [(ngModel)]="address" name="address"/>
             </mat-form-field>
+
+            <div *ngIf="errorMessage?.phone" class="alert">
+              {{ errorMessage.phone }}
+            </div>
             <mat-form-field class="example-full-width" appearance="outline">
               <mat-label>Phone Number</mat-label>
-              <input matInput />
+              <input matInput [(ngModel)]="phonenb" name="phonenb"/>
             </mat-form-field>
+
+            <div *ngIf="errorMessage?.facebook" class="alert">
+              {{ errorMessage.facebook }}
+            </div>
             <mat-form-field class="example-full-width" appearance="outline">
               <mat-label>Facebook Link</mat-label>
-              <input matInput />
+              <input matInput [(ngModel)]="facebook" name="facebook"/>
             </mat-form-field>
+
+            <div *ngIf="errorMessage?.twitter" class="alert">
+              {{ errorMessage.twitter }}
+            </div>
             <mat-form-field class="example-full-width" appearance="outline">
               <mat-label>Twitter Link</mat-label>
-              <input matInput />
+              <input matInput [(ngModel)]="twitter" name="twitter"/>
             </mat-form-field>
-            <mat-form-field class="example-full-width" appearance="outline">
-              <mat-label>Linkedin Link</mat-label>
-              <input matInput />
-            </mat-form-field>
+            
+            <div *ngIf="errorMessage?.instagram" class="alert">
+              {{ errorMessage.instagram }}
+            </div>
             <mat-form-field class="example-full-width" appearance="outline">
               <mat-label>Instagram Link</mat-label>
-              <input matInput />
+              <input matInput [(ngModel)]="instagram" name="instagram"/>
             </mat-form-field>
           </div>
         </div>
@@ -58,27 +83,27 @@
       <div class="preview" id="preview-div">
         <div class="inner-preview">
           <img
-            src="assets/banner.jpg"
+            src="{{banner}}"
             alt="banner"
             class="profile-banner-preview"
           />
           <div class="profile-logo-preview-div">
             <img
-              src="assets/logo.png"
+              src="{{imagePath}}"
               alt="logo"
               class="profile-logo-preview"
             />
           </div>
 
-          <h2 class="shop-name">Boston Hayden</h2>
+          <h2 class="shop-name">{{vendor_name}}</h2>
           <h4 class="shop-address">
-            863 N. Stonybrook Ave. Tonawanda, NY 14150,Cusco, Peru
+            {{vendor_address}}
           </h4>
           <h5 class="shop-number"> <fa-icon
             [icon]="phone"
             [fixedWidth]="true"
           ></fa-icon
-          >(123) 389-4562</h5>
+          >{{vendor_phone_number}}</h5>
           <div class="social-media-icons">
             
           </div>
@@ -91,5 +116,5 @@
     </div>
   </div>
 
-  <button mat-dialog class="submit">Submit Changes</button>
+  <button mat-dialog class="submit" (click)="submitChanges()">Submit Changes</button>
 </div>
