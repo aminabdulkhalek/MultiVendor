@@ -1,21 +1,13 @@
 <table>
   <tr class="header">
-    <td class="order">Product(s)</td>
-    <td class="order-value">54</td>
+    <td class="order">Products</td>
+    <td class="order-value">{{nb_products}}</td>
   </tr>
   <tr>
     <td class="title" colspan="2">Top Selling Products</td>
   </tr>
-  <tr>
-    <td class="product">Blue Coat</td>
-    <td class="sales">15 Sales</td>
-  </tr>
-  <tr>
-    <td class="product" class="product">Iphone 13</td>
-    <td class="sales">10 Sales</td>
-  </tr>
-  <tr>
-    <td class="product">Red Scarf</td>
-    <td class="sales">9 Sales</td>
+  <tr *ngFor=" let product of products">
+    <td class="product">{{product.product_name}}</td>
+    <td class="sales">{{product.sales}}</td>
   </tr>
 </table>
