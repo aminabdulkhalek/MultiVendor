@@ -3,8 +3,8 @@
     <div class="backgorund">
       <img class="product_img" src="{{product.img1}}" alt=""  (click)="redirectToProduct(product.id)"/>
     </div>
-    <button class="add">
-      <mat-icon>add_shopping_cart</mat-icon> Add To Cart
+    <button class="add" (click)="addToCart()">
+      <mat-icon >add_shopping_cart</mat-icon> Add To Cart
     </button>
 
     <p class="product_name">{{product.name}}</p>
