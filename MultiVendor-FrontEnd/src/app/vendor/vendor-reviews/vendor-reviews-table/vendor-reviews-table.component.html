@@ -94,7 +94,7 @@
       Comment
     </mat-header-cell>
     <mat-cell class="center" *matCellDef="let product">
-      {{ product.reviews_comment }}
+      {{ product.review_comment }}
     </mat-cell>
   </ng-container>
 
@@ -108,7 +108,7 @@
       Review Date
     </mat-header-cell>
     <mat-cell class="center" *matCellDef="let product">
-      {{ product.review_date.toDateString() }}
+      {{ product.review_date }}
     </mat-cell>
   </ng-container>
 
