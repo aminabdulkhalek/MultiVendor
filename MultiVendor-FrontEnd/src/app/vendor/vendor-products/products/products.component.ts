@@ -5,29 +5,9 @@ import { MatSort, Sort } from '@angular/material/sort';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatDialog } from '@angular/material/dialog';
 import { AddProductModalComponent } from '../vendor-products.component';
+import { HttpClient } from '@angular/common/http';
+import { API_URL } from 'src/app/shared/auth.service';
 
-export interface Products {
-  id: number;
-  name: string;
-  price: string;
-  flags: number;
-  reviews: number;
-  stock: number;
-  preview: string;
-  status: string;
-
-}
-
-const Product_DATA: Products[] = [
-  { id: 1, name: 'iphone 13 Pro MAX', price: "1299$", flags: 1, reviews: 2, stock: 10, preview: "/assets/img.png", status: "Approved" },
-  { id: 2, name: 'Red Scarf', price: "1299$", flags: 0, reviews: 1, stock: 4, preview: "/assets/img.png", status: "Pending" },
-  { id: 3, name: 'Chair', price: "1299$", flags: 0, reviews: 4, stock: 3, preview: "/assets/img.png", status: "Approved" },
-  { id: 4, name: 'Blue Jeans', price: "1299$", flags: 1, reviews: 1.5, stock: 1, preview: "/assets/img.png", status: "Denied" },
-  { id: 5, name: 'Black Shirt', price: "1299$", flags: 0, reviews: 3.5, stock: 3, preview: "/assets/img.png", status: "Approved" },
-  { id: 6, name: 'Polo T-Shirt', price: "1299$", flags: 2, reviews: 2.5, stock: 5, preview: "/assets/img.png", status: "Approved" },
-  { id: 7, name: 'Sockes', price: "1299$", flags: 0, reviews: 4, stock: 100, preview: "/assets/img.png", status: "Pending" },
-  { id: 8, name: 'Suit', price: "1299$", flags: 0, reviews: 3, stock: 3, preview: "/assets/img.png", status: "Approved" },
-];
 
 @Component({
   selector: 'app-products',
@@ -38,10 +18,10 @@ export class ProductsComponent implements AfterViewInit {
   star = faStar;
   half_star = faStarHalfAlt;
   delete = faTrashAlt
-
-  displayedColumns: string[] = ['id', 'name', 'price', 'flags', 'reviews', 'stock', 'preview', 'status', 'action'];
-  dataSource = new MatTableDataSource<Products>(Product_DATA);
-
+  products =[];
+  displayedColumns: string[] = ['id', 'name', 'price', 'flags', 'average_reviews', 'stock', 'preview', 'status', 'action'];
+  dataSource = new MatTableDataSource<any>(null);
+  errorMessage;
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
   @ViewChild(MatSort)
@@ -52,12 +32,35 @@ export class ProductsComponent implements AfterViewInit {
     this.dataSource.sort = this.sort;
   }
 
-  constructor(public dialog: MatDialog) { }
+  constructor(
+    public dialog: MatDialog,
+    private http: HttpClient,
+    ) { }
   openDialog1() {
     this.dialog.open(UpdateProductModalComponent);
   }
+  getAllProducts() {
+    this.http.get<any>(API_URL + 'vendor/products').subscribe({
+      next: data => {
+        console.log(data)
+        this.dataSource = new MatTableDataSource<any>(data.products);
+        this.dataSource.sort = this.sort;
+        this.dataSource.paginator = this.paginator;
+        this.products = data.products
+        return data
+      },
+      error: error => {
+        this.errorMessage = error.message;
+        console.error('There was an error!', this.errorMessage);
+      }
+    })
 
+  }
+  isEmptyObject() {
+    return (this.products.length === 0);
+  }
   ngOnInit(): void {
+    this.getAllProducts()
   }
 
 }

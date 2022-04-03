@@ -11,7 +11,7 @@
 
   <ng-container matColumnDef="name">
     <mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by name"> Name </mat-header-cell>
-    <mat-cell *matCellDef="let product"> {{ product.name }} </mat-cell>
+    <mat-cell *matCellDef="let product"> {{ product.product_name }} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="price">
@@ -21,15 +21,15 @@
 
   <ng-container matColumnDef="flags">
     <mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by flags"> Flags </mat-header-cell>
-    <mat-cell *matCellDef="let product"> {{ product.flags }} </mat-cell>
+    <mat-cell *matCellDef="let product"> {{ product.flag }} </mat-cell>
   </ng-container>
 
-  <ng-container matColumnDef="reviews">
-    <mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by reviews">
+  <ng-container matColumnDef="average_reviews">
+    <mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by average_reviews">
       Reviews
     </mat-header-cell>
     <mat-cell *matCellDef="let product">
-      <bar-rating [rate]="product.reviews" [readOnly]="true" [max]="5">
+      <bar-rating [rate]="product.average_reviews" [readOnly]="true" [max]="5">
         <ng-template ratingInactive>
           <fa-icon
             [icon]="star"
@@ -63,15 +63,23 @@
   <ng-container matColumnDef="preview">
     <mat-header-cell *matHeaderCellDef> Preview </mat-header-cell>
     <mat-cell *matCellDef="let product">
-      <img class="preview-img" src="{{ product.preview }}" alt="img" />
+      <img class="preview-img" src="{{ product.img1 }}" alt="img" />
     </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="status">
-    <mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by status">
-      Status
-    </mat-header-cell>
-    <mat-cell *matCellDef="let product"> {{ product.status }} </mat-cell>
+    <mat-header-cell class="center" *matHeaderCellDef mat-sort-header sortActionDescription="Sort by order_status"> Order Status </mat-header-cell>
+    <mat-cell class="center" *matCellDef="let product">
+      <div *ngIf="product.status == 1">
+        Approved
+      </div>
+      <div *ngIf="product.status == 2">
+        Dispproved
+      </div>
+      <div *ngIf="product.status == 0 ">
+        Pending
+      </div>
+    </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="action">
