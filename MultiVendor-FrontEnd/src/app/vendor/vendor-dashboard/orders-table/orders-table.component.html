@@ -1,14 +1,14 @@
 <table>
   <tr class="header">
-    <td class="order">Order(s)</td>
-    <td class="order-value">124</td>
+    <td class="order">Orders</td>
+    <td class="order-value">{{orders}}</td>
   </tr>
   <tr>
     <td colspan="2" class="bar">
      <p class="bar-title">Pending</p> 
       <mat-progress-bar
         mode="determinate"
-        value="20"
+        value="{{pending}}"
       ></mat-progress-bar>
     </td>
   </tr>
@@ -17,7 +17,7 @@
         <p class="bar-title">Approved</p> 
         <mat-progress-bar
           mode="determinate"
-          value="60"
+          value="{{approved}}"
         ></mat-progress-bar>
       </td>
   </tr>
@@ -26,7 +26,7 @@
         <p class="bar-title">Disapproved</p> 
         <mat-progress-bar
           mode="determinate"
-          value="06"
+          value="{{disapproved}}"
         ></mat-progress-bar>
       </td>
   </tr>
