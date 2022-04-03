@@ -444,32 +444,35 @@ class VendorController extends Controller
 
     public function updateProfile(Request $request){
         $validator = Validator::make($request->all(), [
-            'first_name' => 'string',
-            'last_name' => 'string',
-            'address' => 'string',
-            'phone' => 'numeric',
-            'facebook'=> 'url',
-            'twitter'=> 'url',
-            'instagram'=> 'url',
-            'linkedin'=> 'url'
+            'first_name' => 'nullable|string',
+            'last_name' => 'nullable|string',
+            'address' => 'nullable|string',
+            'phone' => 'nullable|numeric',
+            'facebook'=> 'nullable|url',
+            'twitter'=> 'nullable|url',
+            'instagram'=> 'nullable|url',
         ]);
         if($validator->fails()){
-            return response()->json($validator->errors()->toJson(), 400);
+            return response()->json($validator->errors(), 400);
         }
         $vendor =  Auth::user();
-        $vendor->name = $request->first_name.' '.$request->last_name;
-        $vendor->save();
         $vendor_info = Vendor::where('user_id','=',$vendor->id)->get()->first();
-        $vendor_info->address = $request->address;
-        $vendor_info->phone = $request->phone;
-        $vendor_info->instagram_link = $request->instagram;
-        $vendor_info->twitter_link = $request->twitter;
-        $vendor_info->facebook_link = $request->facebook;
-        $vendor_info->linkedin_link = $request->linkedin;
-
+        if($request->first_name || $request->last_name){
+            $vendor->name = $request->first_name.' '.$request->last_name;
+            $vendor->save();
+        }if($request->address){
+            $vendor_info->address = $request->address;
+        }if($request->phone){
+            $vendor_info->phone = $request->phone;
+        }if($request->instagram){
+            $vendor_info->instagram_link = $request->instagram;
+        }if($request->twitter){
+            $vendor_info->twitter_link = $request->twitter;
+        }
+        if($request->facebook){
+            $vendor_info->facebook_link = $request->facebook;
+        }
         $vendor_info->save();
-
-
 
         return response()->json([
             'message'=> 'profile successfuly updated',
