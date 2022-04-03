@@ -454,7 +454,7 @@ class Admincontroller extends Controller
     public function DisapproveOrder(Request $request){
         $order_id = $request->order_id;
         $order = Order::where('id','=',$order_id)->get()->first();
-        $order->status  = 0;
+        $order->status  = 2;
 
         $order ->save();
         return response()->json([
