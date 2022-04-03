@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
 
@@ -8,11 +8,14 @@ import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./product-list-view.component.scss']
 })
 export class ProductListViewComponent implements OnInit {
+  @Input()
+  product;
   star=faStar;
   half_star=faStarHalfAlt;
   constructor(private router: Router) { }
 
   ngOnInit(): void {
+    
   }
   redirectToProduct(){
     this.router.navigate(['product'])
