@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
 
@@ -8,6 +8,7 @@ import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./wishlist-item.component.scss']
 })
 export class WishlistItemComponent implements OnInit {
+  @Input()product;
   star=faStar;
   half_star=faStarHalfAlt;
   constructor(private router: Router) { }
@@ -18,4 +19,10 @@ export class WishlistItemComponent implements OnInit {
     this.router.navigate(['product'])
   }
 
+  addToShoppingCart(product_id){
+
+  }
+  removeFromwishlist(product_id){
+    
+  }
 }

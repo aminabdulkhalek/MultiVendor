@@ -33,7 +33,7 @@
   <p class="header">Wishlist</p>
   <div class="container">
     <app-wishlist-item
-      *ngFor="let product of products"
+    *ngFor="let product of products; let i = index" [product]="product"
     ></app-wishlist-item>
   </div>
 </div>

@@ -34,8 +34,8 @@
       </ng-template>
     </bar-rating>
   </div>
-  <button class="add">
+  <button class="add" (click)="addToShoppingCart(product.id)">
     <mat-icon>add_shopping_cart</mat-icon> Add To Cart
   </button>
-  <button class="remove">Remove</button>
+  <button class="remove" (click)="removeFromwishlist(product.id)">Remove</button>
 </div>

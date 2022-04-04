@@ -17,7 +17,7 @@ export class WishlistComponent implements OnInit {
   wishlist = faHeart;
   cart= faShoppingCart;
   shopping_cart= faShoppingBasket;
-  products=[1,2,3,4,5,6,7,8,9]
+  products=[1,2,3,4]
   isSignedIn: boolean;
   constructor(
     private auth: AuthStateService,
@@ -38,10 +38,14 @@ export class WishlistComponent implements OnInit {
       localStorage.removeItem('user_type');
       this.signOut()
     }
-
+    this.getWishlistItems()
   }
   signOut() {
     this.authService.signOut();
+  }
+
+  getWishlistItems(){
+
   }
 
 }
