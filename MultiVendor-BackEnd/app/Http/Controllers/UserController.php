@@ -58,7 +58,7 @@ class UserController extends Controller
                 $average_stars = $average_stars+ $review->stars;
                 $customer = Customer::where('id','=',$review->customer_id)->get()->first();
                 $customer_name = User::where('id','=',$customer->user_id)->get('name')->first()->name;
-
+                array_add($review, 'date', date("d/m/Y", strtotime($review->created_at)));
                 array_add($review,'customer_name',$customer_name);
                 array_push($updated_reviews,$review);
                 }
