@@ -102,4 +102,34 @@ export class ShopComponent implements OnInit {
       }
     })
   }
+  flagVendor(){
+    document.getElementById(`flag0`).classList.add('hide')
+    document.getElementById(`flag1`).classList.remove('hide')
+    const body = {
+      'vendor_id':this.vendor_id
+    }
+    this.http.post<any>(API_URL+'customer/flag-vendor',body).subscribe({
+      next: data => {
+      },
+      error: error => {
+        this.errorMessage = error.message;
+        console.error('There was an error!', this.errorMessage);
+      }
+    })
+  }
+  unFlagVendor(){
+    document.getElementById(`flag1`).classList.add('hide')
+    document.getElementById(`flag0`).classList.remove('hide')
+    const body = {
+      'vendor_id':this.vendor_id
+    }
+    this.http.post<any>(API_URL+'customer/unflag-vendor',body).subscribe({
+      next: data => {
+      },
+      error: error => {
+        this.errorMessage = error.message;
+        console.error('There was an error!', this.errorMessage);
+      }
+    })
+  }
 }
