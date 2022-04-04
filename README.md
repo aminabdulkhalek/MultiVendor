@@ -55,7 +55,16 @@
 > This design was planned before on paper, then moved to Figma app for the fine details.
 Note that i didn't use any styling library or theme, all from scratch and using pure css modules
 
+#### some of the frames:
+<img src="/readme/figma/img1.png" width="500" > <img src="/readme/figma/img2.png" width="500">
+<img src="/readme/figma/img3.png" width="500" > <img src="/readme/figma/img4.png" width="500">
+<img src="/readme/figma/img5.png" width="500" > <img src="/readme/figma/img6.png" width="500">
+<img src="/readme/figma/img7.png" width="500" > <img src="/readme/figma/img8.png" width="500">
+<img src="/readme/figma/img9.png" width="500" > <img src="/readme/figma/img10.png" width="500">
+<img src="/readme/figma/img11.png" width="500" > <img src="/readme/figma/img12.png" width="500">
+<img src="/readme/figma/img14.png" width="500" > <img src="/readme/figma/img15.png" width="500">
 
+![](/readme/figma/img13.png )
 
 
 <br><br>
@@ -74,7 +83,16 @@ Here's a brief high-level overview of the tech stack the Well app uses:
 
 > Uing the above mentioned tecch stacks and the wireframes build with figma from the user sotries we have, the implementation of the app is shown as below, these are screenshots from the real app
 
+#### some of the screenshots:
+<img src="/readme/actual/img1.png" width="500" > <img src="/readme/actual/img2.png" width="500">
+<img src="/readme/actual/img3.png" width="500" > <img src="/readme/actual/img4.png" width="500">
+<img src="/readme/actual/img5.png" width="500" > <img src="/readme/actual/img6.png" width="500">
+<img src="/readme/actual/img7.png" width="500" > <img src="/readme/actual/img8.png" width="500">
+<img src="/readme/actual/img9.png" width="500" > <img src="/readme/actual/img10.png" width="500">
+<img src="/readme/actual/img11.png" width="500" > <img src="/readme/actual/img12.png" width="500">
+<img src="/readme/actual/img14.png" width="500" > <img src="/readme/actual/img15.png" width="500">
 
+![](/readme/actual/img13.png )
 
 <br><br>
 <img src="/readme/title6.svg"/>
