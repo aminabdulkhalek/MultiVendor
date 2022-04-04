@@ -13,9 +13,8 @@
 
 <img src="./readme/title2.svg"/>
 
-> The Well app is a mental health and mindfulness app built on top of the science of positive psychology. The Well app is more than just another meditation or journaling app; it encourages you to enhance and reflect on your day with structured, guided activities.
+> The Multivendor app is a market place where users can browse through different products and buy what they desire. The marketplace hosts many vendors/shops and it's managed by an Admin
 > 
-> There are 5 daily tasks that the Well app asks you to complete each day: record 3 gratitudes, write a journal entry, perform 3 acts of kindness, exercise for 20 minutes, and meditate for 15 minutes.
 
 ### Admin Stories
 - As an admin, I want to access my dashbaord, so that I can see my market place orders,products,sales,featured vendor
