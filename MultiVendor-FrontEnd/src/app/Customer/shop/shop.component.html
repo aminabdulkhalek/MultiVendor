@@ -34,20 +34,20 @@
     <div class="preview" id="preview-div">
       <div class="inner-preview">
         <img
-          src="assets/banner.jpg"
+          src="{{banner}}"
           alt="banner"
           class="profile-banner-preview"
         />
         <div class="profile-logo-preview-div">
-          <img src="assets/logo.png" alt="logo" class="profile-logo-preview" />
+          <img src="{{logo}}" alt="logo" class="profile-logo-preview" />
         </div>
 
-        <h2 class="shop-name">Boston Hayden</h2>
+        <h2 class="shop-name">{{name}}</h2>
         <h4 class="shop-address">
-          863 N. Stonybrook Ave. Tonawanda, NY 14150,Cusco, Peru
+         {{address}}
         </h4>
         <h5 class="shop-number">
-          <fa-icon [icon]="phone" [fixedWidth]="true"></fa-icon>(123) 389-4562
+          <fa-icon [icon]="phone" [fixedWidth]="true"></fa-icon>{{phone}}
         </h5>
         <div class="rating">
           <bar-rating [rate]="4" [readOnly]="false" [max]="5">
@@ -112,12 +112,12 @@
     </div>
     <div id="gird_body" class="body0">
       <app-products-gird-view
-        *ngFor="let product of products"
+      *ngFor="let product of products; let i = index" [product]="product" [index]="i"
       ></app-products-gird-view>
     </div>
     <div id="list_body" class="body1 hide">
       <app-product-list-view
-        *ngFor="let product of products"
+      *ngFor="let product of products; let i = index" [product]="product" [index]="i"
       ></app-product-list-view>
     </div>
   </div>

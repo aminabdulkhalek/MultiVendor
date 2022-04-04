@@ -2,6 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { faSignOut, faUserCircle, faHeart, faShoppingCart, faShoppingBasket, faPhone, faStar, faStarHalf } from '@fortawesome/free-solid-svg-icons';
 import { MatIconRegistry } from '@angular/material/icon';
 import {DomSanitizer} from '@angular/platform-browser';
+import { HttpClient } from '@angular/common/http';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
+import { AuthStateService } from 'src/app/shared/auth-state.service';
+import { API_URL, AuthService } from 'src/app/shared/auth.service';
+import { TokenService } from 'src/app/shared/token.service';
 
 @Component({
   selector: 'app-shop',
@@ -17,30 +23,32 @@ export class ShopComponent implements OnInit {
   phone = faPhone
   star = faStar;
   half_star = faStarHalf;
-  products=[1,2,3,4,5,6,7,8,9]
+  vendor_id;
+  products=[]
+
+  banner;
+  logo;
+  address;
+
+  private routeSub: Subscription
+  errorMessage: any;
+  name: any;
+
   constructor(
-    private matIconRegistry:MatIconRegistry,
-    private domSanitzer:DomSanitizer,
-  ) { 
-    this.matIconRegistry.addSvgIcon(
-      'facebook',
-      this.domSanitzer.bypassSecurityTrustResourceUrl('/assets/socail_media_icon/facebook.svg')
-    );
-    this.matIconRegistry.addSvgIcon(
-      'instagram',
-      this.domSanitzer.bypassSecurityTrustResourceUrl('/assets/socail_media_icon/instagram.svg')
-    );
-    this.matIconRegistry.addSvgIcon(
-      'twitter',
-      this.domSanitzer.bypassSecurityTrustResourceUrl('/assets/socail_media_icon/twitter.svg')
-    );
-    this.matIconRegistry.addSvgIcon(
-      'linkedin',
-      this.domSanitzer.bypassSecurityTrustResourceUrl('/assets/socail_media_icon/linkedin.svg')
-    );
-  }
+    private route: ActivatedRoute,
+    private auth: AuthStateService,
+    public router: Router,
+    public token: TokenService,
+    public authService: AuthService,
+    private http: HttpClient
+    ) { }
 
   ngOnInit(): void {
+    this.routeSub = this.route.params.subscribe(params => {
+      this.vendor_id = params['id']
+    });
+    this.getVendor()
+    this.getProducts()
   }
   gridView(){
     const grid = document.getElementById('grid_view_icon');
@@ -61,5 +69,37 @@ export class ShopComponent implements OnInit {
     gird_body.classList.add('hide');
     list.style.color = '#62C6FF';
     list_body.classList.remove('hide');
+  }
+
+  getVendor(){
+    const body ={'vendor_id':this.vendor_id}
+    this.http.post<any>(API_URL+'customer/get-vendor',body).subscribe({
+      next: data => {
+        this.name = data.vendor.name
+        this.banner = data.vendor.banner;
+        this.logo = data.vendor.logo;
+        this.address = data.vendor.address;
+        this.phone = data.vendor.phone;
+      },
+      error: error => {
+        this.errorMessage = error.message;
+        console.error('There was an error!', this.errorMessage);
+      }
+    })
+  }
+  getProducts(){
+    const body = {
+      vendor_id :this.vendor_id
+    }
+    this.http.post<any>(API_URL+'customer/get-vendor-products',body).subscribe({
+      next: data => {
+        console.log(data)
+        this.products = data.Vendor_Products;
+      },
+      error: error => {
+        this.errorMessage = error.message;
+        console.error('There was an error!', this.errorMessage);
+      }
+    })
   }
 }
