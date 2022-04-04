@@ -281,7 +281,7 @@ input[type=number]::-webkit-outer-spin-button {
   display: none;
 }
 
-.love {
+.love0 {
   text-align: center;
   margin-right: 0.5rem;
   background-color: white;
@@ -289,7 +289,20 @@ input[type=number]::-webkit-outer-spin-button {
   border-radius: 4px;
 }
 
-.love mat-icon {
+.love0 mat-icon {
+  cursor: pointer;
+  color: #ff5c5c;
+  font-size: 30px;
+}
+.love1 {
+  text-align: center;
+  margin-right: 0.5rem;
+  background-color: white;
+  border: 0;
+  border-radius: 4px;
+}
+
+.love1 mat-icon {
   cursor: pointer;
   color: #ff5c5c;
   font-size: 30px;

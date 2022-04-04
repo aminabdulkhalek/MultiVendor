@@ -122,4 +122,34 @@ export class ProductComponent implements OnInit {
       }
     })
   }
+  addToWishlist(){
+    document.getElementById(`love0`).classList.add('hide')
+    document.getElementById(`love1`).classList.remove('hide')
+    const body = {
+      'product_id':this.product_id
+    }
+    this.http.post<any>(API_URL+'customer/love-product',body).subscribe({
+      next: data => {
+      },
+      error: error => {
+        this.errorMessage = error.message;
+        console.error('There was an error!', this.errorMessage);
+      }
+    })
+  }
+  removeFromWishlist(){
+    document.getElementById(`love1`).classList.add('hide')
+    document.getElementById(`love0`).classList.remove('hide')
+    const body = {
+      'product_id':this.product_id
+    }
+    this.http.post<any>(API_URL+'customer/remove-product-wishlist',body).subscribe({
+      next: data => {
+      },
+      error: error => {
+        this.errorMessage = error.message;
+        console.error('There was an error!', this.errorMessage);
+      }
+    })
+  }
 }
