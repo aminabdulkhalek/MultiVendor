@@ -47,7 +47,7 @@ class CustomerController extends Controller
 
     public function approvedProducts(){
         $products = Product::where('status','=',1)->get();
-        
+
         foreach ($products as $product ) {
             $flags = ProductFlag::where('product_id','=',$product->id)->get()->count();
             $product_owner = Vendor::where("id",'=',$product->vendor_id)->get()->first();
@@ -57,15 +57,15 @@ class CustomerController extends Controller
             $reviews = Review::where('product_id','=',$product->id)->get('stars');
             $average_stars = 0;
             if (count($reviews)>0) {
-                foreach ($reviews as $review) { 
+                foreach ($reviews as $review) {
                 $average_stars = $average_stars+ $review->stars;
                 }
                 $average_stars = $average_stars/count($reviews);
                 array_add($product, 'average_reviews', $average_stars);
             }
             array_add($product, 'average_reviews', 0);
-            
-            
+
+
         }
 
         return response()->json([
@@ -105,9 +105,12 @@ class CustomerController extends Controller
 
     public function approvedVendors(){
         $vendors = Vendor::where('status','=',1)->get();
-
+        foreach ($vendors as $vendor ) {
+            $vendor_name = User::where('id','=',$vendor->user_id)->get('name')->first()->name;
+            array_add($vendor, 'name', $vendor_name);
+        }
         return response()->json([
-            'approved_vendors'=> $vendors   
+            'approved_vendors'=> $vendors
         ], 200);
     }
 
@@ -243,7 +246,7 @@ class CustomerController extends Controller
         }
         $cart_item->quantity = $request->quantity;
         $cart_item->save();
-        
+
         return response()->json([
             'message' => 'cart item successfuly updated',
             'cart_item' => $cart_item
@@ -251,7 +254,7 @@ class CustomerController extends Controller
     }
 
     public function addBillingInfo(Request $request){
-        
+
         $validator = Validator::make($request->all(), [
             'order_id' => 'required|numeric',
             'country' => 'required|string',
@@ -364,7 +367,7 @@ class CustomerController extends Controller
             'message' => 'flag removed'
         ], 201);
     }
-    
+
     public function removeCartItem(Request $request){
         $user =  Auth::user();
         $customer = Customer::where('user_id','=',$user->id)->get()->first();
@@ -375,7 +378,7 @@ class CustomerController extends Controller
                                 ->delete();
         $cart->number_of_product -= 1;
         $cart->save();
-        
+
         return response()->json([
             'message' => 'item removed from your cart'
         ], 201);
