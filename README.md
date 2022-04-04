@@ -55,22 +55,22 @@
 > This design was planned before on paper, then moved to Figma app for the fine details.
 Note that i didn't use any styling library or theme, all from scratch and using pure css modules
 
-#### some of the frams:
-![](/readme/figma/img1.png)
-![](/readme/figma/img2.png)
-![](/readme/figma/img3.png)
-![](/readme/figma/img4.png)
-![](/readme/figma/img5.png)
-![](/readme/figma/img6.png)
-![](/readme/figma/img7.png)
-![](/readme/figma/img8.png)
-![](/readme/figma/img9.png)
-![](/readme/figma/img10.png)
-![](/readme/figma/img11.png)
-![](/readme/figma/img12.png)
-![](/readme/figma/img13.png)
-![](/readme/figma/img14.png)
-![](/readme/figma/img15.png)
+#### some of the frames:
+![](/readme/figma/img1.png | width=100) ![](/readme/figma/img2.png | width=100)
+
+![](/readme/figma/img3.png | width=100) ![](/readme/figma/img4.png | width=100)
+
+![](/readme/figma/img5.png | width=100) ![](/readme/figma/img6.png | width=100)
+
+![](/readme/figma/img7.png | width=100) ![](/readme/figma/img8.png | width=100)
+
+![](/readme/figma/img9.png | width=100) ![](/readme/figma/img10.png | width=100)
+
+![](/readme/figma/img11.png | width=100) ![](/readme/figma/img12.png | width=100)
+
+![](/readme/figma/img13.png | width=100) ![](/readme/figma/img14.png | width=100)
+
+![](/readme/figma/img15.png | width=100)
 
 
 <br><br>
