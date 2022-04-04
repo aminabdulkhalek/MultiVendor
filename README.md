@@ -62,9 +62,9 @@ Note that i didn't use any styling library or theme, all from scratch and using 
 <img src="/readme/figma/img7.png" width="500" > <img src="/readme/figma/img8.png" width="500">
 <img src="/readme/figma/img9.png" width="500" > <img src="/readme/figma/img10.png" width="500">
 <img src="/readme/figma/img11.png" width="500" > <img src="/readme/figma/img12.png" width="500">
-<img src="/readme/figma/img13.png" width="500" > <img src="/readme/figma/img15.png" width="500">
+<img src="/readme/figma/img14.png" width="500" > <img src="/readme/figma/img15.png" width="500">
 
-![](/readme/figma/img14.png )
+![](/readme/figma/img13.png )
 
 
 <br><br>
