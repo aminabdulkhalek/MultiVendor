@@ -1,9 +1,9 @@
 <div class="shop" (click)="redirectToShop()">
   <div
     class="top_section"
-    style="background: rgba(0, 0, 0, 0.3) URL(/assets/banner.jpg)"
+    style="background: rgba(0, 0, 0, 0.3) URL({{shop.banner}})"
   >
-    <p class="vendor_name">Boston Hayden</p>
+    <p class="vendor_name">{{shop.name}}</p>
     <div class="rating">
       <bar-rating [rate]="4" [readOnly]="true" [max]="5">
         <ng-template ratingInactive>
@@ -30,16 +30,16 @@
       </bar-rating>
     </div>
     <p class="vendor_address">
-      863 N. Stonybrook Ave. Tonawanda, NY 14150, Cusco, Peru
+     {{shop.address}}
     </p>
   </div>
   <div class="vendor_logo" >
-    <img src="/assets/logo.png" alt="logo" />
+    <img src="{{shop.logo}}" alt="logo" />
   </div>
   <div class="bottom_section">
     <div class="vendor_number">
       <mat-icon>phone</mat-icon>
-      <p>(123) 389-4562</p>
+      <p>{{shop.phone}}</p>
     </div>
   </div>
 </div>

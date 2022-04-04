@@ -17,8 +17,10 @@ export class ShopsComponent implements OnInit {
   wishlist = faHeart;
   cart= faShoppingCart;
   shopping_cart= faShoppingBasket;
-  shops=[1,2,3,4,5,6,7,8,9]
+  shops=[]
   isSignedIn: boolean;
+  errorMessage: any;
+
   constructor(
     private auth: AuthStateService,
     public router: Router,
@@ -37,6 +39,7 @@ export class ShopsComponent implements OnInit {
       localStorage.removeItem('user_type');
       this.signOut()
     }
+    this.getVendors();
   }
   signOut() {
     this.authService.signOut();
@@ -45,5 +48,17 @@ export class ShopsComponent implements OnInit {
     this.router.navigate(['products'])
   }
 
+  getVendors(){
+    this.http.get<any>(API_URL+'customer/approved-vendors').subscribe({
+      next: data => {
+        console.log(data)
+        this.shops = data.approved_vendors;
+      },
+      error: error => {
+        this.errorMessage = error.message;
+        console.error('There was an error!', this.errorMessage);
+      }
+    })
+  }
 
 }
