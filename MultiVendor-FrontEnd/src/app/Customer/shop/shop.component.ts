@@ -33,6 +33,7 @@ export class ShopComponent implements OnInit {
   private routeSub: Subscription
   errorMessage: any;
   name: any;
+  isSignedIn: boolean;
 
   constructor(
     private route: ActivatedRoute,
@@ -44,11 +45,25 @@ export class ShopComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
+
+    this.auth.userAuthState.subscribe((val) => {
+      this.isSignedIn = val;
+      if (!val) {
+        this.router.navigate(['login']);
+      }
+    });
+    if (localStorage.getItem('user_type') != '2') {
+      localStorage.removeItem('user_type');
+      this.signOut()
+    }
     this.routeSub = this.route.params.subscribe(params => {
       this.vendor_id = params['id']
     });
     this.getVendor()
     this.getProducts()
+  }
+  signOut() {
+    this.authService.signOut();
   }
   gridView(){
     const grid = document.getElementById('grid_view_icon');
