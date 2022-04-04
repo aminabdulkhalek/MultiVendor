@@ -18,8 +18,8 @@ export class ShopBoxComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  redirectToShop(){
-    this.router.navigate(['shop'])
+  redirectToShop(vendor_id) {
+    this.router.navigate([`shop/${vendor_id}`])
   }
 }
 
