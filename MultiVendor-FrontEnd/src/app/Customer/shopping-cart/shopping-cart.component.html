@@ -39,23 +39,23 @@
             <p class="total_text">Total</p>
           </div>
           <hr />
-        <div class="item" *ngFor="item of items">
+        <div class="item" *ngFor="let item of items">
 
       <div class="content">
-        <div class="img_container"><img src="/assets/img.png" alt="" /></div>
+        <div class="img_container"><img src="{{item.product.img1}}" alt="" /></div>
         <div class="product_info">
-          <p class="product_name">iPhone 13 Pro MAX Space Gray</p>
+          <p class="product_name">{{item.product.product_name}}</p>
           <p class="product_owner">
-            Vendor: <span class="product_owener_value">Apple</span>
+            Vendor: <span class="product_owener_value">{{item.product_owner}}</span>
           </p>
         </div>
-        <p class="product_price">$1299</p>
+        <p class="product_price">${{item.product.price}}</p>
         <div class="wrapper">
           <button class="plusminus" (click)="handleMinus()">-</button>
-          <input type="number" class="num" value="0" [(ngModel)]="value" />
+          <input type="number" class="num" value="{{item.quantity}}" [(ngModel)]="item.quantity" />
           <button class="plusminus" (click)="handlePlus()">+</button>
         </div>
-        <p class="product_total">$1299</p>
+        <p class="product_total">${{item.product.price * item.quantity}}</p>
         <mat-icon class="delete_icon">delete_outline</mat-icon>
       </div>
       <hr />
@@ -86,10 +86,10 @@
             <p class="total">Total</p>
           </div>
           <div class="values">
-            <p>$3897</p>
-            <p>$428.67</p>
+            <p>${{total}}</p>
+            <p>${{total*10/100}}</p>
             <p>$50.99</p>
-            <p class="total">$4376.66</p>
+            <p class="total">${{total + total*10/100 + 50.99}}</p>
           </div>
         </div>
 

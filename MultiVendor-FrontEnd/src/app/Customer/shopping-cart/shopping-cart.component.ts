@@ -4,7 +4,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { faSignOut, faUserCircle, faHeart, faShoppingCart, faShoppingBasket, faPhone } from '@fortawesome/free-solid-svg-icons';
 import { AuthStateService } from 'src/app/shared/auth-state.service';
-import { AuthService } from 'src/app/shared/auth.service';
+import { API_URL, AuthService } from 'src/app/shared/auth.service';
 import { TokenService } from 'src/app/shared/token.service';
 
 
@@ -20,9 +20,11 @@ export class ShoppingCartComponent implements OnInit {
   cart = faShoppingCart;
   shopping_cart = faShoppingBasket;
   phone = faPhone;
-  value=0;
-  items=[1,2,3]
+  value;
+  items=[]
+  total = 0
   isSignedIn: boolean;
+  errorMessage: any;
   constructor(
     private auth: AuthStateService,
     public router: Router,
@@ -41,6 +43,7 @@ export class ShoppingCartComponent implements OnInit {
       localStorage.removeItem('user_type');
       this.signOut()
     }
+    this.getCartItems()
   }
   signOut() {
     this.authService.signOut();
@@ -55,5 +58,20 @@ export class ShoppingCartComponent implements OnInit {
   }
   redirectToCheckout(){
     this.router.navigate(['checkout'])
+  }
+  getCartItems(){
+    this.http.get<any>(API_URL+'customer/cart-itmes').subscribe({
+      next: data => {
+        console.log(data)
+        this.items = data.Cart_items;
+        this.items.forEach(element => {
+          this.total += (element.product.price * element.quantity)
+        });
+      },
+      error: error => {
+        this.errorMessage = error.message;
+        console.error('There was an error!', this.errorMessage);
+      }
+    })
   }
 }
