@@ -52,11 +52,11 @@
         <p class="product_price">${{item.product.price}}</p>
         <div class="wrapper">
           <button class="plusminus" (click)="handleMinus()">-</button>
-          <input type="number" class="num" value="{{item.quantity}}" [(ngModel)]="item.quantity" />
+          <input type="number" class="num" value="{{item.quantity}}" [(ngModel)]="item.quantity" name="value" />
           <button class="plusminus" (click)="handlePlus()">+</button>
         </div>
         <p class="product_total">${{item.product.price * item.quantity}}</p>
-        <mat-icon class="delete_icon">delete_outline</mat-icon>
+        <mat-icon class="delete_icon" (tapClick)="deleteItem(item.product.id)">delete_outline</mat-icon>
       </div>
       <hr />
     </div>

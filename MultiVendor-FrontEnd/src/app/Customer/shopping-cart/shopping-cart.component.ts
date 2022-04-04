@@ -74,4 +74,20 @@ export class ShoppingCartComponent implements OnInit {
       }
     })
   }
+  deleteItem(id){
+    console.log(id)
+    const body ={
+      product_id:id
+    }
+    this.http.post<any>(API_URL+'customer/remove-from-cart',body).subscribe({
+      next: data => {
+       console.log(data);
+       this.getCartItems();
+      },
+      error: error => {
+        this.errorMessage = error.message;
+        console.error('There was an error!', this.errorMessage);
+      }
+    })
+  }
 }
