@@ -37,35 +37,35 @@
       <div class="form">
         <mat-form-field class="example-full-width" appearance="outline">
           <mat-label>Name</mat-label>
-          <input matInput required />
+          <input matInput required  [(ngModel)]="name"/>
         </mat-form-field>
         <mat-form-field class="example-full-width" appearance="outline">
           <mat-label>Country / Region</mat-label>
-          <input matInput required />
+          <input matInput required  [(ngModel)]="country"/>
         </mat-form-field>
         <mat-form-field class="example-full-width" appearance="outline">
           <mat-label>Street Address</mat-label>
-          <input matInput required />
+          <input matInput required  [(ngModel)]="address"/>
         </mat-form-field>
         <mat-form-field class="example-full-width" appearance="outline">
           <mat-label>Town / city</mat-label>
-          <input matInput required />
+          <input matInput required [(ngModel)]="city"/>
         </mat-form-field>
         <mat-form-field class="example-full-width" appearance="outline">
           <mat-label>State</mat-label>
-          <input matInput required />
+          <input matInput required [(ngModel)]="state"/>
         </mat-form-field>
         <mat-form-field class="example-full-width" appearance="outline">
           <mat-label>ZIP Code</mat-label>
-          <input matInput required />
+          <input matInput required [(ngModel)]="zip_code"/>
         </mat-form-field>
         <mat-form-field class="example-full-width" appearance="outline">
           <mat-label>Phone</mat-label>
-          <input matInput required />
+          <input matInput required [(ngModel)]="phone"/>
         </mat-form-field>
         <mat-form-field class="example-full-width" appearance="outline">
           <mat-label>Email Address</mat-label>
-          <input matInput required />
+          <input matInput required [(ngModel)]="email"/>
         </mat-form-field>
 
         <textarea
@@ -134,7 +134,7 @@
         </mat-checkbox>
 
       </div>
-      <button class="place_order" (click)="openDialog()">Place Order</button>
+      <button class="place_order" (click)="openDialog()" (click)="placeOrder()">Place Order</button>
     </div>
   </div>
 </div>
