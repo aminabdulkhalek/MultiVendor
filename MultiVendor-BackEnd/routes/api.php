@@ -57,6 +57,8 @@ Route::group(['middleware' => ['auth:api']], function () {
             Route::post('/disapprove-product', [AdminController::class, 'disapproveProduct'])->name("disapprove-product");
             Route::post('/delete-product', [AdminController::class, 'deleteProduct'])->name("delete-product");
             Route::get('/vendors', [AdminController::class, 'getVendors'])->name("vendors");
+            Route::get('/vendors0', [AdminController::class, 'getVendors0'])->name("vendors0");
+
             Route::post('/approve-vendor', [AdminController::class, 'approveVendor'])->name("approve-vendor");
             Route::post('/disapprove-vendor', [AdminController::class, 'disapproveVendor'])->name("disapprove-vendor");
             Route::post('/pending-vendor', [AdminController::class, 'pendingVendor'])->name("pending-vendor");

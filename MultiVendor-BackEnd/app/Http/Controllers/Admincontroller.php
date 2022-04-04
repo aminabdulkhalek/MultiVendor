@@ -242,6 +242,20 @@ class Admincontroller extends Controller
         ], 201);
     }
 
+    public function getVendors0(){
+        $vendors = Vendor::get();
+        foreach ($vendors as $vendor ) {
+            $vendor_name = User::where('id','=',$vendor->user_id)->get('name')->first();
+            $vendor_email = User::where('id','=',$vendor->user_id)->get('email')->first();
+            $vendor_flags = VendorFlag::where('vendor_id','=',$vendor->id)->get();
+            array_add($vendor,'name',$vendor_name->name);
+            array_add($vendor,'email',$vendor_email->email);
+            array_add($vendor,'flags',$vendor_flags);
+        }
+        return  response()->json([
+            'Vendors'=>$vendors
+        ], 201);
+    }
     public function getVendors(){
         $vendors = Vendor::where('status','=','0')->get();
         foreach ($vendors as $vendor ) {
@@ -308,7 +322,7 @@ class Admincontroller extends Controller
     }
     public function getBalance(Request $request){
         $balance = Balance::where('vendor_id','=',$request->vendor_id)->get()->first();
-        
+
         return response()->json([
             'Balance' => $balance
         ], 201);
