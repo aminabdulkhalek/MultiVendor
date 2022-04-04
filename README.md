@@ -55,7 +55,22 @@
 > This design was planned before on paper, then moved to Figma app for the fine details.
 Note that i didn't use any styling library or theme, all from scratch and using pure css modules
 
-![](/readme/figma/img1.png)  |  ![](/readme/figma/img2.png)
+#### some of the frams:
+![](/readme/figma/img1.png)
+![](/readme/figma/img2.png)
+![](/readme/figma/img3.png)
+![](/readme/figma/img4.png)
+![](/readme/figma/img5.png)
+![](/readme/figma/img6.png)
+![](/readme/figma/img7.png)
+![](/readme/figma/img8.png)
+![](/readme/figma/img9.png)
+![](/readme/figma/img10.png)
+![](/readme/figma/img11.png)
+![](/readme/figma/img12.png)
+![](/readme/figma/img13.png)
+![](/readme/figma/img14.png)
+![](/readme/figma/img15.png)
 
 
 <br><br>
