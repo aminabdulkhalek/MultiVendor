@@ -141,6 +141,8 @@ class CustomerController extends Controller
 
     public function getVendor(Request $request){
         $vendor  = Vendor::where('id','=',$request->vendor_id)->get()->first();
+        $vendor_name = User::where('id','=',$vendor->user_id)->get('name')->first()->name;
+        array_add($vendor, 'name', $vendor_name);
         return response()->json([
             'vendor' => $vendor
         ], 200);
