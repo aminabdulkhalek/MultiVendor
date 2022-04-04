@@ -204,8 +204,15 @@ class CustomerController extends Controller
         $user =  Auth::user();
         $customer = Customer::where('user_id','=',$user->id)->get()->first();
         $cart = Cart::where('customer_id','=',$customer->id)->get()->first();
-        $cart_items = CartItem::where('cart_id','=',$cart->id)->get('product_id');
+        $cart_items = CartItem::where('cart_id','=',$cart->id)->get();
+        foreach ($cart_items as $item ) {
+            $product = Product::where('id','=',$item->product_id)->get()->first();
+            $product_owner = Vendor::where("id",'=',$product->vendor_id)->get()->first();
+            $vendor_name = User::where('id','=',$product_owner->user_id)->get('name')->first()->name;
+            array_add($item, 'product', $product);
+            array_add($item, 'product_owner', $vendor_name);
 
+        }
         return response()->json([
             'Cart_items' => $cart_items
         ], 200);
