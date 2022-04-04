@@ -90,4 +90,8 @@ export class ShoppingCartComponent implements OnInit {
       }
     })
   }
+  redirectToProducts(){
+    this.router.navigate(['products'])
+
+  }
 }
