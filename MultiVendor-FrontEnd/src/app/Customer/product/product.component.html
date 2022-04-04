@@ -121,8 +121,8 @@
         <button class="buy_now">Buy Now</button>
         <button id="love0" class="love0" (click)="addToWishlist()"><mat-icon>favorite_outline</mat-icon></button>
         <button id='love1' class="love1 hide" (click)="removeFromWishlist()"><mat-icon>favorite</mat-icon></button>
-        <button class="flag" ><mat-icon>outlined_flag</mat-icon></button>
-        <button class="flag hide"><mat-icon>flag</mat-icon></button>
+        <button id="flag0" class="flag" (click)="flagProduct()"><mat-icon>outlined_flag</mat-icon></button>
+        <button id="flag1" class="flag hide" (click)="unFlagProduct()"><mat-icon>flag</mat-icon></button>
       </div>
       <hr />
       <div class="social-media-icons">

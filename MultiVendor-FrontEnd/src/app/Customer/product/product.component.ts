@@ -152,4 +152,34 @@ export class ProductComponent implements OnInit {
       }
     })
   }
+  flagProduct(){
+    document.getElementById(`flag0`).classList.add('hide')
+    document.getElementById(`flag1`).classList.remove('hide')
+    const body = {
+      'product_id':this.product_id
+    }
+    this.http.post<any>(API_URL+'customer/flag-product',body).subscribe({
+      next: data => {
+      },
+      error: error => {
+        this.errorMessage = error.message;
+        console.error('There was an error!', this.errorMessage);
+      }
+    })
+  }
+  unFlagProduct(){
+    document.getElementById(`flag1`).classList.add('hide')
+    document.getElementById(`flag0`).classList.remove('hide')
+    const body = {
+      'product_id':this.product_id
+    }
+    this.http.post<any>(API_URL+'customer/unflag-product',body).subscribe({
+      next: data => {
+      },
+      error: error => {
+        this.errorMessage = error.message;
+        console.error('There was an error!', this.errorMessage);
+      }
+    })
+  }
 }
