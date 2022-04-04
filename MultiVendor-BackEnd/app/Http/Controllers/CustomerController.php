@@ -402,7 +402,7 @@ class CustomerController extends Controller
         $cart_item =  CartItem::where('cart_id','=',$cart->id)
                                 ->where('product_id','=',$request->product_id)
                                 ->delete();
-        $cart->number_of_product -= 1;
+        // $cart->number_of_product -= 1;
         $cart->save();
 
         return response()->json([
