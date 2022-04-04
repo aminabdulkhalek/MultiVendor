@@ -16,7 +16,7 @@ export class FeaturedBoxComponent implements OnInit {
 
 
   constructor(private http: HttpClient) {}
-  
+
   ngOnInit(): void {
     this.getFeatured();
     this.getVendors();
@@ -24,7 +24,7 @@ export class FeaturedBoxComponent implements OnInit {
 
   getVendors(){
 
-    this.http.get<any>(API_URL+'admin/vendors').subscribe({
+    this.http.get<any>(API_URL+'admin/vendors0').subscribe({
       next: data => {
         this.options = data.Vendors;
 
@@ -62,7 +62,7 @@ export class FeaturedBoxComponent implements OnInit {
     })
   }
   newFeatured(selected_value) {
-     
+
     const body = { vendor_id: selected_value };
     this.http.post<any>(API_URL+'admin/new-featured', body).subscribe({
       next: data => {

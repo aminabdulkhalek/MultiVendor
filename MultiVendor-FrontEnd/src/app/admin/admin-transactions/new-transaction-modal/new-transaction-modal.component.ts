@@ -25,7 +25,7 @@ export class NewTransactionModalComponent implements OnInit {
   }
   getVendors(){
 
-    this.http.get<any>(API_URL+'admin/vendors').subscribe({
+    this.http.get<any>(API_URL+'admin/vendors0').subscribe({
       next: data => {
         this.options = data.Vendors;
 
