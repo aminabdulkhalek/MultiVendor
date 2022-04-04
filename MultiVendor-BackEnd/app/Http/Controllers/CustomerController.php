@@ -287,7 +287,6 @@ class CustomerController extends Controller
             'city' => 'required|string',
             'state' => 'required|string',
             'street_address'=>'required|string',
-            'state' => 'required|string',
             'email' => 'required|email',
             'zip_code' => 'required|integer|min:4',
             'phone' => 'required|integer',
@@ -309,7 +308,7 @@ class CustomerController extends Controller
         $billing_info->email = $request->email;
         $billing_info->zip_code = $request->zip_code;
         $billing_info->phone = $request->phone;
-        $billing_info->notes = $request->notes;
+        // $billing_info->notes = $request->notes;
 
         $billing_info->save();
 
@@ -342,7 +341,8 @@ class CustomerController extends Controller
         $cart->save();
 
         return response()->json([
-            'message' => 'order placed and now waiting for aproval'
+            'message' => 'order placed and now waiting for aproval',
+            "order" => $order
         ], 201);
     }
 
