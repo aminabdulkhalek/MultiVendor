@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { faSignOut, faUserCircle, faHeart, faShoppingCart, faShoppingBasket, faStar, faStarHalf, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
 import { Subscription } from 'rxjs';
 import { AuthStateService } from 'src/app/shared/auth-state.service';
-import { AuthService } from 'src/app/shared/auth.service';
+import { API_URL, AuthService } from 'src/app/shared/auth.service';
 import { TokenService } from 'src/app/shared/token.service';
 
 @Component({
@@ -18,15 +18,32 @@ export class ProductComponent implements OnInit {
   wishlist = faHeart;
   cart = faShoppingCart;
   shopping_cart = faShoppingBasket;
-  selected_img = '/assets/img.png'
+  selected_img = ''
   star = faStar;
   half_star = faStarHalfAlt;
   value = 0;
-  reviews = [1, 2, 3, 4]
+  reviews = []
   product_id;
   isSignedIn!: boolean;
   errorMessage
 
+
+  img1;
+  img2;
+  img3;
+  img4;
+  product_name;
+  average_reviews;
+  total_reviews;
+  sales;
+  product_owner;
+  feature1;
+  feature2;
+  feature3;
+  feature4;
+  stock;
+  desc1;
+  desc2;
   private routeSub: Subscription
 
   constructor(
@@ -52,6 +69,7 @@ export class ProductComponent implements OnInit {
       localStorage.removeItem('user_type');
       this.signOut()
     }
+    this.getProductInfo()
   }
   signOut() {
     this.authService.signOut();
@@ -60,9 +78,9 @@ export class ProductComponent implements OnInit {
     this.routeSub.unsubscribe();
   }
   changeImg(img) {
+    console.log(img)
     this.selected_img = img;
   }
-
 
   handleMinus() {
     if (this.value > 0) {
@@ -71,5 +89,37 @@ export class ProductComponent implements OnInit {
   }
   handlePlus() {
     this.value++;
+  }
+
+  getProductInfo(){
+    const body = {product_id: this.product_id}
+    this.http.post<any>(API_URL+'user/product',body).subscribe({
+      next: data => {
+        console.log(data)
+        this.selected_img =data.product.img1;
+        this.img1 = data.product.img1;
+        this.img2 = data.product.img3;
+        this.img3= data.product.img2;
+        this.img4= data.product.img4;
+        this.product_name= data.product.product_name;
+        this.average_reviews= data.product.average_reviews;
+        this.total_reviews= data.product.total_reviews;
+        this.sales= data.product.sales;
+        this.product_owner= data.product.product_owner;
+        this.feature1= data.product.feature1;
+        this.feature2= data.product.feature2;
+        this.feature3= data.product.feature3;
+        this.feature4= data.product.feature4;
+        this.stock= data.product.stock;
+        this.desc1= data.product.desc1;
+        this.desc2= data.product.desc2;
+        this.reviews = data.product.reviewz;
+
+      },
+      error: error => {
+        this.errorMessage = error.message;
+        console.error('There was an error!', this.errorMessage);
+      }
+    })
   }
 }
