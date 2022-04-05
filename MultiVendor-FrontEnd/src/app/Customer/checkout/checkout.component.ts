@@ -31,6 +31,10 @@ export class CheckoutComponent implements OnInit {
   email;
   errorMessage: any;
 
+  items=[]
+  total = 0
+  shipping: number;
+
   constructor(public dialog: MatDialog, private auth: AuthStateService,
     public router: Router,
     public token: TokenService,
@@ -51,12 +55,31 @@ export class CheckoutComponent implements OnInit {
       localStorage.removeItem('user_type');
       this.signOut()
     }
-
+    this.getCartItems()
   }
   signOut() {
     this.authService.signOut();
   }
-
+  getCartItems() {
+    this.http.get<any>(API_URL + 'customer/cart-itmes').subscribe({
+      next: data => {
+        console.log(data)
+        this.items = data.Cart_items;
+        this.items.forEach(element => {
+          this.total += (element.product.price * element.quantity)
+        });
+        if (this.items.length) {
+          this.shipping = 50.99
+        }else{
+          this.shipping = 0
+        }
+      },
+      error: error => {
+        this.errorMessage = error.message;
+        console.error('There was an error!', this.errorMessage);
+      }
+    })
+  }
   placeOrder() {
 
     this.http.get<any>(API_URL + 'customer/place-order').subscribe({

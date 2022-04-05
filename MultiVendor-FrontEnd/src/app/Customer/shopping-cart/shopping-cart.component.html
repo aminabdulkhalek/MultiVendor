@@ -88,8 +88,9 @@
           <div class="values">
             <p>${{total}}</p>
             <p>${{total*10/100}}</p>
-            <p>$50.99</p>
-            <p class="total">${{total + total*10/100 + 50.99}}</p>
+            <p *ngIf="!total">$0</p>
+            <p *ngIf="total">$50.99</p>
+            <p class="total">${{total + total*10/100 +shipping}}</p>
           </div>
         </div>
 

@@ -21,8 +21,9 @@ export class ShoppingCartComponent implements OnInit {
   shopping_cart = faShoppingBasket;
   phone = faPhone;
   value;
-  items=[]
+  items = []
   total = 0
+  shipping = 0
   isSignedIn: boolean;
   errorMessage: any;
   constructor(
@@ -49,24 +50,29 @@ export class ShoppingCartComponent implements OnInit {
     this.authService.signOut();
   }
   handleMinus() {
-    if (this.value>0) {
+    if (this.value > 0) {
       this.value--;
     }
   }
   handlePlus() {
     this.value++;
   }
-  redirectToCheckout(){
+  redirectToCheckout() {
     this.router.navigate(['checkout'])
   }
-  getCartItems(){
-    this.http.get<any>(API_URL+'customer/cart-itmes').subscribe({
+  getCartItems() {
+    this.http.get<any>(API_URL + 'customer/cart-itmes').subscribe({
       next: data => {
         console.log(data)
         this.items = data.Cart_items;
         this.items.forEach(element => {
           this.total += (element.product.price * element.quantity)
         });
+        if (this.items.length) {
+          this.shipping = 50.99
+        }else{
+          this.shipping = 0
+        }
       },
       error: error => {
         this.errorMessage = error.message;
@@ -74,15 +80,16 @@ export class ShoppingCartComponent implements OnInit {
       }
     })
   }
-  deleteItem(id){
+  deleteItem(id) {
     console.log(id)
-    const body ={
-      product_id:id
+    const body = {
+      product_id: id
     }
-    this.http.post<any>(API_URL+'customer/remove-from-cart',body).subscribe({
+    this.http.post<any>(API_URL + 'customer/remove-from-cart', body).subscribe({
       next: data => {
-       console.log(data);
-       this.getCartItems();
+        console.log(data);
+        this.getCartItems()
+        this.total = 0;
       },
       error: error => {
         this.errorMessage = error.message;
@@ -90,7 +97,7 @@ export class ShoppingCartComponent implements OnInit {
       }
     })
   }
-  redirectToProducts(){
+  redirectToProducts() {
     this.router.navigate(['products'])
 
   }
