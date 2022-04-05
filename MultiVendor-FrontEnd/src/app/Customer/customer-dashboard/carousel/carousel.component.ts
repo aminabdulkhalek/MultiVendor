@@ -1,5 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Gallery, GalleryItem, ImageItem } from 'ng-gallery';
+import { API_URL } from 'src/app/shared/auth.service';
 
 @Component({
   selector: 'app-carousel',
@@ -9,26 +11,32 @@ import { Gallery, GalleryItem, ImageItem } from 'ng-gallery';
 export class CarouselComponent implements OnInit {
   items: GalleryItem[];
 
-  imageData = data;
-  constructor(public gallery: Gallery) { }
+  imageData =[];
+  errorMessage: any;
+  constructor(public gallery: Gallery,
+    private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.items = this.imageData.map(item => new ImageItem({ src: item.srcUrl, thumb: item.previewUrl }));
+    this.getFeatured();
+    
+  }
+  getFeatured() {
+    this.http.get<any>(API_URL + 'customer/featured').subscribe({
+      next: data => {
+        console.log(data.vendor_info.banner)
+        this.imageData = [
+          {
+            srcUrl: data.vendor_info.banner,
+            previewUrl: data.vendor_info.banner
+          },
+        ];
+        this.items = this.imageData.map(item => new ImageItem({ src: item.srcUrl, thumb: item.previewUrl }));
+      },
+      error: error => {
+        this.errorMessage = error.message;
+        console.error('There was an error!', this.errorMessage);
+      }
+    })
   }
 
 }
-const data = [
-  {
-    srcUrl: '/assets/banner1.jpg',
-    previewUrl: '/assets/banner1.jpg'
-  },
-  {
-    srcUrl: '/assets/banner2.jpg',
-    previewUrl: '/assets/banner2.jpg'
-  },
-  {
-    srcUrl: '/assets/Banner3.jpg',
-    previewUrl: '/assets/Banner3.jpg'
-  },
-
-];
