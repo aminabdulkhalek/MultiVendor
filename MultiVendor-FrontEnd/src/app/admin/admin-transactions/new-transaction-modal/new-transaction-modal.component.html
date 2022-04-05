@@ -44,7 +44,7 @@
           >
             <mat-label>Admin amount to be recevied</mat-label>
             <input matInput type="number" placeholder="0" min="0" disabled  value="{{commission * amount_to_pay /100}}"/>
-            <span matPrefix>$&nbsp;</span>
+            <div matPrefix class="dollar">$&nbsp;</div>
           </mat-form-field>
           <mat-form-field
             class="example-full-width"
