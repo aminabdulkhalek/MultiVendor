@@ -492,12 +492,12 @@ class Admincontroller extends Controller
         $vendor_commission_rate = Vendor::where('id','=',$request->vendor_id)->get()->first()->commission_rate;
         if ($vendor_balance->remaining_ammount == 0 ) {
             return response()->json([
-                'error'=> 'vendor received all his payments'
+                'error'=> 'All payments were recieved'
             ], 200);
         }
         elseif($request->amount > ($vendor_balance->remaining_ammount)/($vendor_commission_rate/100)){
             return response()->json([
-                'error'=> 'amount to be paid excceeds sales made by this vendor'
+                'error'=> 'Amount to be paid excceeds sales made by this vendor'
             ], 200);
         }
         $vendor_balance->received_ammount += ($request->amount - $request->amount*($vendor_commission_rate/100));
