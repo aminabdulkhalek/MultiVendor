@@ -3,6 +3,12 @@ table {
     border-radius: 4px;
     width: 400px;
     height: 250px;
+    &:hover{
+        box-shadow: 0 2px 35px rgba(0, 0, 0, 0.4);
+        border: 1px solid #d7d7d7;
+        border-radius: 4px;
+        transition: all 0.3s ease-in-out;
+    }
 }
 
 .bar {
