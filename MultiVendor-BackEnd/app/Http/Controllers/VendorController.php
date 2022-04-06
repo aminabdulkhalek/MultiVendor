@@ -544,4 +544,25 @@ class VendorController extends Controller
         ], 200);
         
     }
+    public function uploadLogo(Request $request)
+    {
+        $user = Auth::user();
+        $vendor_info = Vendor::where('user_id','=',$user->id)->get()->first();
+        $image_64 =$request->logo; 
+        $extension = explode('/', explode(':', substr($image_64, 0, strpos($image_64, ';')))[1])[1];
+        $replace = substr($image_64, 0, strpos($image_64, ',') + 1);
+        $image = str_replace($replace, '', $image_64);
+        $image = str_replace(' ', '+', $image);
+        $imageName = Str::random(10) . '.' . $extension;
+
+        Storage::disk('public')->put($imageName, base64_decode($image));
+        $storagePath = request()->getSchemeAndHttpHost() .'/storage/' . $imageName;
+        $vendor_info->logo = $storagePath;
+        $vendor_info->save();
+
+        return response()->json([
+            'message' => 'logo successfuly uploaded',
+        ], 200);
+        
+    }
 }
