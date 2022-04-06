@@ -109,6 +109,8 @@ Route::group(['middleware' => ['auth:api']], function () {
             Route::post('/update-profile', [VendorController::class, 'updateProfile'])->name("update-profile");
             Route::get('/get-profile', [VendorController::class, 'getProfile'])->name("get-profile");
 
+            Route::post('/upload-banner', [VendorController::class, 'uploadBanner'])->name("upload-banner");
+
         });
     });
 
