@@ -6,6 +6,7 @@
       id="fileDropRef"
       multiple
       (change)="fileBrowseHandler($any($event.target).files)"
+      (change)="uploadfile(files)"
     />
     <fa-icon class="image_icon" [icon]="image_icon" size="lg"></fa-icon>
     <h3>Drag and drop file here</h3>
@@ -30,6 +31,7 @@
         [icon]="delete"
         style="color: #ff5c5c"
         (click)="deleteFile(i)"
+        (click)="deleteFile0()"
       ></fa-icon>
     </div>
   </div>
