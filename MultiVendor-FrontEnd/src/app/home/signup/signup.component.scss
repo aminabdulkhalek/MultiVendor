@@ -1,0 +1,108 @@
+$blue: #62c6ff;
+$lblue: #f2faff;
+$red: #ff5c5c;
+
+.body {
+  display: flex;
+  padding: 5.8rem 20rem;
+  justify-content: center;
+  background-color: $lblue;
+}
+.section1 {
+  border-radius: 4px 0 0 4px;
+  background-color: $blue;
+  padding: 4rem 7rem;
+  width: 100%;
+  height: 100%;
+}
+.login_box {
+  background-color: white;
+  border-radius: 4px;
+  padding: 3rem;
+
+}
+.header {
+  color: #5a5a5a;
+  font-size: 30px;
+  font-weight: 500;
+  margin: 2rem 0;
+}
+.sub_hedaer {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  color: #5a5a5a;
+  font-size: 20px;
+  font-weight: 400;
+}
+.input {
+  display: block;
+}
+.login {
+  display: block;
+  background-color: $blue;
+  color: white;
+  border: 0;
+  border-radius: 4px;
+  padding: 1rem;
+  width: 15rem;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 5rem;
+  float: right;
+
+  &:hover {
+    color: $blue;
+    background-color: white;
+    border: 1px solid $blue;
+  }
+}
+.section2 {
+  border-radius: 0 5px 5px 0;
+  background-color: white;
+  padding: 7rem 2rem;
+  text-align: center;
+  border: 1px solid gainsboro;
+}
+.logo {
+  color: $red;
+  font-size: 7rem;
+  margin-left: -6rem;
+}
+.question {
+  color: #5a5a5a;
+  font-size: 24px;
+  font-weight: 500;
+  margin: 2rem 0;
+}
+.text {
+  color: #5a5a5a;
+  font-size: 18px;
+  padding: 0 3rem
+}
+.signup {
+  background-color: $blue;
+  color: white;
+  border: 0;
+  border-radius: 4px;
+  padding: 1rem;
+  width: 15rem;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 5rem;
+
+  &:hover {
+    color: $blue;
+    background-color: white;
+    border: 1px solid $blue;
+  }
+}
+
+.alert , .alert0{
+  color: $red;
+}
+
+.alert0{
+  text-align: center;
+  font-weight: 500;
+  font-size: 18px;
+}

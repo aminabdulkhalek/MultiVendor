@@ -1,1 +1,156 @@
-<p>signup works!</p>
+<div class="body">
+  <div class="section1">
+    <div class="login_box">
+      <p class="header">Welcome to MultiVendor</p>
+      <div *ngIf="errors?.error" class="alert0">
+        {{ errors?.error }}
+      </div>
+
+      <mat-form-field class="example-full-width input" appearance="outline">
+        <mat-label>Please select your role:</mat-label>
+        <mat-select [(value)]="selected_value">
+          <mat-option [value]="1">Vendor / Seller</mat-option>
+          <mat-option [value]="2">Customer</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <div *ngIf="selected_value == 1">
+        <div *ngIf="errors?.name" class="alert">
+          {{ errors?.name }}
+        </div>
+        <mat-form-field class="example-full-width input" appearance="outline">
+          <mat-label>Name</mat-label>
+          <input matInput required type="email" [(ngModel)]="name" />
+        </mat-form-field>
+
+        <div *ngIf="errors?.email" class="alert">
+          {{ errors?.email }}
+        </div>
+        <mat-form-field class="example-full-width input" appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput required type="email" [(ngModel)]="email" />
+        </mat-form-field>
+
+        <div *ngIf="errors?.password" class="alert alert-danger mt-3">
+          {{ errors?.password }}
+        </div>
+        <mat-form-field class="example-full-width input" appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput required type="password" [(ngModel)]="password" />
+        </mat-form-field>
+        <div *ngIf="errors?.password" class="alert alert-danger mt-3">
+          {{ errors?.password }}
+        </div>
+        <mat-form-field class="example-full-width input" appearance="outline">
+          <mat-label>Renter Password</mat-label>
+          <input
+            matInput
+            required
+            type="password"
+            [(ngModel)]="password_confirmation"
+          />
+        </mat-form-field>
+        <button class="login" (click)="signup1()">signup</button>
+      </div>
+      <div *ngIf="selected_value == 2">
+        <div style="display: flex; justify-content: space-between;">
+          <div *ngIf="errors?.name" class="alert">
+            {{ errors?.name }}
+          </div>
+          <mat-form-field class="example-full-width input" appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput required type="email" [(ngModel)]="name" />
+          </mat-form-field>
+
+          <div *ngIf="errors?.email" class="alert">
+            {{ errors?.email }}
+          </div>
+          <mat-form-field class="example-full-width input" style="margin-left: 1rem; width: 100%;" appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput required type="email" [(ngModel)]="email" />
+          </mat-form-field>
+        </div>
+
+        <div style="display: flex; justify-content: space-between;">
+          <div *ngIf="errors?.password" class="alert alert-danger mt-3">
+            {{ errors?.password }}
+          </div>
+          <mat-form-field class="example-full-width input" appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput required type="password" [(ngModel)]="password" />
+          </mat-form-field>
+          <div *ngIf="errors?.password" class="alert alert-danger mt-3">
+            {{ errors?.password }}
+          </div>
+          <mat-form-field class="example-full-width input" appearance="outline"  style="margin-left: 1rem; width: 100%;">
+            <mat-label>Renter Password</mat-label>
+            <input
+              matInput
+              required
+              type="password"
+              [(ngModel)]="password_confirmation"
+            />
+          </mat-form-field>
+        </div>
+
+        <div style="display: flex; justify-content: space-between;">
+          <div *ngIf="errors?.country" class="alert">
+            {{ errors?.country }}
+          </div>
+          <mat-form-field class="example-full-width input" appearance="outline">
+            <mat-label>Country</mat-label>
+            <input matInput required type="email" [(ngModel)]="country" />
+          </mat-form-field>
+
+          <div *ngIf="errors?.state" class="alert">
+            {{ errors?.state }}
+          </div>
+          <mat-form-field class="example-full-width input" appearance="outline"  style="margin-left: 1rem; width: 100%;">
+            <mat-label>State</mat-label>
+            <input matInput required type="email" [(ngModel)]="state" />
+          </mat-form-field>
+        </div>
+        <div style="display: flex">
+          <div *ngIf="errors?.gender" class="alert">
+            {{ errors?.gender }}
+          </div>
+          <mat-form-field class="example-full-width input" appearance="outline">
+            <mat-label>Gender</mat-label>
+            <mat-select [(value)]="gender">
+              <mat-option [value]="0">Male</mat-option>
+              <mat-option [value]="1">Female</mat-option>
+              <mat-option [value]="2">Prefere not specify</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <div *ngIf="errors?.dat_of_birth" class="alert">
+            {{ errors?.dat_of_birth }}
+          </div>
+          <mat-form-field appearance="outline" style="margin-left: 1rem;">
+            <mat-label>Birth Date</mat-label>
+            <input
+              [(ngModel)]="date_of_birth"
+              matInput
+              [matDatepicker]="picker"
+            />
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="picker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+
+        <button class="login" (click)="signup2()">signup</button>
+      </div>
+    </div>
+  </div>
+  <div class="section2">
+    <mat-icon class="logo">shopping_basket</mat-icon>
+    <p class="question">Already registerd?</p>
+    <p class="text">
+      That’s awsome, continue your journey through our amazing platform
+    </p>
+    <button class="signup" (click)="redirectToLogin()">Login</button>
+  </div>
+</div>

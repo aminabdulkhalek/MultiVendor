@@ -21,8 +21,8 @@ export class AuthService {
     public router: Router,
     public token: TokenService) { }
   // User registration
-  register(user: User): Observable<any> {
-    return this.http.post('http://127.0.0.1:8000/api/auth/register', user);
+  register(body): Observable<any> {
+    return this.http.post('http://127.0.0.1:8000/api/auth/register', body);
   }
   // Login
   signin(email, password): Observable<any> {

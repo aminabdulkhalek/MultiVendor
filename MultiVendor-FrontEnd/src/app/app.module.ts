@@ -86,6 +86,8 @@ import { WishlistItemComponent } from './Customer/wishlist/wishlist-item/wishlis
 import { OrderPlacedModalComponent } from './Customer/checkout/order-placed-modal/order-placed-modal.component';
 import { LoginComponent } from './home/login/login.component';
 import { SignupComponent } from './home/signup/signup.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 
 @NgModule({
@@ -183,6 +185,8 @@ import { SignupComponent } from './home/signup/signup.component';
     ReactiveFormsModule,
     MatCheckboxModule,
     NgxSliderModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [{
     provide: GALLERY_CONFIG,
