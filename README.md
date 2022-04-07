@@ -4,7 +4,7 @@
 
 > Hello world! This is the project’s summary that describes the project plain and simple, limited to the space available.  
 
-**[PROJECT PHILOSOPHY](#philosophy) • [WIREFRAMES](#wireframes) • [TECH STACK](#stack) • [IMPLEMENTATION](#-impplementation) • [HOW TO RUN?](#-how-to-run)**
+**[PROJECT PHILOSOPHY](#philosophy) • [WIREFRAMES](#wireframes) • [TECH STACK](#stack) • [IMPLEMENTATION](#implementation) • [HOW TO RUN?](#run)**
 
 </div>
 
@@ -78,17 +78,17 @@ Note that i didn't use any styling library or theme, all from scratch and using 
 
 <br><br>
 
-<img src="/readme/title4.svg"/>
+<img src="/readme/title4.svg" id='stack'/>
 
 Here's a brief high-level overview of the tech stack the Well app uses:
 
-- This project uses the [Angular Frame Work](https://angular.io/). Angular is a TypeScript-based free and open-source web application framework led by the Angular Team at Google and by a community of individuals and corporations. Angular is a complete rewrite from the same team that built AngularJS.
+- This project uses the [Angular FrameWork](https://angular.io/). Angular is a TypeScript-based free and open-source web application framework led by the Angular Team at Google and by a community of individuals and corporations. Angular is a complete rewrite from the same team that built AngularJS.
 - For persistent storage (database), the app uses [Laravel](https://laravel.com/) package which allows the app to create a custom storage schema and save it to a local database.
 
 
 
 <br><br>
-<img src="/readme/title5.svg"/>
+<img src="/readme/title5.svg" id='implementation'/>
 
 > Uing the above mentioned tecch stacks and the wireframes build with figma from the user sotries we have, the implementation of the app is shown as below, these are screenshots from the real app
 
@@ -103,7 +103,7 @@ Here's a brief high-level overview of the tech stack the Well app uses:
 
 
 <br><br>
-<img src="/readme/title6.svg"/>
+<img src="/readme/title6.svg" id='run'/>
 
 
 > This is an example of how you may give instructions on setting up your project locally.
