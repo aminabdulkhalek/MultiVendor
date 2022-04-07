@@ -56,7 +56,7 @@
 Note that i didn't use any styling library or theme, all from scratch and using pure css modules
 
 #### some of the frames:
-<img src="/readme/figma/img1.png" width="500" > <img src="/readme/figma/img2.png" width="500">
+<img src="/readme/figma/img1.png" width="400" > <img src="/readme/figma/img2.png" width="400">
 <img src="/readme/figma/img3.png" width="500" > <img src="/readme/figma/img4.png" width="500">
 <img src="/readme/figma/img5.png" width="500" > <img src="/readme/figma/img6.png" width="500">
 <img src="/readme/figma/img7.png" width="500" > <img src="/readme/figma/img8.png" width="500">
