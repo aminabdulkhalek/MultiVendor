@@ -110,28 +110,63 @@ Here's a brief high-level overview of the tech stack the Well app uses:
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
-
+* [Node JS](https://nodejs.org/en/download/)
+* [Composer](https://getcomposer.org/download/)
+* [Xampp 7.4](https://www.apachefriends.org/download.html) (once installed create a database called MultivendorDB)
 
 * npm
-  ```sh
-  npm install npm@latest -g
-  ```
+```sh
+npm install npm@latest -g
+```
+
+* Angular
+```sh
+npm install -g @angular/cli
+```
+
+* Laravel
+```sh
+composer global require laravel/installer
+```
 
 ### Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
-
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo
    ```sh
    git clone https://github.com/aminabdulkhalek/multivendor.git
    ```
-3. Install NPM packages
+2. Setup the Back-end:  
    ```sh
-   npm install
+   cd MultiVendor/MultiVendor-BackEnd
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
+   ```sh
+   composer install
+   ```
+   ```sh
+   cp .env.example .env
+   ```
+   Open your .env file and change the database name (DB_DATABASE) to MultivendorDB, username (DB_USERNAME) and password (DB_PASSWORD) field correspond to your configuration.
+   
+   ```sh
+   php artisan key:generate
+   ```
+   ```sh
+   php artisan migrate
+   ```
+   ```sh
+   php artisan storage:link
+   ```
+   ```sh
+   php artisan serve
+   ```
+3. Setup the Front-End:
+    ```sh
+   cd MultiVendor/MultiVendor-FrontEnd
+   ```
+   ```sh
+   npm i
+   ```
+   ```sh
+   ng serve --open
    ```
 
