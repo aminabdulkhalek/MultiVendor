@@ -110,6 +110,7 @@ Route::group(['middleware' => ['auth:api']], function () {
             Route::get('/get-profile', [VendorController::class, 'getProfile'])->name("get-profile");
 
             Route::post('/upload-banner', [VendorController::class, 'uploadBanner'])->name("upload-banner");
+            Route::post('/upload-logo', [VendorController::class, 'uploadLogo'])->name("upload-logo");
 
         });
     });
