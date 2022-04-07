@@ -151,8 +151,8 @@ composer global require laravel/installer
    ```sh
    php artisan serve
    ```
-3. Setup the Front-End
- ```sh
+3. Setup the Front-End:
+    ```sh
    cd MultiVendor/MultiVendor-FrontEnd
    ```
    ```sh
