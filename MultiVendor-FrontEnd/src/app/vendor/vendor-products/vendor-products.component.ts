@@ -97,7 +97,17 @@ export class AddProductModalComponent {
   @ViewChild("fileDropRef", { static: false })
   fileDropEl!: ElementRef;
   files: any[] = [];
-
+  imgBase64Path: any;
+  imgBase64Path1: any;
+  imgBase64Path2: any;
+  imgBase64Path3: any;
+  imgBase64Path4: any;
+  body = {
+    'img1':'',
+    'img2':'',
+    'img3':'',
+    'img4':'',
+  }
   /**
    * on file drop handler
    */
@@ -211,10 +221,17 @@ export class AddProductModalComponent {
       'stock': this.stock,
       'desc1': this.desc1,
       'desc2': this.desc2,
+      'img1':this.imgBase64Path1,
+      'img2':this.imgBase64Path2,
+      'img3':this.imgBase64Path3,
+      'img4':this.imgBase64Path4,
+
     }
     console.log(this.selected_value)
+    console.log(body)
     this.http.post<any>(API_URL + 'vendor/new-product', body).subscribe({
       next: data => {
+        console.log(body);
         console.log(data);
         this.success = data;
         this.errorMessage = null;
@@ -228,11 +245,64 @@ export class AddProductModalComponent {
           this.stock= null;
           this.desc1= null;
           this.desc2= null;
+          this.imgBase64Path1 = null
+          this.imgBase64Path2 = null
+          this.imgBase64Path3 = null
+          this.imgBase64Path4 = null
+          this.deleteFile(1)
+          this.deleteFile(2)
+          this.deleteFile(3)
+          this.deleteFile(4)
       },
       error: error => {
+        console.log(error)
         this.errorMessage = error.error;
       }
     })
 
   }
+
+  uploadfile(fileInput: any) {
+    const reader1 = new FileReader();
+    const reader2 = new FileReader();
+    const reader3 = new FileReader();
+    const reader4 = new FileReader();
+    reader1.onload = (e: any) => {
+      const image = new Image();
+      image.src = e.target.result;
+      image.onload = rs => {
+        this.imgBase64Path1 = e.target.result;
+        this.body.img1 = this.imgBase64Path1;
+      };
+    };
+    reader2.onload = (e: any) => {
+      const image = new Image();
+      image.src = e.target.result;
+      image.onload = rs => {
+        this.imgBase64Path2 = e.target.result;
+        this.body.img2 = this.imgBase64Path2;
+      };
+    };
+    reader3.onload = (e: any) => {
+      const image = new Image();
+      image.src = e.target.result;
+      image.onload = rs => {
+        this.imgBase64Path3 = e.target.result;
+        this.body.img3 = this.imgBase64Path3;
+      };
+    };
+    reader4.onload = (e: any) => {
+      const image = new Image();
+      image.src = e.target.result;
+      image.onload = rs => {
+        this.imgBase64Path4 = e.target.result;
+        this.body.img4 = this.imgBase64Path4;
+      };
+    };
+    reader1.readAsDataURL(fileInput[0]);
+    reader2.readAsDataURL(fileInput[1]);
+    reader3.readAsDataURL(fileInput[2]);
+    reader4.readAsDataURL(fileInput[3]);
+  }
+
 }
