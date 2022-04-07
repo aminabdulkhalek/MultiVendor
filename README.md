@@ -129,7 +129,7 @@ composer global require laravel/installer
    ```
 2. Setup the Back-end:  
    ```sh
-   cd MultiVendor/MultiVendor-FrontEnd
+   cd MultiVendor/MultiVendor-BackEnd
    ```
    ```sh
    composer install
@@ -151,5 +151,14 @@ composer global require laravel/installer
    ```sh
    php artisan serve
    ```
-
+3. Setup the Front-End
+ ```sh
+   cd MultiVendor/MultiVendor-FrontEnd
+   ```
+   ```sh
+   npm i
+   ```
+   ```sh
+   ng serve --open
+   ```
 
