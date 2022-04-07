@@ -46,7 +46,7 @@ class AuthController extends Controller
                 'user_type' => 'required'
             ]);
             if($validator->fails()){
-                return response()->json($validator->errors()->toJson(), 400);
+                return response()->json($validator->errors(), 400);
             }
             $user = User::create(array_merge(
                         $validator->validated(),
@@ -76,7 +76,7 @@ class AuthController extends Controller
                 'gender' => 'required|string',
             ]);
             if($validator->fails()){
-                return response()->json($validator->errors()->toJson(), 400);
+                return response()->json($validator->errors(), 400);
             }
             $user = new User;
             $user ->name = $request->name;
@@ -112,7 +112,7 @@ class AuthController extends Controller
 
              ]);
              if($validator->fails()){
-                 return response()->json($validator->errors()->toJson(), 400);
+                 return response()->json($validator->errors(), 400);
              }
              $user = new User;
              $user ->name = $request->name;
