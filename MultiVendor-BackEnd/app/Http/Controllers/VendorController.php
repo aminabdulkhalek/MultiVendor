@@ -317,6 +317,10 @@ class VendorController extends Controller
             'feature4' => 'required',
             'desc1' => 'required',
             'desc2' => 'required',
+            'img1' => 'required',
+            'img2' => 'required',
+            'img3' => 'required',
+            'img4' => 'required',
         ]);
         if ($validator->fails()) {
             return response()->json($validator->errors(), 400);
@@ -336,6 +340,52 @@ class VendorController extends Controller
         $product->feature4 = $request->feature4;
         $product->desc1 = $request->desc1;
         $product->desc2 = $request->desc2;
+
+        $img1 =$request->img1; 
+        $extension1 = explode('/', explode(':', substr($img1, 0, strpos($img1, ';')))[1])[1];
+        $replace1 = substr($img1, 0, strpos($img1, ',') + 1);
+        $image1 = str_replace($replace1, '', $img1);
+        $image1 = str_replace(' ', '+', $image1);
+        $imageName1 = Str::random(10) . '.' . $extension1;
+
+        Storage::disk('public')->put($imageName1, base64_decode($image1));
+        $storagePath1 = request()->getSchemeAndHttpHost() .'/storage/' . $imageName1;
+        $product->img1 = $storagePath1;
+
+        $img2 =$request->img2; 
+        $extension2 = explode('/', explode(':', substr($img2, 0, strpos($img2, ';')))[1])[1];
+        $replace2 = substr($img2, 0, strpos($img2, ',') + 1);
+        $image2 = str_replace($replace2, '', $img2);
+        $image2 = str_replace(' ', '+', $image2);
+        $imageName2 = Str::random(10) . '.' . $extension2;
+
+        Storage::disk('public')->put($imageName2, base64_decode($image2));
+        $storagePath2 = request()->getSchemeAndHttpHost() .'/storage/' . $imageName2;
+        $product->img2 = $storagePath2;
+
+        $img3 =$request->img3; 
+        $extension3 = explode('/', explode(':', substr($img3, 0, strpos($img3, ';')))[1])[1];
+        $replace3 = substr($img3, 0, strpos($img3, ',') + 1);
+        $image3 = str_replace($replace3, '', $img3);
+        $image3 = str_replace(' ', '+', $image3);
+        $imageName3 = Str::random(10) . '.' . $extension3;
+
+        Storage::disk('public')->put($imageName3, base64_decode($image3));
+        $storagePath3 = request()->getSchemeAndHttpHost() .'/storage/' . $imageName3;
+        $product->img3 = $storagePath3;
+
+        $img4 =$request->img4; 
+        $extension4 = explode('/', explode(':', substr($img4, 0, strpos($img4, ';')))[1])[1];
+        $replace4 = substr($img4, 0, strpos($img4, ',') + 1);
+        $image4 = str_replace($replace4, '', $img4);
+        $image4 = str_replace(' ', '+', $image4);
+        $imageName4 = Str::random(10) . '.' . $extension4;
+
+        Storage::disk('public')->put($imageName4, base64_decode($image4));
+        $storagePath4 = request()->getSchemeAndHttpHost() .'/storage/' . $imageName4;
+        $product->img4 = $storagePath4;
+
+
         $product->save();
 
         return response()->json([
