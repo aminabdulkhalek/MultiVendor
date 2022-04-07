@@ -4,14 +4,14 @@
 
 > Hello world! This is the project’s summary that describes the project plain and simple, limited to the space available.  
 
-**[PROJECT PHILOSOPHY](#-project-philosophy) • [WIREFRAMES](#-wireframes) • [TECH STACK](#-tech-stack) • [IMPLEMENTATION](#-impplementation) • [HOW TO RUN?](#-how-to-run)**
+**[PROJECT PHILOSOPHY](#philosophy) • [WIREFRAMES](#wireframes) • [TECH STACK](#stack) • [IMPLEMENTATION](#-impplementation) • [HOW TO RUN?](#-how-to-run)**
 
 </div>
 
 <br><br>
 
 
-<img src="/readme/title2.svg"/>
+<img src="/readme/title2.svg" id='philosophy'/>
 
 > The Multivendor app is a market place where users can browse through different products and buy what they desire. The marketplace hosts many vendors/shops and it's managed by an Admin
 > 
@@ -50,7 +50,7 @@
 
 <br><br>
 
-<img src="/readme/title3.svg"/>
+<img src="/readme/title3.svg" id='wireframes'/>
 
 > This design was planned before on paper, then moved to Figma app for the fine details.
 Note that i didn't use any styling library or theme, all from scratch and using pure css modules
