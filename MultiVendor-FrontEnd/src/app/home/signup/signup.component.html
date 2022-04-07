@@ -110,11 +110,11 @@
             <input matInput required type="email" [(ngModel)]="state" />
           </mat-form-field>
         </div>
-        <div style="display: flex">
+        <div style="display: flex" >
           <div *ngIf="errors?.gender" class="alert">
             {{ errors?.gender }}
           </div>
-          <mat-form-field class="example-full-width input" appearance="outline">
+          <mat-form-field class="example-full-width input" appearance="outline" >
             <mat-label>Gender</mat-label>
             <mat-select [(value)]="gender">
               <mat-option [value]="0">Male</mat-option>
@@ -126,7 +126,7 @@
           <div *ngIf="errors?.dat_of_birth" class="alert">
             {{ errors?.dat_of_birth }}
           </div>
-          <mat-form-field appearance="outline" style="margin-left: 1rem;">
+          <mat-form-field appearance="outline" style="margin-left: 1rem; width: 100%;">
             <mat-label>Birth Date</mat-label>
             <input
               [(ngModel)]="date_of_birth"
