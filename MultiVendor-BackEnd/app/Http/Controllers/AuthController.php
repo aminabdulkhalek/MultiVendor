@@ -73,7 +73,7 @@ class AuthController extends Controller
                 'country' => 'required|string',
                 'state' => 'required|string',
                 'date_of_birth' => 'required|date',
-                'gender' => 'required|string',
+                'gender' => 'required',
             ]);
             if($validator->fails()){
                 return response()->json($validator->errors(), 400);
