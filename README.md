@@ -74,7 +74,7 @@ Note that i didn't use any styling library or theme, all from scratch and using 
 <img src="/readme/figma/customer3.png" width="500" > <img src="/readme/figma/customer4.png" width="500">
 <img src="/readme/figma/customer6.png" width="500" > <img src="/readme/figma/customer7.png" width="500">
 <img src="/readme/figma/customer8.png" width="500" > <img src="/readme/figma/customer9.png" width="500">
-<img src="/readme/figma/customer5.png" width="500">
+<img src="/readme/figma/customer5.png">
 
 <br><br>
 
