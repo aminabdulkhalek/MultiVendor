@@ -112,6 +112,11 @@ export class UpdateProductModalComponent implements OnInit {
   
 
   files: any[] = [this.file1,this.file2,this.file3,this.file4 ];
+  imgBase64Path1: any;
+  body: any;
+  imgBase64Path2: any;
+  imgBase64Path3: any;
+  imgBase64Path4: any;
 
   /**
    * on file drop handler
@@ -253,7 +258,11 @@ export class UpdateProductModalComponent implements OnInit {
       'stock':this.stock,
       'desc1':this.desc1,
       'desc2':this.desc2,
-      'category_id': this.selected_value
+      'category_id': this.selected_value,
+      'img1':this.imgBase64Path1,
+      'img2':this.imgBase64Path2,
+      'img3':this.imgBase64Path3,
+      'img4':this.imgBase64Path4,
       
     }
     this.http.post<any>(API_URL + 'vendor/update-product',body).subscribe({
@@ -270,7 +279,44 @@ export class UpdateProductModalComponent implements OnInit {
       }
     })
   }
-
+  uploadfile(fileInput: any) {
+    const reader1 = new FileReader();
+    const reader2 = new FileReader();
+    const reader3 = new FileReader();
+    const reader4 = new FileReader();
+    reader1.onload = (e: any) => {
+      const image = new Image();
+      image.src = e.target.result;
+      image.onload = rs => {
+        this.imgBase64Path1 = e.target.result;
+      };
+    };
+    reader2.onload = (e: any) => {
+      const image = new Image();
+      image.src = e.target.result;
+      image.onload = rs => {
+        this.imgBase64Path2 = e.target.result;
+      };
+    };
+    reader3.onload = (e: any) => {
+      const image = new Image();
+      image.src = e.target.result;
+      image.onload = rs => {
+        this.imgBase64Path3 = e.target.result;
+      };
+    };
+    reader4.onload = (e: any) => {
+      const image = new Image();
+      image.src = e.target.result;
+      image.onload = rs => {
+        this.imgBase64Path4 = e.target.result;
+      };
+    };
+    reader1.readAsDataURL(fileInput[0]);
+    reader2.readAsDataURL(fileInput[1]);
+    reader3.readAsDataURL(fileInput[2]);
+    reader4.readAsDataURL(fileInput[3]);
+  }
 
 }
 
