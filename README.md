@@ -128,14 +128,13 @@ composer global require laravel/installer
    git clone https://github.com/aminabdulkhalek/multivendor.git
    ```
 2. Setup the Back-end:  
-    ```sh
-   composer install
-   ```
-4. Setup the front-end:
    ```sh
    cd MultiVendor/MultiVendor-FrontEnd
    ```
-      ```sh
+   ```sh
+   composer install
+   ```
+   ```sh
    cp .env.example .env
    ```
    Open your .env file and change the database name (DB_DATABASE) to MultivendorDB, username (DB_USERNAME) and password (DB_PASSWORD) field correspond to your configuration.
@@ -146,11 +145,11 @@ composer global require laravel/installer
    ```sh
    php artisan migrate
    ```
-      ```sh
+   ```sh
    php artisan storage:link
    ```
-       ```sh
+   ```sh
    php artisan serve
-      ```
+   ```
 
 
