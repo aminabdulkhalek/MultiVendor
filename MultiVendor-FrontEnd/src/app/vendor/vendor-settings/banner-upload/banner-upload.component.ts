@@ -108,10 +108,9 @@ export class BannerUploadComponent implements OnInit {
         const body = {
           'banner': this.imgBase64Path
         }
-        console.log(body.banner)
         this.http.post<any>(API_URL + 'vendor/upload-banner', body).subscribe({
           next: data => {
-            console.log(data)
+            // console.log(data)
           },
           error: error => {
             this.errorMessage = error;

@@ -1,5 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { faFile, faTrashAlt, faImage } from '@fortawesome/free-solid-svg-icons';
+import { API_URL } from 'src/app/shared/auth.service';
 
 @Component({
   selector: 'app-logo-upload',
@@ -14,6 +16,8 @@ export class LogoUploadComponent implements OnInit {
 @ViewChild("fileDropRef", { static: false })
   fileDropEl!: ElementRef;
   files: any[] = [];
+  imgBase64Path: any;
+  errorMessage: any;
 
   /**
    * on file drop handler
@@ -89,9 +93,37 @@ export class LogoUploadComponent implements OnInit {
     const i = Math.floor(Math.log(bytes) / Math.log(k));
     return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + " " + sizes[i];
   }
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
   }
+  uploadfile(fileInput: any) {
+    const reader = new FileReader();
+    reader.onload = (e: any) => {
+      const image = new Image();
+      image.src = e.target.result;
+      image.onload = rs => {
+        this.imgBase64Path = e.target.result;
+        const body = {
+          'logo': this.imgBase64Path
+        }
+        this.http.post<any>(API_URL + 'vendor/upload-logo', body).subscribe({
+          next: data => {
+            // console.log(data)
+          },
+          error: error => {
+            this.errorMessage = error;
+            console.error('There was an error!', this.errorMessage);
+          }
+        })
+      };
+    };
+    reader.readAsDataURL(fileInput[0]);
 
+  }
+
+
+  deleteFile0() {
+    this.imgBase64Path = null
+  }
 }
