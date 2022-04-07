@@ -101,10 +101,11 @@ Here's a brief high-level overview of the tech stack the Well app uses:
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
-* Node.js
+* Node.js : [Node JS](https://nodejs.org/en/download/)
 
-* composer
-* Xampp php version 7.4 (once installed create a database called MultivendorDB)
+* composer: [Composer](https://getcomposer.org/download/)
+* Xampp php version 7.4: [Xampp](https://www.apachefriends.org/download.html)
+ (once installed create a database called MultivendorDB)
 
 * npm
 ```sh
