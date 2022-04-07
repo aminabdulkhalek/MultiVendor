@@ -56,16 +56,25 @@
 Note that i didn't use any styling library or theme, all from scratch and using pure css modules
 
 #### some of the frames:
-<img src="/readme/figma/img1.png" width="500" > <img src="/readme/figma/img2.png" width="500">
-<img src="/readme/figma/img3.png" width="500" > <img src="/readme/figma/img4.png" width="500">
-<img src="/readme/figma/img5.png" width="500" > <img src="/readme/figma/img6.png" width="500">
-<img src="/readme/figma/img7.png" width="500" > <img src="/readme/figma/img8.png" width="500">
-<img src="/readme/figma/img9.png" width="500" > <img src="/readme/figma/img10.png" width="500">
-<img src="/readme/figma/img11.png" width="500" > <img src="/readme/figma/img12.png" width="500">
-<img src="/readme/figma/img14.png" width="500" > <img src="/readme/figma/img15.png" width="500">
 
-![](/readme/figma/img13.png )
+##### Vendor APP:
+<img src="/readme/figma/vendor1.png" width="500" > <img src="/readme/figma/vendor2.png" width="500">
+<img src="/readme/figma/vendor3.png" width="500" > <img src="/readme/figma/vendor4.png" width="500">
+<img src="/readme/figma/vendor5.png" width="500" > <img src="/readme/figma/vendor6.png" width="500">
+<img src="/readme/figma/vendor7.png" width="500" > <img src="/readme/figma/vendor8.png" width="500">
 
+##### Admin APP:
+<img src="/readme/figma/admin1.png" width="500" > <img src="/readme/figma/admin2.png" width="500">
+<img src="/readme/figma/admin3.png" width="500" > <img src="/readme/figma/admin4.png" width="500">
+<img src="/readme/figma/admin5.png" width="500" > <img src="/readme/figma/admin6.png" width="500">
+<img src="/readme/figma/admin7.png" width="500" > <img src="/readme/figma/admin8.png" width="500">
+
+##### Customer APP:
+<img src="/readme/figma/customer1.png" width="500" > <img src="/readme/figma/customer2.png" width="500">
+<img src="/readme/figma/customer3.png" width="500" > <img src="/readme/figma/customer4.png" width="500">
+<img src="/readme/figma/customer6.png" width="500" > <img src="/readme/figma/customer7.png" width="500">
+<img src="/readme/figma/customer8.png" width="500" > <img src="/readme/figma/customer9.png" width="500">
+<img src="/readme/figma/customer5.png" width="500">
 
 <br><br>
 
