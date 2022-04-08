@@ -105,9 +105,9 @@ Here's a brief high-level overview of the tech stack the Well app uses:
 
 ##### customer APP:
 
-<img src="/readme/actual/customer4.png">
-<img src="/readme/actual/customer6.png">
 <img src="/readme/actual/customer1.png">
+<img src="/readme/actual/customer6.png">
+<img src="/readme/actual/customer4.png">
 
 <img src="/readme/actual/customer2.png" width="400"> <img src="/readme/actual/customer3.png" width="400">
 <img src="/readme/actual/customer5.png" width="400"> <img src="/readme/actual/customer7.png" width="400">
