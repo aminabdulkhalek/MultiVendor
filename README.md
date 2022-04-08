@@ -93,21 +93,21 @@ Here's a brief high-level overview of the tech stack the Well app uses:
 <img src="/readme/actual/img1.png" > 
 
 ##### Vendor APP:
-<img src="/readme/actual/vendor1.png" width="50vw"> <img src="/readme/actual/vendor2.png" width="50vw">
-<img src="/readme/actual/vendor3.png" width="50vw"> <img src="/readme/actual/vendor4.png" width="50vw">
-<img src="/readme/actual/vendor5.png" width="50vw"> <img src="/readme/actual/vendor6.png" width="50vw">
+<img src="/readme/actual/vendor1.png" width="400"> <img src="/readme/actual/vendor2.png" width="400">
+<img src="/readme/actual/vendor3.png" width="400"> <img src="/readme/actual/vendor4.png" width="400">
+<img src="/readme/actual/vendor5.png" width="400"> <img src="/readme/actual/vendor6.png" width="400">
 
 ##### Admin APP:
-<img src="/readme/actual/admin1.png" width="50vw"> <img src="/readme/actual/admin3.png" width="50vw">
-<img src="/readme/actual/admin4.png" width="50vw"> <img src="/readme/actual/admin5.png" width="50vw">
-<img src="/readme/actual/admin6.png" width="50vw"> <img src="/readme/actual/admin7.png" width="50vw">
-<img src="/readme/actual/admin8.png" width="50vw">
+<img src="/readme/actual/admin1.png" width="400"> <img src="/readme/actual/admin3.png" width="400">
+<img src="/readme/actual/admin4.png" width="400"> <img src="/readme/actual/admin5.png" width="400">
+<img src="/readme/actual/admin6.png" width="400"> <img src="/readme/actual/admin7.png" width="400">
+<img src="/readme/actual/admin8.png" width="400">
 
 ##### customer APP:
 
-<img src="/readme/actual/customer2.png" width="50vw"> <img src="/readme/actual/customer3.png" width="50vw">
-<img src="/readme/actual/customer5.png" width="50vw"> <img src="/readme/actual/customer7.png" width="50vw">
-<img src="/readme/actual/customer8.png" width="50vw"> <img src="/readme/actual/customer9.png" width="50vw">
+<img src="/readme/actual/customer2.png" width="400"> <img src="/readme/actual/customer3.png" width="400">
+<img src="/readme/actual/customer5.png" width="400"> <img src="/readme/actual/customer7.png" width="400">
+<img src="/readme/actual/customer8.png" width="400"> <img src="/readme/actual/customer9.png" width="400">
 <img src="/readme/actual/customer4.png">
 <img src="/readme/actual/customer6.png">
 <img src="/readme/actual/customer1.png">
