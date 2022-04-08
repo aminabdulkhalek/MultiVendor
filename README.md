@@ -57,22 +57,22 @@ Note that i didn't use any styling library or theme, all from scratch and using 
 
 
 ##### Vendor APP:
-<img src="/readme/figma/vendor1.png" width="500" > <img src="/readme/figma/vendor2.png" width="500">
-<img src="/readme/figma/vendor3.png" width="500" > <img src="/readme/figma/vendor4.png" width="500">
-<img src="/readme/figma/vendor5.png" width="500" > <img src="/readme/figma/vendor6.png" width="500">
-<img src="/readme/figma/vendor7.png" width="500" > <img src="/readme/figma/vendor8.png" width="500">
+<img src="/readme/figma/vendor1.png" width="400" > <img src="/readme/figma/vendor2.png" width="400">
+<img src="/readme/figma/vendor3.png" width="400" > <img src="/readme/figma/vendor4.png" width="400">
+<img src="/readme/figma/vendor5.png" width="400" > <img src="/readme/figma/vendor6.png" width="400">
+<img src="/readme/figma/vendor7.png" width="400" > <img src="/readme/figma/vendor8.png" width="400">
 
 ##### Admin APP:
-<img src="/readme/figma/admin1.png" width="500" > <img src="/readme/figma/admin2.png" width="500">
-<img src="/readme/figma/admin3.png" width="500" > <img src="/readme/figma/admin4.png" width="500">
-<img src="/readme/figma/admin5.png" width="500" > <img src="/readme/figma/admin6.png" width="500">
-<img src="/readme/figma/admin7.png" width="500" > <img src="/readme/figma/admin8.png" width="500">
+<img src="/readme/figma/admin1.png" width="400" > <img src="/readme/figma/admin2.png" width="400">
+<img src="/readme/figma/admin3.png" width="400" > <img src="/readme/figma/admin4.png" width="400">
+<img src="/readme/figma/admin5.png" width="400" > <img src="/readme/figma/admin6.png" width="400">
+<img src="/readme/figma/admin7.png" width="400" > <img src="/readme/figma/admin8.png" width="400">
 
 ##### Customer APP:
-<img src="/readme/figma/customer1.png" width="500" > <img src="/readme/figma/customer2.png" width="500">
-<img src="/readme/figma/customer3.png" width="500" > <img src="/readme/figma/customer4.png" width="500">
-<img src="/readme/figma/customer6.png" width="500" > <img src="/readme/figma/customer7.png" width="500">
-<img src="/readme/figma/customer8.png" width="500" > <img src="/readme/figma/customer9.png" width="500">
+<img src="/readme/figma/customer1.png" width="400" > <img src="/readme/figma/customer2.png" width="400">
+<img src="/readme/figma/customer3.png" width="400" > <img src="/readme/figma/customer4.png" width="400">
+<img src="/readme/figma/customer6.png" width="400" > <img src="/readme/figma/customer7.png" width="400">
+<img src="/readme/figma/customer8.png" width="400" > <img src="/readme/figma/customer9.png" width="400">
 <img src="/readme/figma/customer5.png">
 
 <br><br>
