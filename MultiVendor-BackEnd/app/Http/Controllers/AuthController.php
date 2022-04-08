@@ -126,7 +126,7 @@ class AuthController extends Controller
              $vendor ->save();
 
              $balance = new Balance;
-             $balance->vendor_id = $user->id;
+             $balance->vendor_id = $vendor->id;
              $balance->save();
 
 
