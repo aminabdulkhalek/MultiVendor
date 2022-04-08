@@ -55,7 +55,6 @@
 > This design was planned before on paper, then moved to Figma app for the fine details.
 Note that i didn't use any styling library or theme, all from scratch and using pure css modules
 
-#### some of the frames:
 
 ##### Vendor APP:
 <img src="/readme/figma/vendor1.png" width="500" > <img src="/readme/figma/vendor2.png" width="500">
@@ -91,20 +90,25 @@ Here's a brief high-level overview of the tech stack the Well app uses:
 <img src="/readme/title5.svg" id='implementation'/>
 
 > Uing the above mentioned tecch stacks and the wireframes build with figma from the user sotries we have, the implementation of the app is shown as below, these are screenshots from the real app
+<img src="/readme/actual/img1.png" > 
 
-#### some of the screenshots:
-<img src="/readme/actual/img1.png" width="500" > <img src="/readme/actual/img2.png" width="500">
-<img src="/readme/actual/img4.png" width="500" > <img src="/readme/actual/img5.png" width="500">
-<img src="/readme/actual/img6.png" width="500" > <img src="/readme/actual/img7.png" width="500">
-<img src="/readme/actual/img8.png" width="500" > <img src="/readme/actual/img9.png" width="500">
-<img src="/readme/actual/img10.png" width="500" > <img src="/readme/actual/img11.png" width="500">
-<img src="/readme/actual/img12.png" width="500" > <img src="/readme/actual/img13.png" width="500">
-<img src="/readme/actual/img14.png" width="500" > <img src="/readme/actual/img15.png" width="500">
+##### Vendor APP:
+<img src="/readme/actual/vendor1.png" width="500" > <img src="/readme/actual/vendor2.png" width="500">
+<img src="/readme/actual/vendor3.png" width="500" > <img src="/readme/actual/vendor4.png" width="500">
+<img src="/readme/actual/vendor5.png" width="500" > <img src="/readme/actual/vendor6.png" width="500">
 
+##### Admin APP:
+<img src="/readme/actual/admin1.png" width="500" > <img src="/readme/actual/admin2.png" width="500">
+<img src="/readme/actual/admin3.png" width="500" > <img src="/readme/actual/admin4.png" width="500">
+<img src="/readme/actual/admin5.png" width="500" > <img src="/readme/actual/admin6.png" width="500">
+<img src="/readme/actual/admin7.png" width="500" > <img src="/readme/actual/admin8.png" width="500">
 
-<br><br>
-<img src="/readme/title6.svg" id='run'/>
-
+##### customer APP:
+<img src="/readme/actual/customer1.png" width="500" > <img src="/readme/actual/customer2.png" width="500">
+<img src="/readme/actual/customer3.png" width="500" > <img src="/readme/actual/customer4.png" width="500">
+<img src="/readme/actual/customer5.png" width="500" > <img src="/readme/actual/customer6.png" width="500">
+<img src="/readme/actual/customer7.png" width="500" > <img src="/readme/actual/customer8.png" width="500">
+<img src="/readme/actual/customer9.png" width="500">
 
 > This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
