@@ -121,12 +121,12 @@ https://user-images.githubusercontent.com/62925891/162630144-053f2813-c8e6-48bf-
 <img src="/readme/actual/customer4.png">
 
 https://user-images.githubusercontent.com/62925891/162630158-7bbaaefb-c87f-439a-b142-2d08ee172e83.mp4
+
 <img src="/readme/actual/customer2.png" width="400"> <img src="/readme/actual/customer3.png" width="400">
 <img src="/readme/actual/customer5.png" width="400"> 
 
 
-> This is an example of how you may give instructions on setting up your project locally.
-> To get a local copy up and running follow these simple example steps.
+
 
 ### Prerequisites
 
