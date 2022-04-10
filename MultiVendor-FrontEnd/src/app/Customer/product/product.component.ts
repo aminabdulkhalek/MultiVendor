@@ -21,7 +21,7 @@ export class ProductComponent implements OnInit {
   selected_img = ''
   star = faStar;
   half_star = faStarHalfAlt;
-  value = 0;
+  value = 1;
   reviews = []
   product_id;
   isSignedIn!: boolean;
@@ -83,7 +83,7 @@ export class ProductComponent implements OnInit {
   }
 
   handleMinus() {
-    if (this.value > 0) {
+    if (this.value > 1) {
       this.value--;
     }
   }
