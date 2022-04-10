@@ -95,26 +95,22 @@ Here's a brief high-level overview of the tech stack the Well app uses:
 
 ##### Vendor APP:
 
-<video auto-play="true" loop="loop" muted="muted" plays-inline="true">
-  <source src="/readme/actual/vendor_dashboard.mp4" type="video/mp4">
-</video>
-<video auto-play="true" loop="loop" muted="muted" plays-inline="true">
-  <source src="/readme/actual/add_product.mp4" type="video/mp4">
-</video>
- <img src="/readme/actual/vendor3.png" width="400"> <img src="/readme/actual/vendor4.png" width="400">
+https://user-images.githubusercontent.com/62925891/162630108-7a296ddd-f9f3-4a07-b311-975e805a6f3f.mp4
+
+https://user-images.githubusercontent.com/62925891/162630122-43ee7886-c3d6-426a-9d49-22c5d63643ee.mp4
+
+<img src="/readme/actual/vendor3.png" width="400"> <img src="/readme/actual/vendor4.png" width="400">
 <img src="/readme/actual/vendor5.png" width="400"> <img src="/readme/actual/vendor6.png" width="400">
 
 ##### Admin APP:
 
-<video auto-play="true" loop="loop" muted="muted" plays-inline="true">
-  <source src="/readme/actual/manage_vendors.mp4" type="video/mp4">
-</video> 
-<video auto-play="true" loop="loop" muted="muted" plays-inline="true">
-  <source src="/readme/actual/products.mp4" type="video/mp4">
-</video> 
 <img src="/readme/actual/admin1.png" width="400"><img src="/readme/actual/admin6.png" width="400"> 
 <img src="/readme/actual/admin7.png" width="400"><img src="/readme/actual/admin8.png" width="400">
 <img src="/readme/actual/admin5.png" width="400">
+https://user-images.githubusercontent.com/62925891/162630142-72c462f5-cd6c-469d-bd34-ae4ea07cf3dd.mp4
+https://user-images.githubusercontent.com/62925891/162630144-053f2813-c8e6-48bf-8590-8153dd599dc0.mp4
+
+
 
 ##### customer APP:
 
@@ -122,11 +118,11 @@ Here's a brief high-level overview of the tech stack the Well app uses:
 <img src="/readme/actual/customer6.png">
 <img src="/readme/actual/customer4.png">
 
-<video auto-play="true" loop="loop" muted="muted" plays-inline="true">
-  <source src="/readme/actual/buy_product.mp4" type="video/mp4">
-</video> 
+https://user-images.githubusercontent.com/62925891/162630158-7bbaaefb-c87f-439a-b142-2d08ee172e83.mp4
 <img src="/readme/actual/customer2.png" width="400"> <img src="/readme/actual/customer3.png" width="400">
 <img src="/readme/actual/customer5.png" width="400"> 
+
+
 > This is an example of how you may give instructions on setting up your project locally.
 > To get a local copy up and running follow these simple example steps.
 
