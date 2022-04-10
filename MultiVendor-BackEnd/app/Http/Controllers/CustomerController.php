@@ -293,7 +293,7 @@ class CustomerController extends Controller
             // 'notes' => 'required',
         ]);
         if($validator->fails()){
-            return response()->json($validator->errors()->toJson(), 400);
+            return response()->json($validator->errors(), 400);
         }
         $user =  Auth::user();
         $customer = Customer::where('user_id','=',$user->id)->get()->first();
