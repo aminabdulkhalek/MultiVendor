@@ -100,13 +100,13 @@ export class CheckoutComponent implements OnInit {
             console.log(data)
           },
           error: error => {
-            this.errorMessage = error.message;
+            this.errorMessage = error.error;
             console.error('There was an error!', this.errorMessage);
           }
         })
       },
       error: error => {
-        this.errorMessage = error.message;
+        this.errorMessage = error;
         console.error('There was an error!', this.errorMessage);
       }
     })

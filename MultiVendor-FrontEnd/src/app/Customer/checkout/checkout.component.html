@@ -41,35 +41,59 @@
           <mat-label>Name</mat-label>
           <input matInput required [(ngModel)]="name" />
         </mat-form-field>
+        <div *ngIf="errorMessage?.country" class="alert">
+          {{ errorMessage.country }}
+        </div>
         <mat-form-field class="example-full-width" appearance="outline">
           <mat-label>Country / Region</mat-label>
           <input matInput required [(ngModel)]="country" />
         </mat-form-field>
+
+        <div *ngIf="errorMessage?.street_address" class="alert">
+          {{ errorMessage.street_address }}
+        </div>
         <mat-form-field class="example-full-width" appearance="outline">
           <mat-label>Street Address</mat-label>
           <input matInput required [(ngModel)]="address" />
         </mat-form-field>
+        <div *ngIf="errorMessage?.city" class="alert">
+          {{ errorMessage.city }}
+        </div>
         <mat-form-field class="example-full-width" appearance="outline">
           <mat-label>Town / city</mat-label>
           <input matInput required [(ngModel)]="city" />
         </mat-form-field>
+        <div *ngIf="errorMessage?.state" class="alert">
+          {{ errorMessage.state }}
+        </div>
         <mat-form-field class="example-full-width" appearance="outline">
           <mat-label>State</mat-label>
           <input matInput required [(ngModel)]="state" />
         </mat-form-field>
+        <div *ngIf="errorMessage?.zip_code" class="alert">
+          {{ errorMessage.zip_code }}
+        </div>
         <mat-form-field class="example-full-width" appearance="outline">
           <mat-label>ZIP Code</mat-label>
           <input matInput required [(ngModel)]="zip_code" />
         </mat-form-field>
+        <div *ngIf="errorMessage?.phone" class="alert">
+          {{ errorMessage.phone }}
+        </div>
         <mat-form-field class="example-full-width" appearance="outline">
           <mat-label>Phone</mat-label>
           <input matInput required [(ngModel)]="phone" />
         </mat-form-field>
+        <div *ngIf="errorMessage?.email" class="alert">
+          {{ errorMessage.email }}
+        </div>
         <mat-form-field class="example-full-width" appearance="outline">
           <mat-label>Email Address</mat-label>
           <input matInput required [(ngModel)]="email" />
         </mat-form-field>
-
+        <div *ngIf="errorMessage?.notes" class="alert">
+          {{ errorMessage.notes }}
+        </div>
         <textarea
           class="notes_text_area"
           name="order_notes"
