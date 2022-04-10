@@ -95,10 +95,10 @@ Here's a brief high-level overview of the tech stack the Well app uses:
 
 ##### Vendor APP:
 
-<video autoplay loop muted playsinline>
+<video auto-play="true" loop="loop" muted="muted" plays-inline="true">
   <source src="/readme/actual/vendor_dashboard.mp4" type="video/mp4">
 </video>
-<video autoplay loop muted playsinline>
+<video auto-play="true" loop="loop" muted="muted" plays-inline="true">
   <source src="/readme/actual/add_product.mp4" type="video/mp4">
 </video>
  <img src="/readme/actual/vendor3.png" width="400"> <img src="/readme/actual/vendor4.png" width="400">
@@ -106,10 +106,10 @@ Here's a brief high-level overview of the tech stack the Well app uses:
 
 ##### Admin APP:
 
-<video autoplay loop muted playsinline>
+<video auto-play="true" loop="loop" muted="muted" plays-inline="true">
   <source src="/readme/actual/manage_vendors.mp4" type="video/mp4">
 </video> 
- <video autoplay loop muted playsinline>
+<video auto-play="true" loop="loop" muted="muted" plays-inline="true">
   <source src="/readme/actual/products.mp4" type="video/mp4">
 </video> 
 <img src="/readme/actual/admin1.png" width="400"><img src="/readme/actual/admin6.png" width="400"> 
@@ -122,7 +122,7 @@ Here's a brief high-level overview of the tech stack the Well app uses:
 <img src="/readme/actual/customer6.png">
 <img src="/readme/actual/customer4.png">
 
- <video autoplay loop muted playsinline>
+<video auto-play="true" loop="loop" muted="muted" plays-inline="true">
   <source src="/readme/actual/buy_product.mp4" type="video/mp4">
 </video> 
 <img src="/readme/actual/customer2.png" width="400"> <img src="/readme/actual/customer3.png" width="400">
