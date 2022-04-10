@@ -33,15 +33,15 @@
     </mat-cell>
   </ng-container>
 
-  <ng-container matColumnDef="quanitiy">
-    <mat-header-cell class="center" *matHeaderCellDef mat-sort-header sortActionDescription="Sort by quanitiy"> Quantity </mat-header-cell>
-    <mat-cell class="center" *matCellDef="let product"> {{ product.quanitiy }} </mat-cell>
+  <ng-container matColumnDef="quantity">
+    <mat-header-cell class="center" *matHeaderCellDef mat-sort-header sortActionDescription="Sort by quantity"> Quantity </mat-header-cell>
+    <mat-cell class="center" *matCellDef="let product"> {{ product.quantity }} </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="total">
     <mat-header-cell class="center" *matHeaderCellDef mat-sort-header > total </mat-header-cell>
     <mat-cell class="center" *matCellDef="let product">
-      ${{ product.quanitiy * product.product_price}}
+      ${{ product.quantity * product.product_price}}
     </mat-cell>
   </ng-container>
 

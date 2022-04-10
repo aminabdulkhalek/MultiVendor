@@ -12,7 +12,7 @@ import { API_URL } from 'src/app/shared/auth.service';
   styleUrls: ['./vendor-orders-table.component.scss']
 })
 export class VendorOrdersTableComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'product_name', 'customer_name', 'customer_email', 'price', 'quanitiy', 'total', 'order_date', 'order_status'];
+  displayedColumns: string[] = ['id', 'product_name', 'customer_name', 'customer_email', 'price', 'quantity', 'total', 'order_date', 'order_status'];
   dataSource = new MatTableDataSource<any>(null);
 
   errorMessage;
