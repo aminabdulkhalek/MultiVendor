@@ -98,6 +98,7 @@ export class CheckoutComponent implements OnInit {
         this.http.post<any>(API_URL + 'customer/add-billing-info',body).subscribe({
           next: data => {
             console.log(data)
+            this.openDialog();
           },
           error: error => {
             this.errorMessage = error.error;
