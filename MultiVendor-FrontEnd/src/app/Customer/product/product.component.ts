@@ -53,7 +53,7 @@ export class ProductComponent implements OnInit {
     public token: TokenService,
     public authService: AuthService,
     private http: HttpClient
-    ) { }
+  ) { }
 
   ngOnInit(): void {
     this.routeSub = this.route.params.subscribe(params => {
@@ -91,28 +91,28 @@ export class ProductComponent implements OnInit {
     this.value++;
   }
 
-  getProductInfo(){
-    const body = {product_id: this.product_id}
-    this.http.post<any>(API_URL+'user/product',body).subscribe({
+  getProductInfo() {
+    const body = { product_id: this.product_id }
+    this.http.post<any>(API_URL + 'user/product', body).subscribe({
       next: data => {
         console.log(data)
-        this.selected_img =data.product.img1;
+        this.selected_img = data.product.img1;
         this.img1 = data.product.img1;
         this.img2 = data.product.img3;
-        this.img3= data.product.img2;
-        this.img4= data.product.img4;
-        this.product_name= data.product.product_name;
-        this.average_reviews= data.product.average_reviews;
-        this.total_reviews= data.product.total_reviews;
-        this.sales= data.product.sales;
-        this.product_owner= data.product.product_owner;
-        this.feature1= data.product.feature1;
-        this.feature2= data.product.feature2;
-        this.feature3= data.product.feature3;
-        this.feature4= data.product.feature4;
-        this.stock= data.product.stock;
-        this.desc1= data.product.desc1;
-        this.desc2= data.product.desc2;
+        this.img3 = data.product.img2;
+        this.img4 = data.product.img4;
+        this.product_name = data.product.product_name;
+        this.average_reviews = data.product.average_reviews;
+        this.total_reviews = data.product.total_reviews;
+        this.sales = data.product.sales;
+        this.product_owner = data.product.product_owner;
+        this.feature1 = data.product.feature1;
+        this.feature2 = data.product.feature2;
+        this.feature3 = data.product.feature3;
+        this.feature4 = data.product.feature4;
+        this.stock = data.product.stock;
+        this.desc1 = data.product.desc1;
+        this.desc2 = data.product.desc2;
         this.reviews = data.product.reviewz;
 
       },
@@ -122,13 +122,13 @@ export class ProductComponent implements OnInit {
       }
     })
   }
-  addToWishlist(){
+  addToWishlist() {
     document.getElementById(`love0`).classList.add('hide')
     document.getElementById(`love1`).classList.remove('hide')
     const body = {
-      'product_id':this.product_id
+      'product_id': this.product_id
     }
-    this.http.post<any>(API_URL+'customer/love-product',body).subscribe({
+    this.http.post<any>(API_URL + 'customer/love-product', body).subscribe({
       next: data => {
       },
       error: error => {
@@ -137,13 +137,13 @@ export class ProductComponent implements OnInit {
       }
     })
   }
-  removeFromWishlist(){
+  removeFromWishlist() {
     document.getElementById(`love1`).classList.add('hide')
     document.getElementById(`love0`).classList.remove('hide')
     const body = {
-      'product_id':this.product_id
+      'product_id': this.product_id
     }
-    this.http.post<any>(API_URL+'customer/remove-product-wishlist',body).subscribe({
+    this.http.post<any>(API_URL + 'customer/remove-product-wishlist', body).subscribe({
       next: data => {
       },
       error: error => {
@@ -152,13 +152,13 @@ export class ProductComponent implements OnInit {
       }
     })
   }
-  flagProduct(){
+  flagProduct() {
     document.getElementById(`flag0`).classList.add('hide')
     document.getElementById(`flag1`).classList.remove('hide')
     const body = {
-      'product_id':this.product_id
+      'product_id': this.product_id
     }
-    this.http.post<any>(API_URL+'customer/flag-product',body).subscribe({
+    this.http.post<any>(API_URL + 'customer/flag-product', body).subscribe({
       next: data => {
       },
       error: error => {
@@ -167,13 +167,13 @@ export class ProductComponent implements OnInit {
       }
     })
   }
-  unFlagProduct(){
+  unFlagProduct() {
     document.getElementById(`flag1`).classList.add('hide')
     document.getElementById(`flag0`).classList.remove('hide')
     const body = {
-      'product_id':this.product_id
+      'product_id': this.product_id
     }
-    this.http.post<any>(API_URL+'customer/unflag-product',body).subscribe({
+    this.http.post<any>(API_URL + 'customer/unflag-product', body).subscribe({
       next: data => {
       },
       error: error => {
@@ -182,19 +182,19 @@ export class ProductComponent implements OnInit {
       }
     })
   }
-    addToCart(){
-      const body = {
-        'product_id':this.product_id,
-        'quantity':this.value
+  addToCart() {
+    const body = {
+      'product_id': this.product_id,
+      'quantity': this.value
+    }
+    this.http.post<any>(API_URL + 'customer/add-to-cart', body).subscribe({
+      next: data => {
+        console.log(data)
+      },
+      error: error => {
+        this.errorMessage = error.message;
+        console.error('There was an error!', this.errorMessage);
       }
-      this.http.post<any>(API_URL+'customer/add-to-cart',body).subscribe({
-        next: data => {
-          console.log(data)
-        },
-        error: error => {
-          this.errorMessage = error.message;
-          console.error('There was an error!', this.errorMessage);
-        }
-      })
+    })
   }
 }
