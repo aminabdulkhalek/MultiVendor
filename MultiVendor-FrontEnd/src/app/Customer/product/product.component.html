@@ -117,7 +117,7 @@
           <input type="number" class="num" value="1" [(ngModel)]="value" />
           <button class="plusminus" (click)="handlePlus()">+</button>
         </div>
-        <button class="add">Add to Cart</button>
+        <button class="add" (click)="addToCart()">Add to Cart</button>
         <button class="buy_now">Buy Now</button>
         <button id="love0" class="love0" (click)="addToWishlist()"><mat-icon>favorite_outline</mat-icon></button>
         <button id='love1' class="love1 hide" (click)="removeFromWishlist()"><mat-icon>favorite</mat-icon></button>

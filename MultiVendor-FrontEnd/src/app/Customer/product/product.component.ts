@@ -182,4 +182,19 @@ export class ProductComponent implements OnInit {
       }
     })
   }
+    addToCart(){
+      const body = {
+        'product_id':this.product_id,
+        'quantity':this.value
+      }
+      this.http.post<any>(API_URL+'customer/add-to-cart',body).subscribe({
+        next: data => {
+          console.log(data)
+        },
+        error: error => {
+          this.errorMessage = error.message;
+          console.error('There was an error!', this.errorMessage);
+        }
+      })
+  }
 }
