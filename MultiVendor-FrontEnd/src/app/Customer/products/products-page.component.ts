@@ -97,7 +97,104 @@ export class ProductsPageComponent implements OnInit {
         }
       })
     }
-    
+    if (category =='Furnature') {
+      const body = {
+        'category_id': 1
+      }
+      this.http.post<any>(API_URL+'customer/products-by-category',body).subscribe({
+        next: data => {
+          this.products = data.products;
+        },
+        error: error => {
+          this.errorMessage = error.message;
+          console.error('There was an error!', this.errorMessage);
+        }
+      })
+    }
+    if (category =='Health & Beuaty') {
+      const body = {
+        'category_id': 4
+      }
+      this.http.post<any>(API_URL+'customer/products-by-category',body).subscribe({
+        next: data => {
+          this.products = data.products;
+        },
+        error: error => {
+          this.errorMessage = error.message;
+          console.error('There was an error!', this.errorMessage);
+        }
+      })
+    }
+    if (category =='Shoes') {
+      const body = {
+        'category_id': 5
+      }
+      this.http.post<any>(API_URL+'customer/products-by-category',body).subscribe({
+        next: data => {
+          this.products = data.products;
+        },
+        error: error => {
+          this.errorMessage = error.message;
+          console.error('There was an error!', this.errorMessage);
+        }
+      })
+    }
+    if (category =='Tools') {
+      const body = {
+        'category_id': 6
+      }
+      this.http.post<any>(API_URL+'customer/products-by-category',body).subscribe({
+        next: data => {
+          this.products = data.products;
+        },
+        error: error => {
+          this.errorMessage = error.message;
+          console.error('There was an error!', this.errorMessage);
+        }
+      })
+    }
+    if (category =='Electronic Devices') {
+      const body = {
+        'category_id': 7
+      }
+      this.http.post<any>(API_URL+'customer/products-by-category',body).subscribe({
+        next: data => {
+          this.products = data.products;
+        },
+        error: error => {
+          this.errorMessage = error.message;
+          console.error('There was an error!', this.errorMessage);
+        }
+      })
+    }
+    if (category =='Medications') {
+      const body = {
+        'category_id': 7
+      }
+      this.http.post<any>(API_URL+'customer/products-by-category',body).subscribe({
+        next: data => {
+          this.products = data.products;
+        },
+        error: error => {
+          this.errorMessage = error.message;
+          console.error('There was an error!', this.errorMessage);
+        }
+      })
+    }
+    if (category =='E-Books') {
+      const body = {
+        'category_id': 9
+      }
+      this.http.post<any>(API_URL+'customer/products-by-category',body).subscribe({
+        next: data => {
+          this.products = data.products;
+        },
+        error: error => {
+          this.errorMessage = error.message;
+          console.error('There was an error!', this.errorMessage);
+        }
+      })
+    }
   }
 
   gridView() {
