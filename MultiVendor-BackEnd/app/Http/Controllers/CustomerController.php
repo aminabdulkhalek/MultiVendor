@@ -321,18 +321,21 @@ class CustomerController extends Controller
     public function placeOrder(){
         $user =  Auth::user();
         $customer = Customer::where('user_id','=',$user->id)->get()->first();
-        $order  = new Order;
-        $order->customer_id = $customer->id;
-        $order->save();
+        
 
         $cart = Cart::where('customer_id','=',$customer->id)->get()->first();
         $cart_items = CartItem::where('cart_id','=',$cart->id)->get();
 
         foreach($cart_items as $cart_item){
+            $order  = new Order;
+            $order->customer_id = $customer->id;
+            $order->save();
             $order_item = new OrderItem;
             $order_item->order_id = $order->id;
             $order_item->product_id = $cart_item->product_id;
             $order_item->quantity = $cart_item->quantity;
+            $order_item->save();
+            
         }
 
         $cart_items = CartItem::where('cart_id','=',$cart->id)->delete();
