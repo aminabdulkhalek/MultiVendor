@@ -21,6 +21,8 @@ export class CustomerDashboardComponent implements OnInit {
   errorMessage;
   img1;
   img2;
+  product1_id
+  product2_id
   constructor(
     private auth: AuthStateService,
     public router: Router,
@@ -54,11 +56,17 @@ export class CustomerDashboardComponent implements OnInit {
         console.log(data)
         this.img1 = data.products[0].img1;
         this.img2 = data.products[1].img1;
+        this.product1_id = data.products[0].id;
+        this.product2_id = data.products[1].id;
+
       },
       error: error => {
         this.errorMessage = error.message;
         console.error('There was an error!', this.errorMessage);
       }
     })
+  }
+  redirectToProduct(product_id) {
+    this.router.navigate([`product/${product_id}`])
   }
 }
